@@ -52,7 +52,16 @@ graph TD
 
 ---
 
-## 🛠️ Tech Stack
+## � Sumber Data & Integrasi
+
+Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapan di dunia nyata:
+- **Data Induk Pendidikan (NPSN)**: Terintegrasi dengan format Data Pokok Pendidikan (Dapodik) Kemendikbud untuk validasi profil puluhan ribu sekolah di seluruh Indonesia.
+- **Data Wilayah Administrasi**: Menggunakan data resmi Kepmendagri untuk hierarki wilayah yang presisi (Provinsi, Kabupaten/Kota, Kecamatan, hingga Desa/Kelurahan).
+- **Alokasi APBN**: Model data yang merepresentasikan alur dana riil dari APBN Pusat, Transfer ke Daerah (TKD), hingga pencairan langsung ke rekening BOS Sekolah.
+
+---
+
+## �🛠️ Tech Stack
 - **Frontend**: Next.js 15 (App Router), Tailwind CSS, Framer Motion.
 - **Backend & DB**: Supabase (PostgreSQL), Row-Level Security (RLS).
 - **Intelligence**: Google Gemini API (untuk audit AI).
