@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  nip       String   @unique
+  password  String   // Hashed password
+  role      String   @default("ADMIN") // ADMIN, SUPER_ADMIN
+  name      String
+  schoolId  String?
+  school    School?  @relation(fields: [schoolId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model School {
+  id            String   @id @default(uuid())
+  npsn          String   @unique
+  name          String
+  accreditation String   @default("Belum Akreditasi")
+  location      String?
+  budget        Budget?
+  transactions  Transaction[]
+  users         User[]
+  reports       Report[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Budget {
+  id            String   @id @default(uuid())
+  schoolId      String   @unique
+  school        School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  totalReceived Float    @default(0)
+  totalSpent    Float    @default(0)
+  year          Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  date        DateTime
+  category    String
+  description String
+  amount      Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Report {
+  id              String   @id @default(uuid())
+  schoolId        String?
+  school          School?  @relation(fields: [schoolId], references: [id], onDelete: SetNull)
+  reporterName    String?  // Optional for anonymity
+  description     String
+  estimatedAmount Float?
+  status          String   @default("PENDING") // PENDING, INVESTIGATING, RESOLVED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
