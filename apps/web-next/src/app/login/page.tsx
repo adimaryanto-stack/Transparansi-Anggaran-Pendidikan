@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
@@ -12,6 +12,15 @@ export default function AdminLoginPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [rememberMe, setRememberMe] = useState(false);
+
+    useEffect(() => {
+        const savedEmail = localStorage.getItem('remembered_email');
+        if (savedEmail) {
+            setEmail(savedEmail);
+            setRememberMe(true);
+        }
+    }, []);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -22,6 +31,12 @@ export default function AdminLoginPage() {
         setLoading(true);
         setError(null);
 
+        if (rememberMe) {
+            localStorage.setItem('remembered_email', email);
+        } else {
+            localStorage.removeItem('remembered_email');
+        }
+
         try {
             const { data, error: authError } = await supabase.auth.signInWithPassword({
                 email,
@@ -30,7 +45,6 @@ export default function AdminLoginPage() {
 
             if (authError) throw authError;
 
-            // Fetch profile to determine role
             if (data.user) {
                 const { data: profile } = await supabase
                     .from('profiles')
@@ -46,22 +60,31 @@ export default function AdminLoginPage() {
                 }
             }
         } catch (err: any) {
-            console.error('Login Error:', err);
             setError(err.message || 'Gagal masuk. Periksa kembali email dan password Anda.');
         } finally {
             setLoading(false);
         }
     };
 
+    const handleGoogleLogin = async () => {
+        try {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: `${window.location.origin}/auth/callback`,
+                },
+            });
+            if (error) throw error;
+        } catch (err: any) {
+            setError(err.message);
+        }
+    };
+
     return (
         <div className="relative flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900">
             <div className="flex h-full grow flex-col">
-                {/* Navigation Bar */}
                 <header className="flex items-center justify-between border-b border-primary/10 px-6 md:px-10 py-4 bg-white">
-                    <Link
-                        href="/"
-                        className="flex items-center gap-4 text-primary cursor-pointer"
-                    >
+                    <Link href="/" className="flex items-center gap-4 text-primary cursor-pointer">
                         <div className="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
                             <span className="material-symbols-outlined text-primary text-2xl">account_balance</span>
                         </div>
@@ -74,34 +97,31 @@ export default function AdminLoginPage() {
                     </div>
                 </header>
 
-                {/* Main Content (Login Card) */}
                 <main className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8">
                     <div className="w-full max-w-[480px] bg-white rounded-xl shadow-xl shadow-primary/5 overflow-hidden border border-slate-200">
-                        {/* Hero Image Area */}
                         <div className="relative">
                             <div
-                                className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end min-h-[180px]"
-                                style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtufxh1nQo4wj5l-L5b1OOU4-HGaPbDD7rNK3BMgP-XzmP2t0anvwOdq3BtptYp57-7lO0u3TYnM_oWaxyNjVFdG4w6pjhcA9suX6wqHO8e3l1BvV7REpW3__gv9X2ETfROghlpcpz9m2ixg3dLo4PhlltBJt2nacctmryGNuBy0ORXgu6A0Sz9sBfZ2nV8lwtgJ2vrfLcFhna3Rf63jUxlB8T8CPy8dhVR5PP76fzER5o7cGvt1KhtzCDzs8j5lK_guj-RY4yV7Ob")' }}
+                                className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end min-h-[160px]"
+                                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000")' }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                                 <div className="relative p-6">
-                                    <span className="inline-flex items-center rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-white mb-2">
+                                    <span className="inline-flex items-center rounded-full bg-primary/20 backdrop-blur-md border border-white/20 px-2.5 py-0.5 text-xs font-semibold text-white mb-2">
                                         Admin Portal
                                     </span>
-                                    <h1 className="text-white text-2xl font-bold">Selamat Datang Kembali</h1>
+                                    <h1 className="text-white text-2xl font-black tracking-tight">Selamat Datang Kembali</h1>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Login Form */}
                         <div className="p-6 sm:p-8 flex flex-col gap-6">
                             <div>
-                                <h2 className="text-slate-900 text-xl font-bold">Login Admin Sekolah</h2>
-                                <p className="text-slate-500 text-sm mt-1">Silakan masuk untuk mengelola transparansi data sekolah.</p>
+                                <h2 className="text-slate-900 text-xl font-black">Login Admin</h2>
+                                <p className="text-slate-500 text-sm mt-1 font-medium">Silakan masuk untuk mengelola data transparansi.</p>
                             </div>
 
                             {error && (
-                                <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm flex items-center gap-2">
+                                <div className="bg-rose-50 border border-rose-100 text-rose-600 px-4 py-3 rounded-xl text-sm flex items-center gap-2 animate-in fade-in slide-in-from-top-1">
                                     <span className="material-symbols-outlined text-[18px]">error</span>
                                     {error}
                                 </div>
@@ -109,17 +129,23 @@ export default function AdminLoginPage() {
 
                             <form className="flex flex-col gap-5" onSubmit={handleLogin}>
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-slate-700 text-sm font-semibold">Email</label>
+                                    <label className="text-slate-700 text-sm font-bold">Email</label>
                                     <div className="relative group">
                                         <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
                                             <span className="material-symbols-outlined text-[20px]">mail</span>
                                         </div>
                                         <input
-                                            className="w-full rounded-lg border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 pl-11 pr-4 placeholder:text-slate-400 text-base transition-all"
+                                            className="w-full rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary h-12 pl-11 pr-4 placeholder:text-slate-400 text-base transition-all font-medium"
                                             placeholder="admin@sekolah.id"
                                             type="email"
                                             value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
+                                            onChange={(e) => {
+                                                const val = e.target.value;
+                                                setEmail(val);
+                                                if (rememberMe) {
+                                                    localStorage.setItem('remembered_email', val);
+                                                }
+                                            }}
                                             required
                                         />
                                     </div>
@@ -127,16 +153,16 @@ export default function AdminLoginPage() {
 
                                 <div className="flex flex-col gap-2">
                                     <div className="flex justify-between items-center">
-                                        <label className="text-slate-700 text-sm font-semibold">Password</label>
-                                        <Link href="#" className="text-primary text-xs font-semibold hover:underline">Lupa Password?</Link>
+                                        <label className="text-slate-700 text-sm font-bold">Password</label>
+                                        <Link href="/forgot-password" title="Atur ulang kata sandi Anda" className="text-primary text-xs font-bold hover:underline">Lupa Password?</Link>
                                     </div>
                                     <div className="relative group">
                                         <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
                                             <span className="material-symbols-outlined text-[20px]">lock</span>
                                         </div>
                                         <input
-                                            className="w-full rounded-lg border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 pl-11 pr-12 placeholder:text-slate-400 text-base transition-all"
-                                            placeholder="Masukkan password Anda"
+                                            className="w-full rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary h-12 pl-11 pr-12 placeholder:text-slate-400 text-base transition-all font-medium"
+                                            placeholder="••••••••"
                                             type={showPassword ? "text" : "password"}
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
@@ -154,8 +180,28 @@ export default function AdminLoginPage() {
                                     </div>
                                 </div>
 
+                                <div className="flex items-center justify-between">
+                                    <label className="flex items-center gap-2 cursor-pointer group">
+                                        <input
+                                            type="checkbox"
+                                            className="size-4 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
+                                            checked={rememberMe}
+                                            onChange={(e) => {
+                                                const checked = e.target.checked;
+                                                setRememberMe(checked);
+                                                if (checked) {
+                                                    localStorage.setItem('remembered_email', email);
+                                                } else {
+                                                    localStorage.removeItem('remembered_email');
+                                                }
+                                            }}
+                                        />
+                                        <span className="text-sm text-slate-600 font-bold group-hover:text-slate-900 transition-colors">Ingat Saya</span>
+                                    </label>
+                                </div>
+
                                 <button
-                                    className="flex w-full items-center justify-center rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/20 mt-2 disabled:bg-slate-300 disabled:shadow-none"
+                                    className="flex w-full items-center justify-center rounded-xl h-12 bg-primary text-white gap-2 text-base font-black hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 mt-2 disabled:bg-slate-300 disabled:shadow-none"
                                     type="submit"
                                     disabled={loading}
                                 >
@@ -163,16 +209,34 @@ export default function AdminLoginPage() {
                                         <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                                     ) : (
                                         <>
-                                            <span>Masuk</span>
-                                            <span className="material-symbols-outlined text-[20px]">login</span>
+                                            <span>Masuk Sekarang</span>
+                                            <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
                                         </>
                                     )}
                                 </button>
                             </form>
 
+                            <div className="relative my-2">
+                                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-100"></div></div>
+                                <div className="relative flex justify-center text-xs uppercase"><span className="bg-white px-2 text-slate-400 font-bold">Atau masuk dengan</span></div>
+                            </div>
+
+                            <button
+                                onClick={handleGoogleLogin}
+                                className="flex w-full items-center justify-center rounded-xl h-12 bg-white border border-slate-200 text-slate-700 gap-3 text-sm font-bold hover:bg-slate-50 transition-all shadow-sm"
+                            >
+                                <svg className="size-5" viewBox="0 0 24 24">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+                                </svg>
+                                <span>Lanjutkan dengan Google</span>
+                            </button>
+
                             <div className="text-center mt-2">
-                                <p className="text-sm text-slate-500">
-                                    Kendala saat login? <Link className="text-primary font-bold hover:underline" href="#">Hubungi Support</Link>
+                                <p className="text-sm text-slate-500 font-medium">
+                                    Belum punya akun? <Link className="text-primary font-bold hover:underline" href="/signup" title="Daftar akun sekolah baru">Daftar Sekolah</Link>
                                 </p>
                             </div>
                         </div>
@@ -180,8 +244,8 @@ export default function AdminLoginPage() {
                 </main>
 
                 <footer className="p-6 text-center">
-                    <p className="text-slate-400 text-xs">
-                        &copy; 2024 Transparency Platform v2.1. Secure Access.
+                    <p className="text-slate-400 text-xs text-center font-medium">
+                        &copy; {new Date().getFullYear()} Transparency Platform v2.5. Secure Access.
                     </p>
                 </footer>
             </div>

@@ -107,7 +107,36 @@ Proyek ini dikembangkan dalam beberapa fase:
 
 ---
 
-## 🤝 Kontribusi
+---
+
+## 📜 Change Log
+
+### v1.0.0 (Current)
+- **Initial MVP Release**: Database Auth, AI Audit (Gemini), Fund Flow Tracking.
+- **OCR Integration**: Scan nota otomatis via Gemini Vision.
+- **Advanced Dashboards**: Multi-level roles (`SUPER_ADMIN`, `SCHOOL`, dll).
+- **UI Redesign**: SaaS Centered Layout, Dark mode preparation.
+
+---
+
+## 🛠️ Prasyarat & Infrastruktur
+
+Untuk menjalankan aplikasi ini secara penuh, diperlukan:
+1. **Langganan Google One**: Dibutuhkan agar fitur AI (Gemini Pro & Vision) dapat berjalan maksimal, termasuk fitur OCR, Auditor AI, dan Suggest AI.
+2. **Penyimpanan Database Remote**: Membutuhkan koneksi ke database eksternal seperti **Supabase** (rekomendasi) atau **Hostinger MySQL** untuk persistensi data yang aman.
+3. **Server Backend**: Membutuhkan server (VPS/Cloud) untuk menjalankan API dan proses sinkronisasi data.
+4. **Konektor Himbara**: Diperlukan integrasi/konektor dengan sistem perbankan Himbara sebagai eksekutor transaksi dari Kemenkeu langsung ke rekening sekolah.
+5. **Kolaborasi Multisektoral**: Pengembangan aplikasi ini membutuhkan sinergi antar disiplin ilmu (Programmer, UI/UX Designer, Pakar Hukum/Yudikatif, dan Auditor Keuangan).
+6. **Dashboard Admin**: Versi ini mendukung fungsi dasar dan akan terus diperbarui secara berkala sesuai dengan umpan balik dan kebutuhan regulasi terbaru.
+
+---
+
+## 🤝 Kontribusi & Pengembangan
 Aplikasi ini bersifat Open Source (MIT) sebagai bentuk kontribusi digital untuk pendidikan Indonesia yang lebih bersih.
 
-Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia.
+---
+
+## ⚠️ Pernyataan Penting
+Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini.**
+
+Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia yang Bersih dan Beradab.

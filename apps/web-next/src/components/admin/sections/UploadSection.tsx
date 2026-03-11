@@ -102,7 +102,7 @@ export default function UploadSection({
                                 <div className="bg-white rounded-xl border border-emerald-100 p-4 space-y-3 shadow-sm">
                                     <div className="flex justify-between items-center py-2 border-b border-slate-50">
                                         <span className="text-xs text-slate-400 font-bold uppercase">Toko / Vendor</span>
-                                        <span className="text-sm font-black text-slate-800">{scannedData.storeName || '-'}</span>
+                                        <span className="text-sm font-black text-slate-800">{scannedData.merchant_name || '-'}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-2 border-b border-slate-50">
                                         <span className="text-xs text-slate-400 font-bold uppercase">Tanggal</span>
@@ -110,7 +110,7 @@ export default function UploadSection({
                                     </div>
                                     <div className="flex justify-between items-center py-2">
                                         <span className="text-xs text-slate-400 font-bold uppercase">Total Nominal</span>
-                                        <span className="text-lg font-black text-emerald-700">{formatIDR(scannedData.total || 0)}</span>
+                                        <span className="text-lg font-black text-emerald-700">{formatIDR(scannedData.grand_total || 0)}</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3">

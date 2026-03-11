@@ -148,25 +148,34 @@ export default function UnifiedAdminPage() {
     };
 
     const handleOCR = async () => {
-        if (!receiptFile) return;
+        if (!receiptFile || !previewUrl) return;
         setScanning(true);
         try {
-            const reader = new FileReader();
-            reader.onload = async () => {
-                const base64 = (reader.result as string).split(',')[1];
-                const resp = await fetch('/api/v1/ocr', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ base64, mimeType: receiptFile.type }),
-                });
-                const json = await resp.json();
-                setScannedData(json.data || null);
-                setScanning(false);
-            };
-            reader.readAsDataURL(receiptFile);
-        } catch {
+            console.log('Starting OCR process for:', receiptFile.name);
+
+            const formData = new FormData();
+            formData.append('image', receiptFile);
+
+            const resp = await fetch('/api/v1/ocr', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!resp.ok) {
+                const errData = await resp.json();
+                throw new Error(errData.error || 'Gagal memproses struk.');
+            }
+
+            const json = await resp.json();
+            console.log('OCR Result:', json);
+
+            setScannedData(json || null);
+            setMessage({ type: 'success', text: 'Struk berhasil diproses!' });
+        } catch (err: any) {
+            console.error('OCR Error:', err);
+            setMessage({ type: 'error', text: `Gagal membaca struk: ${err.message}` });
+        } finally {
             setScanning(false);
-            setMessage({ type: 'error', text: 'Gagal memproses struk.' });
         }
     };
 
@@ -186,6 +195,59 @@ export default function UnifiedAdminPage() {
             setMessage({ type: 'error', text: err.message });
         } finally {
             setSavingManual(false);
+        }
+    };
+
+    const handleConfirmSave = async () => {
+        if (!scannedData || !profile?.school_id) return;
+        setScanning(true);
+        try {
+            // 1. Insert main transaction
+            const { data: txData, error: txErr } = await supabase
+                .from('transactions')
+                .insert({
+                    school_id: profile.school_id,
+                    date: scannedData.date || new Date().toISOString(),
+                    category: scannedData.category_suggestion || 'Lainnya',
+                    description: `Pembelian di ${scannedData.merchant_name || 'Vendor'}`,
+                    amount: scannedData.grand_total || 0,
+                    tax_amount: scannedData.tax_amount || 0,
+                    shipping_cost: scannedData.shipping_cost || 0,
+                    fund_source: 'BOS' // Default source
+                })
+                .select()
+                .single();
+
+            if (txErr) throw txErr;
+
+            // 2. Insert items if any
+            if (scannedData.items && Array.isArray(scannedData.items) && scannedData.items.length > 0) {
+                const itemsToInsert = scannedData.items.map((item: any) => ({
+                    transaction_id: txData.id,
+                    item_name: item.name,
+                    unit_price: item.price_per_unit || 0,
+                    quantity: item.qty || 1,
+                    unit: item.unit || 'pcs'
+                }));
+
+                const { error: itemsErr } = await supabase
+                    .from('transaction_items')
+                    .insert(itemsToInsert);
+
+                if (itemsErr) console.error('Error inserting items:', itemsErr);
+            }
+
+            setMessage({ type: 'success', text: 'Data struk berhasil disimpan otomatis ke database!' });
+            fetchTransactions();
+            setScannedData(null);
+            setPreviewUrl(null);
+            setReceiptFile(null);
+            setActiveMenu('expenses');
+        } catch (err: any) {
+            console.error('Save Error:', err);
+            setMessage({ type: 'error', text: `Gagal menyimpan: ${err.message}` });
+        } finally {
+            setScanning(false);
         }
     };
 
@@ -268,7 +330,7 @@ export default function UnifiedAdminPage() {
                                         onFileSelect={handleFileSelect}
                                         onRunOCR={handleOCR}
                                         onReset={() => { setPreviewUrl(null); setScannedData(null); }}
-                                        onUseData={() => setMessage({ type: 'info', text: 'Data ditarik ke form input (Coming Soon)' })}
+                                        onUseData={handleConfirmSave}
                                     />
                                 </div>
                             )}
