@@ -111,7 +111,7 @@ Proyek ini dikembangkan dalam beberapa fase:
 
 ## 📜 Change Log
 
-### v1.0.0 (Current)
+### v1.0.0 (Current) - 11 Maret 2026, 11:07 WIB
 - **Initial MVP Release**: Database Auth, AI Audit (Gemini), Fund Flow Tracking.
 - **OCR Integration**: Scan nota otomatis via Gemini Vision.
 - **Advanced Dashboards**: Multi-level roles (`SUPER_ADMIN`, `SCHOOL`, dll).
