@@ -33,14 +33,15 @@ graph TD
 **Fitur Rekonsiliasi**: Jika Dana yang dialokasikan di Pusat tidak sama dengan yang diterima di Sekolah, sistem akan memberikan **! FLAG** (Anomali) secara otomatis untuk diperiksa oleh KPK/BPK.
 
 Melaporkan dugaan korupsi ke KPK dapat dilakukan secara mudah, aman, dan tanpa biaya melalui situs **kws.kpk.go.id**, email **pengaduan@kpk.go.id**, WhatsApp **0811-959-575**, atau telepon ke **198**. Pastikan laporan memuat identitas jelas (dijamin rahasia), kronologi lengkap, bukti permulaan, dan lokasi kejadian.
+
 **Metode 5W +1W + 1H**
-Whats= Jelaskan proyek apa yang beranomali.
-Why= Jelaskan kenapa proyek anomali tersebut terjadi.
-When= Jelaskan kapan proyek anomali tersebut berjalan.
-Where= Jelaskan dimana proyek anomali tersebut terjadi.
-Who= Siapa yang terlibat dalam proyek anomali tersebut.
-How= Jelaskan bagaimana proyek anomali tersebut dapat terlaksana/terjadi, penjelasan harus selengkap-lengkapnya.
-Whom= Jika ada suap, siapa pelaku suap proyek anomali tersebut.
+1. Whats= Jelaskan proyek apa yang beranomali.
+2. Why= Jelaskan kenapa proyek anomali tersebut terjadi.
+3. When= Jelaskan kapan proyek anomali tersebut berjalan.
+4. Where= Jelaskan dimana proyek anomali tersebut terjadi.
+5. Who= Siapa yang terlibat dalam proyek anomali tersebut.
+6. How= Jelaskan bagaimana proyek anomali tersebut dapat terlaksana/terjadi, penjelasan harus selengkap-lengkapnya.
+7. Whom= Jika ada suap, siapa pelaku suap proyek anomali tersebut.
 
 Langkah-langkah Membuat Laporan ke KPK:
 1. Persiapkan Data dan Bukti: Kumpulkan dokumen, foto, rekaman, atau saksi yang berkaitan dengan dugaan tindak pidana korupsi (misalnya kuitansi, surat, atau bukti transfer).
