@@ -32,6 +32,31 @@ graph TD
 
 **Fitur Rekonsiliasi**: Jika Dana yang dialokasikan di Pusat tidak sama dengan yang diterima di Sekolah, sistem akan memberikan **! FLAG** (Anomali) secara otomatis untuk diperiksa oleh KPK/BPK.
 
+Melaporkan dugaan korupsi ke KPK dapat dilakukan secara mudah, aman, dan tanpa biaya melalui situs **kws.kpk.go.id**, email **pengaduan@kpk.go.id**, WhatsApp **0811-959-575**, atau telepon ke **198**. Pastikan laporan memuat identitas jelas (dijamin rahasia), kronologi lengkap, bukti permulaan, dan lokasi kejadian.
+**Metode 5W +1W + 1H**
+Whats= Jelaskan proyek apa yang beranomali.
+Why= Jelaskan kenapa proyek anomali tersebut terjadi.
+When= Jelaskan kapan proyek anomali tersebut berjalan.
+Where= Jelaskan dimana proyek anomali tersebut terjadi.
+Who= Siapa yang terlibat dalam proyek anomali tersebut.
+How= Jelaskan bagaimana proyek anomali tersebut dapat terlaksana/terjadi, penjelasan harus selengkap-lengkapnya.
+Whom= Jika ada suap, siapa pelaku suap proyek anomali tersebut.
+
+Langkah-langkah Membuat Laporan ke KPK:
+1. Persiapkan Data dan Bukti: Kumpulkan dokumen, foto, rekaman, atau saksi yang berkaitan dengan dugaan tindak pidana korupsi (misalnya kuitansi, surat, atau bukti transfer).
+2. Siapkan Identitas Pelapor: Identitas wajib diisi (nama, alamat, pekerjaan, nomor telepon). KPK menjamin kerahasiaan identitas pelapor, namun disarankan tidak mempublikasikan laporan sendiri.
+3. Sampaikan Kronologi Jelas: Jelaskan siapa yang terlibat, apa tindakannya, kapan kejadiannya, di mana lokasi kejadian, dan bagaimana modus operandinya.
+
+Pilih Saluran Pelaporan:
+KWS (KPK Whistleblower System): Kunjungi laman kws.kpk.go.id.
+Email: Kirimkan detail ke pengaduan@kpk.go.id.
+WhatsApp: Kirim pesan ke 0811-959-575.
+Call Center: Hubungi nomor 198.
+Langsung/Surat: Mengirimkan surat ke Gedung Merah Putih KPK, Jl. Kuningan Persada Kav. 4, Jakarta Selatan 12950. 
+www.kpk.go.id
+
+KPK akan melakukan verifikasi dan menindaklanjuti laporan yang memenuhi kriteria (memiliki bukti dan informasi memadai) dalam waktu 30 hari kerja.
+
 ---
 
 ## ✨ Fitur Utama (MVP)
