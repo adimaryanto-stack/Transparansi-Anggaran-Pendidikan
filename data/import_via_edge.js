@@ -1,10 +1,11 @@
 // Import data via Supabase Edge Function (bypasses RLS via service_role)
 const XLSX = require('xlsx');
 const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../apps/web-next/.env.local') });
 
-const EDGE_FUNCTION_URL = 'https://jpytxmnxbicjmgsgprba.supabase.co/functions/v1/bulk-import';
-const SUPABASE_URL = 'https://jpytxmnxbicjmgsgprba.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_1PLDkETImp0X9IJEnqyFJA_8WMiCwwI';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const EDGE_FUNCTION_URL = `${SUPABASE_URL}/functions/v1/bulk-import`;
 
 const filePath = path.resolve('d:/Work From Home Y545/Web Development/transparansi-anggaran/data/kepmendagri2025.xlsx');
 

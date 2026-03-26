@@ -3,6 +3,14 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (NEVER commit these!)
+.env
+.env.local
+.env.*.local
+
+# Build output
+.next
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -16,3 +24,7 @@ dist-ssr
 
 # Prisma
 prisma/migrations
+
+# Temp / test files
+_test_db
+ocr_errors.log

@@ -3,9 +3,10 @@
 const XLSX = require('xlsx');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config({ path: path.resolve(__dirname, '../apps/web-next/.env.local') });
 
-const SUPABASE_URL = 'https://jpytxmnxbicjmgsgprba.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_1PLDkETImp0X9IJEnqyFJA_8WMiCwwI';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
