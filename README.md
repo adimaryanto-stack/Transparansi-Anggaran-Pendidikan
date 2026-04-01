@@ -5,7 +5,7 @@
 [![AI: Gemini Pro](https://img.shields.io/badge/AI-Gemini%20Pro-red)](https://deepmind.google/technologies/gemini/)
 
 ## Pendahuluan 
-Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai sedikit gambaran permasalahan yanh terjadi dalam swbuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
+Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
 ## 🚀 Misi Proyek
 Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN Pusat hingga ke tangan sekolah, guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi. Platform ini memberikan visibilitas publik terhadap aliran dana dan audit otomatis berbasis AI terhadap kecurangan (markup/anomali).
