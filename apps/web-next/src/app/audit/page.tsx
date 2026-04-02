@@ -25,6 +25,8 @@ export default function AuditPage() {
     const [filterSeverity, setFilterSeverity] = useState<string>('ALL');
     const [filterStatus, setFilterStatus] = useState<string>('ALL');
 
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
     useEffect(() => {
         const fetch = async () => {
             let query = supabase
@@ -32,7 +34,11 @@ export default function AuditPage() {
                 .select('*, schools(name, npsn)')
                 .order('detected_at', { ascending: false });
 
-            const { data } = await query;
+            const { data, error } = await query;
+            if (error) {
+                console.error("Audit fetch error", error);
+                setErrorMsg(error.message);
+            }
             setLogs(data || []);
             setLoading(false);
         };
@@ -97,6 +103,13 @@ export default function AuditPage() {
                             <option value="RESOLVED">Resolved</option>
                         </select>
                     </div>
+
+                    {/* Error Box */}
+                    {errorMsg && (
+                        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-xl">
+                            <strong>Fetch Error:</strong> {errorMsg}
+                        </div>
+                    )}
 
                     {/* Log List */}
                     {loading ? (

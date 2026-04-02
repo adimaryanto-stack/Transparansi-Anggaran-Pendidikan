@@ -110,6 +110,23 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ## ⚙️ Cara Menjalankan Proyek
 
+1. **Clone Repositori**:
+   ```bash
+   git clone https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan.git
+   cd transparansi-anggaran
+   ```
+
+2. **Instal Dependensi**:
+   ```bash
+   npm install
+   ```
+
+3. **Konfigurasi Environment**:
+   Salin `.env.example` ke `.env.local` dan isi dengan nilai yang sesuai.
+   ```bash
+   cp .env.example .env.local
+   ```
+
 4. **Setup Database (Otomatis)**:
    Proyek ini sudah dilengkapi dengan migrasi schema dan data awal (APBN & Sekolah Demo).
    ```bash

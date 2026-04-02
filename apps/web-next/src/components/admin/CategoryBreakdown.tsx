@@ -2,7 +2,7 @@
 
 interface CategoryItem {
     name: string;
-    amount: number;
+    value: number;
     budget?: number;
     color: string;
 }
@@ -13,15 +13,15 @@ interface Props {
 }
 
 export default function CategoryBreakdown({ items, total }: Props) {
-    const sortedItems = [...items].sort((a, b) => b.amount - a.amount);
+    const sortedItems = [...items].sort((a, b) => b.value - a.value);
 
     return (
         <div className="bg-white rounded-2xl border border-slate-200 p-5">
             <h3 className="font-bold text-slate-900 text-sm mb-5">Rincian Per Kategori</h3>
             <div className="flex flex-col gap-5">
                 {sortedItems.map((item) => {
-                    const percentage = total > 0 ? (item.amount / total) * 100 : 0;
-                    const budgetPercentage = item.budget ? (item.amount / item.budget) * 100 : 0;
+                    const percentage = total > 0 ? (item.value / total) * 100 : 0;
+                    const budgetPercentage = item.budget ? (item.value / item.budget) * 100 : 0;
                     const isOverBudget = budgetPercentage > 100;
 
                     return (
@@ -30,7 +30,7 @@ export default function CategoryBreakdown({ items, total }: Props) {
                                 <div>
                                     <p className="text-xs font-bold text-slate-700">{item.name}</p>
                                     <p className="text-[11px] text-slate-400">
-                                        Rp {(item.amount ?? 0).toLocaleString('id-ID')}
+                                        Rp {(item.value ?? 0).toLocaleString('id-ID')}
                                         {item.budget && ` / Rp ${(item.budget ?? 0).toLocaleString('id-ID')}`}
                                     </p>
                                 </div>

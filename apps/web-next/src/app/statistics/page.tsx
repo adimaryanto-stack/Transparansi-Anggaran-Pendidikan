@@ -40,21 +40,22 @@ export default function StatisticsPage() {
         const fetchStats = async () => {
             try {
                 // Fetch all data in parallel
-                const [schoolsRes, budgetsRes, transactionsRes, reportsRes] = await Promise.all([
+                // Fetch all data in parallel
+                const [schoolsRes, incomingFundsRes, transactionsRes, reportsRes] = await Promise.all([
                     supabase.from('schools').select('id, name, npsn, accreditation'),
-                    supabase.from('budgets').select('total_received, total_spent, school_id'),
-                    supabase.from('transactions').select('id, date, category, amount'),
+                    supabase.from('incoming_funds').select('amount, school_id'),
+                    supabase.from('transactions').select('id, date, category, amount, school_id'),
                     supabase.from('reports').select('id', { count: 'exact', head: true }),
                 ]);
 
                 const schools = schoolsRes.data || [];
-                const budgets = budgetsRes.data || [];
+                const incomingFunds = incomingFundsRes.data || [];
                 const transactions = transactionsRes.data || [];
                 const reportCount = reportsRes.count || 0;
 
                 // Aggregate budget totals
-                const totalReceived = budgets.reduce((s, b) => s + Number(b.total_received || 0), 0);
-                const totalSpent = budgets.reduce((s, b) => s + Number(b.total_spent || 0), 0);
+                const totalReceived = incomingFunds.reduce((s, f) => s + Number(f.amount || 0), 0);
+                const totalSpent = transactions.reduce((s, t) => s + Number(t.amount || 0), 0);
 
                 // Category breakdown from transactions
                 const catMap: Record<string, number> = {};
@@ -78,13 +79,15 @@ export default function StatisticsPage() {
                     .map(({ month, amount }) => ({ month, amount }));
 
                 // School-level spending
-                const budgetBySchool: Record<string, number> = {};
-                budgets.forEach((b) => { budgetBySchool[b.school_id] = Number(b.total_spent || 0); });
+                const spentBySchool: Record<string, number> = {};
+                transactions.forEach((t) => {
+                    spentBySchool[t.school_id] = (spentBySchool[t.school_id] || 0) + Number(t.amount || 0);
+                });
                 const schoolList = schools.map((s) => ({
                     name: s.name,
                     npsn: s.npsn,
                     accreditation: s.accreditation || '-',
-                    totalSpent: budgetBySchool[s.id] || 0,
+                    totalSpent: spentBySchool[s.id] || 0,
                 })).sort((a, b) => b.totalSpent - a.totalSpent);
 
                 setStats({

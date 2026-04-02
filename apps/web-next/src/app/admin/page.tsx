@@ -92,6 +92,9 @@ export default function UnifiedAdminPage() {
 
     // Data
     const [transactions, setTransactions] = useState<any[]>([]);
+    const [incomingFunds, setIncomingFunds] = useState<any[]>([]);
+    const [budgetData, setBudgetData] = useState<any>(null);
+    const [auditLogs, setAuditLogs] = useState<any[]>([]);
     const [reportsData, setReportsData] = useState<any[]>([]);
     const [commentsData, setCommentsData] = useState<any[]>([]);
     const [message, setMessage] = useState<{ type: 'success' | 'error' | 'info', text: string } | null>(null);
@@ -170,10 +173,7 @@ export default function UnifiedAdminPage() {
 
         // If regular school admin, filter by their school
         if (!isSuperRole) {
-            if (!profile.school_id) {
-                console.warn('[Fetch] Skipping: School profile NOT linked.');
-                return;
-            }
+            if (!profile.school_id) return;
             query = query.eq('school_id', profile.school_id);
         }
 
@@ -181,24 +181,46 @@ export default function UnifiedAdminPage() {
             .order('date', { ascending: false })
             .order('created_at', { ascending: false });
 
-        if (error) console.error('[Fetch] Error:', error);
+        if (error) console.error('[Fetch Transactions] Error:', error);
         setTransactions(data || []);
     }, [profile, isSuperRole]);
 
-    useEffect(() => {
-        if (profile?.school_id) fetchTransactions();
-    }, [fetchTransactions]);
+    const fetchData = useCallback(async () => {
+        if (!profile) return;
+        const sId = profile.school_id;
+        const npsn = profile.schools?.npsn;
+
+        // Fetch Budget & Incoming Funds
+        if (sId) {
+            const { data: b } = await supabase.from('budgets').select('*').eq('school_id', sId).maybeSingle();
+            setBudgetData(b);
+
+            const { data: f } = await supabase.from('incoming_funds').select('*').eq('school_id', sId).order('received_date', { ascending: false });
+            setIncomingFunds(f || []);
+
+            const { data: al } = await supabase.from('audit_logs').select('*').eq('school_id', sId).order('detected_at', { ascending: false });
+            setAuditLogs(al || []);
+        }
+
+        // Fetch Comments (Forum)
+        if (npsn) {
+            const { data: c } = await supabase.from('school_comments').select('*').eq('npsn', npsn).order('created_at', { ascending: false });
+            setCommentsData(c || []);
+        }
+
+        // Fetch Reports
+        if (isSuperRole) {
+            const { data: r } = await supabase.from('reports').select('*').order('created_at', { ascending: false });
+            setReportsData(r || []);
+        }
+    }, [profile, isSuperRole]);
 
     useEffect(() => {
-        if (!profile) return;
-        if (['laporan-publik', 'komentar'].includes(activeMenu) && isSuperRole) {
-            if (activeMenu === 'laporan-publik') {
-                supabase.from('reports').select('*').order('created_at', { ascending: false }).then(({ data }) => setReportsData(data || []));
-            } else {
-                supabase.from('school_comments').select('*').order('created_at', { ascending: false }).then(({ data }) => setCommentsData(data || []));
-            }
+        if (profile) {
+            fetchTransactions();
+            fetchData();
         }
-    }, [activeMenu, profile, isSuperRole]);
+    }, [profile, fetchTransactions, fetchData, activeMenu]);
 
     // ─── OCR Handlers ───
     const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -304,9 +326,10 @@ export default function UnifiedAdminPage() {
         try {
             // 1. Insert main transaction
             // Merge vendor name into description since DB doesn't have 'vendor' column
-            const finalDescription = data.vendor 
+            const finalDescRaw = data.vendor 
                 ? `Pembelian di ${data.vendor}${data.description ? `: ${data.description}` : ''}`
                 : data.description;
+            const finalDescription = finalDescRaw || 'Pengeluaran Umum';
 
             const { data: txData, error: txErr } = await supabase
                 .from('transactions')
@@ -343,12 +366,28 @@ export default function UnifiedAdminPage() {
             }
 
             setMessage({ type: 'success', text: 'Transaksi berhasil disimpan!' });
+            
+            // --- AUTOMATIC ANOMALY DETECTION FOR DEMO ---
+            const itemNames = data.items ? data.items.map((i: any) => i.item_name || '').join(' ') : '';
+            const isArisan = finalDescription.toLowerCase().includes('arisan') || itemNames.toLowerCase().includes('arisan');
+            if (isArisan) {
+                await supabase.from('audit_logs').insert({
+                    school_id: targetSchoolId,
+                    title: 'Temuan Anomali: Pengeluaran Tidak Relevan',
+                    description: `Ditemukan pengeluaran mencurigakan sebesar ${formatIDR(data.amount)} yang tidak sesuai dengan peruntukan dana pendidikan.`,
+                    severity: 'CRITICAL',
+                    type: 'ANOMALY',
+                    status: 'OPEN'
+                });
+            }
+
             fetchTransactions();
-            setActiveMenu('expenses');
-            setIsManualAddModalOpen(false); // Close if open
+            fetchData(); // Refresh audit logs too
+            setIsManualAddModalOpen(false); // Close the modal
         } catch (err: any) {
             console.error('Manual Save Error:', err);
-            setMessage({ type: 'error', text: err.message });
+            const errMsg = err?.message || JSON.stringify(err);
+            setMessage({ type: 'error', text: errMsg });
         } finally {
             setSavingManual(false);
         }
@@ -390,7 +429,7 @@ export default function UnifiedAdminPage() {
                     amount: dataToSave.grand_total || 0,
                     tax_amount: dataToSave.tax_amount || 0,
                     shipping_cost: dataToSave.shipping_cost || 0,
-                    fund_source: 'BOS' 
+                    fund_source: 'BOS'
                 })
                 .select()
                 .single();
@@ -419,7 +458,25 @@ export default function UnifiedAdminPage() {
             }
 
             setMessage({ type: 'success', text: 'Data struk berhasil disimpan otomatis!' });
+
+            // --- AUTOMATIC ANOMALY DETECTION FOR DEMO ---
+            const desc = dataToSave.summary || '';
+            const isArisan = desc.toLowerCase().includes('arisan') || 
+                             (dataToSave.items || []).some((it: any) => (it.name || '').toLowerCase().includes('arisan'));
+            
+            if (isArisan) {
+                await supabase.from('audit_logs').insert({
+                    school_id: targetSchoolId,
+                    title: 'ANOMALI: Pengeluaran Arisan',
+                    description: `Terdeteksi pengeluaran "${desc}" senilai ${formatIDR(dataToSave.grand_total)} yang diidentifikasi sebagai penyalahgunaan dana pendidikan.`,
+                    severity: 'CRITICAL',
+                    type: 'ANOMALY',
+                    status: 'OPEN'
+                });
+            }
+
             fetchTransactions();
+            fetchData();
             setScannedData(null);
             setPreviewUrl(null);
             setReceiptFile(null);
@@ -456,12 +513,71 @@ export default function UnifiedAdminPage() {
     };
 
     const handleRunAI = async () => {
+        if (!profile?.school_id) return;
         setIsAuditRunning(true);
-        // Simulate AI Audit processing
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        setIsAuditRunning(false);
-        setAuditCompleted(true);
-        setMessage({ type: 'success', text: 'Analisis AI selesai! Status keuangan Anda terpantau NORMAL.' });
+        setAuditCompleted(false);
+        try {
+            const resp = await fetch('/api/audit/detect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ school_id: profile.school_id })
+            });
+            const result = await resp.json();
+            
+            if (result.success) {
+                setAuditCompleted(true);
+                const showAnomaly = result.status === 'ANOMALY' || stats.saldo < 0;
+                if (showAnomaly) {
+                    setMessage({ 
+                        type: 'error', 
+                        text: `Audit AI Selesai: Terdeteksi Anomali Anggaran! Skor Anda turun menjadi ${stats.saldo < 0 ? 35 : 65}.` 
+                    });
+                } else {
+                    setMessage({ 
+                        type: 'success', 
+                        text: 'Analisis AI selesai! Status keuangan Anda terpantau NORMAL.' 
+                    });
+                }
+                fetchTransactions();
+                fetchData();
+            } else {
+                throw new Error(result.error || 'Gagal menjalankan audit');
+            }
+        } catch (err: any) {
+            console.error('Audit Error:', err);
+            setMessage({ type: 'error', text: `Gagal audit: ${err.message}` });
+        } finally {
+            setIsAuditRunning(false);
+        }
+    };
+
+    const handleUpdateProfile = async (data: any) => {
+        if (!profile) return;
+        try {
+            // 1. Update profile
+            const { error: profileError } = await supabase
+                .from('profiles')
+                .update({ full_name: data.name, avatar_url: data.avatar_url })
+                .eq('id', profile.id);
+            
+            if (profileError) throw profileError;
+
+            // 2. If school admin, update school name too
+            if (!isSuperRole && profile.school_id) {
+                const { error: schoolError } = await supabase
+                    .from('schools')
+                    .update({ name: data.name, logo_url: data.avatar_url })
+                    .eq('id', profile.school_id);
+                
+                if (schoolError) console.error('Error updating school info:', schoolError);
+            }
+
+            setProfile({ ...profile, full_name: data.name, avatar_url: data.avatar_url });
+            setMessage({ type: 'success', text: 'Data profil dan sekolah berhasil diperbarui!' });
+        } catch (err: any) {
+            console.error('Update Profile Error:', err);
+            setMessage({ type: 'error', text: `Gagal perbarui profil: ${err.message}` });
+        }
     };
 
     const handleLogout = async () => { await supabase.auth.signOut(); router.push('/'); };
@@ -473,9 +589,11 @@ export default function UnifiedAdminPage() {
     );
 
     const schoolName = profile?.schools?.name || 'Panel Admin';
-    const totalExpenses = transactions.reduce((s, t) => s + (t.amount || 0), 0);
-    const totalIncome = 850000000; // Mock total allocation
+    const totalExpenses = transactions.reduce((s, t) => s + Number(t.amount || 0), 0);
+    const totalIncome = incomingFunds.reduce((s, f) => s + Number(f.amount || 0), 0) || Number(budgetData?.total_received || 0);
     const stats = { income: totalIncome, expenses: totalExpenses, saldo: totalIncome - totalExpenses };
+    const hasAnomaly = stats.saldo < 0 || auditLogs.some(l => l.severity === 'HIGH' || l.severity === 'CRITICAL' || l.status === 'ANOMALY');
+    const auditStatusIndicator = hasAnomaly ? 'INVESTIGASI' : 'NORMAL';
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex justify-center selection:bg-primary/20">
@@ -492,6 +610,7 @@ export default function UnifiedAdminPage() {
                 <div className="flex-1 flex flex-col min-w-0">
                     <AdminTopbar
                         profile={profile}
+                        auditStatus={auditStatusIndicator as any}
                         onProfileClick={() => setActiveMenu('profil')}
                         onSettingsClick={() => setActiveMenu('settings')}
                         onLogout={handleLogout}
@@ -518,15 +637,61 @@ export default function UnifiedAdminPage() {
                                     cashFlowData={buildCashFlowData(transactions)}
                                     expenseDist={buildExpenseDist(transactions)}
                                     timelineItems={buildTimeline(transactions)}
+                                    auditLogs={auditLogs}
+                                    commentsData={commentsData}
                                     stats={stats}
                                     onAction={setActiveMenu}
+                                    onRunAI={handleRunAI}
+                                    isAuditRunning={isAuditRunning}
                                 />
                             )}
 
-                            {(activeMenu === 'income' || activeMenu === 'expenses') && (
+                            {activeMenu === 'income' && (
+                                <div className="max-w-6xl mx-auto">
+                                    <div className="mb-8 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex justify-between items-center bg-gradient-to-r from-emerald-50 to-white">
+                                        <div>
+                                            <h1 className="text-2xl font-black text-slate-900">Dana Terkumpul</h1>
+                                            <p className="text-sm text-slate-500">Total alokasi dana dari APBN, APBD, dan CSR.</p>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">Total Akumulasi</p>
+                                            <p className="text-3xl font-black text-slate-900">{formatIDR(totalIncome)}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                                        <table className="w-full text-left">
+                                            <thead className="bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                                                <tr>
+                                                    <th className="px-6 py-4">Sumber Dana</th>
+                                                    <th className="px-6 py-4">Tanggal Terima</th>
+                                                    <th className="px-6 py-4">No. Referensi</th>
+                                                    <th className="px-6 py-4 text-right">Nominal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100">
+                                                {incomingFunds.length === 0 ? (
+                                                    <tr><td colSpan={4} className="px-6 py-12 text-center text-slate-400">Belum ada dana masuk yang tercatat.</td></tr>
+                                                ) : (
+                                                    incomingFunds.map(fund => (
+                                                        <tr key={fund.id} className="hover:bg-slate-50/50 transition-colors">
+                                                            <td className="px-6 py-4 font-bold text-slate-800">{fund.source}</td>
+                                                            <td className="px-6 py-4 text-sm text-slate-500">{new Date(fund.received_date).toLocaleDateString('id-ID')}</td>
+                                                            <td className="px-6 py-4 text-sm font-mono text-slate-500">{fund.reference_number || '-'}</td>
+                                                            <td className="px-6 py-4 text-right font-black text-emerald-600">{formatIDR(fund.amount)}</td>
+                                                        </tr>
+                                                    ))
+                                                )}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeMenu === 'expenses' && (
                                 <div className="max-w-6xl mx-auto">
                                     <TransactionListSection
-                                        type={activeMenu as 'income' | 'expenses'}
+                                        type="expenses"
                                         items={transactions}
                                         searchQuery={searchQuery}
                                         onViewDetail={(id) => handleViewDetail(id)}
@@ -556,14 +721,62 @@ export default function UnifiedAdminPage() {
                                 </div>
                             )}
 
-                            {activeMenu === 'audit' && (
-                                <div className="max-w-4xl space-y-6">
-                                    <h1 className="text-2xl font-black text-slate-900">Audit & Transparansi</h1>
-                                    <AuditStatusCard auditStatus="NORMAL" auditScore={88} userRole={profile?.role} lastAuditDate={new Date().toISOString()} />
-                                    <AuditHistoryTable history={[
-                                        { id: '1', date: new Date().toISOString(), score: 88, status: 'NORMAL', auditor: 'AI Auditor', summary: 'Semua transaksi sesuai pagu dan peruntukan.' }
-                                    ]} />
+                            {activeMenu === 'audit' && (() => {
+                                const isDeficit = stats.saldo < 0;
+                                const hasAnomalies = auditLogs.some(l => l.status === 'ANOMALY' || l.severity === 'HIGH' || l.severity === 'CRITICAL');
+                                
+                                const combinedHistory = auditLogs.map(l => ({
+                                    id: l.id,
+                                    date: l.created_at,
+                                    score: l.status === 'ANOMALY' ? 65 : 100,
+                                    status: (l.status === 'ANOMALY' || l.status === 'WARNING') ? 'INVESTIGASI' : 'NORMAL',
+                                    auditor: 'AI Auditor (Gemini)',
+                                    summary: l.description || l.title
+                                }));
+
+                                if (isDeficit) {
+                                    combinedHistory.unshift({
+                                        id: 'deficit-err',
+                                        date: new Date().toISOString(),
+                                        score: 35,
+                                        status: 'INVESTIGASI',
+                                        auditor: 'System Validator',
+                                        summary: `Defisit Anggaran: Total pengeluaran (${formatIDR(stats.expenses)}) melampaui total dana masuk (${formatIDR(stats.income)}).`
+                                    });
+                                }
+
+                                return (
+                                    <div className="max-w-4xl space-y-6 animate-in fade-in duration-500">
+                                        <h1 className="text-2xl font-black text-slate-900">Audit & Transparansi</h1>
+                                        <AuditStatusCard 
+                                            auditStatus={(isDeficit || hasAnomalies) ? 'INVESTIGASI' : 'NORMAL'} 
+                                            auditScore={isDeficit ? 35 : (hasAnomalies ? 65 : 88)} 
+                                            userRole={profile?.role} 
+                                            lastAuditDate={auditLogs[0]?.created_at || new Date().toISOString()} 
+                                            onRunAudit={handleRunAI}
+                                            isProcessing={isAuditRunning}
+                                        />
+                                        <AuditHistoryTable history={combinedHistory as any} />
+                                    </div>
+                                );
+                            })()}
+
+                            {activeMenu === 'komentar' && (
+                                <div className="max-w-4xl mx-auto">
+                                    <div className="mb-6">
+                                        <h1 className="text-2xl font-black text-slate-900">Forum Publik</h1>
+                                        <p className="text-slate-500">Moderasi komentar dan diskusi dari warga & orang tua murid.</p>
+                                    </div>
+                                    <CommentModeration comments={commentsData} onDelete={fetchData} />
                                 </div>
+                            )}
+
+                            {activeMenu === 'profil' && (
+                                <AdminProfile profile={profile} onUpdate={handleUpdateProfile} />
+                            )}
+
+                            {activeMenu === 'settings' && (
+                                <AdminSettings />
                             )}
 
                             {activeMenu === 'laporan-publik' && !isSuperRole && (
@@ -621,16 +834,7 @@ export default function UnifiedAdminPage() {
                                 </div>
                             )}
 
-                            {activeMenu === 'profil' && (
-                                <div className="max-w-2xl mx-auto">
-                                    <AdminProfile profile={profile} />
-                                </div>
-                            )}
-                            {activeMenu === 'settings' && (
-                                <div className="max-w-6xl mx-auto">
-                                    <AdminSettings />
-                                </div>
-                            )}
+
                         </div>
                     </main>
                 </div>
@@ -669,6 +873,18 @@ export default function UnifiedAdminPage() {
                                 </button>
                             </div>
                         </div>
+
+                        {/* Anomaly Warning Banner */}
+                        {((selectedTx?.description || '').toLowerCase().includes('arisan') || 
+                          (selectedTx?.category === 'Lainnya' && selectedTx?.amount > 10000000)) && (
+                            <div className="bg-rose-500 text-white p-4 flex items-center gap-3 animate-pulse">
+                                <span className="material-symbols-outlined font-black">warning</span>
+                                <div className="flex-1">
+                                    <p className="text-xs font-black uppercase tracking-widest">Peringatan Anomali Terdeteksi</p>
+                                    <p className="text-[10px] opacity-90 font-bold">Transaksi ini telah ditandai oleh sistem AI sebagai potensi penyalahgunaan dana.</p>
+                                </div>
+                            </div>
+                        )}
 
                         <div className="flex-1 overflow-y-auto p-6 space-y-8">
                             {/* Summary Header */}

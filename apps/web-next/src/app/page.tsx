@@ -133,13 +133,13 @@ const Content = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
-      // Fetch total funds tracked (sum of total_spent from budgets)
-      const { data: budgetData } = await supabase
-        .from("budgets")
-        .select("total_spent");
+      // Fetch total funds tracked (sum of amount from transactions for real-time accuracy)
+      const { data: transactionData } = await supabase
+        .from("transactions")
+        .select("amount");
 
-      if (budgetData) {
-        const totalSpent = budgetData.reduce((sum, b) => sum + Number(b.total_spent || 0), 0);
+      if (transactionData) {
+        const totalSpent = transactionData.reduce((sum, t) => sum + Number(t.amount || 0), 0);
         setTotalTracked(totalSpent);
       }
 
@@ -157,13 +157,14 @@ const Content = () => {
         .from("school_comments")
         .select(`
           id,
+          comment_text,
           created_at,
-          user_name,
+          author_name,
           npsn,
           schools ( name )
         `)
         .order("created_at", { ascending: false })
-        .limit(5);
+        .limit(10);
 
       // Fetch recent transactions
       const { data: transactions } = await supabase
@@ -172,38 +173,53 @@ const Content = () => {
           id,
           date,
           amount,
+          category,
+          description,
+          created_at,
           schools ( name, npsn )
         `)
         .order("date", { ascending: false })
-        .limit(5);
+        .order("created_at", { ascending: false })
+        .limit(10);
 
       let activities: any[] = [];
 
       if (comments) {
-        activities = [...activities, ...comments.map(c => ({
-          id: `comment-${c.id}`,
-          type: 'COMMENT',
-          date: new Date(c.created_at).getTime(),
-          content: `${c.user_name} mengomentari anggaran`,
-          schoolName: (c.schools as any)?.name || c.npsn,
-          link: `/dashboard/${c.npsn}`
-        }))];
+        activities = [...activities, ...comments.map(c => {
+          const s = Array.isArray(c.schools) ? c.schools[0] : c.schools;
+          return {
+            id: `comment-${c.id}`,
+            type: 'COMMENT',
+            date: new Date(c.created_at).getTime(),
+            content: `${c.author_name || 'Warga'} mengomentari: "${c.comment_text?.substring(0, 50)}${c.comment_text?.length > 50 ? '...' : ''}"`,
+            schoolName: (s as any)?.name || c.npsn || 'Sekolah',
+            link: `/dashboard/${c.npsn}#forum`
+          };
+        })];
       }
-
+      
       if (transactions && transactions.length > 0) {
-        activities = [...activities, ...transactions.map(t => ({
-          id: `trx-${t.id}`,
-          type: 'TRANSACTION',
-          date: new Date(t.date).getTime(),
-          content: `Mencatatkan pengeluaran ${formatIDR(t.amount)}`,
-          schoolName: (t.schools as any)?.name || 'Sekolah Tidak Diketahui',
-          link: `/dashboard/${(t.schools as any)?.npsn || ''}`
-        }))];
+        activities = [...activities, ...transactions.map(t => {
+          const s = Array.isArray(t.schools) ? t.schools[0] : t.schools;
+          // Check for anomaly in description
+          const isAnomaly = (t.description || '').toLowerCase().includes('arisan') || (t.category === 'Lainnya' && Number(t.amount) > 10000000);
+          
+          return {
+            id: `trx-${t.id}`,
+            type: 'TRANSACTION',
+            date: new Date(t.created_at || t.date).getTime(),
+            content: isAnomaly 
+              ? `⚠️ ANOMALI: ${t.description || 'Pengeluaran'} (${formatIDR(t.amount)})`
+              : `${t.description || 'Belanja'} - ${formatIDR(t.amount)}`,
+            schoolName: (s as any)?.name || 'Sekolah Tidak Diketahui',
+            link: `/dashboard/${(s as any)?.npsn || ''}`
+          };
+        })];
       }
 
       // Sort combined activities by date desc
       activities.sort((a, b) => b.date - a.date);
-      setRecentActivities(activities.slice(0, 5));
+      setRecentActivities(activities.slice(0, 10)); // Show more activities now
       setLoadingActivities(false);
     };
 

@@ -49,38 +49,17 @@ export default function SchoolDashboardPage() {
             try {
                 setLoading(true);
 
-                // Fetch school with its budget, transactions, AND incoming funds
+                // Fetch school basic info
                 const { data: school, error: supabaseError } = await supabase
                     .from('schools')
-                    .select(`
-                        *,
-                        budgets (
-                            total_received,
-                            total_spent,
-                            year
-                        ),
-                        transactions (
-                            id,
-                            date,
-                            category,
-                            description,
-                            amount
-                        ),
-                        incoming_funds (
-                            id,
-                            source,
-                            amount,
-                            received_date,
-                            reference_number
-                        )
-                    `)
+                    .select('*')
                     .eq('npsn', npsn)
                     .single();
 
                 // Fetch transactions separately for better control over sorting
                 const { data: transactionsData } = await supabase
                     .from('transactions')
-                    .select('id, date, category, description, amount')
+                    .select('*, transaction_items(*)')
                     .eq('school_id', school.id)
                     .order('date', { ascending: false })
                     .order('created_at', { ascending: false });
@@ -143,6 +122,7 @@ export default function SchoolDashboardPage() {
                 // Map Supabase data to the format expected by the charts
                 const formattedData = {
                     profile: {
+                        id: school.id,
                         name: school.name,
                         npsn: school.npsn,
                         accreditation: school.accreditation,
@@ -244,8 +224,9 @@ export default function SchoolDashboardPage() {
                 .from('school_comments')
                 .insert({
                     npsn,
-                    user_name: userName.trim() || 'Warga Anonim',
-                    comment: newComment.trim()
+                    school_id: schoolData.profile.id,
+                    author_name: userName.trim() || 'Warga Anonim',
+                    comment_text: newComment.trim()
                 })
                 .select()
                 .single();
@@ -371,18 +352,33 @@ export default function SchoolDashboardPage() {
 
                             <div className="py-4 border-y border-dashed border-slate-300 bg-slate-50/50 -mx-8 px-8 print:mx-0 print:px-0 print:bg-transparent text-sm">
                                 <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-3">Item / Keterangan</p>
-                                <p className="text-slate-800 font-bold leading-relaxed mb-4">{selectedTransaction.description}</p>
+                                
+                                {selectedTransaction.transaction_items && selectedTransaction.transaction_items.length > 0 ? (
+                                    <div className="space-y-3 mb-4">
+                                        {selectedTransaction.transaction_items.map((item: any) => (
+                                            <div key={item.id} className="flex justify-between items-start gap-4">
+                                                <div className="flex-1">
+                                                    <p className="text-slate-800 font-bold leading-tight">{item.item_name}</p>
+                                                    <p className="text-xs text-slate-500">{item.quantity} {item.unit} x {formatIDR(item.unit_price)}</p>
+                                                </div>
+                                                <span className="font-bold text-slate-700 whitespace-nowrap">{formatIDR(item.unit_price * item.quantity)}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className="text-slate-800 font-bold leading-relaxed mb-4">{selectedTransaction.description}</p>
+                                )}
 
                                 {/* Subtotals for extra costs if they exist */}
-                                {(selectedTransaction.tax_amount > 0 || selectedTransaction.shipping_cost > 0) && (
+                                {(Number(selectedTransaction.tax_amount) > 0 || Number(selectedTransaction.shipping_cost) > 0) && (
                                     <div className="flex flex-col gap-2 pt-3 border-t border-slate-200 mt-2">
-                                        {selectedTransaction.shipping_cost > 0 && (
+                                        {Number(selectedTransaction.shipping_cost) > 0 && (
                                             <div className="flex justify-between items-center text-xs text-slate-600">
                                                 <span>Biaya Pengiriman</span>
                                                 <span className="font-mono">{formatIDR(selectedTransaction.shipping_cost)}</span>
                                             </div>
                                         )}
-                                        {selectedTransaction.tax_amount > 0 && (
+                                        {Number(selectedTransaction.tax_amount) > 0 && (
                                             <div className="flex justify-between items-center text-xs text-slate-600">
                                                 <span>Pajak (PPN/PPh)</span>
                                                 <span className="font-mono">{formatIDR(selectedTransaction.tax_amount)}</span>
@@ -638,7 +634,7 @@ export default function SchoolDashboardPage() {
                         </div>
 
                         {/* Public Forum / Comments Section */}
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6">
+                        <div id="forum" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6 scroll-mt-24">
                             <div className="p-6 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
                                 <h3 className="text-xl font-bold flex items-center gap-2">
                                     <span className="material-symbols-outlined text-primary">forum</span>
@@ -692,17 +688,17 @@ export default function SchoolDashboardPage() {
                                                 <div className="flex items-center justify-between mb-3">
                                                     <div className="flex items-center gap-3">
                                                         <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold uppercase shrink-0">
-                                                            {comment.user_name.charAt(0)}
+                                                            {comment.author_name?.charAt(0) || 'A'}
                                                         </div>
                                                         <div>
-                                                            <p className="font-bold text-slate-900">{comment.user_name}</p>
+                                                            <p className="font-bold text-slate-900">{comment.author_name || 'Warga Anonim'}</p>
                                                             <p className="text-xs text-slate-500">
                                                                 {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(comment.created_at))}
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <p className="text-slate-700 leading-relaxed whitespace-pre-wrap text-sm">{comment.comment}</p>
+                                                <p className="text-slate-700 leading-relaxed whitespace-pre-wrap text-sm">{comment.comment_text}</p>
                                             </div>
                                         ))
                                     )}

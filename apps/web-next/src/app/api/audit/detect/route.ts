@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { GoogleGenAI } from '@google/genai';
 
 const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
+
+const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
 interface AuditEntry {
     school_id: string;
@@ -21,65 +24,73 @@ export async function POST(request: NextRequest) {
 
         const findings: AuditEntry[] = [];
 
-        // Fetch transactions
+        // 1. Fetch transactions & items for semantic analysis
         const { data: transactions } = await supabaseAdmin
             .from('transactions')
-            .select('*')
+            .select('*, transaction_items(*)')
             .eq('school_id', school_id);
 
+        const txs = transactions || [];
+
+        // 2. RUN SEMANTIC AI AUDIT (GEMINI)
+        if (txs.length > 0) {
+            const prompt = `Sebagai Auditor AI untuk Dana BOS (Bantuan Operasional Sekolah), analisis daftar transaksi berikut.
+            Cari transaksi yang memiliki indikasi:
+            1. PENGGUNAAN PRIBADI/TIDAK TERKAIT PENDIDIKAN (Contoh: Arisan, Liburan keluarga, Cicilan pribadi, Belanja sembako rumah tangga).
+            2. MARKUP HARGA (Harga tidak masuk akal).
+            3. ANOMALI DESKRIPSI (Deskripsi mencurigakan).
+
+            DATA TRANSAKSI:
+            ${JSON.stringify(txs.map(t => ({
+                id: t.id,
+                desc: t.description,
+                cat: t.category,
+                amount: t.amount,
+                items: t.transaction_items?.map((i: any) => i.item_name).join(', ')
+            })), null, 2)}
+
+            KEMBALIKAN DALAM FORMAT JSON ARRAY:
+            [{
+                "tx_id": "ID transaksi",
+                "reason": "Alasan anomali (jelas & tegas)",
+                "severity": "HIGH/CRITICAL/MEDIUM",
+                "title": "Judul Temuan"
+            }]
+            Kembalikan ARRAY KOSONG [] jika tidak ada anomali. JANGAN ADA TEKS LAIN.`;
+
+            try {
+                const result = await genAI.models.generateContent({
+                    model: 'gemini-1.5-flash',
+                    contents: [{ role: 'user', parts: [{ text: prompt }] }]
+                });
+                
+                const responseText = result.text || '';
+                const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+                if (jsonMatch) {
+                    const aiFindings = JSON.parse(jsonMatch[0]);
+                    aiFindings.forEach((af: any) => {
+                        findings.push({
+                            school_id,
+                            type: 'ANOMALY',
+                            title: af.title,
+                            description: af.reason,
+                            severity: af.severity
+                        });
+                    });
+                }
+            } catch (aiErr) {
+                console.error('[Audit AI] Error:', aiErr);
+            }
+        }
+
+        // 3. HARDCODED RULES AS FALLBACK/COMPLEMENT
+        // Rule: Over-budget check
         const { data: budget } = await supabaseAdmin
             .from('budgets')
             .select('*')
             .eq('school_id', school_id)
             .single();
 
-        const txs = transactions || [];
-
-        // Rule 1: Large transactions (> 50 juta)
-        txs.forEach(tx => {
-            if (Number(tx.amount) > 50000000) {
-                findings.push({
-                    school_id,
-                    type: 'ANOMALY',
-                    title: `Transaksi besar: ${tx.description}`,
-                    description: `Nominal Rp ${Number(tx.amount).toLocaleString('id-ID')} melebihi batas Rp 50.000.000. Perlu verifikasi dan bukti tambahan.`,
-                    severity: 'HIGH',
-                });
-            }
-        });
-
-        // Rule 2: High-frequency same vendor in 1 month
-        const vendorMonthMap: Record<string, number> = {};
-        txs.forEach(tx => {
-            const month = new Date(tx.date).toISOString().slice(0, 7);
-            const key = `${tx.description?.split(' ')[0] || 'unknown'}_${month}`;
-            vendorMonthMap[key] = (vendorMonthMap[key] || 0) + 1;
-        });
-        Object.entries(vendorMonthMap).forEach(([key, count]) => {
-            if (count > 5) {
-                findings.push({
-                    school_id,
-                    type: 'WARNING',
-                    title: `Frekuensi tinggi: ${key.split('_')[0]}`,
-                    description: `Ditemukan ${count} transaksi ke vendor yang sama dalam 1 bulan. Potensi pemecahan anggaran.`,
-                    severity: 'MEDIUM',
-                });
-            }
-        });
-
-        // Rule 3: Missing receipt
-        const noReceipt = txs.filter(tx => !tx.receipt_url);
-        if (noReceipt.length > 0) {
-            findings.push({
-                school_id,
-                type: 'INFO',
-                title: `${noReceipt.length} transaksi tanpa bukti belanja`,
-                description: `Terdapat ${noReceipt.length} transaksi yang belum dilengkapi bukti/struk.`,
-                severity: 'LOW',
-            });
-        }
-
-        // Rule 4: Over-budget
         if (budget) {
             const received = Number(budget.total_received || 0);
             const spent = Number(budget.total_spent || 0);
@@ -87,22 +98,33 @@ export async function POST(request: NextRequest) {
                 findings.push({
                     school_id,
                     type: 'ANOMALY',
-                    title: 'Pengeluaran melebihi penerimaan (Over-Budget)',
-                    description: `Total pengeluaran Rp ${spent.toLocaleString('id-ID')} melebihi total penerimaan Rp ${received.toLocaleString('id-ID')}.`,
+                    title: 'Pagu Anggaran Terlampaui',
+                    description: `Total pengeluaran (Rp ${spent.toLocaleString('id-ID')}) melampaui dana yang diterima (Rp ${received.toLocaleString('id-ID')}).`,
                     severity: 'CRITICAL',
                 });
             }
         }
 
-        // Insert findings (upsert by title to avoid duplicates)
-        if (findings.length > 0) {
-            for (const f of findings) {
-                await supabaseAdmin.from('audit_logs').upsert(f, { onConflict: 'school_id,title', ignoreDuplicates: true });
+        // 4. PERSIST FINDINGS TO audit_logs (Upsert by title to avoid duplicates)
+        // Note: Table must exist. We handle errors if not.
+        try {
+            if (findings.length > 0) {
+                for (const f of findings) {
+                    await supabaseAdmin.from('audit_logs').upsert(f, { onConflict: 'school_id,title' });
+                }
             }
+        } catch (dbErr) {
+            console.warn('[Audit Log] Database persist failed (table might be missing):', dbErr);
         }
 
-        return NextResponse.json({ success: true, findings: findings.length, data: findings });
+        return NextResponse.json({ 
+            success: true, 
+            findings: findings.length, 
+            data: findings,
+            status: findings.length > 0 ? 'ANOMALY' : 'NORMAL'
+        });
     } catch (err: any) {
+        console.error('[Audit API] Fatal Error:', err);
         return NextResponse.json({ error: err.message }, { status: 500 });
     }
 }
