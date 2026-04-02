@@ -425,32 +425,32 @@ graph TB
 
 ```mermaid
 flowchart TD
-    Start([Buka Website]) --> Home[Landing Page]
-    Home --> Search{Cari Sekolah?}
+    Start(["Buka Website"]) --> Home["Landing Page"]
+    Home --> Search{"Cari Sekolah?"}
 
-    Search -->|Ya| Input[Input Nama / NPSN]
-    Input --> Auto[Autocomplete Suggestion<br/>dari DB Supabase]
-    Auto --> Select[Pilih Sekolah]
-    Select --> Dashboard[Dashboard Sekolah /npsn]
-    Dashboard --> View[Lihat Profil & Anggaran]
-    Dashboard --> Comment[Beri Komentar]
-    Dashboard --> Star[Beri Bintang Apresiasi]
+    Search -->|Ya| Input["Input Nama / NPSN"]
+    Input --> Auto["Autocomplete Suggestion<br/>dari DB Supabase"]
+    Auto --> Select["Pilih Sekolah"]
+    Select --> Dashboard["Dashboard Sekolah"]
+    Dashboard --> View["Lihat Profil & Anggaran"]
+    Dashboard --> Comment["Beri Komentar"]
+    Dashboard --> Star["Beri Bintang Apresiasi"]
 
-    Search -->|Tidak| Explore{Jelajahi?}
+    Search -->|Tidak| Explore{"Jelajahi?"}
 
-    Explore -->|Aliran Dana| Fund[/aliran-dana]
-    Fund --> FlowChart[Lihat APBN Flow Chart]
-    Fund --> Recon[Tabel Rekonsiliasi]
-    Fund --> Map[Peta Indonesia]
+    Explore -->|"Aliran Dana"| Fund["Halaman Aliran Dana"]
+    Fund --> FlowChart["Lihat APBN Flow Chart"]
+    Fund --> Recon["Tabel Rekonsiliasi"]
+    Fund --> Map["Peta Indonesia"]
 
-    Explore -->|Statistik| Stats[/statistics]
-    Explore -->|Lapor| Report[/reporting]
+    Explore -->|Statistik| Stats["Halaman Statistik"]
+    Explore -->|Lapor| Report["Halaman Pelaporan"]
 
-    Report --> Form[Isi Formulir 5W1H]
-    Form --> Submit[Kirim ke Database]
-    Submit --> Gate{Nominal ≥ 500jt?}
-    Gate -->|Ya| KPK[Redirect WhatsApp KPK]
-    Gate -->|Tidak| BPK[Redirect WhatsApp BPK]
+    Report --> Form["Isi Formulir 5W1H"]
+    Form --> Submit["Kirim ke Database"]
+    Submit --> Gate{"Nominal >= 500jt?"}
+    Gate -->|Ya| KPK["Redirect WhatsApp KPK"]
+    Gate -->|Tidak| BPK["Redirect WhatsApp BPK"]
 
     style Start fill:#10b981,color:#fff
     style KPK fill:#dc2626,color:#fff
@@ -462,34 +462,34 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start([Login]) --> Auth{Autentikasi<br/>Supabase Auth}
-    Auth -->|Gagal| Login[Halaman Login]
-    Auth -->|Berhasil| Check{Cek Role di<br/>profiles table}
+    Start(["Login"]) --> Auth{"Autentikasi<br/>Supabase Auth"}
+    Auth -->|Gagal| Login["Halaman Login"]
+    Auth -->|Berhasil| Check{"Cek Role di<br/>profiles table"}
 
-    Check -->|SCHOOL| Admin[Admin Dashboard]
+    Check -->|SCHOOL| Admin["Admin Dashboard"]
 
-    Admin --> Menu{Pilih Menu}
+    Admin --> Menu{"Pilih Menu"}
 
-    Menu -->|Overview| OV[Dashboard Overview<br/>Cash flow + Pie chart + Timeline]
+    Menu -->|Overview| OV["Dashboard Overview<br/>Cash flow + Pie chart + Timeline"]
 
-    Menu -->|Upload Nota| OCR[Upload Section]
-    OCR --> Scan[Pilih File Gambar]
-    Scan --> Process[Kirim ke /api/v1/ocr]
-    Process --> Gemini[Gemini Vision<br/>Extract Items]
-    Gemini --> Preview[Preview Hasil OCR]
-    Preview --> Confirm{Konfirmasi?}
-    Confirm -->|Ya| Save[Simpan ke<br/>transactions + items]
-    Confirm -->|Tidak| Edit[Edit Manual]
+    Menu -->|"Upload Nota"| OCR["Upload Section"]
+    OCR --> Scan["Pilih File Gambar"]
+    Scan --> Process["Kirim ke API OCR"]
+    Process --> Gemini["Gemini Vision<br/>Extract Items"]
+    Gemini --> Preview["Preview Hasil OCR"]
+    Preview --> Confirm{"Konfirmasi?"}
+    Confirm -->|Ya| Save["Simpan ke<br/>transactions + items"]
+    Confirm -->|Tidak| Edit["Edit Manual"]
     Edit --> Save
 
-    Menu -->|Input Manual| Manual[ManualEntryForm]
-    Manual --> Fields[Isi: Tanggal, Kategori,<br/>Items, Qty, Harga,<br/>Pajak, Ongkir]
-    Fields --> SaveM[Simpan ke transactions]
+    Menu -->|"Input Manual"| Manual["ManualEntryForm"]
+    Manual --> Fields["Isi: Tanggal, Kategori,<br/>Items, Qty, Harga,<br/>Pajak, Ongkir"]
+    Fields --> SaveM["Simpan ke transactions"]
 
-    Menu -->|Expenses| TList[Daftar Transaksi]
-    Menu -->|Audit| AuditV[Lihat Audit Score<br/>+ History]
+    Menu -->|Expenses| TList["Daftar Transaksi"]
+    Menu -->|Audit| AuditV["Lihat Audit Score<br/>+ History"]
 
-    Save --> Refresh[Refresh Data]
+    Save --> Refresh["Refresh Data"]
     SaveM --> Refresh
 
     style Start fill:#10b981,color:#fff
@@ -501,31 +501,31 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start([Login Super Admin]) --> Auth{Auth + Role Check}
-    Auth -->|SUPER_ADMIN| Dashboard[Admin Panel]
+    Start(["Login Super Admin"]) --> Auth{"Auth + Role Check"}
+    Auth -->|SUPER_ADMIN| Dashboard["Admin Panel"]
 
-    Dashboard --> Action{Aksi}
+    Dashboard --> Action{"Aksi"}
 
-    Action -->|Kelola APBN| APBN[AdminApbnManager]
-    APBN --> APBNCrud[CRUD Data APBN<br/>per Tahun]
-    APBNCrud --> FlowData[Edit flow_data JSON]
+    Action -->|"Kelola APBN"| APBN["AdminApbnManager"]
+    APBN --> APBNCrud["CRUD Data APBN<br/>per Tahun"]
+    APBNCrud --> FlowData["Edit flow_data JSON"]
 
-    Action -->|Kelola Sekolah| Schools[SchoolManager]
-    Schools --> SCRUD[CRUD Data Sekolah<br/>NPSN, Nama, Lokasi]
+    Action -->|"Kelola Sekolah"| Schools["SchoolManager"]
+    Schools --> SCRUD["CRUD Data Sekolah<br/>NPSN, Nama, Lokasi"]
 
-    Action -->|Kelola User| Users[UserManager]
-    Users --> UCRUD[CRUD User + Assign Role]
+    Action -->|"Kelola User"| Users["UserManager"]
+    Users --> UCRUD["CRUD User + Assign Role"]
 
-    Action -->|Moderasi| Mod[CommentModeration]
-    Mod --> ModAction{Aksi Moderasi}
-    ModAction -->|Hapus| Delete[Delete Komentar]
-    ModAction -->|Biarkan| Skip[Skip]
+    Action -->|Moderasi| Mod["CommentModeration"]
+    Mod --> ModAction{"Aksi Moderasi"}
+    ModAction -->|Hapus| Delete["Delete Komentar"]
+    ModAction -->|Biarkan| Skip["Skip"]
 
-    Action -->|Laporan Publik| Reports[Daftar Laporan<br/>Penyalahgunaan]
+    Action -->|"Laporan Publik"| Reports["Daftar Laporan<br/>Penyalahgunaan"]
 
-    Action -->|Audit| AuditAll[Audit Semua Sekolah]
-    AuditAll --> AuditDetect[AI Detect Anomali]
-    AuditDetect --> AuditLog[Simpan ke audit_logs]
+    Action -->|Audit| AuditAll["Audit Semua Sekolah"]
+    AuditAll --> AuditDetect["AI Detect Anomali"]
+    AuditDetect --> AuditLog["Simpan ke audit_logs"]
 
     style Start fill:#7c3aed,color:#fff
     style APBN fill:#f59e0b,color:#fff
@@ -605,32 +605,32 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A([Masyarakat<br/>Buka /reporting]) --> B[Isi Formulir]
+    A(["Masyarakat<br/>Buka Pelaporan"]) --> B["Isi Formulir"]
 
-    B --> C["Nama Pelapor (opsional)"]
-    B --> D["WhatsApp (opsional)"]
-    B --> E["Informasi 5W1H<br/>(wajib)"]
-    B --> F["Penjelasan Lengkap<br/>(wajib)"]
+    B --> C["Nama Pelapor - opsional"]
+    B --> D["WhatsApp - opsional"]
+    B --> E["Informasi 5W1H - wajib"]
+    B --> F["Penjelasan Lengkap - wajib"]
     B --> G["Estimasi Nominal"]
-    B --> H["Link Bukti (opsional)"]
+    B --> H["Link Bukti - opsional"]
 
-    E & F --> Validate{Validasi<br/>5W1H & Penjelasan<br/>terisi?}
+    E & F --> Validate{"Validasi<br/>5W1H dan Penjelasan<br/>terisi?"}
 
-    Validate -->|Tidak| Error[❌ Tampilkan Error]
+    Validate -->|Tidak| Error["Tampilkan Error"]
     Error --> B
 
-    Validate -->|Ya| Submit[Kirim ke Supabase<br/>INSERT reports]
-    Submit --> Success[✅ Laporan Berhasil!]
+    Validate -->|Ya| Submit["Kirim ke Supabase<br/>INSERT reports"]
+    Submit --> Success["Laporan Berhasil!"]
 
-    Success --> Gate{Cek Nominal}
+    Success --> Gate{"Cek Nominal"}
 
-    Gate -->|"≥ Rp 500.000.000"| KPK["📱 Tombol WhatsApp KPK<br/>wa.me/6287881527804"]
-    Gate -->|"< Rp 500.000.000"| BPK["📱 Tombol WhatsApp BPK<br/>wa.me/6281113401234"]
+    Gate -->|">=Rp 500 Juta"| KPK["Tombol WhatsApp KPK"]
+    Gate -->|"< Rp 500 Juta"| BPK["Tombol WhatsApp BPK"]
 
-    KPK --> WA[Buka WhatsApp<br/>dengan Template Pesan]
+    KPK --> WA["Buka WhatsApp<br/>dengan Template Pesan"]
     BPK --> WA
 
-    WA --> Done([Selesai])
+    WA --> Done(["Selesai"])
 
     style A fill:#3b82f6,color:#fff
     style KPK fill:#dc2626,color:#fff
@@ -642,25 +642,25 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A([User Buka /admin]) --> B{Cek Session<br/>Supabase Auth}
+    A(["User Buka Admin"]) --> B{"Cek Session<br/>Supabase Auth"}
 
-    B -->|No Session| C[Redirect ke /login]
-    C --> D[Input Email + Password]
-    D --> E{Supabase<br/>auth.signIn}
-    E -->|Gagal| F[Tampilkan Error]
+    B -->|"No Session"| C["Redirect ke Login"]
+    C --> D["Input Email + Password"]
+    D --> E{"Supabase<br/>auth.signIn"}
+    E -->|Gagal| F["Tampilkan Error"]
     F --> D
 
-    E -->|Berhasil| G[Fetch Profile<br/>dari profiles table]
-    G --> H{Profile<br/>ditemukan?}
+    E -->|Berhasil| G["Fetch Profile<br/>dari profiles table"]
+    G --> H{"Profile<br/>ditemukan?"}
     H -->|Tidak| C
-    H -->|Ya| I[Set Profile State]
-    I --> J{Cek Role}
+    H -->|Ya| I["Set Profile State"]
+    I --> J{"Cek Role"}
 
-    J -->|SCHOOL| K[Tampilkan Menu Sekolah<br/>Overview, Upload, Expenses,<br/>Audit, Timeline]
-    J -->|SUPER_ADMIN/ADMIN| L[Tampilkan Semua Menu<br/>+ User/School Manager<br/>+ APBN + Moderasi]
-    J -->|KEMENDIKBUD/KPK/BPK| M[Tampilkan Menu Auditor<br/>+ APBN + Laporan]
+    J -->|SCHOOL| K["Tampilkan Menu Sekolah<br/>Overview, Upload, Expenses,<br/>Audit, Timeline"]
+    J -->|"SUPER_ADMIN / ADMIN"| L["Tampilkan Semua Menu<br/>+ User dan School Manager<br/>+ APBN + Moderasi"]
+    J -->|"KEMENDIKBUD / KPK / BPK"| M["Tampilkan Menu Auditor<br/>+ APBN + Laporan"]
 
-    B -->|Has Session| G
+    B -->|"Has Session"| G
 
     style A fill:#6366f1,color:#fff
     style K fill:#10b981,color:#fff
