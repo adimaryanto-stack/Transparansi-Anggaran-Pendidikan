@@ -279,6 +279,17 @@ erDiagram
 | **Admin Access** | Full CRUD untuk role `authenticated` |
 | **Pelaporan** | Anonimitas pelapor dijamin |
 
+## 1.7 Portability & Deployment (One-Click Setup)
+
+Mulai April 2026, proyek ini mendukung **One-Click Deploy** untuk memudahkan siapapun menjalankan portal transparansi mereka sendiri.
+
+| Komponen | Mekanisme |
+|---|---|
+| **Database Schema** | Otomatis via `supabase/migrations/` (Full Schema included) |
+| **Initial Data** | Otomatis via `supabase/seed.sql` (APBN 2020-2026 + Demo School) |
+| **Frontend** | Deploy to Vercel Button (Auto-configure Env Vars) |
+| **Integration** | Supabase Vercel Integration |
+
 ---
 
 # 2. MVP Definition

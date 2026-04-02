@@ -4,7 +4,9 @@
 [![Stack: Next.js + Supabase](https://img.shields.io/badge/Stack-Next.js%20%2B%20Supabase-blue)](https://nextjs.org/)
 [![AI: Gemini Pro](https://img.shields.io/badge/AI-Gemini%20Pro-red)](https://deepmind.google/technologies/gemini/)
 
-## Pendahuluan 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fadimaryanto-stack%2FTransparansi-Anggaran-Pendidikan&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,GEMINI_API_KEY&project-name=transparansi-anggaran&repository-name=transparansi-anggaran&demo-title=Transparansi%20Anggaran%20Pendidikan&demo-description=Portal%20BOS%20Digital%20dan%20Audit%20AI&demo-url=https%3A%2F%2Ftransparansi.myfirstmovie.org%2F&integration-ids=oac_Vqy9pq9YF9cl0S8NisS8OFrE)
+
+---
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
 Uji coba Online di sini: https://transparansi.myfirstmovie.org/
@@ -108,27 +110,23 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ## ⚙️ Cara Menjalankan Proyek
 
-1. **Clone Repository**:
+4. **Setup Database (Otomatis)**:
+   Proyek ini sudah dilengkapi dengan migrasi schema dan data awal (APBN & Sekolah Demo).
    ```bash
-   git clone https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan.git
-   cd Transparansi-Anggaran-Pendidikan/apps/web-next
+   # Install Supabase CLI
+   npm install -g supabase
+   
+   # Login & Link ke proyek Supabase baru Anda
+   supabase login
+   supabase link --project-ref <your-project-id>
+   
+   # Push Schema & Seed Data
+   supabase db push
    ```
 
-2. **Install Dependencies**:
+5. **Jalankan Aplikasi**:
    ```bash
-   npm install
-   ```
-
-3. **Konfigurasi Environment**:
-   Buat file `.env.local` dan isi dengan:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
-   GEMINI_API_KEY=your_gemini_api_key
-   ```
-
-4. **Jalankan Aplikasi**:
-   ```bash
+   cd apps/web-next
    npm run dev
    ```
 
