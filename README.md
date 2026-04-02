@@ -6,6 +6,7 @@
 
 ## Pendahuluan 
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
+
 Uji coba Online di sini: https://transparansi.myfirstmovie.org/
 
 ## 🚀 Misi Proyek
