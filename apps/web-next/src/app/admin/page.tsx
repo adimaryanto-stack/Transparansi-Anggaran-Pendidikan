@@ -303,14 +303,18 @@ export default function UnifiedAdminPage() {
         setSavingManual(true);
         try {
             // 1. Insert main transaction
+            // Merge vendor name into description since DB doesn't have 'vendor' column
+            const finalDescription = data.vendor 
+                ? `Pembelian di ${data.vendor}${data.description ? `: ${data.description}` : ''}`
+                : data.description;
+
             const { data: txData, error: txErr } = await supabase
                 .from('transactions')
                 .insert({
                     school_id: targetSchoolId,
                     date: data.date,
                     category: data.category,
-                    description: data.description,
-                    vendor: data.vendor,
+                    description: finalDescription,
                     amount: data.amount,
                     tax_amount: data.tax_amount || 0,
                     shipping_cost: data.shipping_cost || 0,
