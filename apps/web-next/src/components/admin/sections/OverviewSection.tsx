@@ -15,6 +15,8 @@ import ForumPreview from '../ForumPreview';
 import CategoryBreakdown from '../CategoryBreakdown';
 import BudgetProgressCircle from '../BudgetProgressCircle';
 
+import { formatIDR } from '@/lib/mockData';
+
 interface Props {
     profile: any;
     transactions: any[];
@@ -32,8 +34,6 @@ interface Props {
 export default function OverviewSection({ profile, transactions, cashFlowData, expenseDist, timelineItems, stats, onAction }: Props) {
     const isSuperRole = ['SUPER_ADMIN', 'ADMIN', 'KEMENDIKBUD', 'KPK', 'BPK'].includes(profile?.role || '');
     const topCat = expenseDist.sort((a, b: any) => b.value - a.value)[0] || { name: '-', value: 0 };
-
-    const formatIDR = (val: number) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(val);
 
     const now = new Date();
     const currentMonth = now.toLocaleDateString('id-ID', { month: 'long' });

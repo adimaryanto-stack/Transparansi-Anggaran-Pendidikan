@@ -1,2 +1,3 @@
 export * from './gemini-vision';
-export * from './puter-ocr-provider';
+export * from './google-vision';
+// Tesseract is removed to ensure server stability during runtime.

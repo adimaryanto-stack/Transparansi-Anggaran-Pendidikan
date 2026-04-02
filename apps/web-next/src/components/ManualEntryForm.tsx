@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { createWorker } from 'tesseract.js';
 import { formatIDR } from '@/lib/mockData';
 
 // ---- Types ----
@@ -60,6 +61,15 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
 
     const catConfig = CATEGORIES.find(c => c.value === category) || CATEGORIES[0];
 
+    // ---- Auto Calculation Sync ----
+    useEffect(() => {
+        const total = items.reduce((sum, i) => sum + (i.unit_price * i.quantity), 0);
+        // Standard rule: 11% PPN if > 2,000,000 and not already set
+        if (total > 2000000 && taxAmount === 0) {
+            setTaxAmount(Math.floor(total * 0.11));
+        }
+    }, [items, taxAmount]);
+
     // ---- OCR Logic ----
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -72,18 +82,45 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
         formData.append('image', file);
 
         try {
-            const res = await fetch('/api/v1/ocr', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                throw new Error(data.error || 'Gagal memproses struk');
+            // 1. Try Cloud OCR (Gemini/Vision)
+            let data: any = null;
+            try {
+                const res = await fetch('/api/v1/ocr', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (res.ok) {
+                    data = await res.json();
+                } else {
+                    const errText = await res.text();
+                    console.warn('[OCR] Cloud failed:', errText);
+                }
+            } catch (cloudErr) {
+                console.warn('[OCR] Cloud connection error:', cloudErr);
             }
 
-            // Map AI data to local state
+            // 2. Fallback to Client-side Tesseract if cloud failed
+            if (!data) {
+                console.log('[OCR] Falling back to Client-side Tesseract...');
+                const worker = await createWorker('ind+eng', 1);
+                const { data: { text } } = await worker.recognize(file);
+                await worker.terminate();
+
+                // Minimal local parser for fallback mode
+                const totalMatch = text.match(/(?:TOTAL|JUMLAH|BAYAR|Rp)[\s:\.\-]*([\d\.,]{3,})/i);
+                const grandTotal = totalMatch ? parseInt(totalMatch[1].replace(/[^\d]/g, "")) || 0 : 0;
+
+                data = {
+                    merchant_name: text.split('\n')[0].substring(0, 30) || 'Merchant Terdeteksi',
+                    date: new Date().toISOString().split('T')[0],
+                    items: [
+                        { name: 'Hasil Pemindaian Lokal', price_per_unit: grandTotal, qty: 1, unit: 'pcs' }
+                    ],
+                    category_suggestion: 'Lainnya'
+                };
+            }
+
+            // 3. Map Results to UI
             if (data.merchant_name) setVendor(data.merchant_name);
             if (data.date) setDate(data.date);
             if (data.tax_amount) setTaxAmount(data.tax_amount);
@@ -97,9 +134,9 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
             if (data.items && Array.isArray(data.items) && data.items.length > 0) {
                 const mappedItems: LineItem[] = data.items.map((it: any) => ({
                     id: crypto.randomUUID(),
-                    item_name: it.name || 'Item Tanpa Nama',
-                    unit_price: it.price_per_unit || 0,
-                    quantity: it.qty || 1,
+                    item_name: it.name || it.item_name || 'Item Tanpa Nama',
+                    unit_price: it.price_per_unit || it.unit_price || 0,
+                    quantity: it.qty || it.quantity || 1,
                     unit: it.unit || 'pcs',
                     notes: ''
                 }));
@@ -217,8 +254,26 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
                     <input type="text" value={vendor} onChange={e => setVendor(e.target.value)} placeholder="Contoh: Toko Gramedia" className="rounded-lg border border-slate-200 bg-slate-50 p-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-slate-500 flex items-center gap-1"><span className="material-symbols-outlined text-xs">account_balance_wallet</span> Sumber Dana</label>
-                    <input type="text" value={fundSource} onChange={e => setFundSource(e.target.value)} placeholder="Contoh: BOS Reguler" className="rounded-lg border border-slate-200 bg-slate-50 p-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+                    <label className="text-xs font-bold text-slate-500 flex items-center gap-1">
+                        <span className="material-symbols-outlined text-xs">account_balance_wallet</span> Sumber Dana
+                    </label>
+                    <input 
+                        type="text" 
+                        list="fund-sources"
+                        value={fundSource} 
+                        onChange={e => setFundSource(e.target.value)} 
+                        placeholder="Contoh: BOS Reguler" 
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" 
+                    />
+                    <datalist id="fund-sources">
+                        <option value="BOS Reguler" />
+                        <option value="BOS Kinerja" />
+                        <option value="CSR" />
+                        <option value="Dana Komite" />
+                        <option value="Bantuan Provinsi" />
+                        <option value="Bantuan Pusat" />
+                        <option value="Lainnya" />
+                    </datalist>
                 </div>
             </div>
 
@@ -264,12 +319,16 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
                                     <div className="relative">
                                         <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 font-bold">Rp</span>
                                         <input
-                                            type="number"
-                                            value={item.unit_price || ''}
-                                            onChange={e => updateItem(item.id, 'unit_price', Number(e.target.value))}
+                                            type="text"
+                                            value={item.unit_price?.toLocaleString('id-ID') || ''}
+                                            onChange={e => {
+                                                const raw = e.target.value.replace(/\./g, '');
+                                                if (raw === '' || /^\d+$/.test(raw)) {
+                                                    updateItem(item.id, 'unit_price', raw === '' ? 0 : parseInt(raw, 10));
+                                                }
+                                            }}
                                             placeholder="Harga satuan"
                                             className="w-full rounded-lg border border-slate-200 bg-white p-2.5 pl-8 text-sm outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-right font-semibold"
-                                            min="0"
                                             required
                                         />
                                     </div>
@@ -328,12 +387,16 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
                     <div className="relative max-w-xs">
                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400 font-bold">Rp</span>
                         <input
-                            type="number"
-                            value={shippingCost || ''}
-                            onChange={e => setShippingCost(Number(e.target.value))}
+                            type="text"
+                            value={shippingCost?.toLocaleString('id-ID') || ''}
+                            onChange={e => {
+                                const raw = e.target.value.replace(/\./g, '');
+                                if (raw === '' || /^\d+$/.test(raw)) {
+                                    setShippingCost(raw === '' ? 0 : parseInt(raw, 10));
+                                }
+                            }}
                             placeholder="0"
                             className="w-full rounded-lg border border-slate-200 bg-slate-50 p-3 pl-9 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-semibold"
-                            min="0"
                         />
                     </div>
                 </div>
@@ -347,12 +410,16 @@ export default function ManualEntryForm({ onSave, saving, onCancel }: ManualEntr
                 <div className="relative max-w-xs">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400 font-bold">Rp</span>
                     <input
-                        type="number"
-                        value={taxAmount || ''}
-                        onChange={e => setTaxAmount(Number(e.target.value))}
+                        type="text"
+                        value={taxAmount?.toLocaleString('id-ID') || ''}
+                        onChange={e => {
+                            const raw = e.target.value.replace(/\./g, '');
+                            if (raw === '' || /^\d+$/.test(raw)) {
+                                setTaxAmount(raw === '' ? 0 : parseInt(raw, 10));
+                            }
+                        }}
                         placeholder="0"
                         className="w-full rounded-lg border border-slate-200 bg-slate-50 p-3 pl-9 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-semibold"
-                        min="0"
                     />
                 </div>
             </div>

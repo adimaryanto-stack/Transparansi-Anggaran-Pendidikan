@@ -234,10 +234,42 @@ export default function AdminLoginPage() {
                                 <span>Lanjutkan dengan Google</span>
                             </button>
 
-                            <div className="text-center mt-2">
+                            <div className="text-center mt-2 flex flex-col gap-6">
                                 <p className="text-sm text-slate-500 font-medium">
                                     Belum punya akun? <Link className="text-primary font-bold hover:underline" href="/signup" title="Daftar akun sekolah baru">Daftar Sekolah</Link>
                                 </p>
+
+                                {/* Demo Credentials Section */}
+                                <div className="mt-2 p-5 bg-slate-50 rounded-2xl border border-slate-200 text-left">
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-sm">bolt</span> AKSES DEMO CEPAT
+                                    </p>
+                                    <div className="space-y-4">
+                                        {[
+                                            { label: 'Admin Sekolah (SDN 01)', email: 'admin@sdn01.sch.id' },
+                                            { label: 'Auditor KPK', email: 'kpk@kpk.go.id' },
+                                            { label: 'Super Admin Pusat', email: 'admin@transparansi.go.id' }
+                                        ].map(acc => (
+                                            <div key={acc.email} className="flex items-center justify-between group">
+                                                <div className="text-[11px]">
+                                                    <p className="font-bold text-slate-700 leading-none mb-1">{acc.label}</p>
+                                                    <p className="text-slate-400 font-mono text-[10px]">{acc.email}</p>
+                                                </div>
+                                                <button 
+                                                    type="button"
+                                                    onClick={() => { setEmail(acc.email); setPassword('password123'); }}
+                                                    className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-[9px] font-black text-primary hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm active:scale-95"
+                                                >
+                                                    GUNA KAN
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="mt-4 pt-4 border-t border-slate-200 flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-slate-300 text-sm">lock_open</span>
+                                        <p className="text-[9px] text-slate-400 font-medium italic">Semua password: <span className="font-black text-slate-900 not-italic">password123</span></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { formatIDR } from '@/lib/mockData';
 
 interface Transaction {
@@ -9,6 +8,7 @@ interface Transaction {
     amount: number;
     is_suspicious?: boolean;
     npsn?: string;
+    transaction_items?: any[];
 }
 
 interface Props {
@@ -51,46 +51,61 @@ export default function RecentExpenseTable({ items, onViewDetail, filterCategory
                             <tr className="bg-slate-50 border-b border-slate-100">
                                 <th className="text-left px-4 py-3 text-xs font-bold text-slate-500 uppercase">Tanggal</th>
                                 <th className="text-left px-4 py-3 text-xs font-bold text-slate-500 uppercase">Kategori</th>
+                                <th className="text-center px-4 py-3 text-xs font-bold text-slate-500 uppercase">Item</th>
                                 <th className="text-right px-4 py-3 text-xs font-bold text-slate-500 uppercase">Nominal</th>
                                 <th className="px-4 py-3" />
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-50">
-                            {filtered.slice(0, 5).map(tx => (
-                                <tr key={tx.id} className="hover:bg-slate-50/70 transition-colors group">
-                                    <td className="px-4 py-3 text-slate-500 text-xs whitespace-nowrap">
-                                        {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(tx.date))}
-                                    </td>
-                                    <td className="px-4 py-3">
-                                        <div className="flex items-center gap-2">
-                                            <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${CATEGORY_COLORS[tx.category] || 'bg-slate-100 text-slate-600'}`}>
-                                                {tx.category}
-                                            </span>
-                                            {tx.is_suspicious && (
-                                                <span className="flex items-center gap-0.5 text-[10px] font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
-                                                    <span className="material-symbols-outlined text-[12px]">warning</span>Mencurigakan
+                            {filtered.slice(0, 10).map(tx => {
+                                const itemCount = tx.transaction_items?.length || 0;
+                                return (
+                                    <tr key={tx.id} className="hover:bg-slate-50/70 transition-colors group">
+                                        <td className="px-4 py-3 text-slate-500 text-xs whitespace-nowrap">
+                                            {tx.date ? new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(tx.date)) : '-'}
+                                        </td>
+                                        <td className="px-4 py-3">
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${CATEGORY_COLORS[tx.category] || 'bg-slate-100 text-slate-600'}`}>
+                                                    {tx.category}
+                                                </span>
+                                                {tx.is_suspicious && (
+                                                    <span className="flex items-center gap-0.5 text-[10px] font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
+                                                        <span className="material-symbols-outlined text-[12px]">warning</span>Mencurigakan
+                                                    </span>
+                                                )}
+                                            </div>
+                                            {tx.description && <p className="text-slate-400 text-[11px] mt-0.5 truncate max-w-[180px]">{tx.description}</p>}
+                                        </td>
+                                        <td className="px-4 py-3 text-center">
+                                            {itemCount > 0 ? (
+                                                <span className="bg-indigo-50 text-indigo-600 font-bold text-[10px] px-2 py-0.5 rounded-md border border-indigo-100">
+                                                    {itemCount} Produk
+                                                </span>
+                                            ) : (
+                                                <span className="bg-slate-100 text-slate-400 font-bold text-[10px] px-2 py-0.5 rounded-md">
+                                                    -
                                                 </span>
                                             )}
-                                        </div>
-                                        {tx.description && <p className="text-slate-400 text-[11px] mt-0.5 truncate max-w-[180px]">{tx.description}</p>}
-                                    </td>
-                                    <td className="px-4 py-3 text-right">
-                                        <span className={`font-black text-sm ${tx.is_suspicious ? 'text-amber-600' : 'text-rose-500'}`}>
-                                            {formatIDR(tx.amount)}
-                                        </span>
-                                    </td>
-                                    <td className="px-4 py-3 text-right">
-                                        {onViewDetail && (
-                                            <button
-                                                onClick={() => onViewDetail(tx.id, tx.npsn)}
-                                                className="opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-bold"
-                                            >
-                                                Detail →
-                                            </button>
-                                        )}
-                                    </td>
-                                </tr>
-                            ))}
+                                        </td>
+                                        <td className="px-4 py-3 text-right">
+                                            <span className={`font-black text-sm ${tx.is_suspicious ? 'text-amber-600' : 'text-rose-500'}`}>
+                                                {formatIDR(tx.amount)}
+                                            </span>
+                                        </td>
+                                        <td className="px-4 py-3 text-right">
+                                            {onViewDetail && (
+                                                <button
+                                                    onClick={() => onViewDetail(tx.id, tx.npsn)}
+                                                    className="px-3 py-1.5 rounded-lg bg-slate-50 text-primary hover:bg-primary hover:text-white transition-all text-xs font-bold border border-slate-100 hover:border-primary shadow-sm active:scale-95"
+                                                >
+                                                    Detail
+                                                </button>
+                                            )}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
