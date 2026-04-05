@@ -58,11 +58,11 @@ Langkah-langkah Membuat Laporan ke KPK:
 3. Sampaikan Kronologi Jelas: Jelaskan siapa yang terlibat, apa tindakannya, kapan kejadiannya, di mana lokasi kejadian, dan bagaimana modus operandinya.
 
 Pilih Saluran Pelaporan:
-KWS (KPK Whistleblower System): Kunjungi laman kws.kpk.go.id.
-Email: Kirimkan detail ke pengaduan@kpk.go.id.
-WhatsApp: Kirim pesan ke 0811-959-575.
-Call Center: Hubungi nomor 198.
-Langsung/Surat: Mengirimkan surat ke Gedung Merah Putih KPK, Jl. Kuningan Persada Kav. 4, Jakarta Selatan 12950. 
+1. KWS (KPK Whistleblower System): Kunjungi laman kws.kpk.go.id.
+2. Email: Kirimkan detail ke pengaduan@kpk.go.id.
+3. WhatsApp: Kirim pesan ke 0811-959-575.
+4. Call Center: Hubungi nomor 198.
+5. Langsung/Surat: Mengirimkan surat ke Gedung Merah Putih KPK, Jl. Kuningan Persada Kav. 4, Jakarta Selatan 12950. 
 www.kpk.go.id
 
 KPK akan melakukan verifikasi dan menindaklanjuti laporan yang memenuhi kriteria (memiliki bukti dan informasi memadai) dalam waktu 30 hari kerja.
