@@ -189,6 +189,6 @@ Aplikasi ini bersifat Open Source (MIT) sebagai bentuk kontribusi digital untuk 
 ---
 
 ## ⚠️ Pernyataan Penting
-Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini.**
+Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini. Sebelumnya telah terjadi "pembungkaman" dalam bentuk intimidasi secara langsung dengan menggunakan perantara "preman bayaran"**
 
 Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia yang Bersih dan Beradab.
