@@ -116,6 +116,8 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ## ⚙️ Cara Menjalankan Proyek
 
+Untuk Anda yang awam dengan programming, silahkan install Node.js, dan jalankan kode berikut;
+
 1. **Clone Repositori**:
    ```bash
    git clone https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan.git
