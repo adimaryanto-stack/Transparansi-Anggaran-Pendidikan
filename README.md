@@ -67,7 +67,7 @@ www.kpk.go.id
 
 KPK akan melakukan verifikasi dan menindaklanjuti laporan yang memenuhi kriteria (memiliki bukti dan informasi memadai) dalam waktu 30 hari kerja.
 
-Jika nilainya dibawah 500 jt, makaa dilaporkan ke auditor BPK. BPK menyediakan beberapa kanal resmi untuk menerima laporan:
+Jika nilainya dibawah 500 jt, maka dilaporkan ke auditor BPK(Badan Pemeriksa Keuangan). BPK menyediakan beberapa kanal resmi untuk menerima laporan:
 1. E-PPID BPK: Melalui portal resmi e-ppid.bpk.go.id.
 2. Email: Mengirimkan formulir pengaduan dan bukti ke email humas BPK pusat atau perwakilan provinsi (contoh: humastu.kepri@bpk.go.id untuk Kepri).
 3. Datang Langsung: Mengunjungi Pusat Informasi dan Komunikasi (PIK) di Kantor Pusat BPK Jakarta atau Kantor BPK Perwakilan di setiap provinsi.
