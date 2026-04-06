@@ -9,7 +9,7 @@
 ---
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
-Uji coba Online di sini: https://transparansi.myfirstmovie.org/
+Uji coba Online di sini: https://transparansi-anggaran-pendidikan-we.vercel.app/
 
 ## 🚀 Misi Proyek
 Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN Pusat hingga ke tangan sekolah, guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi. Platform ini memberikan visibilitas publik terhadap aliran dana dan audit otomatis berbasis AI terhadap kecurangan (markup/anomali).
