@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 type AdminMenu =
     | 'overview' | 'income' | 'expenses' | 'upload'
     | 'timeline' | 'audit' | 'komentar' | 'laporan-publik'
-    | 'users' | 'schools' | 'apbn' | 'profil' | 'settings';
+    | 'users' | 'schools' | 'apbn' | 'profil' | 'settings' | 'reconciliation';
 
 interface Props {
     activeMenu: AdminMenu;
@@ -30,12 +30,13 @@ const SCHOOL_MENUS: { id: AdminMenu; label: string; icon: string; roles?: string
 
 const SUPER_ADMIN_MENUS: { id: AdminMenu; label: string; icon: string }[] = [
     { id: 'overview', label: 'Dashboard', icon: 'grid_view' },
+    { id: 'reconciliation', label: 'Audit & Rekonsiliasi', icon: 'fact_check' },
     { id: 'apbn', label: 'Flow APBN', icon: 'account_tree' },
     { id: 'users', label: 'Pengguna', icon: 'group' },
     { id: 'schools', label: 'Sekolah', icon: 'school' },
     { id: 'laporan-publik', label: 'Laporan Publik', icon: 'flag' },
     { id: 'komentar', label: 'Komentar', icon: 'chat' },
-    { id: 'audit', label: 'AI Audit', icon: 'psychology' },
+    { id: 'audit', label: 'AI Audit (Sekolah)', icon: 'psychology' },
     { id: 'settings', label: 'Pengaturan', icon: 'tune' },
 ];
 

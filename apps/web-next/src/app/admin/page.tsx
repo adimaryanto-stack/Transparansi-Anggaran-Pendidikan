@@ -15,6 +15,7 @@ import { formatIDR } from '@/lib/mockData';
 import OverviewSection from '@/components/admin/sections/OverviewSection';
 import UploadSection from '@/components/admin/sections/UploadSection';
 import TransactionListSection from '@/components/admin/sections/TransactionListSection';
+import ReconciliationSection from '@/components/admin/sections/ReconciliationSection';
 
 // Small Components used in various roles
 import ManualEntryForm from '@/components/ManualEntryForm';
@@ -33,7 +34,7 @@ import AdminSettings from '@/components/admin/AdminSettings';
 type AdminMenu =
     | 'overview' | 'income' | 'expenses' | 'upload'
     | 'timeline' | 'audit' | 'komentar' | 'laporan-publik'
-    | 'users' | 'schools' | 'apbn' | 'profil' | 'settings';
+    | 'users' | 'schools' | 'apbn' | 'profil' | 'settings' | 'reconciliation';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
 const buildCashFlowData = (transactions: any[]) => {
@@ -787,6 +788,12 @@ export default function UnifiedAdminPage() {
                                         <h3 className="font-bold text-slate-800 mb-4">Input Manual</h3>
                                         <ManualEntryForm onSave={handleManualSave} saving={savingManual} />
                                     </div>
+                                </div>
+                            )}
+
+                            {activeMenu === 'reconciliation' && isSuperRole && (
+                                <div className="max-w-7xl mx-auto">
+                                    <ReconciliationSection />
                                 </div>
                             )}
 
