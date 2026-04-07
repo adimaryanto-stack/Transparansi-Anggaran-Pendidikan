@@ -9,7 +9,7 @@
 ---
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
-Uji coba Online di sini: https://transparansi.myfirstmovie.org/
+Uji coba sistem secara Online di sini: https://transparansi-anggaran-pendidikan-we.vercel.app/
 
 ## 🚀 Misi Proyek
 Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN Pusat hingga ke tangan sekolah, guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi. Platform ini memberikan visibilitas publik terhadap aliran dana dan audit otomatis berbasis AI terhadap kecurangan (markup/anomali).
@@ -58,14 +58,20 @@ Langkah-langkah Membuat Laporan ke KPK:
 3. Sampaikan Kronologi Jelas: Jelaskan siapa yang terlibat, apa tindakannya, kapan kejadiannya, di mana lokasi kejadian, dan bagaimana modus operandinya.
 
 Pilih Saluran Pelaporan:
-KWS (KPK Whistleblower System): Kunjungi laman kws.kpk.go.id.
-Email: Kirimkan detail ke pengaduan@kpk.go.id.
-WhatsApp: Kirim pesan ke 0811-959-575.
-Call Center: Hubungi nomor 198.
-Langsung/Surat: Mengirimkan surat ke Gedung Merah Putih KPK, Jl. Kuningan Persada Kav. 4, Jakarta Selatan 12950. 
+1. KWS (KPK Whistleblower System): Kunjungi laman kws.kpk.go.id.
+2. Email: Kirimkan detail ke pengaduan@kpk.go.id.
+3. WhatsApp: Kirim pesan ke 0811-959-575.
+4. Call Center: Hubungi nomor 198.
+5. Langsung/Surat: Mengirimkan surat ke Gedung Merah Putih KPK, Jl. Kuningan Persada Kav. 4, Jakarta Selatan 12950. 
 www.kpk.go.id
 
 KPK akan melakukan verifikasi dan menindaklanjuti laporan yang memenuhi kriteria (memiliki bukti dan informasi memadai) dalam waktu 30 hari kerja.
+
+Jika nilainya dibawah 500 jt, maka dilaporkan ke auditor BPK(Badan Pemeriksa Keuangan). BPK menyediakan beberapa kanal resmi untuk menerima laporan:
+1. E-PPID BPK: Melalui portal resmi e-ppid.bpk.go.id.
+2. Email: Mengirimkan formulir pengaduan dan bukti ke email humas BPK pusat atau perwakilan provinsi (contoh: humastu.kepri@bpk.go.id untuk Kepri).
+3. Datang Langsung: Mengunjungi Pusat Informasi dan Komunikasi (PIK) di Kantor Pusat BPK Jakarta atau Kantor BPK Perwakilan di setiap provinsi.
+4. Surat Resmi: Dikirimkan kepada Ketua BPK RI atau Kepala Perwakilan BPK setempat.
 
 ---
 
@@ -109,6 +115,8 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 ---
 
 ## ⚙️ Cara Menjalankan Proyek
+
+Untuk Anda yang awam dengan programming, silahkan install Node.js, dan jalankan kode berikut;
 
 1. **Clone Repositori**:
    ```bash
@@ -189,6 +197,6 @@ Aplikasi ini bersifat Open Source (MIT) sebagai bentuk kontribusi digital untuk 
 ---
 
 ## ⚠️ Pernyataan Penting
-Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini.**
+Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini. Sebelumnya telah terjadi "pembungkaman" dalam bentuk intimidasi secara langsung dengan menggunakan perantara "preman bayaran"**
 
 Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia yang Bersih dan Beradab.
