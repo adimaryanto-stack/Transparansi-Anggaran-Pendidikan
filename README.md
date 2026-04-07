@@ -171,7 +171,12 @@ Proyek ini dikembangkan dalam beberapa fase:
 
 ## 📜 Change Log
 
-### v1.0.0 (Current) - 11 Maret 2026, 11:07 WIB
+### v1.1.0 (Current) - 7 April 2026, 15:37 WIB
+- **Sync Audit Flow**: Penyelarasan alur audit dengan database Supabase Cloud.
+- **Sprint 3 Implementation**: Deteksi anomali otomatis dan rekonsiliasi anggaran.
+- **Improved Data Sync**: Sinkronisasi data sekolah dan wilayah yang lebih akurat.
+
+### v1.0.0 - 11 Maret 2026, 11:07 WIB
 - **Initial MVP Release**: Database Auth, AI Audit (Gemini), Fund Flow Tracking.
 - **OCR Integration**: Scan nota otomatis via Gemini Vision.
 - **Advanced Dashboards**: Multi-level roles (`SUPER_ADMIN`, `SCHOOL`, dll).
