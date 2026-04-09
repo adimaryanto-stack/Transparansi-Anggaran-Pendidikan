@@ -3,8 +3,23 @@
 import { useState, useEffect, Suspense } from 'react';
 import SharedNavbar from '@/components/SharedNavbar';
 import { formatIDR } from '@/lib/mockData';
+import { supabase } from '@/lib/supabase';
 import ApbnFlowChart from '@/components/ApbnFlowChart';
 import IndonesiaMap from '@/components/IndonesiaMap';
+import TopologiAnggaran from '@/components/TopologiAnggaran';
+
+function PageVisualisasi({ data, yearData, selectedYear, setSelectedYear }: { data: any, yearData: any[], selectedYear: number, setSelectedYear: (y: number) => void }) {
+    return (
+        <div className="my-8 rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white relative" style={{ height: '800px' }}>
+            <TopologiAnggaran 
+                externalYearData={yearData} 
+                externalSelectedYear={selectedYear}
+                onYearChange={setSelectedYear}
+                externalAllocations={data?.allocations || []}
+            />
+        </div>
+    );
+}
 
 interface Allocation {
     id: string;
@@ -48,16 +63,59 @@ function formatCompact(n: number): string {
 
 export default function AliranDanaPage() {
     const [data, setData] = useState<{ allocations: Allocation[]; flowLinks: FlowLink[] } | null>(null);
+    const [apbnYears, setApbnYears] = useState<any[]>([]);
+    const [selectedYear, setSelectedYear] = useState(2025);
     const [loading, setLoading] = useState(true);
     const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
     const [activeSourceTab, setActiveSourceTab] = useState<'APBN' | 'APBD' | 'CSR'>('APBN');
 
+    const fetchYears = async () => {
+        const { data } = await supabase.from('apbn_yearly_data').select('*').order('year', { ascending: false });
+        if (data) setApbnYears(data);
+    };
+
+    const fetchDetail = async (year: number) => {
+        setLoading(true);
+        try {
+            const r = await fetch(`/api/v1/fund-flow?year=${year}`);
+            const d = await r.json();
+            if (d.success) setData(d);
+        } catch (error) {
+            console.error('Error fetching detail:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Initial Fetch
     useEffect(() => {
-        fetch('/api/v1/fund-flow')
-            .then(r => r.json())
-            .then(d => { if (d.success) setData(d); })
-            .finally(() => setLoading(false));
+        fetchYears();
     }, []);
+
+    // Fetch Detail for Selected Year
+    useEffect(() => {
+        fetchDetail(selectedYear);
+    }, [selectedYear]);
+
+    // Realtime Subscription
+    useEffect(() => {
+        const channel = supabase
+            .channel('public:apbn_yearly_data')
+            .on(
+                'postgres_changes',
+                { event: '*', schema: 'public', table: 'apbn_yearly_data' },
+                () => {
+                    // Update both list and current detail
+                    fetchYears();
+                    fetchDetail(selectedYear);
+                }
+            )
+            .subscribe();
+
+        return () => {
+            supabase.removeChannel(channel);
+        };
+    }, [selectedYear]);
 
     const groupedAllocations = data?.allocations
         ? LEVEL_ORDER.map(level => ({
@@ -118,10 +176,17 @@ export default function AliranDanaPage() {
                                 </button>
                             </div>
 
+
+
                             {/* ---- DYNAMIC APBN FLOW CHART ---- */}
                             {activeSourceTab === 'APBN' && (
                                 <Suspense fallback={<div className="min-h-[500px] flex justify-center items-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
-                                    <ApbnFlowChart />
+                                    <PageVisualisasi 
+                                        data={data} 
+                                        yearData={apbnYears} 
+                                        selectedYear={selectedYear} 
+                                        setSelectedYear={setSelectedYear} 
+                                    />
                                 </Suspense>
                             )}
 
@@ -157,61 +222,7 @@ export default function AliranDanaPage() {
                                 </section>
                             )}
 
-                            {/* ---- WATERFALL FLOW VISUALIZATION ---- */}
-                            <section className="mb-10">
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">schema</span>
-                                    Alur Transfer Dana 2025
-                                </h2>
-                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
-                                    <div className="flex items-stretch min-w-[800px] p-6 gap-0">
-                                        {groupedAllocations.map((group, gIdx) => (
-                                            <div key={group.level} className="flex items-center">
-                                                {/* Node */}
-                                                <div
-                                                    className={`rounded-xl border-2 p-4 min-w-[160px] cursor-pointer transition-all hover:shadow-md ${group.config.bgColor} ${selectedLevel === group.level ? 'ring-2 ring-primary scale-105' : ''}`}
-                                                    onClick={() => setSelectedLevel(selectedLevel === group.level ? null : group.level)}
-                                                >
-                                                    <div className="flex items-center gap-2 mb-2">
-                                                        <span className={`material-symbols-outlined ${group.config.color}`}>{group.config.icon}</span>
-                                                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">{group.config.label}</span>
-                                                    </div>
-                                                    {group.items.map(item => (
-                                                        <div key={item.id} className="mb-1">
-                                                            <p className="font-bold text-sm truncate" title={item.entity_name}>{item.entity_name}</p>
-                                                            <p className={`text-lg font-black ${group.config.color}`}>{formatCompact(item.allocated)}</p>
-                                                            {item.status === 'FLAGGED' && (
-                                                                <span className="inline-flex items-center gap-1 text-xs font-bold text-red-600 bg-red-100 px-2 py-0.5 rounded-full mt-1">
-                                                                    <span className="material-symbols-outlined text-xs">error</span> Selisih {item.gap_percent}%
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    ))}
-                                                </div>
 
-                                                {/* Arrow */}
-                                                {gIdx < groupedAllocations.length - 1 && (
-                                                    <div className="flex flex-col items-center px-3">
-                                                        <div className="w-16 h-0.5 bg-gradient-to-r from-slate-300 to-primary relative">
-                                                            <div className="absolute -right-1 -top-1.5 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-primary"></div>
-                                                        </div>
-                                                        {data.flowLinks
-                                                            .filter(fl => {
-                                                                const src = groupedAllocations[gIdx]?.items.some(i => i.entity_name === fl.source);
-                                                                const tgt = groupedAllocations[gIdx + 1]?.items.some(i => i.entity_name === fl.target);
-                                                                return src && tgt;
-                                                            })
-                                                            .map((fl, i) => (
-                                                                <span key={i} className="text-[10px] text-slate-400 mt-1 whitespace-nowrap">{formatCompact(fl.value)}</span>
-                                                            ))
-                                                        }
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </section>
 
                             {/* ---- RECONCILIATION TABLE ---- */}
                             <section className="mb-10">
@@ -234,7 +245,7 @@ export default function AliranDanaPage() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {data.allocations.map(a => {
+                                            {data?.allocations?.map(a => {
                                                 const cfg = LEVEL_CONFIG[a.level] || LEVEL_CONFIG.SEKOLAH;
                                                 return (
                                                     <tr key={a.id} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
@@ -280,7 +291,7 @@ export default function AliranDanaPage() {
                                     Log Transfer Dana
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {data.flowLinks.map((fl, idx) => (
+                                    {data?.flowLinks?.map((fl, idx) => (
                                         <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
                                             <div className="flex items-center justify-between mb-3">
                                                 <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>

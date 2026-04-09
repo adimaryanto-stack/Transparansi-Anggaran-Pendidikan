@@ -50,11 +50,37 @@ export default function SchoolDashboardPage() {
                 setLoading(true);
 
                 // Fetch school basic info
-                const { data: school, error: supabaseError } = await supabase
+                let { data: school, error: supabaseError } = await supabase
                     .from('schools')
                     .select('*')
                     .eq('npsn', npsn)
-                    .single();
+                    .maybeSingle();
+
+                if (supabaseError) {
+                    throw supabaseError;
+                }
+
+                if (!school) {
+                    // Auto-create school profile
+                    const nameParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('name') : null;
+                    const defaultName = nameParam || `Institusi Pendidikan (NPSN: ${npsn})`;
+
+                    const { data: newSchool, error: insertError } = await supabase
+                        .from('schools')
+                        .insert([
+                            {
+                                npsn: npsn,
+                                name: defaultName,
+                                location: 'Indonesia',
+                                accreditation: 'B'
+                            }
+                        ])
+                        .select()
+                        .single();
+
+                    if (insertError) throw insertError;
+                    school = newSchool;
+                }
 
                 // Fetch transactions separately for better control over sorting
                 const { data: transactionsData } = await supabase
@@ -70,14 +96,6 @@ export default function SchoolDashboardPage() {
                     .select('id, source, amount, received_date, reference_number')
                     .eq('school_id', school.id)
                     .order('received_date', { ascending: false });
-
-                if (supabaseError) {
-                    throw supabaseError;
-                }
-
-                if (!school) {
-                    throw new Error('Sekolah tidak ditemukan');
-                }
 
                 const transactions = transactionsData || [];
                 const incomingFunds = incomingFundsData || [];

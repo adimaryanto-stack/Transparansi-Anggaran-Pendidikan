@@ -18,9 +18,12 @@ Draft konsep dari Web Aplikasi ini ada di sini:https://docs.google.com/spreadshe
 
 Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/reel/DU2gI3lk9cO) maka akan memudahkan dalam hal audit dan pelaporan, karena semuanya bisa diinstruksikan perintah nya ke OpenClaw dan semuanya dapat berjalan otomatis.
 
-Tutorial untuk mengubah, mengembangkan atau memodifikasi source code ini ada di sini:https://youtu.be/eow7GpWb7UI?si=N-6pAOrpQnOiCYKK
-
 ---
+
+## 📋 Status Proyek
+- **Versi Saat Ini**: `v1.2.0` (Nasional & Regional)
+- **Status**: Stabilized (Finalizing 38 Provinces Flow)
+- **Update Terakhir**: 9 April 2026
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
@@ -107,10 +110,10 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 ---
 
 ## �🛠️ Tech Stack
-- **Frontend**: Next.js 15 (App Router), Tailwind CSS, Framer Motion.
-- **Backend & DB**: Supabase (PostgreSQL), Row-Level Security (RLS).
-- **Intelligence**: Google Gemini API (untuk audit AI).
-- **Charts**: Recharts & Shadcn UI components.
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion
+- **Backend**: Supabase (PostgreSQL + RLS), Google Gemini 3.1 Pro (Audit AI)
+- **PWA**: `next-pwa` (Ready for offline & mobile dashboard)
+- **Visualisasi**: CSS Layered Topology, SVG & D3 Dynamic Flow
 
 ---
 
@@ -163,7 +166,8 @@ Proyek ini dikembangkan dalam beberapa fase:
 - [x] **Fase 5**: Integrasi OCR (Scan Nota) otomatis via Gemini Vision.
 - [x] **Fase 6**: Advanced Dashboards & Multi-level Roles (`SUPER_ADMIN`, `SCHOOL`, dll).
 - [x] **Fase 7**: Dashboard UI Redesign (SaaS Centered Layout, Dark mode prep).
-- [ ] **Fase 8**: Peluncuran Publik & PWA Optimization.
+- [x] **Fase 8**: Super Admin Flow Builder & Real-time Sync.
+- [ ] **Fase 9**: Peluncuran Publik & PWA Optimization.
 
 ---
 
@@ -171,16 +175,18 @@ Proyek ini dikembangkan dalam beberapa fase:
 
 ## 📜 Change Log
 
-### v1.1.0 (Current) - 7 April 2026, 15:37 WIB
-- **Sync Audit Flow**: Penyelarasan alur audit dengan database Supabase Cloud.
-- **Sprint 3 Implementation**: Deteksi anomali otomatis dan rekonsiliasi anggaran.
-- **Improved Data Sync**: Sinkronisasi data sekolah dan wilayah yang lebih akurat.
+### v1.2.0 (9 April 2026) - 17:15 WIB
+- **National Budget Topology Stabilization**: Seluruh 38 provinsi kini terintegrasi secara visual dan fungsional dengan data fiskal 2025.
+- **Super Admin Flow Builder**: Manajemen aliran dana APBN kini bersifat visual, menggantikan edit JSON manual.
+- **Real-time Synchronization**: Sinkronisasi otomatis antara Admin Dashboard dan Aliran Dana (Public) menggunakan Supabase Realtime.
+- **Quick-add Nodes**: Tombol penambahan cepat untuk Belanja Pusat, TKDD, LPDP, Kemenag, dan Dana Desa.
+- **Budget Auto-Calculation**: Penghitungan otomatis "Sisa Anggaran" di dashboard admin.
 
-### v1.0.0 - 11 Maret 2026, 11:07 WIB
-- **Initial MVP Release**: Database Auth, AI Audit (Gemini), Fund Flow Tracking.
-- **OCR Integration**: Scan nota otomatis via Gemini Vision.
-- **Advanced Dashboards**: Multi-level roles (`SUPER_ADMIN`, `SCHOOL`, dll).
-- **UI Redesign**: SaaS Centered Layout, Dark mode preparation.
+### v1.1.0 - 7 April 2026
+- Implementasi 38 Provinsi (Full Topology UI).
+- Migrasi ke Next.js 16 (Turbopack).
+- Audit Real-time (Anomaly Detection) berbasis SQL Triggers.
+- Master APBN 2020-2026.
 
 ---
 
