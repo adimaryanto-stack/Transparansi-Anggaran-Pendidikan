@@ -11,6 +11,8 @@ Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bin
 
 Uji coba sistem secara Online di sini: https://transparansi-anggaran-pendidikan-we.vercel.app/
 
+Untuk melihat Product Requirement Document ada di sini: https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan/blob/5149ce726ba1d07a8de58db600fe3174197a12cb/prd.md
+
 ## 🚀 Misi Proyek
 Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN Pusat hingga ke tangan sekolah, guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi. Platform ini memberikan visibilitas publik terhadap aliran dana dan audit otomatis berbasis AI terhadap kecurangan (markup/anomali).
 
