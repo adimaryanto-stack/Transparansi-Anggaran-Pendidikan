@@ -9,6 +9,8 @@
 ---
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
+Sederhananya adalah karena anggaran **Anggaran APBN dan APBD berasal dari pajak rakyat, yang dihimpun melalui lembaga perpajakan** sudah seharusnya anggaran tersebut dibuka, dan untuk mengurangi terjadinya anomali, lakukan **Blockchain anggaran**, semakin ditutupi maka semakin besar potensi terjadinya anomali **Dana Gaib**. Untuk keterbukaan anggaran, sudah ada UU yang mengatur hal ini, sehingga tidak ada lagi alasan untuk menyembunyikan anggaran, terutama anggaran pendidikan.
+
 Uji coba sistem secara Online di sini: https://transparansi-anggaran-pendidikan-we.vercel.app/
 
 Untuk melihat Product Requirement Document ada di sini: https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan/blob/main/prd.md
