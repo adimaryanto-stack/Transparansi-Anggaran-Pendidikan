@@ -20,7 +20,14 @@ Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN P
 
 Draft konsep **Blockchain Anggaran** dari Web Aplikasi ini ada di sini: https://docs.google.com/spreadsheets/d/18XTrxy175Fxzar1eJM_N5Wd8F67x7LWZAz_fwGrQ9gw/edit?usp=sharing
 
+**Integrasi Strategis Multi-Sumber: APBN, APBD, dan CSR**
+
 Sumber anggaran dari APBN, dikirim ke Dinas Provinsi(38 Provinsi), kemudian dibagi ke Dinas Kabupaten/Kota, lalu didistribusikan ke jenjang pendidikan PAUD, SD, SMP, SMA hingga jenjang Universitas. Tentunya dengan memperhatikan kebijakan persentase/porsi Anggaran tiap jenjang pendidikan.
+
+**Kelayakan fiskal** sangat bergantung pada **sinkronisasi tiga pilar pendanaan utama**:
+1. **Pilar APBN (Mandatory Spending)**: Alokasi 20% APBN dioptimalkan dengan memfokuskan belanja pada kebutuhan operasional dan instruksional inti siswa.
+2. **Pilar APBD (Kemandirian Daerah)**: Penekanan diberikan pada pemenuhan mandat 20% APBD murni dari Pendapatan Asli Daerah (PAD) guna meminimalkan disparitas unit cost pendidikan antarwilayah tanpa harus selalu bergantung pada dana transfer pusat.
+3. **Pilar CSR (Kemitraan Strategis)**: Sektor swasta dikonversi dari pemberi donasi sukarela menjadi mitra strategis melalui sistem e-budgeting. Kontribusi CSR diarahkan khusus untuk belanja modal seperti infrastruktur teknologi, sehingga mengurangi beban fiskal pemerintah pada sektor sarana prasarana.
 
 Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/reel/DU2gI3lk9cO) maka akan memudahkan dalam hal audit dan pelaporan, karena semuanya bisa diinstruksikan perintah nya ke OpenClaw dan semuanya dapat berjalan secara otomatis.
 
