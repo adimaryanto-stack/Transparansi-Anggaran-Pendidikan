@@ -18,9 +18,11 @@ Untuk melihat Product Requirement Document ada di sini: https://github.com/adima
 ## 🚀 Misi Proyek
 Membangun sistem pengawasan anggaran pendidikan yang **end-to-end**, dari APBN Pusat hingga ke tangan sekolah, guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi. Platform ini memberikan visibilitas publik terhadap aliran dana dan audit otomatis berbasis AI terhadap kecurangan (markup/anomali).
 
-Draft konsep dari Web Aplikasi ini ada di sini: https://docs.google.com/spreadsheets/d/18XTrxy175Fxzar1eJM_N5Wd8F67x7LWZAz_fwGrQ9gw/edit?usp=sharing
+Draft konsep **Blockchain Anggaran** dari Web Aplikasi ini ada di sini: https://docs.google.com/spreadsheets/d/18XTrxy175Fxzar1eJM_N5Wd8F67x7LWZAz_fwGrQ9gw/edit?usp=sharing
 
-Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/reel/DU2gI3lk9cO) maka akan memudahkan dalam hal audit dan pelaporan, karena semuanya bisa diinstruksikan perintah nya ke OpenClaw dan semuanya dapat berjalan otomatis.
+Sumber anggaran dari APBN, dikirim ke Dinas Provinsi(38 Provinsi), kemudian dibagi ke Dinas Kabupaten/Kota, lalu didistribusikan ke jenjang pendidikan PAUD, SD, SMP, SMA hingga jenjang Universitas. Tentunya dengan memperhatikan kebijakan persentase/porsi Anggaran tiap jenjang pendidikan.
+
+Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/reel/DU2gI3lk9cO) maka akan memudahkan dalam hal audit dan pelaporan, karena semuanya bisa diinstruksikan perintah nya ke OpenClaw dan semuanya dapat berjalan secara otomatis.
 
 ---
 
