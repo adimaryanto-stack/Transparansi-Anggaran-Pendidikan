@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Transparansi Anggaran Pendidikan | BOS Online",
   description: "Pantau penggunaan dana BOS dan anggaran sekolah secara terbuka demi pendidikan Indonesia yang lebih baik.",
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
   themeColor: "#2563eb",
 };
 

@@ -1,9 +1,8 @@
-const CACHE_NAME = 'transparansi-v1';
+const CACHE_NAME = 'transparansi-v2';
 const ASSETS_TO_CACHE = [
     '/',
     '/manifest.json',
-    '/favicon.ico',
-    '/globals.css'
+    '/favicon.ico'
 ];
 
 self.addEventListener('install', (event) => {

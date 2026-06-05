@@ -126,14 +126,15 @@ export default function UnifiedAdminPage() {
             // Auto tax calculation rules:
             // 1. If total > 2,000,000, assume 11% PPN (Standard school audit rule)
             // 2. Only auto-calculate if tax is 0 or was originally auto-calculated
-            let autoTax = selectedTx.tax_amount || 0;
-            if (baseAmount > 2000000 && (selectedTx.tax_amount === 0)) {
+            const currentTax = selectedTx.tax_amount || 0;
+            let autoTax = currentTax;
+            if (baseAmount > 2000000 && currentTax === 0) {
                 autoTax = Math.floor(baseAmount * 0.11);
             }
 
             const newTotal = baseAmount + autoTax + (selectedTx.shipping_cost || 0);
             
-            if (selectedTx.amount !== newTotal || selectedTx.tax_amount !== autoTax) {
+            if (selectedTx.amount !== newTotal || currentTax !== autoTax) {
                 setSelectedTx((prev: any) => ({
                     ...prev,
                     amount: newTotal,
@@ -141,7 +142,8 @@ export default function UnifiedAdminPage() {
                 }));
             }
         }
-    }, [txItems, isEditingDetail, selectedTx?.shipping_cost, selectedTx?.tax_amount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [txItems, isEditingDetail, selectedTx?.shipping_cost]);
 
     // ─── Auth ───
     useEffect(() => {
@@ -221,7 +223,7 @@ export default function UnifiedAdminPage() {
             fetchTransactions();
             fetchData();
         }
-    }, [profile, fetchTransactions, fetchData, activeMenu]);
+    }, [profile, fetchTransactions, fetchData]);
 
     // ─── OCR Handlers ───
     const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {

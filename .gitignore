@@ -28,3 +28,4 @@ prisma/migrations
 # Temp / test files
 _test_db
 ocr_errors.log
+ocr_debug.log

@@ -15,8 +15,7 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
     const [formData, setFormData] = useState({
         year: new Date().getFullYear(),
         total_budget: 0,
-        status: 'PUBLISHED',
-        flow_data_raw: ''
+        status: 'PUBLISHED'
     });
 
     // Node state for visual editor
@@ -31,41 +30,7 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
         return Math.max(0, formData.total_budget - totalAllocated);
     }, [formData.total_budget, totalAllocated]);
 
-    // Sync nodes to JSON string
-    useEffect(() => {
-        if (nodes.length > 0 || formData.flow_data_raw.includes('children')) {
-            try {
-                const currentData = formData.flow_data_raw ? JSON.parse(formData.flow_data_raw) : {};
-                const newData = {
-                    ...currentData,
-                    id: currentData.id || `apbn-${formData.year}`,
-                    label: currentData.label || `APBN Pendidikan ${formData.year}`,
-                    amount: formData.total_budget,
-                    color: currentData.color || "indigo",
-                    children: nodes
-                };
-                const newJson = JSON.stringify(newData, null, 2);
-                if (newJson !== formData.flow_data_raw) {
-                    setFormData(prev => ({ ...prev, flow_data_raw: newJson }));
-                }
-            } catch (e) {
-                // Ignore parse errors while typing
-            }
-        }
-    }, [nodes, formData.year, formData.total_budget]);
 
-    // Sync JSON string to nodes (only when editing/loading)
-    useEffect(() => {
-        try {
-            const parsed = JSON.parse(formData.flow_data_raw);
-            if (parsed.children && Array.isArray(parsed.children)) {
-                // Only update if actually different to avoid infinite loop
-                if (JSON.stringify(parsed.children) !== JSON.stringify(nodes)) {
-                    setNodes(parsed.children);
-                }
-            }
-        } catch (e) { /* ignore */ }
-    }, [formData.flow_data_raw]);
 
     useEffect(() => {
         fetchApbnData();
@@ -92,15 +57,21 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
         setFormData({
             year: item.year,
             total_budget: item.total_budget,
-            status: item.status,
-            flow_data_raw: typeof item.flow_data === 'string' ? item.flow_data : JSON.stringify(item.flow_data, null, 2)
+            status: item.status
         });
+        const flowData = typeof item.flow_data === 'string' ? JSON.parse(item.flow_data) : item.flow_data;
+        if (flowData && flowData.children && Array.isArray(flowData.children)) {
+            setNodes(flowData.children);
+        } else {
+            setNodes([]);
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleCancel = () => {
         setEditingNode(null);
-        setFormData({ year: new Date().getFullYear(), total_budget: 0, status: 'PUBLISHED', flow_data_raw: '' });
+        setFormData({ year: new Date().getFullYear(), total_budget: 0, status: 'PUBLISHED' });
+        setNodes([]);
         setMessage(null);
     };
 
@@ -112,19 +83,24 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
             return;
         }
 
-        let parsedFlowData;
-        try {
-            parsedFlowData = JSON.parse(formData.flow_data_raw);
-        } catch (err) {
-            setMessage({ type: 'error', text: 'Format JSON Flow Data tidak valid. Pastikan JSON sesuai standar.' });
-            return;
-        }
+        const currentFlowData = editingNode?.flow_data 
+            ? (typeof editingNode.flow_data === 'string' ? JSON.parse(editingNode.flow_data) : editingNode.flow_data)
+            : {};
+            
+        const flowDataPayload = {
+            ...currentFlowData,
+            id: currentFlowData.id || `apbn-${formData.year}`,
+            label: currentFlowData.label || `APBN Pendidikan ${formData.year}`,
+            amount: formData.total_budget,
+            color: currentFlowData.color || "indigo",
+            children: nodes
+        };
 
         const payload = {
             year: formData.year,
             total_budget: formData.total_budget,
             status: formData.status,
-            flow_data: parsedFlowData
+            flow_data: flowDataPayload
         };
 
         let result;
@@ -137,9 +113,10 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
         if (result.error) {
             setMessage({ type: 'error', text: result.error.message });
         } else {
-            setMessage({ type: 'success', text: `Data APBN ${formData.year} berhasil didimpan.` });
+            setMessage({ type: 'success', text: `Data APBN ${formData.year} berhasil disimpan.` });
             setEditingNode(null);
-            setFormData({ year: new Date().getFullYear(), total_budget: 0, status: 'PUBLISHED', flow_data_raw: '' });
+            setFormData({ year: new Date().getFullYear(), total_budget: 0, status: 'PUBLISHED' });
+            setNodes([]);
             fetchApbnData();
         }
     };
@@ -328,8 +305,7 @@ export default function AdminApbnManager({ userRole }: { userRole?: string }) {
                         )}
                     </div>
 
-                    {/* Hidden Raw JSON for state preservation */}
-                    <input type="hidden" name="flow_data_raw" value={formData.flow_data_raw} />
+
                     <div className="flex justify-end">
                         <button type="button" onClick={generateTemplate} className="text-[10px] font-black text-slate-400 hover:text-primary transition-colors flex items-center gap-1">
                             <span className="material-symbols-outlined text-xs">refresh</span> RESET KE TEMPLATE
