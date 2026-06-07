@@ -122,6 +122,21 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ---
 
+## �🛠️ Manajemen Server dan Virtual Private Server 
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion
+
+## 🖥️ Infrastruktur Server & Deployment
+
+| No | Nama Server | Fungsi Server | Database | Repositori | Demo URL |
+|----|-------------|---------------|----------|------------|----------|
+| 1 | **Dedicated Server 1**<br>Frontend Publik | Frontend untuk dapat diakses oleh publik dari 38 Provinsi | PostgreSQL *(sinkron dengan Supabase)* | [adimaryanto-stack/Transparansi-Anggaran-Pendidikan](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo](https://transparansi-anggaran-pendidikan-we.vercel.app) |
+| 2 | **VPS 2**<br>Dashboard Kementerian | Dashboard untuk Kementerian dalam membagi nominal anggaran | Supabase | [adimaryanto-stack/Dashboard-Kementerian](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [🔗 Live Demo](https://742jpk8a.insforge.site) |
+| 3 | **VPS 3**<br>Dashboard Himbara | Manajemen dan status transfer ke rekening Institusi Pendidikan | Supabase | [adimaryanto-stack/Dashboard-Himbara](https://github.com/adimaryanto-stack/Dashboard-Himbara) | *Coming Soon* |
+| 4 | **Dedicated 4**<br>Dashboard Institusi Pendidikan | Dashboard manajemen dan pendataan pengeluaran belanja Institusi Pendidikan dari 38 Provinsi *(CDN Indonesia — Supermicro untuk 5 pulau besar)* | Supabase | [adimaryanto-stack/Dashboard-Institusi-Pendidikan](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [🔗 Live Demo](https://dashboard-institusi-pendidikan.vercel.app) |
+| 5 | **VPS 5**<br>Dashboard Auditor | Dashboard pengawasan oleh Auditor resmi negara | Supabase | [adimaryanto-stack/Dashboard-Auditor](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [🔗 Live Demo](https://dashboard-auditor.vercel.app) |
+
+---
+
 ## �🛠️ Tech Stack
 - **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion
 - **Backend**: Supabase (PostgreSQL + RLS), Google Gemini 3.1 Pro (Audit AI)
