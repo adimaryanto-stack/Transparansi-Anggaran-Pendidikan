@@ -122,18 +122,28 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ---
 
-## �🛠️ Manajemen Server dan Virtual Private Server 
-- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion
+# 🏫 Transparansi Anggaran Pendidikan — Infrastruktur Server
 
-## 🖥️ Infrastruktur Server & Deployment
+Sistem Transparansi Anggaran Pendidikan terdiri dari 5 server yang saling terhubung, mencakup frontend publik, dashboard kementerian, perbankan (Himbara), institusi pendidikan, dan auditor negara.
 
-| No | Nama Server | Fungsi Server | Database | Repositori | Demo URL |
-|----|-------------|---------------|----------|------------|----------|
-| 1 | **Dedicated Server 1**<br>Frontend Publik | Frontend untuk dapat diakses oleh publik dari 38 Provinsi | PostgreSQL *(sinkron dengan Supabase)* | [adimaryanto-stack/Transparansi-Anggaran-Pendidikan](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo](https://transparansi-anggaran-pendidikan-we.vercel.app) |
-| 2 | **VPS 2**<br>Dashboard Kementerian | Dashboard untuk Kementerian dalam membagi nominal anggaran | Supabase | [adimaryanto-stack/Dashboard-Kementerian](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [🔗 Live Demo](https://742jpk8a.insforge.site) |
-| 3 | **VPS 3**<br>Dashboard Himbara | Manajemen dan status transfer ke rekening Institusi Pendidikan | Supabase | [adimaryanto-stack/Dashboard-Himbara](https://github.com/adimaryanto-stack/Dashboard-Himbara) | *Coming Soon* |
-| 4 | **Dedicated 4**<br>Dashboard Institusi Pendidikan | Dashboard manajemen dan pendataan pengeluaran belanja Institusi Pendidikan dari 38 Provinsi *(CDN Indonesia — Supermicro untuk 5 pulau besar)* | Supabase | [adimaryanto-stack/Dashboard-Institusi-Pendidikan](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [🔗 Live Demo](https://dashboard-institusi-pendidikan.vercel.app) |
-| 5 | **VPS 5**<br>Dashboard Auditor | Dashboard pengawasan oleh Auditor resmi negara | Supabase | [adimaryanto-stack/Dashboard-Auditor](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [🔗 Live Demo](https://dashboard-auditor.vercel.app) |
+---
+
+## 🖥️ Daftar Server & Infrastruktur
+
+| No | Nama Server | Kategori | Fungsi | Database | Repositori | Demo |
+|----|-------------|----------|--------|----------|------------|------|
+| 1 | **Frontend Publik** | Dedicated Server | Frontend yang dapat diakses publik dari 38 Provinsi | PostgreSQL *(sinkron dengan Supabase)* | [GitHub](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [Live Demo](https://transparansi-anggaran-pendidikan-we.vercel.app) |
+| 2 | **Dashboard Kementerian** | VPS Server | Dashboard Kementerian untuk pembagian nominal anggaran | Supabase | [GitHub](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [Live Demo](https://742jpk8a.insforge.site) |
+| 3 | **Dashboard Himbara** | VPS Server | Manajemen dan status transfer ke rekening Institusi Pendidikan | Supabase | [GitHub](https://github.com/adimaryanto-stack/Dashboard-Himbara) | *(coming soon)* |
+| 4 | **Dashboard Institusi Pendidikan** | Dedicated Server | Dashboard manajemen & pendataan pengeluaran belanja institusi dari 38 Provinsi *(CDN Indonesia, Supermicro 5 pulau besar)* | PostgreSQL *(sinkron dengan Supabase)* | [GitHub](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [Live Demo](https://dashboard-institusi-pendidikan.vercel.app) |
+| 5 | **Dashboard Auditor** | VPS Server | Dashboard pengawasan oleh Auditor resmi negara | Supabase | [GitHub](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [Live Demo](https://dashboard-auditor.vercel.app) |
+
+---
+
+> **Catatan Infrastruktur:**
+> - Server **Dedicated** (No. 1 & 4) menggunakan PostgreSQL lokal yang disinkronkan dengan Supabase untuk menangani beban akses dari 38 Provinsi.
+> - Server **VPS** (No. 2, 3 & 5) menggunakan Supabase sebagai database utama.
+> - Server No. 4 direkomendasikan menggunakan **Supermicro** dengan CDN Indonesia untuk coverage 5 pulau besar.
 
 ---
 
