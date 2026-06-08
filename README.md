@@ -137,7 +137,7 @@ Sistem Transparansi Anggaran Pendidikan terdiri dari 5 server yang saling terhub
 **Catatan Infrastruktur:**
 - Server **Dedicated** (No. 1 & 4) menggunakan PostgreSQL lokal yang disinkronkan dengan Supabase untuk menangani beban akses dari 38 Provinsi.
 - Server **VPS** (No. 2, 3 & 5) menggunakan Supabase sebagai database utama.
-- Server No. 4 direkomendasikan menggunakan **Supermicro** dengan skema CDN(Content Delivery Network)Indonesia untuk coverage 1x5 pulau besar.
+- Server No. 4 direkomendasikan menggunakan **Supermicro** dengan skema CDN (Content Delivery Network) Indonesia untuk coverage 1x5 pulau besar.
 
 ---
 
