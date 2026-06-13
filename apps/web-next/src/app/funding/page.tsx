@@ -167,7 +167,7 @@ export default function FundingPage() {
                                                 <Bar
                                                     dataKey="amount"
                                                     radius={[6, 6, 0, 0]}
-                                                    onClick={(data) => router.push(`/aliran-dana?year=${data.payload.year}`)}
+                                                    onClick={(data: any) => router.push(`/aliran-dana?year=${data.payload.year}`)}
                                                     style={{ cursor: 'pointer' }}
                                                 >
                                                     {apbnData.map((entry, index) => (
