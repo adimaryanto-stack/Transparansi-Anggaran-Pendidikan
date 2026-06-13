@@ -142,7 +142,7 @@ export default function FundingPage() {
                                                     axisLine={false}
                                                     tickLine={false}
                                                     tick={{ fill: '#64748b', fontSize: 13 }}
-                                                    tickFormatter={(value) => `${value}`}
+                                                    tickFormatter={(value: any) => `${value}`}
                                                 />
                                                 <Tooltip
                                                     cursor={{ fill: '#f1f5f9' }}
