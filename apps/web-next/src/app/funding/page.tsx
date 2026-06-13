@@ -18,32 +18,50 @@ import {
 export default function FundingPage() {
     const router = useRouter();
     const [apbnData, setApbnData] = useState<any[]>([]);
+    const [apbdData, setApbdData] = useState<any[]>([]);
+    const [csrData, setCsrData] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchApbnData = async () => {
+        const fetchAllData = async () => {
             try {
-                const { data, error } = await supabase
+                // Fetch APBN
+                const { data: apbn, error: apbnError } = await supabase
                     .from('apbn_yearly_data')
                     .select('*')
                     .order('year', { ascending: true });
 
-                if (!error && data) {
-                    const formatted = data.map(item => ({
+                if (!apbnError && apbn) {
+                    const formatted = apbn.map(item => ({
                         year: item.year.toString(),
                         amount: Number(item.total_budget),
                         type: item.year >= 2025 ? (item.year === 2025 ? 'Pagu Anggaran' : 'Proyeksi') : (item.year === 2024 ? 'Outlook' : 'Realisasi')
                     }));
                     setApbnData(formatted);
                 }
+
+                // Fetch APBD
+                const { data: apbd, error: apbdError } = await supabase
+                    .from('apbd_yearly_data')
+                    .select('*')
+                    .order('year', { ascending: true });
+                if (!apbdError && apbd) setApbdData(apbd);
+
+                // Fetch CSR
+                const { data: csr, error: csrError } = await supabase
+                    .from('csr_yearly_data')
+                    .select('*')
+                    .order('year', { ascending: true });
+                if (!csrError && csr) setCsrData(csr);
+
             } catch (err) {
-                console.error("Failed to fetch APBN data:", err);
+                console.error("Failed to fetch funding data:", err);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchApbnData();
+        fetchAllData();
     }, []);
 
     const currentYearData = apbnData.find(d => d.year === "2025") || { amount: 724.3 };
@@ -189,37 +207,113 @@ export default function FundingPage() {
                     </div>
                 </section>
 
-                {/* Empty States Section */}
+                {/* APBD and CSR Sections */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* APBD */}
-                    <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[300px]">
-                        <div className="w-16 h-16 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center mb-4">
-                            <span className="material-symbols-outlined text-3xl text-slate-300">location_city</span>
-                        </div>
-                        <h2 className="text-xl font-bold text-slate-900 mb-2">Dana APBD Daerah</h2>
-                        <p className="text-slate-500 mb-6 max-w-sm">
-                            Konsolidasi data anggaran pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh Indonesia.
-                        </p>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold border border-amber-100">
-                            <span className="material-symbols-outlined text-sm">pending</span>
-                            Data Belum Tersedia
-                        </div>
-                    </section>
+                    {apbdData.length === 0 ? (
+                        <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[300px]">
+                            <div className="w-16 h-16 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center mb-4">
+                                <span className="material-symbols-outlined text-3xl text-slate-300">location_city</span>
+                            </div>
+                            <h2 className="text-xl font-bold text-slate-900 mb-2">Dana APBD Daerah</h2>
+                            <p className="text-slate-500 mb-6 max-w-sm">
+                                Konsolidasi data anggaran pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh Indonesia.
+                            </p>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold border border-amber-100">
+                                <span className="material-symbols-outlined text-sm">pending</span>
+                                Data Belum Tersedia
+                            </div>
+                        </section>
+                    ) : (
+                        <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col relative h-[400px]">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600">
+                                    <span className="material-symbols-outlined text-2xl">location_city</span>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold text-slate-900">Dana APBD Daerah</h2>
+                                    <p className="text-slate-500 text-xs">Konsolidasi anggaran pendidikan APBD (Triliun Rupiah)</p>
+                                </div>
+                            </div>
+                            <div className="flex-1 w-full mt-2">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={apbdData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                                        <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} dy={10} />
+                                        <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                                        <Tooltip 
+                                            cursor={{ fill: '#f1f5f9' }}
+                                            content={({ active, payload }: any) => {
+                                                if (active && payload && payload.length) {
+                                                    return (
+                                                        <div className="bg-white p-3 rounded-xl shadow-lg border border-slate-100">
+                                                            <p className="font-bold text-slate-900 mb-1">Tahun {payload[0].payload.year}</p>
+                                                            <p className="text-lg font-extrabold text-orange-600">Rp {payload[0].payload.total_budget} T</p>
+                                                        </div>
+                                                    );
+                                                }
+                                                return null;
+                                            }}
+                                        />
+                                        <Bar dataKey="total_budget" fill="#f97316" radius={[4, 4, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </section>
+                    )}
 
                     {/* CSR */}
-                    <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[300px]">
-                        <div className="w-16 h-16 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center mb-4">
-                            <span className="material-symbols-outlined text-3xl text-slate-300">handshake</span>
-                        </div>
-                        <h2 className="text-xl font-bold text-slate-900 mb-2">Dana CSR Perusahaan</h2>
-                        <p className="text-slate-500 mb-6 max-w-sm">
-                            Rekapitulasi donasi atau Corporate Social Responsibility (CSR) dari sektor swasta/BUMN untuk entitas pendidikan.
-                        </p>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold border border-amber-100">
-                            <span className="material-symbols-outlined text-sm">pending</span>
-                            Data Belum Tersedia
-                        </div>
-                    </section>
+                    {csrData.length === 0 ? (
+                        <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[300px]">
+                            <div className="w-16 h-16 rounded-full bg-slate-50 border-2 border-slate-100 flex items-center justify-center mb-4">
+                                <span className="material-symbols-outlined text-3xl text-slate-300">handshake</span>
+                            </div>
+                            <h2 className="text-xl font-bold text-slate-900 mb-2">Dana CSR Perusahaan</h2>
+                            <p className="text-slate-500 mb-6 max-w-sm">
+                                Rekapitulasi donasi atau Corporate Social Responsibility (CSR) dari sektor swasta/BUMN untuk entitas pendidikan.
+                            </p>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold border border-amber-100">
+                                <span className="material-symbols-outlined text-sm">pending</span>
+                                Data Belum Tersedia
+                            </div>
+                        </section>
+                    ) : (
+                        <section className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col relative h-[400px]">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <span className="material-symbols-outlined text-2xl">handshake</span>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold text-slate-900">Dana CSR Perusahaan</h2>
+                                    <p className="text-slate-500 text-xs">Rekapitulasi donasi swasta/BUMN (Triliun Rupiah)</p>
+                                </div>
+                            </div>
+                            <div className="flex-1 w-full mt-2">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart data={csrData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                                        <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} dy={10} />
+                                        <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                                        <Tooltip 
+                                            cursor={{ fill: '#f1f5f9' }}
+                                            content={({ active, payload }: any) => {
+                                                if (active && payload && payload.length) {
+                                                    return (
+                                                        <div className="bg-white p-3 rounded-xl shadow-lg border border-slate-100">
+                                                            <p className="font-bold text-slate-900 mb-1">Tahun {payload[0].payload.year}</p>
+                                                            <p className="text-lg font-extrabold text-purple-600">Rp {payload[0].payload.total_budget} T</p>
+                                                        </div>
+                                                    );
+                                                }
+                                                return null;
+                                            }}
+                                        />
+                                        <Bar dataKey="total_budget" fill="#a855f7" radius={[4, 4, 0, 0]} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </section>
+                    )}
                 </div>
 
             </main>

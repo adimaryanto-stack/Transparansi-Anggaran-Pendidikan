@@ -217,8 +217,9 @@ Fase 8 berfokus pada **Kinerja Ekstrim (Google PageSpeed)**, optimalisasi PWA, d
 │ PWA Offline-First Cache │ 100%     │  🔴 HIGH │   🔄     │ Devops    │
 │ Hapus Dark Mode & Admin │ Selesai  │  🔴 HIGH │   ✅     │ UI/UX     │
 │ Dynamic totalIncome     │ DB-based │  🟡 MED  │   📋     │ Backend   │
-│ Integrasi Dana APBD/CSR │ Schema   │  🟡 MED  │   📋     │ Data Eng  │
-│ Konektor Bank Himbara   │ API Auth │  🟢 LOW  │   📋     │ Integrator│
+│ Integrasi Dana APBD/CSR │ Selesai  │  🟡 MED  │   ✅     │ Data Eng  │
+│ Smart Autocomplete Cari │ Selesai  │  🟢 LOW  │   ✅     │ Frontend  │
+│ DB Seed Data Pesawaran  │ Selesai  │  🟢 LOW  │   ✅     │ Database  │
 └─────────────────────────┴──────────┴──────────┴──────────┴───────────┘
 ```
 

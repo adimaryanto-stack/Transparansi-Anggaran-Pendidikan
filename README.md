@@ -33,9 +33,9 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 ---
 
 ## 📋 Status Proyek
-- **Versi Saat Ini**: `v1.2.0` (Nasional & Regional)
-- **Status**: Stabilized (Finalizing 38 Provinces Flow)
-- **Update Terakhir**: 9 April 2026
+- **Versi Saat Ini**: `v1.3.0` (Funding Hub & Smart Search)
+- **Status**: Active Development (Fase 8 - PWA & Optimasi Kecepatan)
+- **Update Terakhir**: 13 Juni 2026
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
@@ -205,6 +205,12 @@ Proyek ini dikembangkan dalam beberapa fase:
 ---
 
 ## 📜 Change Log
+
+### v1.3.0 (13 Juni 2026)
+- **Integrasi APBD & CSR**: Visualisasi data pendanaan daerah dan donasi swasta di halaman Sumber Dana (/funding) secara dinamis.
+- **Smart Autocomplete Search**: Pencarian pintar di Navbar berbasis NPSN dan Nama Sekolah dengan performa tinggi.
+- **Data Dummy Realistis**: Injeksi 967 data sekolah di Kabupaten Pesawaran lengkap dengan filter Kecamatan (PAUD, SD, SMP, SMA).
+- **Peningkatan UI/UX**: Penyelarasan antarmuka "Empty State" dan penambahan lokasi spesifik pada profil Dashboard Sekolah.
 
 ### v1.2.0 (9 April 2026) - 17:15 WIB
 - **National Budget Topology Stabilization**: Seluruh 38 provinsi kini terintegrasi secara visual dan fungsional dengan data fiskal 2025.

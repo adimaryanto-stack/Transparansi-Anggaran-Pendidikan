@@ -16,6 +16,8 @@ export default function RegencyDetailPage() {
     const [loading, setLoading] = useState(true);
     const [filterJenjang, setFilterJenjang] = useState<string>('Semua');
     const [filterKecamatan, setFilterKecamatan] = useState<string>('Semua');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const getJenjang = (name: string) => {
         const n = (name || '').toUpperCase();
@@ -76,14 +78,17 @@ export default function RegencyDetailPage() {
     const filteredSchools = schools.filter(s => {
         const passJenjang = filterJenjang === 'Semua' || getJenjang(s.name) === filterJenjang;
         const passKecamatan = filterKecamatan === 'Semua' || getKecamatan(s.location) === filterKecamatan;
-        return passJenjang && passKecamatan;
+        const passSearch = searchQuery === '' || 
+            s.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            s.npsn.toLowerCase().includes(searchQuery.toLowerCase());
+        return passJenjang && passKecamatan && passSearch;
     });
 
     const uniqueKecamatan = Array.from(new Set(schools.map(s => getKecamatan(s.location)))).filter(k => k !== 'Lainnya').sort();
     if (schools.some(s => getKecamatan(s.location) === 'Lainnya')) uniqueKecamatan.push('Lainnya');
 
     return (
-        <div className="relative flex min-h-screen flex-col bg-slate-50">
+        <div className="relative flex min-h-screen flex-col bg-slate-50" onClick={() => setShowDropdown(false)}>
             <SharedNavbar />
 
             <main className="flex-1 flex justify-center py-10 px-4 md:px-6">
@@ -127,34 +132,83 @@ export default function RegencyDetailPage() {
                     )}
 
                     {!loading && schools.length > 0 && (
-                        <div className="flex flex-col sm:flex-row gap-4 mb-2 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                            <div className="flex-1">
-                                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Sortir Kecamatan</label>
-                                <select 
-                                    className="w-full h-11 px-3 rounded-lg border border-slate-200 bg-slate-50 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium"
-                                    value={filterKecamatan}
-                                    onChange={(e) => setFilterKecamatan(e.target.value)}
-                                >
-                                    <option value="Semua">Semua Kecamatan</option>
-                                    {uniqueKecamatan.map(k => (
-                                        <option key={k} value={k}>{k}</option>
-                                    ))}
-                                </select>
+                        <div className="flex flex-col gap-4 mb-2 bg-white p-5 rounded-xl border border-slate-200 shadow-sm" onClick={e => e.stopPropagation()}>
+                            {/* Search Input with Autocomplete Dropdown */}
+                            <div className="relative z-20">
+                                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                                <input
+                                    className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-base"
+                                    placeholder="Cari berdasarkan Nama Sekolah atau NPSN..."
+                                    value={searchQuery}
+                                    onChange={(e) => {
+                                        setSearchQuery(e.target.value);
+                                        setShowDropdown(true);
+                                    }}
+                                    onFocus={() => setShowDropdown(true)}
+                                />
+                                {showDropdown && searchQuery.trim().length > 0 && (
+                                    <div className="absolute top-full mt-2 left-0 w-full bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden max-h-64 overflow-y-auto">
+                                        {filteredSchools.slice(0, 10).map(s => (
+                                            <Link 
+                                                key={s.id} 
+                                                href={`/dashboard/${s.npsn}`} 
+                                                className="block px-4 py-3 hover:bg-slate-50 border-b border-slate-100 last:border-0"
+                                                onClick={() => setShowDropdown(false)}
+                                            >
+                                                <div className="font-bold text-slate-900">{s.name}</div>
+                                                <div className="text-xs text-slate-500 flex items-center gap-2 mt-1">
+                                                    <span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-600">NPSN: {s.npsn}</span>
+                                                    <span className="text-slate-400">&bull;</span>
+                                                    <span>{getKecamatan(s.location)}</span>
+                                                    <span className="text-slate-400">&bull;</span>
+                                                    <span>{getJenjang(s.name)}</span>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                        {filteredSchools.length === 0 && (
+                                            <div className="px-4 py-4 text-center text-sm text-slate-500">
+                                                Tidak ada sekolah yang cocok dengan "{searchQuery}".
+                                            </div>
+                                        )}
+                                        {filteredSchools.length > 10 && (
+                                            <div className="px-4 py-2 bg-slate-50 text-center text-xs font-bold text-slate-400 border-t border-slate-100">
+                                                Dan {filteredSchools.length - 10} sekolah lainnya. Tekan Enter untuk melihat di grid bawah.
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
-                            <div className="flex-1">
-                                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Sortir Jenjang</label>
-                                <select 
-                                    className="w-full h-11 px-3 rounded-lg border border-slate-200 bg-slate-50 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium"
-                                    value={filterJenjang}
-                                    onChange={(e) => setFilterJenjang(e.target.value)}
-                                >
-                                    <option value="Semua">Semua Jenjang</option>
-                                    <option value="PAUD">PAUD / TK / KB</option>
-                                    <option value="SD">SD / Sederajat</option>
-                                    <option value="SMP">SMP / Sederajat</option>
-                                    <option value="SMA">SMA / SMK / Sederajat</option>
-                                    <option value="Universitas">Universitas / Tinggi</option>
-                                </select>
+
+                            {/* Filters */}
+                            <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                                <div className="flex-1">
+                                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Sortir Kecamatan</label>
+                                    <select 
+                                        className="w-full h-11 px-3 rounded-lg border border-slate-200 bg-slate-50 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium"
+                                        value={filterKecamatan}
+                                        onChange={(e) => setFilterKecamatan(e.target.value)}
+                                    >
+                                        <option value="Semua">Semua Kecamatan</option>
+                                        {uniqueKecamatan.map(k => (
+                                            <option key={k} value={k}>{k}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="flex-1">
+                                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Sortir Jenjang</label>
+                                    <select 
+                                        className="w-full h-11 px-3 rounded-lg border border-slate-200 bg-slate-50 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium"
+                                        value={filterJenjang}
+                                        onChange={(e) => setFilterJenjang(e.target.value)}
+                                    >
+                                        <option value="Semua">Semua Jenjang</option>
+                                        <option value="PAUD">PAUD / TK / KB</option>
+                                        <option value="SD">SD / Sederajat</option>
+                                        <option value="SMP">SMP / Sederajat</option>
+                                        <option value="SMA">SMA / SMK / Sederajat</option>
+                                        <option value="Universitas">Universitas / Tinggi</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     )}

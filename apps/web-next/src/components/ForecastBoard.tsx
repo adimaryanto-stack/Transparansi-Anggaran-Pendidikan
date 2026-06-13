@@ -21,17 +21,7 @@ export default function ForecastBoard({ npsn, transactions = [] }: { npsn: strin
                     });
                 }
             });
-
-            // Tambahan contoh anomali fiktif/gaib
-            detected.push({
-                id: "TRX-999",
-                date: "2024-10-30",
-                category: "Lain-lain",
-                description: "Pembelian Perangkat Keras Tidak Terdaftar",
-                amount: 45000000,
-                reason: "Pengeluaran fiktif/gaib: Tidak ada rincian vendor dan barang tidak ditemukan dalam inventaris.",
-                severity: "critical"
-            });
+            // (Hanya menampilkan anomali jika transaksi nyata melebihi aturan)
 
             setAnomalies(detected);
         };

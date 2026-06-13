@@ -476,7 +476,13 @@ export default function SchoolDashboardPage() {
                                 </div>
                                 <div className="flex flex-col text-center md:text-left">
                                     <h1 className="text-3xl font-bold tracking-tight mb-1 dark:text-white uppercase">{schoolData.profile.name}</h1>
-                                    <p className="text-slate-500 dark:text-slate-400 text-lg mb-2 leading-relaxed">Dasbor Transparansi Sekolah</p>
+                                    <p className="text-slate-500 dark:text-slate-400 text-lg mb-1 leading-relaxed">Dasbor Transparansi Sekolah</p>
+                                    {schoolData.profile.location && (
+                                        <div className="flex items-center justify-center md:justify-start gap-1.5 text-slate-500 mb-3">
+                                            <span className="material-symbols-outlined text-[16px]">location_on</span>
+                                            <span className="text-sm font-medium">{schoolData.profile.location}</span>
+                                        </div>
+                                    )}
                                     <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium mt-2 mb-4">
                                         <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">NPSN: {schoolData.profile.npsn}</span>
                                         <span className="px-3 py-1 rounded-full bg-primary/10 text-primary">Akreditasi {schoolData.profile.accreditation}</span>
