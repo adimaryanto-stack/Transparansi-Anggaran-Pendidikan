@@ -29,3 +29,4 @@ prisma/migrations
 _test_db
 ocr_errors.log
 ocr_debug.log
+.vercel
