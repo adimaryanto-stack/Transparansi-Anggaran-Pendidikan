@@ -146,7 +146,7 @@ export default function FundingPage() {
                                                 />
                                                 <Tooltip
                                                     cursor={{ fill: '#f1f5f9' }}
-                                                    content={({ active, payload }) => {
+                                                    content={({ active, payload }: any) => {
                                                         if (active && payload && payload.length) {
                                                             const data = payload[0].payload;
                                                             return (
