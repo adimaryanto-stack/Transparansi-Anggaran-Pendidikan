@@ -19,14 +19,18 @@ export default function ProvinceDetailPage() {
             setProvince(prov);
 
             const { data: regs } = await supabase.from('regencies').select('*').eq('province_id', prov.id).order('name');
-            const { data: schools } = await supabase.from('schools').select('id, regency_id');
-
-            const schoolByReg: Record<string, number> = {};
-            (schools || []).forEach(s => {
-                if (s.regency_id) schoolByReg[s.regency_id] = (schoolByReg[s.regency_id] || 0) + 1;
+            
+            const regsData = regs || [];
+            const countPromises = regsData.map(async (r) => {
+                const { count } = await supabase
+                    .from('schools')
+                    .select('*', { count: 'exact', head: true })
+                    .eq('regency_id', r.id);
+                return { ...r, schoolCount: count || 0 };
             });
 
-            setRegencies((regs || []).map(r => ({ ...r, schoolCount: schoolByReg[r.id] || 0 })));
+            const regenciesWithCount = await Promise.all(countPromises);
+            setRegencies(regenciesWithCount);
             setLoading(false);
         };
         fetch();

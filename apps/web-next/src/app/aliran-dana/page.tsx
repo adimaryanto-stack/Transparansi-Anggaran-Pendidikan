@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import SharedNavbar from '@/components/SharedNavbar';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
 import ApbnFlowChart from '@/components/ApbnFlowChart';
 import IndonesiaMap from '@/components/IndonesiaMap';

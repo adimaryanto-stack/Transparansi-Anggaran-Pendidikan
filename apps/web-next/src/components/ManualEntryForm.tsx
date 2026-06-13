@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { createWorker } from 'tesseract.js';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 
 // ---- Types ----
 interface LineItem {

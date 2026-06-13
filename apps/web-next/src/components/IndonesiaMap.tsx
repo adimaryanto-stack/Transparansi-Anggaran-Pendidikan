@@ -22,24 +22,18 @@ export default function IndonesiaMap() {
         const fetch = async () => {
             const { data: provs } = await supabase.from('provinces').select('id, name, code');
             const { data: regs } = await supabase.from('regencies').select('id, province_id');
-            const { data: schools } = await supabase.from('schools').select('id, regency_id');
-
-            const regToProv: Record<string, string> = {};
-            (regs || []).forEach(r => { regToProv[r.id] = r.province_id; });
-
-            const schoolByProv: Record<string, number> = {};
-            (schools || []).forEach(s => {
-                if (s.regency_id && regToProv[s.regency_id]) {
-                    const provId = regToProv[s.regency_id];
-                    schoolByProv[provId] = (schoolByProv[provId] || 0) + 1;
-                }
+            const countPromises = (provs || []).map(async (p) => {
+                const regIds = (regs || []).filter(r => r.province_id === p.id).map(r => r.id);
+                if (regIds.length === 0) return { code: p.code, name: p.name, schoolCount: 0 };
+                const { count } = await supabase
+                    .from('schools')
+                    .select('*', { count: 'exact', head: true })
+                    .in('regency_id', regIds);
+                return { code: p.code, name: p.name, schoolCount: count || 0 };
             });
 
-            setProvinces((provs || []).map(p => ({
-                code: p.code,
-                name: p.name,
-                schoolCount: schoolByProv[p.id] || 0,
-            })));
+            const provsWithCount = await Promise.all(countPromises);
+            setProvinces(provsWithCount);
         };
         fetch();
     }, []);

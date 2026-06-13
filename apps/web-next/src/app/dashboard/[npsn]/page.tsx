@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 import BudgetPieChart from '@/components/charts/BudgetPieChart';
 import ExpenseBarChart from '@/components/charts/ExpenseBarChart';
 import { supabase } from '@/lib/supabase';
@@ -556,7 +556,7 @@ export default function SchoolDashboardPage() {
 
                         {/* AI Forecasting (Task 24) */}
                         <div className="print:hidden">
-                            <ForecastBoard npsn={npsn} />
+                            <ForecastBoard npsn={npsn} transactions={schoolData.recentTransactions} />
                         </div>
 
                         {/* Incoming Funds Section */}

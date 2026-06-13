@@ -13,56 +13,6 @@ const TOTAL_KK_NASIONAL = 514;
 const VIRTUAL_CANVAS_WIDTH = 8000;
 const VIRTUAL_CANVAS_HEIGHT = 4000;
 
-const PROVINCES = [
-    { id: "pv1", name: "Aceh", kabkota: 23, region: "Sumatera" },
-    { id: "pv2", name: "Sumatera Utara", kabkota: 33, region: "Sumatera" },
-    { id: "pv3", name: "Sumatera Barat", kabkota: 19, region: "Sumatera" },
-    { id: "pv4", name: "Riau", kabkota: 12, region: "Sumatera" },
-    { id: "pv5", name: "Jambi", kabkota: 11, region: "Sumatera" },
-    { id: "pv6", name: "Sumatera Selatan", kabkota: 17, region: "Sumatera" },
-    { id: "pv7", name: "Bengkulu", kabkota: 10, region: "Sumatera" },
-    { id: "pv8", name: "Lampung", kabkota: 15, region: "Sumatera" },
-    { id: "pv9", name: "Kep. Bangka Belitung", kabkota: 7, region: "Sumatera" },
-    { id: "pv10", name: "Kepulauan Riau", kabkota: 7, region: "Sumatera" },
-    { id: "pv11", name: "DKI Jakarta", kabkota: 6, region: "Jawa" },
-    { id: "pv12", name: "Jawa Barat", kabkota: 27, region: "Jawa" },
-    { id: "pv13", name: "Jawa Tengah", kabkota: 35, region: "Jawa" },
-    { id: "pv14", name: "DI Yogyakarta", kabkota: 5, region: "Jawa" },
-    { id: "pv15", name: "Jawa Timur", kabkota: 38, region: "Jawa" },
-    { id: "pv16", name: "Banten", kabkota: 8, region: "Jawa" },
-    { id: "pv17", name: "Bali", kabkota: 9, region: "Nusa Tenggara" },
-    { id: "pv18", name: "Nusa Tenggara Barat", kabkota: 10, region: "Nusa Tenggara" },
-    { id: "pv19", name: "Nusa Tenggara Timur", kabkota: 22, region: "Nusa Tenggara" },
-    { id: "pv20", name: "Kalimantan Barat", kabkota: 14, region: "Kalimantan" },
-    { id: "pv21", name: "Kalimantan Tengah", kabkota: 14, region: "Kalimantan" },
-    { id: "pv22", name: "Kalimantan Selatan", kabkota: 13, region: "Kalimantan" },
-    { id: "pv23", name: "Kalimantan Timur", kabkota: 10, region: "Kalimantan" },
-    { id: "pv24", name: "Kalimantan Utara", kabkota: 5, region: "Kalimantan" },
-    { id: "pv25", name: "Sulawesi Utara", kabkota: 15, region: "Sulawesi" },
-    { id: "pv26", name: "Sulawesi Tengah", kabkota: 13, region: "Sulawesi" },
-    { id: "pv27", name: "Sulawesi Selatan", kabkota: 24, region: "Sulawesi" },
-    { id: "pv28", name: "Sulawesi Tenggara", kabkota: 17, region: "Sulawesi" },
-    { id: "pv29", name: "Gorontalo", kabkota: 6, region: "Sulawesi" },
-    { id: "pv30", name: "Sulawesi Barat", kabkota: 6, region: "Sulawesi" },
-    { id: "pv31", name: "Maluku", kabkota: 11, region: "Maluku & Papua" },
-    { id: "pv32", name: "Maluku Utara", kabkota: 10, region: "Maluku & Papua" },
-    { id: "pv33", name: "Papua", kabkota: 9, region: "Maluku & Papua" },
-    { id: "pv34", name: "Papua Barat", kabkota: 7, region: "Maluku & Papua" },
-    { id: "pv35", name: "Papua Selatan", kabkota: 4, region: "Maluku & Papua" },
-    { id: "pv36", name: "Papua Tengah", kabkota: 8, region: "Maluku & Papua" },
-    { id: "pv37", name: "Papua Pegunungan", kabkota: 8, region: "Maluku & Papua" },
-    { id: "pv38", name: "Papua Barat Daya", kabkota: 6, region: "Maluku & Papua" },
-];
-
-const YEARS_DATA = [
-    { tahun: 2026, total: 720, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 420, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 160, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 60, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 80, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2025, total: 700, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 410, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 155, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 55, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 80, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2024, total: 665, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 395, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 150, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 50, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 70, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2023, total: 612, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 365, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 138, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 42, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 67, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2022, total: 608, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 360, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 135, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 40, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 73, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2021, total: 550, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 325, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 120, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 35, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 70, ke_provinsi: false, color: "#f59e0b" }] },
-    { tahun: 2020, total: 508, peruntukan: [{ id: "p1", nama: "Transfer ke Daerah", icon: "🏘️", nilai: 300, ke_provinsi: true, color: "#10b981" }, { id: "p2", nama: "Kementerian Agama", icon: "🕌", nilai: 110, ke_provinsi: false, color: "#f43f5e" }, { id: "p3", nama: "LPDP & Beasiswa", icon: "🎓", nilai: 30, ke_provinsi: false, color: "#8b5cf6" }, { id: "p4", nama: "Kemendikbudristek", icon: "🏢", nilai: 68, ke_provinsi: false, color: "#f59e0b" }] },
-];
 
 const JENJANG_DEF = [
     { key: "paud", label: "PAUD", icon: "🌱", color: "#f59e0b" },
@@ -219,9 +169,11 @@ export default function TopologiAnggaran({
     const activeYear = useMemo(() => {
         const ext = externalYearData?.find(y => y.year === selectedYear);
         if (!ext) {
-            // Fallback to mock if no external data
-            const mock = YEARS_DATA.find(y => y.tahun === selectedYear) || YEARS_DATA[0];
-            return mock;
+            return {
+                tahun: selectedYear,
+                total: 0,
+                peruntukan: []
+            };
         }
 
         return {
@@ -242,20 +194,16 @@ export default function TopologiAnggaran({
         const provs = externalAllocations.filter(a => a.level === 'DINAS_PROV');
         if (provs.length > 0) {
             return provs.map((p) => {
-                const officialInfo = PROVINCES.find(pr => 
-                    pr.name.toLowerCase().includes(p.entity_name.toLowerCase()) || 
-                    p.entity_name.toLowerCase().includes(pr.name.toLowerCase())
-                );
                 return {
                     id: p.id,
                     name: p.entity_name,
                     alokasi: p.allocated / 1e12,
-                    kabkota: officialInfo ? officialInfo.kabkota : 10, // Fallback to 10 if not found
-                    region: officialInfo ? officialInfo.region : "Wilayah"
+                    kabkota: 5, // Fallback dummy to be replaced by DB fetch if needed
+                    region: "Wilayah"
                 };
             });
         }
-        return PROVINCES;
+        return [];
     }, [externalAllocations]);
 
     const toggle = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
@@ -455,7 +403,9 @@ export default function TopologiAnggaran({
 
                                     {expanded[per.id] && per.ke_provinsi && (
                                         <div className="mt-24 flex flex-col gap-16 items-center">
-                                            {activeProvinces.map(prov => {
+                                            {activeProvinces.length === 0 ? (
+                                                <div className="bg-white p-6 rounded-2xl border border-slate-200 text-slate-500 text-sm">Belum ada data alokasi provinsi.</div>
+                                            ) : activeProvinces.map(prov => {
                                                 const provId = `${per.id}_${prov.id}`;
                                                 const alokasiProv = (prov.kabkota / TOTAL_KK_NASIONAL) * per.nilai;
                                                 const districts = genKabKota(prov, 4, expandedOthers[provId]);

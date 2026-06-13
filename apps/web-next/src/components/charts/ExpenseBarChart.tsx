@@ -1,7 +1,7 @@
 "use client";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 
 interface ExpenseBarChartProps {
     data: { month: string; amount: number }[];

@@ -1,18 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { formatIDR, mockSchoolData } from "@/lib/mockData";
+import { formatIDR } from "@/lib/utils";
 
-export default function ForecastBoard({ npsn }: { npsn: string }) {
+export default function ForecastBoard({ npsn, transactions = [] }: { npsn: string, transactions?: any[] }) {
     const [anomalies, setAnomalies] = useState<any[]>([]);
 
     useEffect(() => {
         // Simulasi AI mendeteksi anomali dari data transaksi
         const detectAnomalies = () => {
-            const detected = [];
+            const detected: any[] = [];
             
-            // Contoh rule anomali sederhana berdasarkan data mock
-            mockSchoolData.recentTransactions.forEach(trx => {
+            // Contoh rule anomali sederhana berdasarkan data transaksi
+            transactions.forEach(trx => {
                 if (trx.amount > 20000000) {
                     detected.push({
                         ...trx,
@@ -37,7 +37,7 @@ export default function ForecastBoard({ npsn }: { npsn: string }) {
         };
 
         detectAnomalies();
-    }, [npsn]);
+    }, [npsn, transactions]);
 
     if (anomalies.length === 0) return null;
 

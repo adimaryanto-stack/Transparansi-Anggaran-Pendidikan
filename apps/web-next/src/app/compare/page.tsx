@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import SharedNavbar from "@/components/SharedNavbar";
-import { formatIDR } from "@/lib/mockData";
+import { formatIDR } from "@/lib/utils";
 import {
     BarChart,
     Bar,

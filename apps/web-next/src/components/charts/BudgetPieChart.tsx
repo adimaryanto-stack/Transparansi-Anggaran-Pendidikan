@@ -1,7 +1,7 @@
 "use client";
 
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 
 interface BudgetPieChartProps {
     data: { name: string; value: number; color: string }[];

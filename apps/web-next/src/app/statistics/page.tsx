@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { formatIDR } from '@/lib/mockData';
+import { formatIDR } from '@/lib/utils';
 import SharedNavbar from '@/components/SharedNavbar';
 import BudgetPieChart from '@/components/charts/BudgetPieChart';
 import ExpenseBarChart from '@/components/charts/ExpenseBarChart';

@@ -22,25 +22,21 @@ export default function ProvincesPage() {
         const fetch = async () => {
             const { data: provs } = await supabase.from('provinces').select('id, name, code').order('name');
             const { data: regs } = await supabase.from('regencies').select('id, province_id');
-            const { data: schools } = await supabase.from('schools').select('id, regency_id');
 
-            const regByProv: Record<string, number> = {};
-            (regs || []).forEach(r => { regByProv[r.province_id] = (regByProv[r.province_id] || 0) + 1; });
-
-            const regIds = new Set((regs || []).map(r => r.id));
-            const schoolByProv: Record<string, number> = {};
-            (schools || []).forEach(s => {
-                if (s.regency_id) {
-                    const reg = (regs || []).find(r => r.id === s.regency_id);
-                    if (reg) schoolByProv[reg.province_id] = (schoolByProv[reg.province_id] || 0) + 1;
+            const countPromises = (provs || []).map(async (p) => {
+                const regIds = (regs || []).filter(r => r.province_id === p.id).map(r => r.id);
+                if (regIds.length === 0) {
+                    return { ...p, regencyCount: 0, schoolCount: 0 };
                 }
+                const { count } = await supabase
+                    .from('schools')
+                    .select('*', { count: 'exact', head: true })
+                    .in('regency_id', regIds);
+                return { ...p, regencyCount: regIds.length, schoolCount: count || 0 };
             });
 
-            setProvinces((provs || []).map(p => ({
-                ...p,
-                regencyCount: regByProv[p.id] || 0,
-                schoolCount: schoolByProv[p.id] || 0,
-            })));
+            const provsWithCount = await Promise.all(countPromises);
+            setProvinces(provsWithCount);
             setLoading(false);
         };
         fetch();
