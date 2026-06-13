@@ -7,7 +7,6 @@
 > **Target Launch:** Fase 8 (PWA, Kecepatan Tinggi & Peluncuran Publik)  
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fadimaryanto-stack%2FTransparansi-Anggaran-Pendidikan&root-directory=apps/web-next&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,GEMINI_API_KEY&project-name=transparansi-anggaran&repository-name=transparansi-anggaran)
-[![Deploy to InsForge](https://img.shields.io/badge/Deploy%20to-InsForge-000000?style=for-the-badge&logo=supabase&logoColor=white)](https://insforge.dev/new?repo=https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan&root=apps/web-next)
 
 ---
 
