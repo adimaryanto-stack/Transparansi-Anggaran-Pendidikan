@@ -4,7 +4,8 @@
 [![Stack: Next.js + Supabase](https://img.shields.io/badge/Stack-Next.js%20%2B%20Supabase-blue)](https://nextjs.org/)
 [![AI: Gemini Pro](https://img.shields.io/badge/AI-Gemini%20Pro-red)](https://deepmind.google/technologies/gemini/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fadimaryanto-stack%2FTransparansi-Anggaran-Pendidikan&root-directory=apps/web-next&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,GEMINI_API_KEY&project-name=transparansi-anggaran&repository-name=transparansi-anggaran)---
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fadimaryanto-stack%2FTransparansi-Anggaran-Pendidikan&root-directory=apps/web-next&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,GEMINI_API_KEY&project-name=transparansi-anggaran&repository-name=transparansi-anggaran)
+---
 Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bintang Emon terlebih dahulu sebagai gambaran permasalahan yang terjadi dalam sebuah sistem anggaran https://vt.tiktok.com/ZSH2L1DVd/
 
 Sederhananya adalah karena anggaran **Anggaran APBN dan APBD berasal dari pajak rakyat, yang dihimpun melalui lembaga perpajakan** sudah seharusnya anggaran tersebut dibuka, dan untuk mengurangi terjadinya anomali, lakukan **Blockchain anggaran**, semakin ditutupi maka semakin besar potensi terjadinya anomali **Dana Gaib**. Untuk keterbukaan anggaran, sudah ada UU yang mengatur hal ini, sehingga tidak ada lagi alasan untuk menyembunyikan anggaran, terutama anggaran pendidikan.
