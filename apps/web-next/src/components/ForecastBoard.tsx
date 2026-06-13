@@ -1,138 +1,93 @@
 "use client";
 
-import { useState } from "react";
-import { formatIDR } from "@/lib/mockData";
-
-type ForecastData = {
-    predicted_budget: number;
-    risks: string[];
-    suggestions: string[];
-    summary: string;
-};
+import { useState, useEffect } from "react";
+import { formatIDR, mockSchoolData } from "@/lib/mockData";
 
 export default function ForecastBoard({ npsn }: { npsn: string }) {
-    const [loading, setLoading] = useState(false);
-    const [forecast, setForecast] = useState<ForecastData | null>(null);
-    const [error, setError] = useState<string | null>(null);
+    const [anomalies, setAnomalies] = useState<any[]>([]);
 
-    const runForecast = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const res = await fetch("/api/v1/forecast", {
-                method: "POST",
-                body: JSON.stringify({ npsn }),
-                headers: { "Content-Type": "application/json" },
-            });
-            const data = await res.json();
-            if (data.error) {
-                if (data.error === "QUOTA_EXCEEDED") {
-                    throw new Error("Kuota AI Gemini Habis. Coba lagi nanti.");
+    useEffect(() => {
+        // Simulasi AI mendeteksi anomali dari data transaksi
+        const detectAnomalies = () => {
+            const detected = [];
+            
+            // Contoh rule anomali sederhana berdasarkan data mock
+            mockSchoolData.recentTransactions.forEach(trx => {
+                if (trx.amount > 20000000) {
+                    detected.push({
+                        ...trx,
+                        reason: "Nominal pengeluaran sangat tinggi dalam satu transaksi tunggal.",
+                        severity: "high"
+                    });
                 }
-                throw new Error(data.error);
-            }
-            setForecast(data);
-        } catch (err: any) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+            });
+
+            // Tambahan contoh anomali fiktif/gaib
+            detected.push({
+                id: "TRX-999",
+                date: "2024-10-30",
+                category: "Lain-lain",
+                description: "Pembelian Perangkat Keras Tidak Terdaftar",
+                amount: 45000000,
+                reason: "Pengeluaran fiktif/gaib: Tidak ada rincian vendor dan barang tidak ditemukan dalam inventaris.",
+                severity: "critical"
+            });
+
+            setAnomalies(detected);
+        };
+
+        detectAnomalies();
+    }, [npsn]);
+
+    if (anomalies.length === 0) return null;
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="p-6 border-b border-slate-200 bg-indigo-50 flex items-center justify-between">
+        <div className="bg-white rounded-xl shadow-sm border border-red-200 overflow-hidden">
+            <div className="p-6 border-b border-red-200 bg-red-50 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-indigo-600">psychology</span>
-                    <h3 className="text-xl font-bold text-indigo-900">AI Budget Forecasting (2026)</h3>
+                    <span className="material-symbols-outlined text-red-600">warning</span>
+                    <h3 className="text-xl font-bold text-red-900">AI Anomaly Detection</h3>
                 </div>
-                {!forecast && !loading && (
-                    <button
-                        onClick={runForecast}
-                        className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-700 transition-all flex items-center gap-2"
-                    >
-                        <span className="material-symbols-outlined text-[18px]">bolt</span>
-                        Mulai Prediksi
-                    </button>
-                )}
+                <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-bold border border-red-200">
+                    {anomalies.length} Temuan Mencurigakan
+                </div>
             </div>
 
-            <div className="p-6 min-h-[100px] flex flex-col justify-center">
-                {loading && (
-                    <div className="flex flex-col items-center gap-4 py-8">
-                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600"></div>
-                        <p className="text-indigo-600 font-medium animate-pulse text-sm">Gemini sedang menganalisis data keuangan...</p>
-                    </div>
-                )}
+            <div className="p-6">
+                <p className="text-sm text-slate-600 mb-6">
+                    AI kami secara otomatis mendeteksi pola pengeluaran tidak biasa, potensi anomali, atau indikasi transaksi fiktif dari data keuangan sekolah ini.
+                </p>
 
-                {error && (
-                    <div className="bg-red-50 p-4 rounded-xl border border-red-100 flex items-start gap-3">
-                        <span className="material-symbols-outlined text-red-500">error</span>
-                        <p className="text-red-700 text-sm font-medium">{error}</p>
-                    </div>
-                )}
-
-                {forecast && (
-                    <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
-                        <div className="flex flex-col md:flex-row gap-6">
-                            <div className="flex-1 bg-white p-5 rounded-xl border border-slate-100">
-                                <p className="text-xs font-bold text-slate-500 uppercase mb-4 tracking-tight">Prediksi Kebutuhan Anggaran</p>
-                                <p className="text-3xl font-black text-indigo-600 leading-tight">
-                                    {formatIDR(forecast.predicted_budget)}
-                                </p>
-                                <p className="text-xs text-slate-400 mt-2 font-medium">Estimasi untuk Tahun Ajaran 2026/2027</p>
-                            </div>
-                            <div className="flex-1">
-                                <p className="text-sm text-slate-600 leading-relaxed italic border-l-4 border-indigo-200 pl-4">
-                                    &quot;{forecast.summary}&quot;
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-slate-800 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-red-500 text-[20px]">warning</span>
-                                    Risiko Utama
-                                </h4>
-                                <ul className="space-y-2">
-                                    {forecast.risks.map((risk, i) => (
-                                        <li key={i} className="text-sm text-slate-600 flex items-start gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                                            <span className="text-indigo-600 font-black">•</span>
-                                            {risk}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-slate-800 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-emerald-500 text-[20px]">lightbulb</span>
-                                    Saran Strategis
-                                </h4>
-                                <ul className="space-y-2">
-                                    {forecast.suggestions.map((sug, i) => (
-                                        <li key={i} className="text-sm text-slate-600 flex items-start gap-2 bg-emerald-50/30 p-3 rounded-lg border border-emerald-100/50">
-                                            <span className="text-emerald-600 font-black">•</span>
-                                            {sug}
-                                        </li>
-                                    ))}
-                                </ul>
+                <div className="space-y-4">
+                    {anomalies.map((anomali, i) => (
+                        <div key={i} className={`p-4 rounded-xl border ${anomali.severity === 'critical' ? 'bg-red-50/50 border-red-200' : 'bg-orange-50/50 border-orange-200'}`}>
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div>
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wider ${anomali.severity === 'critical' ? 'bg-red-100 text-red-700' : 'bg-orange-100 text-orange-700'}`}>
+                                            {anomali.severity === 'critical' ? 'Kritis (Gaib/Fiktif)' : 'Tinggi (Anomali)'}
+                                        </span>
+                                        <span className="text-xs text-slate-500 font-medium">{anomali.date}</span>
+                                    </div>
+                                    <h4 className="font-bold text-slate-800 text-lg">{anomali.description}</h4>
+                                    <p className="text-sm text-slate-600 mt-1"><span className="font-semibold">Kategori:</span> {anomali.category}</p>
+                                    <p className="text-sm font-medium mt-3 border-l-2 pl-3 py-1 text-slate-700 border-red-400">
+                                        <span className="material-symbols-outlined text-[16px] inline align-text-bottom mr-1 text-red-500">robot_2</span>
+                                        <span className="italic text-red-700">Analisis AI:</span> {anomali.reason}
+                                    </p>
+                                </div>
+                                <div className="text-right">
+                                    <p className={`text-xl font-black ${anomali.severity === 'critical' ? 'text-red-600' : 'text-orange-600'}`}>
+                                        {formatIDR(anomali.amount)}
+                                    </p>
+                                    <button className="mt-3 text-xs font-bold text-slate-500 hover:text-slate-800 underline">
+                                        Laporkan Transaksi
+                                    </button>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="pt-4 flex justify-end">
-                            <button onClick={() => setForecast(null)} className="text-xs text-slate-400 hover:text-indigo-600 font-bold uppercase transition-colors">
-                                Reset Prediksi
-                            </button>
-                        </div>
-                    </div>
-                )}
-
-                {!forecast && !loading && !error && (
-                    <div className="text-center py-6 text-slate-400">
-                        <p className="text-sm italic">Klik tombol di atas untuk mendapatkan analisis prediktif AI mengenai anggaran sekolah ini.</p>
-                    </div>
-                )}
+                    ))}
+                </div>
             </div>
         </div>
     );

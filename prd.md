@@ -1,169 +1,96 @@
-# 📋 PRD, MVP & Flowchart — Transparansi Anggaran Pendidikan
+# 📋 DOKUMEN KONSOLIDASI: PRD, MVP, & FLOWCHART
+## Portal Transparansi Anggaran Pendidikan Indonesia (BOS Online)
 
-> **Dokumen Analisis Produk** | Versi 1.2 | 9 April 2026
-> Berdasarkan analisis kode sumber proyek [transparansi-anggaran](file:///d:/Work%20From%20Home%20Y545/Web%20Development/transparansi-anggaran)
-
----
-
-## 📑 Daftar Isi
-
-1. [Product Requirements Document (PRD)](#1-product-requirements-document-prd)
-2. [MVP Definition](#2-mvp-definition)
-3. [Flowchart & Diagram Alur](#3-flowchart--diagram-alur)
+> **Status Dokumen:** Konsolidasi Final (v3.0)  
+> **Tanggal Pembaruan:** 13 Juni 2026  
+> **Aplikasi Aktif:** `apps/web-next` (Next.js 16.1.6 + Supabase + Gemini AI)  
+> **Target Launch:** Fase 8 (PWA, Kecepatan Tinggi & Peluncuran Publik)  
 
 ---
 
-# 1. Product Requirements Document (PRD)
+## 📑 DAFTAR ISI
 
-## 1.1 Ringkasan Eksekutif
+1. [PENGANTAR & PENJELASAN KONSOLIDASI](#1-pengantar--penjelasan-konsolidasi)
+2. [PRODUCT REQUIREMENTS DOCUMENT (PRD)](#2-product-requirements-document-prd)
+   - [2.1 Latar Belakang & Masalah](#21-latar-belakang--masalah)
+   - [2.2 Target Pengguna & Akses Role](#22-target-pengguna--akses-role)
+   - [2.3 Fitur Utama Aplikasi Aktif](#23-fitur-utama-aplikasi-aktif)
+   - [2.4 Rencana Integrasi Spreadsheet (Core Concept Legacy)](#24-rencana-integrasi-spreadsheet-core-concept-legacy)
+3. [ARSITEKTUR & DATABASE SCHEMA](#3-arsitektur--database-schema)
+   - [3.1 Skema Database (Supabase PostgreSQL)](#31-skema-database-supabase-postgresql)
+   - [3.2 API Endpoints](#32-api-endpoints)
+4. [MVP ROADMAP & RENCANA PENGEMBANGAN](#4-mvp-roadmap--rencana-pengembangan)
+   - [4.1 Status MVP Saat Ini (Telah Selesai)](#41-status-mvp-saat-ini-telah-selesai)
+   - [4.2 Roadmap Pengembangan Fase 8 (Sedang Berjalan)](#42-roadmap-pengembangan-fase-8-sedang-berjalan)
+   - [4.3 Roadmap Spreadsheet Legacy (Referensi Pengembangan)](#43-roadmap-spreadsheet-legacy-referensi-pengembangan)
+5. [METRIK KESUKSESAN & PENYELARASAN PAGE SPEED](#5-metrik-kesuksesan--penyelarasan-page-speed)
+6. [DIAGRAM ALUR (FLOWCHART & JOURNEY)](#6-diagram-alur-flowchart--journey)
 
-**Transparansi Anggaran Pendidikan** (Portal BOS Digital) adalah platform web open-source yang bertujuan membangun sistem pengawasan anggaran pendidikan secara **end-to-end** — dari APBN Pusat hingga ke tangan sekolah — guna memastikan setiap rupiah sampai ke tujuannya tanpa dikorupsi.
+---
 
-| Aspek | Detail |
-|---|---|
-| **Nama Produk** | Transparansi Anggaran Pendidikan (Portal BOS Digital) |
-| **Tipe** | Web Application (PWA-ready) |
-| **Lisensi** | MIT (Open Source) |
-| **Target Launch** | Fase 8 — Peluncuran Publik & PWA Optimization |
-| **Status Saat Ini** | v1.2.0 — Flow Builder & Real-time Sync (Fase 1-8 ✅) |
+## 1. PENGANTAR & PENJELASAN KONSOLIDASI
 
-## 1.2 Latar Belakang & Masalah
+Dokumen ini merupakan hasil penggabungan (konsolidasi) dari beberapa file spesifikasi sebelumnya, yaitu:
+1. `prd.md` (Spesifikasi Awal Portal Publik & AI Audit BOS Online)
+2. `PRD/MASTER_PRD.md` (Spesifikasi Dashboard Berbasis Spreadsheet)
+3. `PRD/MVP_Roadmap_v2_Spreadsheet.md` (Rencana Pengembangan Aplikasi Spreadsheet)
 
-### Problem Statement
+### 🔄 Evolusi Proyek & Pembersihan Codebase
 
-> Dana pendidikan Indonesia seringkali mengalami "kebocoran" di setiap level penyaluran — dari APBN Pusat, Transfer ke Daerah, hingga pencairan BOS ke Sekolah. Tidak ada sistem terpusat yang memungkinkan publik melacak arus dana secara transparan dan mendeteksi anomali/markup secara otomatis.
+Sebelumnya, proyek ini memiliki dua cabang konsep desain/arsitektur paralel yang menyebabkan duplikasi kode:
+* **Cabang A (BOS Online Public Portal & AI Audit):** Berfokus pada kemudahan akses publik, deteksi anomali anggaran menggunakan Gemini AI, upload nota/struk belanja dengan OCR, serta integrasi sistem pelaporan ke KPK/BPK.
+* **Cabang B (Web-Based Spreadsheet Dashboard):** Berfokus pada interface interaktif menyerupai Excel untuk input cepat data anggaran bertingkat (Sekolah → Kab/Kota → Provinsi → Nasional) dengan inline editing dan cascade update database trigger.
 
-### Masalah Spesifik yang Dipecahkan
+Untuk mengurangi utang teknis (*technical debt*), meningkatkan kinerja, dan memaksimalkan nilai Google PageSpeed, kami telah melakukan **pembersihan codebase besar-besaran**:
+1. **Menghapus Folder Duplikat:** Folder dashboard spreadsheet di tingkat root (`/app`, `/components`, `/lib`, `/types`, `/public`, `tsconfig.json`) telah dihapus.
+2. **Menghapus Legacy Code:** Menghapus package tidak terpakai seperti `apps/api` (Express + SQLite + Prisma) dan `apps/web` (Vite + React) untuk memastikan aplikasi super ringan.
+3. **Penyatuan ke Satu Aplikasi Utama:** Kode utama sepenuhnya menggunakan Next.js 16 (App Router) di dalam directory [apps/web-next](file:///d:/DaVinci/Web%20Development/dashboard-publik/apps/web-next).
+4. **Optimasi Navbar:** Menghapus tombol *Login Admin* dan ikon *Mode Gelap* untuk menyederhanakan antarmuka publik dan mempercepat waktu muat (PageSpeed).
+5. **Penyelamatan Data:** Directory [data/](file:///d:/DaVinci/Web%20Development/dashboard-publik/data) yang berisi data sekolah (NPSN) dan data wilayah (Kepmendagri 2025) tetap dipertahankan untuk kebutuhan seeding data Supabase.
 
-1. **Dana Gaib** — Selisih antara dana yang dialokasikan di Pusat vs yang diterima Sekolah tidak terlacak
-2. **Markup Harga** — Penggelembungan harga belanja barang/jasa di tingkat sekolah sulit dideteksi
-3. **Ketiadaan Transparansi** — Masyarakat tidak memiliki akses untuk memantau penggunaan dana BOS
-4. **Pelaporan Manual** — Proses audit masih manual, memakan waktu, dan rawan human error
-5. **Silo Data** — Data anggaran tersebar di banyak instansi tanpa integrasi
+> [!TIP]
+> Navigasi cepat ke rencana pengembangan minimum layak produk dapat diakses melalui link berikut:  
+> **👉 [Buka Detail MVP Roadmap](#4-mvp-roadmap--rencana-pengembangan)**
 
-## 1.3 User Personas & Roles
+---
 
-Berdasarkan analisis kode ([admin/page.tsx](file:///d:/Work%20From%20Home%20Y545/Web%20Development/transparansi-anggaran/apps/web-next/src/app/admin/page.tsx#L102)):
+## 2. PRODUCT REQUIREMENTS DOCUMENT (PRD)
 
-| Role | Deskripsi | Akses Menu |
+### 2.1 Latar Belakang & Masalah
+Dana pendidikan di Indonesia rentan mengalami kebocoran anggaran pada setiap level penyaluran (dari APBN Pusat, APBD Provinsi/Kabupaten, hingga ke Sekolah dalam bentuk dana BOS). Kehadiran Portal Transparansi Anggaran ini bertujuan untuk:
+1. Membuka akses pelacakan dana pendidikan dari hulu ke hilir secara transparan dan *real-time*.
+2. Mendeteksi anomali belanja sekolah secara dini menggunakan kecerdasan buatan (Gemini AI).
+3. Memberikan wadah pelaporan yang aman dan langsung terhubung dengan pihak berwenang (KPK/BPK) untuk laporan di atas/di bawah Rp 500 Juta.
+
+### 2.2 Target Pengguna & Akses Role
+
+| Role | Deskripsi | Hak Akses Utama |
 |---|---|---|
-| **SCHOOL** | Operator sekolah (Bendahara/KepSek) | Overview, Income, Expenses, Upload OCR, Timeline, Audit, Laporan |
-| **SUPER_ADMIN** | Administrator sistem utama | Semua menu + User Manager, School Manager, APBN Manager |
-| **ADMIN** | Administrator level menengah | Semua menu + Moderasi + Laporan Publik |
-| **KEMENDIKBUD** | Pejabat Kemendikbud | Dashboard Auditor Pusat, APBN Flow |
-| **KPK** | Penyidik KPK | Audit Logs, Laporan Anomali, APBN Flow |
-| **BPK** | Auditor BPK | Rekonsiliasi Dana, Audit Logs |
-| **PUBLIC** | Masyarakat umum (tanpa login) | Homepage, Pencarian Sekolah, Dashboard Publik, Aliran Dana, Statistik, Pelaporan |
+| **PUBLIC** | Masyarakat umum, wali murid, LSM | Pencarian sekolah (NPSN), melihat aliran dana APBN, statistik nasional, memberikan komentar di forum sekolah, dan melakukan pelaporan (anonim). |
+| **SCHOOL** | Operator/Bendahara sekolah | Melihat data sekolah sendiri, memasukkan data belanja, upload struk untuk scan OCR, melihat hasil audit anomali internal. |
+| **AUDITOR (BPK/KPK)**| Pemeriksa Keuangan / Penyidik | Mengakses histori transaksi lengkap, logs audit anomali sistem, dan meninjau laporan masyarakat yang masuk. |
+| **SUPER_ADMIN** | Administrator Sistem | Hak akses penuh: mengelola data APBN tahunan, data sekolah, manajemen user, serta moderasi komentar publik. |
 
-## 1.4 Fitur Lengkap (Berdasarkan Kode yang Ada)
+### 2.3 Fitur Utama Aplikasi Aktif (`apps/web-next`)
 
-### 🏠 A. Landing Page & Pencarian Publik
-- [x] Hero section dengan search bar NPSN/nama sekolah
-- [x] Autocomplete search dengan debounced query ke Supabase `schools`
-- [x] Statistik real-time: Total Dana Terlacak & Sekolah Terdaftar
-- [x] Timeline aktivitas nasional (komentar + transaksi terbaru)
-- [x] Pilar transparansi (Data Akurat, Update Real-time, Laporan Publik)
-- [x] CTA section "Mulai Pantau"
+1. **Pencarian Sekolah Publik:** Kolom pencarian di beranda dengan fitur autocomplete (debound query) langsung ke database sekolah di Supabase.
+2. **Dashboard Sekolah Publik (`/dashboard/[npsn]`):** Ringkasan alokasi vs pengeluaran sekolah, histori transaksi belanja, visualisasi data, rating bintang dari warga, dan forum diskusi publik.
+3. **Peta Distribusi Aliran Dana (`/aliran-dana`):** Visualisasi interaktif APBN → Kemendikbud → Dinas Provinsi → Kabupaten/Kota → Sekolah. Dilengkapi dengan bagan pohon aliran anggaran tahun 2020-2026.
+4. **AI Audit & OCR Receipt Scanner:** Upload nota belanja sekolah → Gemini Vision otomatis mengekstrak item barang, kuantitas, dan harga. AI Audit Engine mendeteksi anomali harga markup secara *real-time*.
+5. **Formulir Laporan 5W1H (`/reporting`):** Form pelaporan kasus korupsi. Sistem akan otomatis mengarahkan tombol kirim pesan ke WhatsApp KPK (jika temuan ≥ Rp 500 Juta) atau BPK (jika temuan < Rp 500 Juta) serta menyimpannya secara terenkripsi ke database.
 
-### 📊 B. Dashboard Sekolah (`/dashboard/[npsn]`)
-- [x] Profil sekolah (Nama, NPSN, Lokasi, Akreditasi)
-- [x] Ringkasan anggaran (Penerimaan vs Pengeluaran vs Saldo)
-- [x] Tabel transaksi detail (tanggal, kategori, deskripsi, nominal)
-- [x] AI Audit Score per transaksi
-- [x] Forum komentar publik per sekolah
-- [x] Sistem rating "Beri Bintang" (Citizen Oversight)
+### 2.4 Rencana Integrasi Spreadsheet (Core Concept Legacy)
+Fitur spreadsheet excel-like dengan *inline editing* (dari `PRD/MASTER_PRD.md`) direncanakan untuk diintegrasikan pada panel khusus admin sekolah/operator untuk memudahkan input data secara massal.
+* **Inline Editing:** Operator dapat mengubah alokasi/realisasi langsung pada baris tabel seperti Google Sheets.
+* **Cascade Update Trigger:** Otomatis memperbarui akumulasi nilai ke atas (Sekolah → Kabupaten → Provinsi → Nasional) saat satu sel diedit.
 
-### 💰 C. Aliran Dana (`/aliran-dana`)
-- [x] APBN Flow Chart (tree view hierarki anggaran per tahun 2020-2026)
-- [x] Waterfall visualization (APBN → Kemendikbud → Dinas Prov → Dinas Kab → Sekolah)
-- [x] Tabel rekonsiliasi dana (Dialokasikan vs Diterima vs Disalurkan vs Sisa vs Selisih)
-- [x] Flagging otomatis (>1% selisih = **FLAG**)
-- [x] Log transfer dana
-- [x] Peta Indonesia interaktif (persebaran per provinsi)
-- [x] Tab sumber dana: APBN, APBD (Coming Soon), CSR (Coming Soon)
+---
 
-### 🤖 D. AI Audit Engine
-- [x] Deteksi anomali otomatis berbasis 4 aturan audit
-- [x] Severity levels: CRITICAL, HIGH, MEDIUM, LOW
-- [x] Status tracking: OPEN, INVESTIGATING, RESOLVED
-- [x] Powered by Google Gemini API
-- [x] OCR Receipt Scanner (Gemini Vision)
+## 3. ARSITEKTUR & DATABASE SCHEMA
 
-### 🛡️ E. Admin Panel (`/admin`)
-- [x] **Overview** — Cash flow chart (Recharts), distribusi pengeluaran (pie), timeline
-- [x] **Upload OCR** — Scan nota → auto-extract items → simpan ke DB
-- [x] **Manual Entry** — Input transaksi manual (satuan, harga, pajak PPN/PPh, ongkir)
-- [x] **Transaction List** — Daftar transaksi (income/expenses) dengan search
-- [x] **Audit & Transparansi** — Audit score, history table
-- [x] **Timeline Aktivitas** — Feed interaktif
-- [x] **APBN Manager** — CRUD data APBN tahunan (Super Admin only)
-- [x] **User Manager** — Kelola akun pengguna
-- [x] **School Manager** — Kelola data sekolah
-- [x] **Comment Moderation** — Moderasi komentar publik
-- [x] **Laporan Publik** — Daftar laporan penyalahgunaan
-- [x] **Profile & Settings**
+Aplikasi berjalan di atas Next.js 16 (App Router), Tailwind CSS v4, dan menggunakan backend Supabase (PostgreSQL) dengan perlindungan Row Level Security (RLS).
 
-### 📝 F. Pelaporan Masyarakat (`/reporting`)
-- [x] Formulir 5W1H + Penjelasan Lengkap
-- [x] Input anonim (nama & WhatsApp opsional)
-- [x] Estimasi nominal temuan
-- [x] Upload link bukti
-- [x] **Logic Gate Routing**:
-  - ≥ Rp 500 Juta → Redirect ke KPK (WhatsApp)
-  - < Rp 500 Juta → Redirect ke Auditor BPK (WhatsApp)
-- [x] Penyimpanan otomatis ke database `reports`
-
-### 🔐 G. Autentikasi
-- [x] Login via Supabase Auth
-- [x] Signup
-- [x] Forgot Password
-- [x] Auth Callback handler
-- [x] Session-based route protection
-- [x] Row-Level Security (RLS) di database
-
-### 📈 H. Halaman Tambahan
-- [x] `/statistics` — Statistik nasional
-- [x] `/about` — Tentang platform
-- [x] `/faq` — FAQ
-- [x] `/contact` — Kontak
-- [x] `/compare` — Perbandingan sekolah
-- [x] `/funding` — Informasi pendanaan
-- [x] `/provinces` — Data per provinsi
-- [x] `/admin-pusat` — Dashboard admin pusat
-
-## 1.5 Arsitektur Teknis
-
-### Tech Stack
-
-| Layer | Teknologi |
-|---|---|
-| **Frontend** | Next.js 15 (App Router), React 19, TypeScript |
-| **Styling** | Tailwind CSS v4, Framer Motion |
-| **UI Components** | Radix UI, Shadcn, Lucide React, Material Symbols |
-| **Charts** | Recharts |
-| **Backend (Primary)** | Next.js API Routes (`/api/`) |
-| **Backend (Legacy)** | Express.js + Prisma (SQLite) — di `/apps/api/` |
-| **Database (Primary)** | Supabase (PostgreSQL) + RLS |
-| **AI/ML** | Google Gemini API (`@google/genai`) |
-| **Auth** | Supabase Auth + `@supabase/ssr` |
-| **Data** | Dapodik (NPSN), Kepmendagri 2025 (Wilayah) |
-| **Architecture** | Monorepo (npm workspaces) |
-
-### Struktur Monorepo
-
-```
-transparansi-anggaran/
-├── apps/
-│   ├── web-next/        ← Primary app (Next.js 15)
-│   ├── api/             ← Legacy Express API (Prisma + SQLite)
-│   └── web/             ← Legacy Vite + React app
-├── packages/            ← Shared packages (empty)
-├── data/                ← Import scripts (Kepmendagri, SQL)
-├── scripts/             ← Utility scripts (scrape NPSN, seed, test)
-└── supabase/            ← Migrations
-```
-
-### Database Schema (Supabase — Primary)
+### 3.1 Skema Database (Supabase PostgreSQL)
 
 ```mermaid
 erDiagram
@@ -181,7 +108,6 @@ erDiagram
         uuid school_id FK
         string name
     }
-
     schools {
         uuid id PK
         string npsn UK
@@ -189,7 +115,6 @@ erDiagram
         string accreditation
         string location
     }
-
     budgets {
         uuid id PK
         uuid school_id FK
@@ -197,7 +122,6 @@ erDiagram
         float total_spent
         int year
     }
-
     transactions {
         uuid id PK
         uuid school_id FK
@@ -209,7 +133,6 @@ erDiagram
         float shipping_cost
         string fund_source
     }
-
     transaction_items {
         uuid id PK
         uuid transaction_id FK
@@ -218,7 +141,6 @@ erDiagram
         int quantity
         string unit
     }
-
     school_comments {
         uuid id PK
         string npsn FK
@@ -226,7 +148,6 @@ erDiagram
         text comment
         timestamp created_at
     }
-
     audit_logs {
         uuid id PK
         uuid school_id FK
@@ -237,7 +158,6 @@ erDiagram
         string status
         timestamp detected_at
     }
-
     reports {
         uuid id PK
         string reporter_name
@@ -247,7 +167,6 @@ erDiagram
         string evidence_link
         string status
     }
-
     apbn_yearly_data {
         uuid id PK
         int year UK
@@ -257,171 +176,87 @@ erDiagram
     }
 ```
 
-### API Routes (Next.js)
+### 3.2 API Endpoints
 
 | Endpoint | Method | Deskripsi |
 |---|---|---|
-| `/api/v1/ocr` | POST | OCR receipt scanner via Gemini Vision |
-| `/api/v1/fund-flow` | GET | Data aliran dana & rekonsiliasi |
-| `/api/v1/forecast` | GET | Prediksi anggaran |
-| `/api/v1/public/*` | GET | Public data endpoints |
-| `/api/audit/detect` | POST | AI audit detection engine |
-| `/api/admin/audit` | * | Admin audit management |
-
-## 1.6 Security Model
-
-| Mekanisme | Implementasi |
-|---|---|
-| **Authentication** | Supabase Auth (email/password) |
-| **Authorization** | Role-based via `profiles.role` column |
-| **Database Security** | PostgreSQL Row-Level Security (RLS) |
-| **Public Access** | Read-only pada data `PUBLISHED` |
-| **Admin Access** | Full CRUD untuk role `authenticated` |
-| **Pelaporan** | Anonimitas pelapor dijamin |
-
-## 1.7 Portability & Deployment (One-Click Setup)
-
-Mulai April 2026, proyek ini mendukung **One-Click Deploy** untuk memudahkan siapapun menjalankan portal transparansi mereka sendiri.
-
-| Komponen | Mekanisme |
-|---|---|
-| **Database Schema** | Otomatis via `supabase/migrations/` (Full Schema included) |
-| **Initial Data** | Otomatis via `supabase/seed.sql` (APBN 2020-2026 + Demo School) |
-| **Frontend** | Deploy to Vercel Button (Auto-configure Env Vars) |
-| **Integration** | Supabase Vercel Integration |
+| `/api/v1/ocr` | POST | Scan nota belanja otomatis menggunakan Gemini Vision. |
+| `/api/v1/fund-flow` | GET | Mengambil alokasi dana nasional per tahun untuk diagram pohon. |
+| `/api/v1/forecast` | GET | Prediksi anggaran tahun depan berdasarkan tren histori. |
+| `/api/audit/detect`| POST | Menjalankan AI Audit untuk mendeteksi transaksi tidak wajar. |
+| `/api/v1/public/*` | GET | Endpoint data publik untuk Provinsi, Kabupaten, dan Sekolah. |
 
 ---
 
-# 2. MVP Definition
+## 4. MVP ROADMAP & RENCANA PENGEMBANGAN
 
-## 2.1 Fase MVP yang Telah Selesai ✅
+Rencana pengembangan minimum layak produk (MVP) dibagi menjadi dua bagian: apa yang telah diselesaikan (Fase 1-7) dan apa yang sedang dikerjakan saat ini (Fase 8).
 
-### Fase 1-2: Foundation
-- [x] Setup monorepo & Supabase
-- [x] Autentikasi (Login, Signup, Forgot Password)
-- [x] CRUD Sekolah & Transaksi dasar
-- [x] Database schema & migrations
-
-### Fase 3-4: Core Features
-- [x] AI Audit Engine (Gemini Pro) — deteksi markup harga
-- [x] Fund Flow Tracking (APBN → Sekolah)
-- [x] Dashboard sekolah publik
-
-### Fase 5: OCR Integration
-- [x] Scan nota otomatis via Gemini Vision
-- [x] Auto-extract items (nama, qty, harga satuan, unit)
-- [x] Simpan hasil OCR ke transaksi + items
-
-### Fase 6: Advanced Features
-- [x] Multi-level roles (SUPER_ADMIN, SCHOOL, KEMENDIKBUD, KPK, BPK)
-- [x] Admin dashboard lengkap (13+ sections)
-- [x] Sistem pelaporan 5W1H dengan routing KPK/BPK
-
-### Fase 7: UI Redesign
-- [x] SaaS-centered layout
-- [x] Dark mode preparation
-- [x] Responsive design
-
-## 2.2 Fase Berikutnya (Fase 8 — In Progress) 🔄
-
-| Fitur | Prioritas | Status |
-|---|---|---|
-| PWA Optimization (offline-first) | 🔴 HIGH | Service Worker registered, manifest ready |
-| Push Notifications | 🟡 MEDIUM | Belum |
-| APBD Integration | 🟡 MEDIUM | Coming Soon (placeholder ada) |
-| CSR Data Integration | 🟢 LOW | Coming Soon (placeholder ada) |
-| Dark Mode Full Implementation | 🟡 MEDIUM | CSS prepared |
-| Export PDF Reports | 🟡 MEDIUM | `window.print()` basic |
-| Konektor Himbara (Banking) | 🔴 HIGH | Belum |
-| Mobile App (React Native) | 🟢 LOW | Belum |
-
-## 2.3 MVP Feature Matrix
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    MVP FEATURE PRIORITY MATRIX                       │
-├──────────────────────┬──────────┬──────────┬──────────┬─────────────┤
-│ Feature              │ Fase 1-2 │ Fase 3-5 │ Fase 6-7 │ Fase 8+     │
-│                      │ Foundation│ Core AI  │ Advanced │ Public      │
-├──────────────────────┼──────────┼──────────┼──────────┼─────────────┤
-│ Auth & Roles         │    ✅    │          │    ✅    │             │
-│ School CRUD          │    ✅    │          │    ✅    │             │
-│ Transaction CRUD     │    ✅    │          │          │             │
-│ AI Audit (Gemini)    │          │    ✅    │          │             │
-│ OCR Scanner          │          │    ✅    │          │             │
-│ Fund Flow Tracking   │          │    ✅    │          │             │
-│ Public Dashboard     │          │    ✅    │          │             │
-│ Admin Panel          │          │          │    ✅    │             │
-│ Pelaporan 5W1H       │          │          │    ✅    │             │
-│ Peta Indonesia       │          │          │    ✅    │             │
-│ UI Redesign          │          │          │    ✅    │             │
-│ PWA Optimization     │          │          │          │     🔄      │
-│ APBD/CSR Data        │          │          │          │     📋      │
-│ Banking Connector    │          │          │          │     📋      │
-│ Push Notifications   │          │          │          │     📋      │
-└──────────────────────┴──────────┴──────────┴──────────┴─────────────┘
- ✅ = Done  |  🔄 = In Progress  |  📋 = Planned
-```
+### 4.1 Status MVP Saat Ini (Telah Selesai) ✅
+- **Fase 1-2 (Foundation):** Inisialisasi Next.js, integrasi Supabase PostgreSQL DB, setup Supabase Auth (Login/Signup/Forgot Password), RLS Policies.
+- **Fase 3-4 (Core Features):** Diagram Aliran APBN, visualisasi data, integrasi Gemini AI Audit (markup detector), Dashboard Sekolah Publik, pencarian NPSN.
+- **Fase 5 (OCR Integration):** Fitur upload struk nota, parser data visual Gemini Vision, penyimpanan otomatis ke tabel transaksi.
+- **Fase 6 (Advanced Features):** Manajemen Multi-role (Super Admin, School, Auditor), Form pelaporan 5W1H dengan WhatsApp Redirect (KPK/BPK).
+- **Fase 7 (UI Redesign):** Dashboard modern, layout SaaS clean, optimasi responsive mobile.
 
 ---
 
-# 3. Flowchart & Diagram Alur
+### 4.2 Roadmap Pengembangan Fase 8 (Sedang Berjalan) 🔄
 
-## 3.1 Arsitektur Sistem Keseluruhan
+Fase 8 berfokus pada **Kinerja Ekstrim (Google PageSpeed)**, optimalisasi PWA, dan penyederhanaan antarmuka agar aplikasi berjalan super ringan.
 
-```mermaid
-graph TB
-    subgraph "Client Layer"
-        A[Browser / PWA]
-    end
-
-    subgraph "Frontend - Next.js 15"
-        B[App Router Pages]
-        C[React Components]
-        D[Shared Navbar]
-    end
-
-    subgraph "API Layer - Next.js Routes"
-        E["/api/v1/ocr"]
-        F["/api/v1/fund-flow"]
-        G["/api/audit/detect"]
-        H["/api/v1/public/*"]
-    end
-
-    subgraph "External Services"
-        I["Google Gemini API<br/>(AI Audit + OCR Vision)"]
-        J[WhatsApp API<br/>KPK / BPK]
-    end
-
-    subgraph "Backend - Supabase"
-        K[(PostgreSQL + RLS)]
-        L[Supabase Auth]
-        M[Storage]
-    end
-
-    subgraph "Data Sources"
-        N[Dapodik / NPSN]
-        O[Kepmendagri 2025]
-        P[APBN Data]
-    end
-
-    A --> B
-    B --> C
-    C --> D
-    B --> E & F & G & H
-    E --> I
-    G --> I
-    B --> K
-    B --> L
-    F --> K
-    H --> K
-    K --- N & O & P
-    B -.-> J
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                    MVP FASE 8 & 9 PRIORITAS UTAMA                    │
+├─────────────────────────┬──────────┬──────────┬──────────┬───────────┤
+│ Fitur                   │ Target   │ Prioritas│ Status   │ PIC       │
+├─────────────────────────┼──────────┼──────────┼──────────┼───────────┤
+│ Penyelarasan PageSpeed  │ > 95%    │  🔴 HIGH │   🔄     │ Frontend  │
+│ PWA Offline-First Cache │ 100%     │  🔴 HIGH │   🔄     │ Devops    │
+│ Hapus Dark Mode & Admin │ Selesai  │  🔴 HIGH │   ✅     │ UI/UX     │
+│ Dynamic totalIncome     │ DB-based │  🟡 MED  │   📋     │ Backend   │
+│ Integrasi Dana APBD/CSR │ Schema   │  🟡 MED  │   📋     │ Data Eng  │
+│ Konektor Bank Himbara   │ API Auth │  🟢 LOW  │   📋     │ Integrator│
+└─────────────────────────┴──────────┴──────────┴──────────┴───────────┘
 ```
 
-## 3.2 Alur Pengguna Utama (User Journey)
+#### Rencana Aksi Detail Fase 8:
+1. **Penyelarasan Cache Browser (PWA):**  
+   File `apps/web-next/public/sw.js` telah dikonfigurasi ulang ke strategi **Network-First** untuk navigasi halaman utama (HTML) agar perubahan antarmuka langsung dirender tanpa tertahan cache. static assets lainnya menggunakan Stale-While-Revalidate.
+2. **Pembersihan Modul:**  
+   Menghapus seluruh file komponen mode gelap (`ThemeToggle.tsx`) dan melarang rendering tombol Login/Theme pada navbar publik.
+3. **Peningkatan Google PageSpeed Score:**  
+   - Mengganti browser default fonts dengan font modern yang dioptimasi via `next/font/google`.
+   - Mengurangi bundle size dengan menghapus library Express/SQLite yang tidak terpakai dari workspace.
+   - Pemanfaatan *Dynamic Imports* untuk grafik berat (Recharts) agar tidak memperlambat loading awal halaman.
 
-### A. Alur Masyarakat Umum (Public)
+---
+
+### 4.3 Roadmap Spreadsheet Legacy (Referensi Pengembangan) 📋
+*Diambil dari `PRD/MVP_Roadmap_v2_Spreadsheet.md` sebagai panduan jika modul spreadsheet inline-editing akan diimplementasikan sebagai fitur internal panel admin sekolah:*
+
+* **Sprint 1 (Minggu 1-2):** Setup TanStack Table v8, inisialisasi state management Zustand untuk manipulasi baris sel, integrasi CRUD database level transaksi sekolah.
+* **Sprint 2 (Minggu 3-4):** Pembuatan komponen `EditableCell.tsx`, pembuatan database trigger PostgreSQL untuk cascade updates (Sekolah → Kabkota → Provinsi).
+* **Sprint 3 (Minggu 5-6):** Fitur filter bertingkat cascading (Provinsi → Kabkota), pagination server-side untuk menangani data besar (>150.000 sekolah), dan import massal data dari file Excel (.xlsx).
+* **Sprint 4 (Minggu 7-8):** Role-Based Access Control (RBAC) pada inline-editing, ekspor excel menggunakan `ExcelJS` dengan formula matematika tetap aktif, audit trail logs untuk setiap edit sel.
+
+---
+
+## 5. METRIK KESUKSESAN & PENYELARASAN PAGE SPEED
+
+Untuk mendukung target kecepatan tinggi dan aplikasi yang super ringan:
+
+1. **Google PageSpeed Score:** Target skor minimal **95** pada Mobile dan Desktop.
+2. **First Contentful Paint (FCP):** Kurang dari **0.8 detik** di jaringan 4G.
+3. **Interactive Delay (FID):** Kurang dari **100 milidetik**.
+4. **Data Integrity:** 100% kecocokan perhitungan total nominal belanja di dashboard dengan total penjumlahan transaksi di database Supabase (tidak ada data hardcoded).
+5. **Offline Ready:** PWA dapat diakses dalam keadaan offline dengan data cache terkelola secara otomatis oleh Service Worker.
+
+---
+
+## 6. DIAGRAM ALUR (FLOWCHART & JOURNEY)
+
+### 6.1 Alur Masyarakat Umum (Public User)
 
 ```mermaid
 flowchart TD
@@ -458,115 +293,7 @@ flowchart TD
     style Dashboard fill:#3b82f6,color:#fff
 ```
 
-### B. Alur Operator Sekolah (SCHOOL Role)
-
-```mermaid
-flowchart TD
-    Start(["Login"]) --> Auth{"Autentikasi<br/>Supabase Auth"}
-    Auth -->|Gagal| Login["Halaman Login"]
-    Auth -->|Berhasil| Check{"Cek Role di<br/>profiles table"}
-
-    Check -->|SCHOOL| Admin["Admin Dashboard"]
-
-    Admin --> Menu{"Pilih Menu"}
-
-    Menu -->|Overview| OV["Dashboard Overview<br/>Cash flow + Pie chart + Timeline"]
-
-    Menu -->|"Upload Nota"| OCR["Upload Section"]
-    OCR --> Scan["Pilih File Gambar"]
-    Scan --> Process["Kirim ke API OCR"]
-    Process --> Gemini["Gemini Vision<br/>Extract Items"]
-    Gemini --> Preview["Preview Hasil OCR"]
-    Preview --> Confirm{"Konfirmasi?"}
-    Confirm -->|Ya| Save["Simpan ke<br/>transactions + items"]
-    Confirm -->|Tidak| Edit["Edit Manual"]
-    Edit --> Save
-
-    Menu -->|"Input Manual"| Manual["ManualEntryForm"]
-    Manual --> Fields["Isi: Tanggal, Kategori,<br/>Items, Qty, Harga,<br/>Pajak, Ongkir"]
-    Fields --> SaveM["Simpan ke transactions"]
-
-    Menu -->|Expenses| TList["Daftar Transaksi"]
-    Menu -->|Audit| AuditV["Lihat Audit Score<br/>+ History"]
-
-    Save --> Refresh["Refresh Data"]
-    SaveM --> Refresh
-
-    style Start fill:#10b981,color:#fff
-    style Gemini fill:#ef4444,color:#fff
-    style Save fill:#3b82f6,color:#fff
-```
-
-### C. Alur Super Admin / Auditor
-
-```mermaid
-flowchart TD
-    Start(["Login Super Admin"]) --> Auth{"Auth + Role Check"}
-    Auth -->|SUPER_ADMIN| Dashboard["Admin Panel"]
-
-    Dashboard --> Action{"Aksi"}
-
-    Action -->|"Kelola APBN"| APBN["AdminApbnManager"]
-    APBN --> APBNCrud["CRUD Data APBN<br/>per Tahun"]
-    APBNCrud --> FlowData["Edit flow_data JSON"]
-
-    Action -->|"Kelola Sekolah"| Schools["SchoolManager"]
-    Schools --> SCRUD["CRUD Data Sekolah<br/>NPSN, Nama, Lokasi"]
-
-    Action -->|"Kelola User"| Users["UserManager"]
-    Users --> UCRUD["CRUD User + Assign Role"]
-
-    Action -->|Moderasi| Mod["CommentModeration"]
-    Mod --> ModAction{"Aksi Moderasi"}
-    ModAction -->|Hapus| Delete["Delete Komentar"]
-    ModAction -->|Biarkan| Skip["Skip"]
-
-    Action -->|"Laporan Publik"| Reports["Daftar Laporan<br/>Penyalahgunaan"]
-
-    Action -->|Audit| AuditAll["Audit Semua Sekolah"]
-    AuditAll --> AuditDetect["AI Detect Anomali"]
-    AuditDetect --> AuditLog["Simpan ke audit_logs"]
-
-    style Start fill:#7c3aed,color:#fff
-    style APBN fill:#f59e0b,color:#fff
-    style AuditDetect fill:#ef4444,color:#fff
-```
-
-## 3.3 Alur Dana (Fund Flow)
-
-```mermaid
-graph TD
-    A["🏛️ APBN Pusat<br/>Rp 724.3 T (2025)"] -->|SP2D / Transfer| B["📚 Kemendikbud<br/>+ Kemenag"]
-
-    B -->|Alokasi DAU/DAK| C["🏢 Dinas Pendidikan<br/>Provinsi"]
-    B -->|BOS Langsung| E
-
-    C -->|Distribusi| D["🏙️ Dinas Pendidikan<br/>Kab/Kota"]
-
-    D -->|Pencairan ke<br/>Rek. Sekolah| E["🏫 Sekolah / BOS"]
-
-    subgraph "Sistem Pengawasan"
-        F["🤖 AI Audit Engine<br/>(Gemini Pro)"] -.->|Scan Anomali| E
-        G["👥 Publik / Warga"] -.->|Komentar & Laporan| E
-        H["🔍 KPK / BPK"] -.->|Investigasi jika FLAG| D
-    end
-
-    subgraph "Rekonsiliasi Otomatis"
-        I{"Alokasi = Diterima?"}
-        I -->|Selisih > 1%| J["🚨 FLAG!<br/>Anomali Terdeteksi"]
-        I -->|Selisih ≤ 1%| K["✅ OK<br/>Dana Sesuai"]
-    end
-
-    E --> I
-    J --> H
-
-    style A fill:#4f46e5,color:#fff
-    style J fill:#dc2626,color:#fff
-    style K fill:#10b981,color:#fff
-    style F fill:#f59e0b,color:#fff
-```
-
-## 3.4 Alur OCR & AI Audit
+### 6.2 Alur Scan Nota (OCR) & AI Audit
 
 ```mermaid
 sequenceDiagram
@@ -583,12 +310,11 @@ sequenceDiagram
     U->>FE: Klik "Proses Struk"
     FE->>API: POST FormData (image)
     API->>AI: Kirim gambar ke Gemini Vision
-    AI-->>API: JSON Response:<br/>{merchant, date, items[], total, tax}
+    AI-->>API: JSON: {merchant, date, items[], total, tax}
     API-->>FE: Return parsed data
     FE->>FE: Tampilkan preview items
     U->>FE: Konfirmasi / Edit
-    FE->>DB: INSERT transactions
-    FE->>DB: INSERT transaction_items[]
+    FE->>DB: INSERT transactions & items
 
     Note over U,DB: === Alur AI Audit ===
 
@@ -601,146 +327,6 @@ sequenceDiagram
     FE->>U: Tampilkan skor + temuan
 ```
 
-## 3.5 Alur Pelaporan Masyarakat
-
-```mermaid
-flowchart TD
-    A(["Masyarakat<br/>Buka Pelaporan"]) --> B["Isi Formulir"]
-
-    B --> C["Nama Pelapor - opsional"]
-    B --> D["WhatsApp - opsional"]
-    B --> E["Informasi 5W1H - wajib"]
-    B --> F["Penjelasan Lengkap - wajib"]
-    B --> G["Estimasi Nominal"]
-    B --> H["Link Bukti - opsional"]
-
-    E & F --> Validate{"Validasi<br/>5W1H dan Penjelasan<br/>terisi?"}
-
-    Validate -->|Tidak| Error["Tampilkan Error"]
-    Error --> B
-
-    Validate -->|Ya| Submit["Kirim ke Supabase<br/>INSERT reports"]
-    Submit --> Success["Laporan Berhasil!"]
-
-    Success --> Gate{"Cek Nominal"}
-
-    Gate -->|">=Rp 500 Juta"| KPK["Tombol WhatsApp KPK"]
-    Gate -->|"< Rp 500 Juta"| BPK["Tombol WhatsApp BPK"]
-
-    KPK --> WA["Buka WhatsApp<br/>dengan Template Pesan"]
-    BPK --> WA
-
-    WA --> Done(["Selesai"])
-
-    style A fill:#3b82f6,color:#fff
-    style KPK fill:#dc2626,color:#fff
-    style BPK fill:#0284c7,color:#fff
-    style Success fill:#10b981,color:#fff
-```
-
-## 3.6 Alur Autentikasi & Otorisasi
-
-```mermaid
-flowchart TD
-    A(["User Buka Admin"]) --> B{"Cek Session<br/>Supabase Auth"}
-
-    B -->|"No Session"| C["Redirect ke Login"]
-    C --> D["Input Email + Password"]
-    D --> E{"Supabase<br/>auth.signIn"}
-    E -->|Gagal| F["Tampilkan Error"]
-    F --> D
-
-    E -->|Berhasil| G["Fetch Profile<br/>dari profiles table"]
-    G --> H{"Profile<br/>ditemukan?"}
-    H -->|Tidak| C
-    H -->|Ya| I["Set Profile State"]
-    I --> J{"Cek Role"}
-
-    J -->|SCHOOL| K["Tampilkan Menu Sekolah<br/>Overview, Upload, Expenses,<br/>Audit, Timeline"]
-    J -->|"SUPER_ADMIN / ADMIN"| L["Tampilkan Semua Menu<br/>+ User dan School Manager<br/>+ APBN + Moderasi"]
-    J -->|"KEMENDIKBUD / KPK / BPK"| M["Tampilkan Menu Auditor<br/>+ APBN + Laporan"]
-
-    B -->|"Has Session"| G
-
-    style A fill:#6366f1,color:#fff
-    style K fill:#10b981,color:#fff
-    style L fill:#f59e0b,color:#fff
-    style M fill:#ef4444,color:#fff
-```
-
-## 3.7 Sitemap
-
-```mermaid
-graph TD
-    Root["/ (Landing Page)"]
-
-    Root --> Public["Public Pages"]
-    Root --> Auth["Auth Pages"]
-    Root --> Admin["Admin Panel"]
-    Root --> API["API Routes"]
-
-    Public --> About["/about"]
-    Public --> FAQ["/faq"]
-    Public --> Contact["/contact"]
-    Public --> Stats["/statistics"]
-    Public --> Compare["/compare"]
-    Public --> Funding["/funding"]
-    Public --> Provinces["/provinces"]
-    Public --> Fund["/aliran-dana"]
-    Public --> Dash["/dashboard/[npsn]"]
-    Public --> Audit["/audit"]
-    Public --> Report["/reporting"]
-
-    Auth --> Login["/login"]
-    Auth --> Signup["/signup"]
-    Auth --> Forgot["/forgot-password"]
-    Auth --> Callback["/auth/callback"]
-
-    Admin --> AdminPage["/admin"]
-    Admin --> AdminPusat["/admin-pusat"]
-
-    API --> APIV1["/api/v1/"]
-    APIV1 --> OCR["/api/v1/ocr"]
-    APIV1 --> FundFlow["/api/v1/fund-flow"]
-    APIV1 --> Forecast["/api/v1/forecast"]
-    APIV1 --> PubAPI["/api/v1/public"]
-    API --> AuditAPI["/api/audit/detect"]
-    API --> AdminAPI["/api/admin/audit"]
-    API --> OCRAPI["/api/ocr"]
-
-    style Root fill:#3b82f6,color:#fff
-    style Admin fill:#f59e0b,color:#fff
-    style API fill:#10b981,color:#fff
-    style Auth fill:#8b5cf6,color:#fff
-```
-
 ---
 
-## 🔑 Key Takeaways
-
-> [!IMPORTANT]
-> **Kekuatan Proyek:**
-> - Arsitektur sudah matang dengan monorepo + Supabase + Next.js 15
-> - AI integration (Gemini) untuk audit otomatis & OCR sudah berjalan
-> - Multi-role authorization dengan RLS database-level security
-> - Fund flow tracking end-to-end dengan rekonsiliasi otomatis
-> - Mekanisme pelaporan publik dengan routing cerdas (KPK vs BPK)
-
-> [!WARNING]
-> **Area yang Perlu Perhatian:**
-> - Legacy code di `/apps/api/` (Express + Prisma + SQLite) masih ada — perlu cleanup
-> - Legacy code di `/apps/web/` (Vite + React) masih ada — perlu cleanup
-> - APBD & CSR integrations masih placeholder
-> - Dark mode belum fully implemented
-> - `totalIncome` di admin panel masih hardcoded (`850000000`) — perlu dynamic fetch
-> - PWA Service Worker sudah registered tapi belum fully optimized
-> - Konektor Himbara (banking) belum ada
-
-> [!TIP]
-> **Rekomendasi Prioritas untuk Fase 8:**
-> 1. Bersihkan legacy code (apps/api, apps/web) untuk mengurangi technical debt
-> 2. Implementasi dynamic budget fetch (ganti hardcoded totalIncome)
-> 3. Full PWA optimization (caching, offline support)
-> 4. APBD data integration
-> 5. Export PDF yang proper (bukan window.print)
-> 6. Push notifications untuk anomali alerts
+*Dokumen ini merupakan panduan tunggal dan resmi bagi seluruh developer yang berpartisipasi dalam proyek ini.*

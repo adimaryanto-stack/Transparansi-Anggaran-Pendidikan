@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import SchoolSearch from "./SchoolSearch";
-import ThemeToggle from "./ThemeToggle";
 
 type NavLink = {
     label: string;
@@ -110,13 +109,6 @@ export default function SharedNavbar() {
 
                     <div className="hidden lg:flex items-center gap-4">
                         <SchoolSearch />
-                        <ThemeToggle />
-                        <Link
-                            href="/login"
-                            className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-sm whitespace-nowrap"
-                        >
-                            Login Admin
-                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -191,13 +183,7 @@ export default function SharedNavbar() {
                                 </Link>
                             );
                         })}
-                        <Link
-                            href="/login"
-                            onClick={() => setMobileOpen(false)}
-                            className="mt-2 bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-lg text-sm font-bold text-center transition-all"
-                        >
-                            Login Admin
-                        </Link>
+                        
                     </nav>
                 </div>
             )}
