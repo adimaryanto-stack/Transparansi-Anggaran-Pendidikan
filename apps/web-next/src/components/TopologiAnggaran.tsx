@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect, useCallback, useMemo } from "react";
 
 /**
  * KOMPONEN: TopologiAnggaran
@@ -205,7 +205,8 @@ export default function TopologiAnggaran({
 
     const canvasRef = useRef<HTMLDivElement>(null);
     const nodeRefs = useRef<Record<string, HTMLElement>>({});
-    const isDragging = useRef(false);
+    const isDraggingRef = useRef(false);
+    const [isDragging, setIsDragging] = useState(false);
     const lastPos = useRef({ x: 0, y: 0 });
 
     // Sync from external year change
@@ -283,19 +284,23 @@ export default function TopologiAnggaran({
 
     const handleMouseDown = (e: React.MouseEvent) => {
         if ((e.target as HTMLElement).closest('[data-clickable]') || (e.target as HTMLElement).closest('button')) return;
-        isDragging.current = true;
+        isDraggingRef.current = true;
+        setIsDragging(true);
         lastPos.current = { x: e.clientX, y: e.clientY };
     };
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!isDragging.current) return;
+        if (!isDraggingRef.current) return;
         const dx = e.clientX - lastPos.current.x;
         const dy = e.clientY - lastPos.current.y;
         setPan(p => ({ x: p.x + dx, y: p.y + dy }));
         lastPos.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handleMouseUp = () => { isDragging.current = false; };
+    const handleMouseUp = () => {
+        isDraggingRef.current = false;
+        setIsDragging(false);
+    };
 
     const handleWheel = (e: WheelEvent) => {
         e.preventDefault();
@@ -335,21 +340,52 @@ export default function TopologiAnggaran({
         return { x, y: adjustedY };
     };
 
-    const renderEdges = () => {
-        const lines: React.ReactNode[] = [];
+    const [edgePaths, setEdgePaths] = useState<{ d: string; color: string }[]>([]);
+
+    const updateEdges = useCallback(() => {
+        const lines: { d: string; color: string }[] = [];
         const drawLine = (from: string, to: string, color = "#cbd5e1") => {
             const p1 = getPos(from, 'bottom');
             const p2 = getPos(to, 'top');
             if (p1 && p2) {
                 const cp = p1.y + (p2.y - p1.y) / 2;
-                lines.push(<path key={`${from}-${to}`} d={`M ${p1.x} ${p1.y} C ${p1.x} ${cp}, ${p2.x} ${cp}, ${p2.x} ${p2.y}`} fill="none" stroke={color} strokeWidth="1.5" opacity="0.25" />);
+                lines.push({
+                    d: `M ${p1.x} ${p1.y} C ${p1.x} ${cp}, ${p2.x} ${cp}, ${p2.x} ${p2.y}`,
+                    color
+                });
             }
         };
-        if (expanded.pusat) activeYear.peruntukan.forEach((p: any) => drawLine('pusat', p.id, p.color));
+        if (expanded.pusat) {
+            activeYear.peruntukan.forEach((p: any) => drawLine('pusat', p.id, p.color));
+        }
         activeYear.peruntukan.forEach((per: any) => {
-            if (expanded[per.id] && per.ke_provinsi) activeProvinces.forEach(prov => drawLine(per.id, `${per.id}_${prov.id}`, per.color));
+            if (expanded[per.id] && per.ke_provinsi) {
+                activeProvinces.forEach(prov => drawLine(per.id, `${per.id}_${prov.id}`, per.color));
+            }
         });
-        return <svg className="absolute inset-0 pointer-events-none overflow-visible">{lines}</svg>;
+        setEdgePaths(lines);
+    }, [expanded, activeYear, activeProvinces, zoom]);
+
+    // Recalculate edges after layout is committed
+    useLayoutEffect(() => {
+        updateEdges();
+    }, [updateEdges, expanded, expandedOthers, activeYear, activeProvinces, zoom]);
+
+    const renderEdges = () => {
+        return (
+            <svg className="absolute inset-0 pointer-events-none overflow-visible">
+                {edgePaths.map((path, idx) => (
+                    <path
+                        key={idx}
+                        d={path.d}
+                        fill="none"
+                        stroke={path.color}
+                        strokeWidth="1.5"
+                        opacity="0.25"
+                    />
+                ))}
+            </svg>
+        );
     };
 
 
@@ -390,7 +426,7 @@ export default function TopologiAnggaran({
                     style={{ 
                         transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`, 
                         transformOrigin: '0 0', 
-                        transition: isDragging.current ? 'none' : 'transform 0.4s cubic-bezier(0.2, 0, 0, 1)' 
+                        transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.2, 0, 0, 1)' 
                     }} 
                     className="absolute virtual-canvas"
                 >
