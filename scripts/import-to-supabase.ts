@@ -34,11 +34,43 @@ import {
   mockAnomalies
 } from '../lib/data/index';
 
+// Helper to fetch all existing IDs from a table using pagination
+async function fetchAllIds(tableName: string): Promise<Set<string>> {
+  const allIds = new Set<string>();
+  let from = 0;
+  const limit = 1000;
+  let hasMore = true;
+
+  while (hasMore) {
+    const to = from + limit - 1;
+    const { data, error } = await supabase
+      .from(tableName)
+      .select('id')
+      .range(from, to);
+
+    if (error) {
+      throw new Error(`Failed to fetch IDs from ${tableName}: ${error.message}`);
+    }
+
+    if (!data || data.length === 0) {
+      hasMore = false;
+    } else {
+      data.forEach((row: any) => allIds.add(row.id));
+      from += limit;
+      if (data.length < limit) {
+        hasMore = false;
+      }
+    }
+  }
+
+  return allIds;
+}
+
 async function main() {
   console.log('=== STARTING SUPABASE IMPORT SCRIPT ===');
   console.log('Target URL:', supabaseUrl);
   
-  const results: Record<string, number> = {};
+  const results: Record<string, { inserted: number; skipped: number }> = {};
 
   try {
     // 1. Import tahun_anggaran
@@ -50,10 +82,16 @@ async function main() {
       status: t.status,
       created_at: t.created_at
     }));
-    const { error: errTahun } = await supabase.from('tahun_anggaran').upsert(formattedTahun);
-    if (errTahun) throw new Error(`tahun_anggaran: ${errTahun.message}`);
-    results['tahun_anggaran'] = formattedTahun.length;
-    console.log(`   Success: Imported ${formattedTahun.length} rows.`);
+
+    const existingTahunIds = await fetchAllIds('tahun_anggaran');
+    const newTahun = formattedTahun.filter(t => !existingTahunIds.has(t.id));
+
+    if (newTahun.length > 0) {
+      const { error: errTahun } = await supabase.from('tahun_anggaran').insert(newTahun);
+      if (errTahun) throw new Error(`tahun_anggaran: ${errTahun.message}`);
+    }
+    results['tahun_anggaran'] = { inserted: newTahun.length, skipped: formattedTahun.length - newTahun.length };
+    console.log(`   Success: Inserted ${newTahun.length} rows, skipped ${formattedTahun.length - newTahun.length} existing rows.`);
 
     // 2. Import provinsi and alokasi_provinsi
     console.log('2. Importing provinsi & alokasi_provinsi...');
@@ -79,14 +117,25 @@ async function main() {
     });
 
     const provList = Array.from(uniqueProvinces.values());
-    const { error: errProv } = await supabase.from('provinsi').upsert(provList);
-    if (errProv) throw new Error(`provinsi: ${errProv.message}`);
-    results['provinsi'] = provList.length;
 
-    const { error: errAlokasiProv } = await supabase.from('alokasi_provinsi').upsert(formattedAlokasiProv);
-    if (errAlokasiProv) throw new Error(`alokasi_provinsi: ${errAlokasiProv.message}`);
-    results['alokasi_provinsi'] = formattedAlokasiProv.length;
-    console.log(`   Success: Imported ${provList.length} provinces and ${formattedAlokasiProv.length} provincial allocations.`);
+    const existingProvIds = await fetchAllIds('provinsi');
+    const newProv = provList.filter(p => !existingProvIds.has(p.id));
+
+    if (newProv.length > 0) {
+      const { error: errProv } = await supabase.from('provinsi').insert(newProv);
+      if (errProv) throw new Error(`provinsi: ${errProv.message}`);
+    }
+    results['provinsi'] = { inserted: newProv.length, skipped: provList.length - newProv.length };
+
+    const existingAlokasiProvIds = await fetchAllIds('alokasi_provinsi');
+    const newAlokasiProv = formattedAlokasiProv.filter(ap => !existingAlokasiProvIds.has(ap.id));
+
+    if (newAlokasiProv.length > 0) {
+      const { error: errAlokasiProv } = await supabase.from('alokasi_provinsi').insert(newAlokasiProv);
+      if (errAlokasiProv) throw new Error(`alokasi_provinsi: ${errAlokasiProv.message}`);
+    }
+    results['alokasi_provinsi'] = { inserted: newAlokasiProv.length, skipped: formattedAlokasiProv.length - newAlokasiProv.length };
+    console.log(`   Success: Imported provinces (inserted: ${newProv.length}, skipped: ${provList.length - newProv.length}) and provincial allocations (inserted: ${newAlokasiProv.length}, skipped: ${formattedAlokasiProv.length - newAlokasiProv.length}).`);
 
     // 3. Import kabupaten_kota and alokasi_kabupaten_kota
     console.log('3. Importing kabupaten_kota & alokasi_kabupaten_kota...');
@@ -121,21 +170,27 @@ async function main() {
       });
     }
 
+    const existingKabkotaIds = await fetchAllIds('kabupaten_kota');
+    const newKabkota = allKabkota.filter(k => !existingKabkotaIds.has(k.id));
+
     const batchSize = 100;
-    for (let i = 0; i < allKabkota.length; i += batchSize) {
-      const batch = allKabkota.slice(i, i + batchSize);
-      const { error } = await supabase.from('kabupaten_kota').upsert(batch);
+    for (let i = 0; i < newKabkota.length; i += batchSize) {
+      const batch = newKabkota.slice(i, i + batchSize);
+      const { error } = await supabase.from('kabupaten_kota').insert(batch);
       if (error) throw new Error(`kabupaten_kota batch: ${error.message}`);
     }
-    results['kabupaten_kota'] = allKabkota.length;
+    results['kabupaten_kota'] = { inserted: newKabkota.length, skipped: allKabkota.length - newKabkota.length };
 
-    for (let i = 0; i < allAlokasiKabkota.length; i += batchSize) {
-      const batch = allAlokasiKabkota.slice(i, i + batchSize);
-      const { error } = await supabase.from('alokasi_kabupaten_kota').upsert(batch);
+    const existingAlokasiKabkotaIds = await fetchAllIds('alokasi_kabupaten_kota');
+    const newAlokasiKabkota = allAlokasiKabkota.filter(k => !existingAlokasiKabkotaIds.has(k.id));
+
+    for (let i = 0; i < newAlokasiKabkota.length; i += batchSize) {
+      const batch = newAlokasiKabkota.slice(i, i + batchSize);
+      const { error } = await supabase.from('alokasi_kabupaten_kota').insert(batch);
       if (error) throw new Error(`alokasi_kabupaten_kota batch: ${error.message}`);
     }
-    results['alokasi_kabupaten_kota'] = allAlokasiKabkota.length;
-    console.log(`   Success: Imported ${allKabkota.length} districts and ${allAlokasiKabkota.length} district allocations.`);
+    results['alokasi_kabupaten_kota'] = { inserted: newAlokasiKabkota.length, skipped: allAlokasiKabkota.length - newAlokasiKabkota.length };
+    console.log(`   Success: Imported districts (inserted: ${newKabkota.length}, skipped: ${allKabkota.length - newKabkota.length}) and district allocations (inserted: ${newAlokasiKabkota.length}, skipped: ${allAlokasiKabkota.length - newAlokasiKabkota.length}).`);
 
     // 4. Import schools and related sub-tables
     console.log('4. Importing institusi_pendidikan and related data...');
@@ -214,25 +269,44 @@ async function main() {
       }
     });
 
-    const { error: errSchool } = await supabase.from('institusi_pendidikan').upsert(allSchools);
-    if (errSchool) throw new Error(`institusi_pendidikan: ${errSchool.message}`);
-    results['institusi_pendidikan'] = allSchools.length;
+    const existingSchoolIds = await fetchAllIds('institusi_pendidikan');
+    const newSchools = allSchools.filter(s => !existingSchoolIds.has(s.id));
 
-    const { error: errSD } = await supabase.from('sumber_dana_institusi').upsert(allSumberDana);
-    if (errSD) throw new Error(`sumber_dana_institusi: ${errSD.message}`);
-    results['sumber_dana_institusi'] = allSumberDana.length;
+    if (newSchools.length > 0) {
+      const { error: errSchool } = await supabase.from('institusi_pendidikan').insert(newSchools);
+      if (errSchool) throw new Error(`institusi_pendidikan: ${errSchool.message}`);
+    }
+    results['institusi_pendidikan'] = { inserted: newSchools.length, skipped: allSchools.length - newSchools.length };
 
-    const { error: errPB } = await supabase.from('pengeluaran_bulanan_institusi').upsert(allPengeluaranBulanan);
-    if (errPB) throw new Error(`pengeluaran_bulanan_institusi: ${errPB.message}`);
-    results['pengeluaran_bulanan_institusi'] = allPengeluaranBulanan.length;
+    const existingSDIds = await fetchAllIds('sumber_dana_institusi');
+    const newSD = allSumberDana.filter(sd => !existingSDIds.has(sd.id));
 
-    for (let i = 0; i < allRincianItems.length; i += batchSize) {
-      const batch = allRincianItems.slice(i, i + batchSize);
-      const { error } = await supabase.from('rincian_pengeluaran_item').upsert(batch);
+    if (newSD.length > 0) {
+      const { error: errSD } = await supabase.from('sumber_dana_institusi').insert(newSD);
+      if (errSD) throw new Error(`sumber_dana_institusi: ${errSD.message}`);
+    }
+    results['sumber_dana_institusi'] = { inserted: newSD.length, skipped: allSumberDana.length - newSD.length };
+
+    const existingPBIds = await fetchAllIds('pengeluaran_bulanan_institusi');
+    const newPB = allPengeluaranBulanan.filter(pb => !existingPBIds.has(pb.id));
+
+    if (newPB.length > 0) {
+      const { error: errPB } = await supabase.from('pengeluaran_bulanan_institusi').insert(newPB);
+      if (errPB) throw new Error(`pengeluaran_bulanan_institusi: ${errPB.message}`);
+    }
+    results['pengeluaran_bulanan_institusi'] = { inserted: newPB.length, skipped: allPengeluaranBulanan.length - newPB.length };
+
+    const existingRincianIds = await fetchAllIds('rincian_pengeluaran_item');
+    const newRincianItems = allRincianItems.filter(r => !existingRincianIds.has(r.id));
+
+    for (let i = 0; i < newRincianItems.length; i += batchSize) {
+      const batch = newRincianItems.slice(i, i + batchSize);
+      const { error } = await supabase.from('rincian_pengeluaran_item').insert(batch);
       if (error) throw new Error(`rincian_pengeluaran_item batch: ${error.message}`);
     }
-    results['rincian_pengeluaran_item'] = allRincianItems.length;
-    console.log(`   Success: Imported ${allSchools.length} schools, ${allSumberDana.length} sources, ${allPengeluaranBulanan.length} monthly spend records, and ${allRincianItems.length} line items.`);
+    results['rincian_pengeluaran_item'] = { inserted: newRincianItems.length, skipped: allRincianItems.length - newRincianItems.length };
+    
+    console.log(`   Success: Seeded schools (inserted: ${newSchools.length}, skipped: ${allSchools.length - newSchools.length}), sources (inserted: ${newSD.length}, skipped: ${allSumberDana.length - newSD.length}), monthly spend (inserted: ${newPB.length}, skipped: ${allPengeluaranBulanan.length - newPB.length}), and line items (inserted: ${newRincianItems.length}, skipped: ${allRincianItems.length - newRincianItems.length}).`);
 
     // 5. Import users
     console.log('5. Importing users...');
@@ -246,10 +320,16 @@ async function main() {
       is_active: u.is_active,
       created_at: u.created_at
     }));
-    const { error: errUsers } = await supabase.from('users').upsert(formattedUsers);
-    if (errUsers) throw new Error(`users: ${errUsers.message}`);
-    results['users'] = formattedUsers.length;
-    console.log(`   Success: Imported ${formattedUsers.length} users.`);
+
+    const existingUsersIds = await fetchAllIds('users');
+    const newUsers = formattedUsers.filter(u => !existingUsersIds.has(u.id));
+
+    if (newUsers.length > 0) {
+      const { error: errUsers } = await supabase.from('users').insert(newUsers);
+      if (errUsers) throw new Error(`users: ${errUsers.message}`);
+    }
+    results['users'] = { inserted: newUsers.length, skipped: formattedUsers.length - newUsers.length };
+    console.log(`   Success: Imported users (inserted: ${newUsers.length}, skipped: ${formattedUsers.length - newUsers.length}).`);
 
     // 6. Import audit anomalies
     console.log('6. Importing audit anomalies...');
@@ -273,13 +353,22 @@ async function main() {
       audit_who: a.audit_who || null,
       audit_how: a.audit_how || null
     }));
-    const { error: errAnomalies } = await supabase.from('audit_anomaly').upsert(formattedAnomalies);
-    if (errAnomalies) throw new Error(`audit_anomaly: ${errAnomalies.message}`);
-    results['audit_anomaly'] = formattedAnomalies.length;
-    console.log(`   Success: Imported ${formattedAnomalies.length} audit anomalies.`);
+
+    const existingAnomaliesIds = await fetchAllIds('audit_anomaly');
+    const newAnomalies = formattedAnomalies.filter(a => !existingAnomaliesIds.has(a.id));
+
+    if (newAnomalies.length > 0) {
+      const { error: errAnomalies } = await supabase.from('audit_anomaly').insert(newAnomalies);
+      if (errAnomalies) throw new Error(`audit_anomaly: ${errAnomalies.message}`);
+    }
+    results['audit_anomaly'] = { inserted: newAnomalies.length, skipped: formattedAnomalies.length - newAnomalies.length };
+    console.log(`   Success: Imported audit anomalies (inserted: ${newAnomalies.length}, skipped: ${formattedAnomalies.length - newAnomalies.length}).`);
 
     console.log('\n=== IMPORT COMPLETED SUCCESSFULLY ===');
-    console.log('Summary of inserted rows:', results);
+    console.log('Summary of sync operations:');
+    Object.entries(results).forEach(([table, counts]) => {
+      console.log(` - Table [${table}]: inserted ${counts.inserted} rows, skipped ${counts.skipped} existing rows.`);
+    });
 
   } catch (error: any) {
     console.error('\n=== IMPORT FAILED ===');

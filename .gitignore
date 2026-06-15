@@ -30,3 +30,5 @@ _test_db
 ocr_errors.log
 ocr_debug.log
 .vercel
+tsconfig-temp.json
+scripts/test_school_data.mjs

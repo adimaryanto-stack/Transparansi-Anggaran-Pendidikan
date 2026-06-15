@@ -7,12 +7,6 @@ export function cn(...inputs: ClassValue[]) {
 
 // Formatting helper for currency
 export const formatIDR = (amount: number) => {
-    if (amount >= 1000000000000) {
-        return `Rp ${(amount / 1000000000000).toLocaleString('id-ID', { maximumFractionDigits: 1 })} T`;
-    }
-    if (amount >= 1000000000) {
-        return `Rp ${(amount / 1000000000).toLocaleString('id-ID', { maximumFractionDigits: 1 })} M`;
-    }
     return new Intl.NumberFormat("id-ID", {
         style: "currency",
         currency: "IDR",
