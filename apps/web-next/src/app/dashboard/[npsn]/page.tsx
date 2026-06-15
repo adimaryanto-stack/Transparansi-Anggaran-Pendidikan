@@ -22,6 +22,16 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
 
+const getCategoryFromName = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('gaji') || n.includes('honor') || n.includes('tunjangan')) return 'Gaji Honorer';
+    if (n.includes('buku') || n.includes('perpus') || n.includes('pustaka')) return 'Buku & Perpus';
+    if (n.includes('siswa') || n.includes('lomba') || n.includes('kegiatan') || n.includes('ekskul')) return 'Kegiatan Siswa';
+    if (n.includes('sarana') || n.includes('gedung') || n.includes('pemeliharaan') || n.includes('media') || n.includes('peralatan') || n.includes('rehab')) return 'Sarana Prasarana';
+    if (n.includes('atk') || n.includes('tulis') || n.includes('daya') || n.includes('internet') || n.includes('listrik') || n.includes('operasional')) return 'Operasional';
+    return 'Lainnya';
+};
+
 export default function SchoolDashboardPage() {
     const params = useParams();
     const npsn = params.npsn as string;
@@ -60,45 +70,140 @@ export default function SchoolDashboardPage() {
                     throw supabaseError;
                 }
 
+                let isLegacy = false;
+                let legacySchoolData = null;
+
                 if (!school) {
-                    // Auto-create school profile
-                    const nameParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('name') : null;
-                    const defaultName = nameParam || `Institusi Pendidikan (NPSN: ${npsn})`;
+                    // Try to fetch from legacy table 'institusi_pendidikan'
+                    const { data: instData } = await supabase
+                        .from('institusi_pendidikan')
+                        .select('*')
+                        .eq('npsn', npsn)
+                        .maybeSingle();
 
-                    const { data: newSchool, error: insertError } = await supabase
-                        .from('schools')
-                        .insert([
-                            {
-                                npsn: npsn,
-                                name: defaultName,
-                                location: 'Indonesia',
-                                accreditation: 'B'
-                            }
-                        ])
-                        .select()
-                        .single();
+                    if (instData) {
+                        isLegacy = true;
+                        legacySchoolData = instData;
+                        school = {
+                            id: instData.id,
+                            name: instData.nama_institusi,
+                            npsn: instData.npsn,
+                            accreditation: 'B',
+                            location: instData.alamat || `${instData.kabupaten_kota_nama}, ${instData.provinsi_nama}`
+                        };
+                    } else {
+                        // Auto-create school profile if completely missing
+                        const nameParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('name') : null;
+                        const defaultName = nameParam || `Institusi Pendidikan (NPSN: ${npsn})`;
 
-                    if (insertError) throw insertError;
-                    school = newSchool;
+                        const { data: newSchool, error: insertError } = await supabase
+                            .from('schools')
+                            .insert([
+                                {
+                                    npsn: npsn,
+                                    name: defaultName,
+                                    location: 'Indonesia',
+                                    accreditation: 'B'
+                                }
+                            ])
+                            .select()
+                            .single();
+
+                        if (insertError) throw insertError;
+                        school = newSchool;
+                    }
                 }
 
-                // Fetch transactions separately for better control over sorting
-                const { data: transactionsData } = await supabase
-                    .from('transactions')
-                    .select('*, transaction_items(*)')
-                    .eq('school_id', school.id)
-                    .order('date', { ascending: false })
-                    .order('created_at', { ascending: false });
+                let transactions: any[] = [];
+                let incomingFunds: any[] = [];
 
-                // Fetch incoming funds separately for better control over sorting
-                const { data: incomingFundsData } = await supabase
-                    .from('incoming_funds')
-                    .select('id, source, amount, received_date, reference_number')
-                    .eq('school_id', school.id)
-                    .order('received_date', { ascending: false });
+                if (!isLegacy) {
+                    // Fetch transactions separately for better control over sorting
+                    const { data: transactionsData } = await supabase
+                        .from('transactions')
+                        .select('*, transaction_items(*)')
+                        .eq('school_id', school.id)
+                        .order('date', { ascending: false })
+                        .order('created_at', { ascending: false });
 
-                const transactions = transactionsData || [];
-                const incomingFunds = incomingFundsData || [];
+                    // Fetch incoming funds separately for better control over sorting
+                    const { data: incomingFundsData } = await supabase
+                        .from('incoming_funds')
+                        .select('id, source, amount, received_date, reference_number')
+                        .eq('school_id', school.id)
+                        .order('received_date', { ascending: false });
+
+                    transactions = transactionsData || [];
+                    incomingFunds = incomingFundsData || [];
+
+                    // If they are empty, double check if this school has data in the legacy tables!
+                    if (transactions.length === 0 && incomingFunds.length === 0) {
+                        const { data: instData } = await supabase
+                            .from('institusi_pendidikan')
+                            .select('*')
+                            .eq('npsn', npsn)
+                            .maybeSingle();
+
+                        if (instData) {
+                            isLegacy = true;
+                            legacySchoolData = instData;
+                        }
+                    }
+                }
+
+                if (isLegacy && legacySchoolData) {
+                    // Fetch legacy source of funds
+                    const { data: sourcesData } = await supabase
+                        .from('sumber_dana_institusi')
+                        .select('*')
+                        .eq('institusi_id', legacySchoolData.id);
+
+                    // Fetch legacy items
+                    const { data: itemsData } = await supabase
+                        .from('rincian_pengeluaran_item')
+                        .select('*')
+                        .eq('institusi_id', legacySchoolData.id)
+                        .order('nomor_bulan', { ascending: false })
+                        .order('nomor', { ascending: false });
+
+                    // Map legacy source of funds to incoming_funds format
+                    incomingFunds = (sourcesData || []).map((sd: any) => ({
+                        id: sd.id,
+                        source: sd.nama_sumber,
+                        amount: Number(sd.nominal || 0),
+                        received_date: `${sd.tahun_anggaran}-01-15T00:00:00Z`,
+                        reference_number: sd.id.substring(0, 12).toUpperCase()
+                    }));
+
+                    // Map legacy items to transactions format
+                    transactions = (itemsData || []).map((item: any) => {
+                        const cat = getCategoryFromName(item.nama_produk_jasa);
+                        const monthStr = String(item.nomor_bulan).padStart(2, '0');
+                        const dateStr = `2026-${monthStr}-15`;
+                        
+                        return {
+                            id: item.id,
+                            school_id: school.id,
+                            date: dateStr,
+                            category: cat,
+                            description: item.nama_produk_jasa,
+                            amount: Number(item.jumlah || 0),
+                            tax_amount: 0,
+                            shipping_cost: 0,
+                            fund_source: 'BOS',
+                            transaction_items: [
+                                {
+                                    id: `item-${item.id}`,
+                                    transaction_id: item.id,
+                                    item_name: item.nama_produk_jasa,
+                                    unit_price: Number(item.harga_satuan || 0),
+                                    quantity: Number(item.qty || 1),
+                                    unit: 'pcs'
+                                }
+                            ]
+                        };
+                    });
+                }
 
                 // --- Compute DYNAMIC Totals ---
                 const totalSpent = transactions.reduce((sum, trx) => sum + Number(trx.amount || 0), 0);
