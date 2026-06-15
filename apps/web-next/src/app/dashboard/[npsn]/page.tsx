@@ -181,14 +181,18 @@ export default function SchoolDashboardPage() {
                         const monthStr = String(item.nomor_bulan).padStart(2, '0');
                         const dateStr = `2026-${monthStr}-15`;
                         
+                        const subtotal = Number(item.jumlah || 0);
+                        const taxAmount = Math.round(subtotal * 0.11);
+                        const totalAmount = subtotal + taxAmount;
+                        
                         return {
                             id: item.id,
                             school_id: school.id,
                             date: dateStr,
                             category: cat,
                             description: item.nama_produk_jasa,
-                            amount: Number(item.jumlah || 0),
-                            tax_amount: 0,
+                            amount: totalAmount,
+                            tax_amount: taxAmount,
                             shipping_cost: 0,
                             fund_source: 'BOS',
                             transaction_items: [
