@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { formatIDR } from "@/lib/utils";
+import Link from 'next/link';
 
 export default function ForecastBoard({ npsn, transactions = [] }: { npsn: string, transactions?: any[] }) {
     const [anomalies, setAnomalies] = useState<any[]>([]);
@@ -70,9 +71,12 @@ export default function ForecastBoard({ npsn, transactions = [] }: { npsn: strin
                                     <p className={`text-xl font-black ${anomali.severity === 'critical' ? 'text-red-600' : 'text-orange-600'}`}>
                                         {formatIDR(anomali.amount)}
                                     </p>
-                                    <button className="mt-3 text-xs font-bold text-slate-500 hover:text-slate-800 underline">
+                                    <Link 
+                                        href={`/reporting?description=${encodeURIComponent(anomali.description)}&amount=${anomali.amount}&category=${encodeURIComponent(anomali.category)}&reason=${encodeURIComponent(anomali.reason)}&date=${anomali.date}&npsn=${npsn}`}
+                                        className="mt-3 inline-block text-xs font-bold text-slate-500 hover:text-slate-800 underline"
+                                    >
                                         Laporkan Transaksi
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

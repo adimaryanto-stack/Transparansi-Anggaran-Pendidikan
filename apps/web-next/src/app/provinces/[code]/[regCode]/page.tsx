@@ -167,7 +167,7 @@ export default function RegencyDetailPage() {
                                         ))}
                                         {filteredSchools.length === 0 && (
                                             <div className="px-4 py-4 text-center text-sm text-slate-500">
-                                                Tidak ada sekolah yang cocok dengan "{searchQuery}".
+                                                Tidak ada sekolah yang cocok dengan &quot;{searchQuery}&quot;.
                                             </div>
                                         )}
                                         {filteredSchools.length > 10 && (

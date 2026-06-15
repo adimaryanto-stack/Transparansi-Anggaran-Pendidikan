@@ -1,11 +1,12 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import SharedNavbar from '@/components/SharedNavbar';
 
-export default function SmartReportingPage() {
+function ReportingForm() {
     const [reporterName, setReporterName] = useState('');
     const [whatsappNumber, setWhatsappNumber] = useState('');
     const [summary5W1H, setSummary5W1H] = useState('');
@@ -15,6 +16,32 @@ export default function SmartReportingPage() {
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const desc = searchParams.get('description');
+        const amt = searchParams.get('amount');
+        const reason = searchParams.get('reason');
+        const date = searchParams.get('date');
+        const category = searchParams.get('category');
+        const npsn = searchParams.get('npsn');
+
+        if (desc || amt || reason || date || category || npsn) {
+            if (desc) {
+                const w5h = `What: Dugaan penyalahgunaan anggaran terkait "${desc}"\nWhere: NPSN ${npsn || '-'}\nWhen: ${date || '-'}\nWho: Pihak Pengelola Sekolah\nWhy: ${reason || 'Anomali terdeteksi oleh sistem'}`;
+                setSummary5W1H(w5h);
+
+                const explanation = `Ditemukan kejanggalan dalam alokasi dana untuk transaksi: "${desc}".\nKategori: ${category || '-'}.\nAnalisis AI mendeteksi: "${reason || 'Nominal mencurigakan'}".`;
+                setFullExplanation(explanation);
+            }
+            if (amt) {
+                // If amount is a number string like 25000000, keep it as raw number string.
+                // We should format or just set it
+                setEstimatedAmount(amt);
+            }
+        }
+    }, [searchParams]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -83,8 +110,6 @@ export default function SmartReportingPage() {
 
     return (
         <div className="relative flex min-h-screen flex-col bg-slate-50">
-            <SharedNavbar />
-
             <main className="flex flex-1 justify-center py-10 px-6">
                 <div className="flex flex-col w-full max-w-[800px]">
                     {/* Hero Section */}
@@ -288,3 +313,20 @@ export default function SmartReportingPage() {
     );
 }
 
+export default function SmartReportingPage() {
+    return (
+        <div className="relative flex min-h-screen flex-col bg-slate-50">
+            <SharedNavbar />
+            <Suspense fallback={
+                <div className="flex-1 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                        <p className="text-slate-500 font-medium">Memuat Formulir Pelaporan...</p>
+                    </div>
+                </div>
+            }>
+                <ReportingForm />
+            </Suspense>
+        </div>
+    );
+}

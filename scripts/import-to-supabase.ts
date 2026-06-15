@@ -32,7 +32,7 @@ import {
   getRincianPengeluaranBulanan,
   usersData,
   mockAnomalies
-} from '../lib/data';
+} from '../lib/data/index';
 
 async function main() {
   console.log('=== STARTING SUPABASE IMPORT SCRIPT ===');
