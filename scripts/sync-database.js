@@ -18,7 +18,7 @@ if (fs.existsSync(envPath)) {
 }
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 if (!supabaseUrl) {
     console.error('Error: NEXT_PUBLIC_SUPABASE_URL is missing from .env.local');
@@ -26,20 +26,12 @@ if (!supabaseUrl) {
 }
 
 if (!serviceRoleKey) {
-    console.error('\n======================================================================');
-    console.error('⚠️  SUPABASE_SERVICE_ROLE_KEY IS MISSING IN apps/web-next/.env.local');
-    console.error('======================================================================');
-    console.error('Untuk melakukan sinkronisasi database, silakan ikuti langkah berikut:');
-    console.error('1. Buka Supabase Dashboard proyek Anda.');
-    console.error('2. Masuk ke Project Settings -> API.');
-    console.error('3. Salin kunci "service_role" (secret key yang membypass RLS).');
-    console.error('4. Tambahkan kunci tersebut ke file:');
-    console.error('   d:\\DaVinci\\Web Development\\transparansi-anggaran\\apps\\web-next\\.env.local');
-    console.error('   seperti ini:');
-    console.error('   SUPABASE_SERVICE_ROLE_KEY=your_copied_service_role_key');
-    console.error('5. Jalankan kembali perintah sinkronisasi ini.');
-    console.error('======================================================================\n');
+    console.error('Error: SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY is missing from .env.local');
     process.exit(1);
+}
+
+if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    console.log('⚠️  SUPABASE_SERVICE_ROLE_KEY is missing. Falling back to NEXT_PUBLIC_SUPABASE_ANON_KEY...');
 }
 
 const supabase = createClient(supabaseUrl, serviceRoleKey);
@@ -117,10 +109,11 @@ async function sync() {
         }
 
         // 2. Bersihkan tabel modern untuk persiapan sinkronisasi bersih
-        console.log('2. Mengosongkan tabel modern (incoming_funds, transactions, transaction_items)...');
+        console.log('2. Mengosongkan tabel modern (incoming_funds, transactions, transaction_items, audit_logs)...');
         await supabase.from('transaction_items').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         await supabase.from('transactions').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         await supabase.from('incoming_funds').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+        await supabase.from('audit_logs').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         console.log('   Tabel modern berhasil dikosongkan.');
 
         // 3. Ambil data sekolah modern dan sekolah legacy
@@ -229,6 +222,38 @@ async function sync() {
             itemsInserted += batch.length;
         }
         console.log(`   Berhasil memigrasikan ${itemsInserted} rincian item transaksi.`);
+
+        // 6. Migrasi audit_anomaly -> audit_logs
+        console.log('6. Memigrasikan temuan audit...');
+        const legacyAnomalies = await fetchAll('audit_anomaly');
+        const auditLogsToInsert = legacyAnomalies
+            .map(anomaly => {
+                const npsn = legacyIdToNpsn[anomaly.institusi_id];
+                const schoolId = npsn ? npsnToUuid[npsn] : null;
+                
+                let mappedStatus = 'OPEN';
+                if (anomaly.status === 'INVESTIGASI') mappedStatus = 'INVESTIGATING';
+                if (anomaly.status === 'SELESAI') mappedStatus = 'RESOLVED';
+
+                return {
+                    school_id: schoolId || null,
+                    title: anomaly.tipe_anomali,
+                    description: anomaly.keterangan,
+                    severity: anomaly.tingkat_keparahan || 'MEDIUM',
+                    type: 'ANOMALY',
+                    status: mappedStatus,
+                    detected_at: anomaly.tanggal_ditemukan ? `${anomaly.tanggal_ditemukan}T00:00:00Z` : new Date().toISOString()
+                };
+            });
+
+        let auditInserted = 0;
+        for (let i = 0; i < auditLogsToInsert.length; i += batchSize) {
+            const batch = auditLogsToInsert.slice(i, i + batchSize);
+            const { error } = await supabase.from('audit_logs').insert(batch);
+            if (error) throw new Error(`Audit logs batch error: ${error.message}`);
+            auditInserted += batch.length;
+        }
+        console.log(`   Berhasil memigrasikan ${auditInserted} temuan audit.`);
 
         console.log('\n=== SINKRONISASI SELESAI DENGAN SUKSES! ===\n');
 

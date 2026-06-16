@@ -54,16 +54,18 @@ export async function GET() {
             results.dummyDeleted = false;
         }
 
-        // 2. Clear existing modern incoming_funds, transactions, and transaction_items to avoid duplication.
-        console.log('Clearing modern incoming_funds, transactions, transaction_items...');
+        // 2. Clear existing modern incoming_funds, transactions, transaction_items, and audit_logs to avoid duplication.
+        console.log('Clearing modern incoming_funds, transactions, transaction_items, audit_logs...');
         const { error: errClearItems } = await supabase.from('transaction_items').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         const { error: errClearTxs } = await supabase.from('transactions').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         const { error: errClearFunds } = await supabase.from('incoming_funds').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+        const { error: errClearAudit } = await supabase.from('audit_logs').delete().neq('id', '00000000-0000-0000-0000-000000000000');
 
         results.clearErrors = {
             transactionItems: errClearItems?.message || null,
             transactions: errClearTxs?.message || null,
-            incomingFunds: errClearFunds?.message || null
+            incomingFunds: errClearFunds?.message || null,
+            auditLogs: errClearAudit?.message || null
         };
 
         // 3. Fetch all schools and build npsn -> id map
@@ -230,6 +232,51 @@ export async function GET() {
             insertedItemsCount += batch.length;
         }
         results.insertedItemsCount = insertedItemsCount;
+
+        // 7. Migrate audit_anomaly -> audit_logs
+        console.log('Migrating audit anomalies...');
+        let allLegacyAnomalies: any[] = [];
+        from = 0;
+        hasMore = true;
+        while (hasMore) {
+            const { data, error } = await supabase.from('audit_anomaly').select('*').range(from, from + limit - 1);
+            if (error) throw new Error(`Legacy anomalies fetch error: ${error.message}`);
+            if (!data || data.length === 0) hasMore = false;
+            else {
+                allLegacyAnomalies = [...allLegacyAnomalies, ...data];
+                from += limit;
+                if (data.length < limit) hasMore = false;
+            }
+        }
+
+        const auditLogsToInsert = allLegacyAnomalies
+            .map(anomaly => {
+                const npsn = legacyIdToNpsn[anomaly.institusi_id];
+                const schoolId = npsn ? npsnToUuid[npsn] : null;
+                
+                let mappedStatus = 'OPEN';
+                if (anomaly.status === 'INVESTIGASI') mappedStatus = 'INVESTIGATING';
+                if (anomaly.status === 'SELESAI') mappedStatus = 'RESOLVED';
+
+                return {
+                    school_id: schoolId || null,
+                    title: anomaly.tipe_anomali,
+                    description: anomaly.keterangan,
+                    severity: anomaly.tingkat_keparahan || 'MEDIUM',
+                    type: 'ANOMALY',
+                    status: mappedStatus,
+                    detected_at: anomaly.tanggal_ditemukan ? `${anomaly.tanggal_ditemukan}T00:00:00Z` : new Date().toISOString()
+                };
+            });
+
+        let insertedAuditCount = 0;
+        for (let i = 0; i < auditLogsToInsert.length; i += batchSize) {
+            const batch = auditLogsToInsert.slice(i, i + batchSize);
+            const { error } = await supabase.from('audit_logs').insert(batch);
+            if (error) throw new Error(`Audit logs insert failed at batch ${i}: ${error.message}`);
+            insertedAuditCount += batch.length;
+        }
+        results.insertedAuditCount = insertedAuditCount;
 
         console.log('=== SYNC COMPLETED SUCCESSFULLY ===');
         return NextResponse.json({

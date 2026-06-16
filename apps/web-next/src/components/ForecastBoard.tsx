@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export default function ForecastBoard({ npsn, transactions = [] }: { npsn: string, transactions?: any[] }) {
     const [anomalies, setAnomalies] = useState<any[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         // Simulasi AI mendeteksi anomali dari data transaksi
@@ -25,12 +26,18 @@ export default function ForecastBoard({ npsn, transactions = [] }: { npsn: strin
             // (Hanya menampilkan anomali jika transaksi nyata melebihi aturan)
 
             setAnomalies(detected);
+            setCurrentPage(1); // Reset to first page when data changes
         };
 
         detectAnomalies();
     }, [npsn, transactions]);
 
     if (anomalies.length === 0) return null;
+
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(anomalies.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedAnomalies = anomalies.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <div className="bg-white rounded-xl shadow-sm border border-red-200 overflow-hidden">
@@ -50,7 +57,7 @@ export default function ForecastBoard({ npsn, transactions = [] }: { npsn: strin
                 </p>
 
                 <div className="space-y-4">
-                    {anomalies.map((anomali, i) => (
+                    {paginatedAnomalies.map((anomali, i) => (
                         <div key={i} className={`p-4 rounded-xl border ${anomali.severity === 'critical' ? 'bg-red-50/50 border-red-200' : 'bg-orange-50/50 border-orange-200'}`}>
                             <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                                 <div>
@@ -82,6 +89,31 @@ export default function ForecastBoard({ npsn, transactions = [] }: { npsn: strin
                         </div>
                     ))}
                 </div>
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-red-100">
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                            disabled={currentPage === 1}
+                            className="px-4 py-2 text-xs font-bold rounded-lg border border-red-200 bg-white text-red-700 hover:bg-red-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Sebelumnya
+                        </button>
+                        <span className="text-xs font-semibold text-red-800">
+                            Halaman {currentPage} dari {totalPages}
+                        </span>
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                            disabled={currentPage === totalPages}
+                            className="px-4 py-2 text-xs font-bold rounded-lg border border-red-200 bg-white text-red-700 hover:bg-red-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                            Berikutnya
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

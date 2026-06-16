@@ -29,17 +29,40 @@ export default function AuditPage() {
 
     useEffect(() => {
         const fetch = async () => {
-            let query = supabase
-                .from('audit_logs')
-                .select('*, schools(name, npsn)')
-                .order('detected_at', { ascending: false });
+            // Fetch from audit_anomaly table which is fully populated in Supabase
+            const query = supabase
+                .from('audit_anomaly')
+                .select('*, institusi_pendidikan(nama_institusi, npsn)')
+                .order('tanggal_ditemukan', { ascending: false });
 
             const { data, error } = await query;
             if (error) {
                 console.error("Audit fetch error", error);
                 setErrorMsg(error.message);
             }
-            setLogs(data || []);
+
+            // Map audit_anomaly schema to the format expected by the UI
+            const mappedLogs = (data || []).map((item: any) => {
+                let mappedStatus = 'OPEN';
+                if (item.status === 'INVESTIGASI' || item.status === 'INVESTIGATING') mappedStatus = 'INVESTIGATING';
+                if (item.status === 'SELESAI' || item.status === 'RESOLVED') mappedStatus = 'RESOLVED';
+
+                return {
+                    id: item.id,
+                    title: item.tipe_anomali || item.title,
+                    description: item.keterangan || item.description,
+                    severity: item.tingkat_keparahan || item.severity || 'MEDIUM',
+                    type: 'ANOMALY',
+                    status: mappedStatus,
+                    detected_at: item.tanggal_ditemukan ? `${item.tanggal_ditemukan}T00:00:00Z` : item.detected_at || new Date().toISOString(),
+                    schools: item.institusi_pendidikan ? {
+                        name: item.institusi_pendidikan.nama_institusi,
+                        npsn: item.institusi_pendidikan.npsn
+                    } : null
+                };
+            });
+
+            setLogs(mappedLogs);
             setLoading(false);
         };
         fetch();

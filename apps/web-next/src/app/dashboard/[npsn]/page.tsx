@@ -633,21 +633,46 @@ export default function SchoolDashboardPage() {
                             </div>
                         </div>
 
-                        {/* Summary Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="bg-white dark:bg-slate-900 rounded-xl p-8 border-l-4 border-emerald-500 shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
-                                <p className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-xs mb-2">Total Dana Diterima</p>
-                                <p className="text-3xl font-bold text-slate-900 dark:text-white">{formatIDR(schoolData.budget.totalReceived)}</p>
+                        {/* Summary Table (Structured like Riwayat Dana Masuk) */}
+                        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
+                            <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-emerald-50 dark:bg-emerald-950/20">
+                                <div className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400">payments</span>
+                                    <h3 className="text-xl font-bold text-emerald-900 dark:text-emerald-300">Ringkasan Anggaran Sekolah</h3>
+                                </div>
                             </div>
-                            <div className="bg-white dark:bg-slate-900 rounded-xl p-8 border-l-4 border-amber-500 shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
-                                <p className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-xs mb-2">Total Digunakan</p>
-                                <p className="text-3xl font-bold text-slate-900 dark:text-white">{formatIDR(schoolData.budget.totalSpent)}</p>
-                            </div>
-                            <div className="bg-white dark:bg-slate-900 rounded-xl p-8 border-l-4 border-primary shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
-                                <p className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-xs mb-2">Sisa Dana Kas</p>
-                                <p className="text-3xl font-bold text-slate-900 dark:text-white">{formatIDR(schoolData.budget.remaining)}</p>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left">
+                                    <thead className="bg-emerald-100/50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-400 uppercase text-xs font-bold">
+                                        <tr>
+                                            <th className="px-6 py-4">Kategori Anggaran</th>
+                                            <th className="px-6 py-4 text-right">Nominal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                        <tr className="hover:bg-emerald-50/10 dark:hover:bg-emerald-950/10 transition-colors">
+                                            <td className="px-6 py-4 font-semibold text-slate-700 dark:text-slate-300">Total Dana Diterima</td>
+                                            <td className="px-6 py-4 text-right font-black text-emerald-600 dark:text-emerald-400 text-lg">
+                                                {formatIDR(schoolData.budget.totalReceived)}
+                                            </td>
+                                        </tr>
+                                        <tr className="hover:bg-emerald-50/10 dark:hover:bg-emerald-950/10 transition-colors">
+                                            <td className="px-6 py-4 font-semibold text-slate-700 dark:text-slate-300">Total Digunakan</td>
+                                            <td className="px-6 py-4 text-right font-black text-amber-600 dark:text-amber-400 text-lg">
+                                                {formatIDR(schoolData.budget.totalSpent)}
+                                            </td>
+                                        </tr>
+                                        <tr className="hover:bg-emerald-50/10 dark:hover:bg-emerald-950/10 bg-slate-50/30 dark:bg-slate-800/10 transition-colors">
+                                            <td className="px-6 py-4 font-bold text-slate-800 dark:text-slate-200">Sisa Dana Kas</td>
+                                            <td className="px-6 py-4 text-right font-black text-primary dark:text-primary-400 text-xl">
+                                                {formatIDR(schoolData.budget.remaining)}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+
 
                         {/* Charts */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
