@@ -54,6 +54,39 @@ export default function SchoolDashboardPage() {
     // Receipt Modal State
     const [selectedTransaction, setSelectedTransaction] = useState<any | null>(null);
 
+    // Year selection states
+    const [selectedYear, setSelectedYear] = useState<number>(2026);
+    const [availableYears, setAvailableYears] = useState<number[]>([2026]);
+    const [activeTab, setActiveTab] = useState<'transactions' | 'anomalies'>('transactions');
+
+    // Fetch available years from 'tahun_anggaran'
+    useEffect(() => {
+        const fetchYears = async () => {
+            try {
+                const { data, error: yearsError } = await supabase
+                    .from('tahun_anggaran')
+                    .select('tahun')
+                    .order('tahun', { ascending: false });
+
+                if (!yearsError && data) {
+                    const yearsList = data.map((d: any) => d.tahun);
+                    if (yearsList.length > 0) {
+                        setAvailableYears(yearsList);
+                        // Default to 2026 if present, otherwise default to latest year
+                        if (yearsList.includes(2026)) {
+                            setSelectedYear(2026);
+                        } else {
+                            setSelectedYear(yearsList[0]);
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error("Error fetching years:", err);
+            }
+        };
+        fetchYears();
+    }, [npsn]);
+
     useEffect(() => {
         const fetchSchoolFromSupabase = async () => {
             try {
@@ -118,19 +151,23 @@ export default function SchoolDashboardPage() {
                 let incomingFunds: any[] = [];
 
                 if (!isLegacy) {
-                    // Fetch transactions separately for better control over sorting
+                    // Fetch transactions separately filtered by selected year
                     const { data: transactionsData } = await supabase
                         .from('transactions')
                         .select('*, transaction_items(*)')
                         .eq('school_id', school.id)
+                        .gte('date', `${selectedYear}-01-01`)
+                        .lte('date', `${selectedYear}-12-31`)
                         .order('date', { ascending: false })
                         .order('created_at', { ascending: false });
 
-                    // Fetch incoming funds separately for better control over sorting
+                    // Fetch incoming funds separately filtered by selected year
                     const { data: incomingFundsData } = await supabase
                         .from('incoming_funds')
                         .select('id, source, amount, received_date, reference_number')
                         .eq('school_id', school.id)
+                        .gte('received_date', `${selectedYear}-01-01`)
+                        .lte('received_date', `${selectedYear}-12-31`)
                         .order('received_date', { ascending: false });
 
                     transactions = transactionsData || [];
@@ -152,11 +189,12 @@ export default function SchoolDashboardPage() {
                 }
 
                 if (isLegacy && legacySchoolData) {
-                    // Fetch legacy source of funds
+                    // Fetch legacy source of funds filtered by selected year
                     const { data: sourcesData } = await supabase
                         .from('sumber_dana_institusi')
                         .select('*')
-                        .eq('institusi_id', legacySchoolData.id);
+                        .eq('institusi_id', legacySchoolData.id)
+                        .eq('tahun_anggaran', String(selectedYear));
 
                     // Fetch legacy items
                     const { data: itemsData } = await supabase
@@ -175,38 +213,40 @@ export default function SchoolDashboardPage() {
                         reference_number: sd.id.substring(0, 12).toUpperCase()
                     }));
 
-                    // Map legacy items to transactions format
-                    transactions = (itemsData || []).map((item: any) => {
-                        const cat = getCategoryFromName(item.nama_produk_jasa);
-                        const monthStr = String(item.nomor_bulan).padStart(2, '0');
-                        const dateStr = `2026-${monthStr}-15`;
-                        
-                        const subtotal = Number(item.jumlah || 0);
-                        const taxAmount = Math.round(subtotal * 0.11);
-                        const totalAmount = subtotal + taxAmount;
-                        
-                        return {
-                            id: item.id,
-                            school_id: school.id,
-                            date: dateStr,
-                            category: cat,
-                            description: item.nama_produk_jasa,
-                            amount: totalAmount,
-                            tax_amount: taxAmount,
-                            shipping_cost: 0,
-                            fund_source: 'BOS',
-                            transaction_items: [
-                                {
-                                    id: `item-${item.id}`,
-                                    transaction_id: item.id,
-                                    item_name: item.nama_produk_jasa,
-                                    unit_price: Number(item.harga_satuan || 0),
-                                    quantity: Number(item.qty || 1),
-                                    unit: 'pcs'
-                                }
-                            ]
-                        };
-                    });
+                    // Map legacy items to transactions format only if we have sources for that year
+                    transactions = sourcesData && sourcesData.length > 0
+                        ? (itemsData || []).map((item: any) => {
+                            const cat = getCategoryFromName(item.nama_produk_jasa);
+                            const monthStr = String(item.nomor_bulan).padStart(2, '0');
+                            const dateStr = `${selectedYear}-${monthStr}-15`;
+                            
+                            const subtotal = Number(item.jumlah || 0);
+                            const taxAmount = Math.round(subtotal * 0.11);
+                            const totalAmount = subtotal + taxAmount;
+                            
+                            return {
+                                id: item.id,
+                                school_id: school.id,
+                                date: dateStr,
+                                category: cat,
+                                description: item.nama_produk_jasa,
+                                amount: totalAmount,
+                                tax_amount: taxAmount,
+                                shipping_cost: 0,
+                                fund_source: 'BOS',
+                                transaction_items: [
+                                    {
+                                        id: `item-${item.id}`,
+                                        transaction_id: item.id,
+                                        item_name: item.nama_produk_jasa,
+                                        unit_price: Number(item.harga_satuan || 0),
+                                        quantity: Number(item.qty || 1),
+                                        unit: 'pcs'
+                                    }
+                                ]
+                            };
+                        })
+                        : [];
                 }
 
                 // --- Compute DYNAMIC Totals ---
@@ -318,7 +358,7 @@ export default function SchoolDashboardPage() {
         if (npsn) {
             fetchSchoolFromSupabase();
         }
-    }, [npsn]);
+    }, [npsn, selectedYear]);
 
     const handleLike = async () => {
         if (hasLiked || isLiking) return;
@@ -633,6 +673,33 @@ export default function SchoolDashboardPage() {
                             </div>
                         </div>
 
+                        {/* Pilihan Tahun Anggaran */}
+                        <div className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div className="flex items-center gap-2.5">
+                                <span className="material-symbols-outlined text-primary text-[24px]">calendar_today</span>
+                                <div>
+                                    <h3 className="font-bold text-slate-800 dark:text-white text-base">Tahun Anggaran</h3>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">Pilih tahun anggaran untuk melihat laporan keuangan sekolah</p>
+                                </div>
+                            </div>
+                            <div className="relative shrink-0 w-full sm:w-48">
+                                <select
+                                    value={selectedYear}
+                                    onChange={(e) => setSelectedYear(Number(e.target.value))}
+                                    className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-4 py-2.5 text-slate-700 dark:text-slate-200 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none cursor-pointer pr-10"
+                                >
+                                    {availableYears.map(year => (
+                                        <option key={year} value={year}>
+                                            Tahun {year}
+                                        </option>
+                                    ))}
+                                </select>
+                                <span className="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined pointer-events-none text-slate-400 text-[20px]">
+                                    arrow_drop_down
+                                </span>
+                            </div>
+                        </div>
+
                         {/* Summary Table (Structured like Riwayat Dana Masuk) */}
                         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
                             <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-emerald-50 dark:bg-emerald-950/20">
@@ -673,6 +740,49 @@ export default function SchoolDashboardPage() {
                             </div>
                         </div>
 
+                        {/* Incoming Funds Section */}
+                        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
+                            <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-emerald-50 dark:bg-emerald-950/20">
+                                <div className="flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-emerald-600 dark:text-emerald-400">account_balance_wallet</span>
+                                    <h3 className="text-xl font-bold text-emerald-900 dark:text-emerald-300">Riwayat Dana Masuk (Pusat/Daerah)</h3>
+                                </div>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left">
+                                    <thead className="bg-emerald-100/50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-400 uppercase text-xs font-bold">
+                                        <tr>
+                                            <th className="px-6 py-4">ID</th>
+                                            <th className="px-6 py-4">Tanggal</th>
+                                            <th className="px-6 py-4">Sumber Dana</th>
+                                            <th className="px-6 py-4">No. Referensi</th>
+                                            <th className="px-6 py-4 text-right">Nominal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                        {schoolData.incomingFunds.length === 0 ? (
+                                            <tr>
+                                                <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Belum ada dana masuk tercatat.</td>
+                                            </tr>
+                                        ) : (
+                                            schoolData.incomingFunds.map((fund: any) => (
+                                                <tr key={fund.id} className="hover:bg-emerald-50/10 dark:hover:bg-emerald-950/10 transition-colors">
+                                                    <td className="px-6 py-4 text-xs font-mono text-slate-500">{fund.id.substring(0, 8)}</td>
+                                                    <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
+                                                        {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(fund.received_date))}
+                                                    </td>
+                                                    <td className="px-6 py-4 font-medium text-slate-800 dark:text-slate-200">{fund.source}</td>
+                                                    <td className="px-6 py-4 text-sm text-slate-500">{fund.reference_number || '-'}</td>
+                                                    <td className="px-6 py-4 text-right font-bold text-emerald-600 dark:text-emerald-400">
+                                                        {formatIDR(fund.amount)}
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
                         {/* Charts */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -694,100 +804,95 @@ export default function SchoolDashboardPage() {
                             </div>
                         </div>
 
-                        {/* AI Forecasting (Task 24) */}
-                        <div className="print:hidden">
-                            <ForecastBoard npsn={npsn} transactions={schoolData.recentTransactions} />
-                        </div>
-
-                        {/* Incoming Funds Section */}
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                            <div className="p-6 border-b border-slate-200 flex justify-between items-center bg-emerald-50">
-                                <div className="flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-emerald-600">account_balance_wallet</span>
-                                    <h3 className="text-xl font-bold text-emerald-900">Riwayat Dana Masuk (Pusat/Daerah)</h3>
+                        {/* Tabbed Transactions and Anomalies Section */}
+                        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
+                            {/* Tab Headers */}
+                            <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex flex-col sm:flex-row sm:items-center justify-between px-6 py-4 gap-4">
+                                <div className="flex gap-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTab('transactions')}
+                                        className={`flex items-center gap-2 py-2 px-3 border-b-2 font-bold text-sm transition-all ${
+                                            activeTab === 'transactions'
+                                                ? 'border-primary text-primary'
+                                                : 'border-transparent text-slate-500 hover:text-slate-750 dark:text-slate-400 dark:hover:text-slate-200'
+                                        }`}
+                                    >
+                                        <span className="material-symbols-outlined text-[18px]">receipt_long</span>
+                                        Rincian Transaksi
+                                        <span className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold px-2 py-0.5 rounded-full ml-1">
+                                            {schoolData.recentTransactions.length}
+                                        </span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTab('anomalies')}
+                                        className={`flex items-center gap-2 py-2 px-3 border-b-2 font-bold text-sm transition-all ${
+                                            activeTab === 'anomalies'
+                                                ? 'border-red-500 text-red-600 dark:text-red-400'
+                                                : 'border-transparent text-slate-500 hover:text-slate-750 dark:text-slate-400 dark:hover:text-slate-200'
+                                        }`}
+                                    >
+                                        <span className="material-symbols-outlined text-[18px]">warning</span>
+                                        Deteksi Anomali AI
+                                        <span className="bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 text-xs font-bold px-2 py-0.5 rounded-full ml-1">
+                                            {schoolData.recentTransactions.filter((t: any) => t.amount > 20000000).length}
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left">
-                                    <thead className="bg-emerald-100/50 text-emerald-800 uppercase text-xs font-bold">
-                                        <tr>
-                                            <th className="px-6 py-4">ID</th>
-                                            <th className="px-6 py-4">Tanggal</th>
-                                            <th className="px-6 py-4">Sumber Dana</th>
-                                            <th className="px-6 py-4">No. Referensi</th>
-                                            <th className="px-6 py-4 text-right">Nominal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {schoolData.incomingFunds.length === 0 ? (
-                                            <tr>
-                                                <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Belum ada dana masuk tercatat.</td>
-                                            </tr>
-                                        ) : (
-                                            schoolData.incomingFunds.map((fund: any) => (
-                                                <tr key={fund.id} className="hover:bg-emerald-50/30 transition-colors">
-                                                    <td className="px-6 py-4 text-xs font-mono text-slate-500">{fund.id.substring(0, 8)}</td>
-                                                    <td className="px-6 py-4 text-sm text-slate-600">
-                                                        {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(fund.received_date))}
-                                                    </td>
-                                                    <td className="px-6 py-4 font-medium text-slate-800">{fund.source}</td>
-                                                    <td className="px-6 py-4 text-sm text-slate-500">{fund.reference_number || '-'}</td>
-                                                    <td className="px-6 py-4 text-right font-bold text-emerald-600">
-                                                        {formatIDR(fund.amount)}
-                                                    </td>
+
+                            {/* Tab Contents */}
+                            <div>
+                                {activeTab === 'transactions' ? (
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left">
+                                            <thead className="bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-400 uppercase text-xs font-bold">
+                                                <tr>
+                                                    <th className="px-6 py-4">ID</th>
+                                                    <th className="px-6 py-4">Tanggal</th>
+                                                    <th className="px-6 py-4">Keterangan</th>
+                                                    <th className="px-6 py-4">Kategori</th>
+                                                    <th className="px-6 py-4 text-right">Nominal</th>
                                                 </tr>
-                                            ))
-                                        )}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6">
-                            <div className="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50">
-                                <h3 className="text-xl font-bold">Rincian Riwayat Transaksi</h3>
-                            </div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left">
-                                    <thead className="bg-slate-100 text-slate-600 uppercase text-xs font-bold">
-                                        <tr>
-                                            <th className="px-6 py-4">ID</th>
-                                            <th className="px-6 py-4">Tanggal</th>
-                                            <th className="px-6 py-4">Keterangan</th>
-                                            <th className="px-6 py-4">Kategori</th>
-                                            <th className="px-6 py-4 text-right">Nominal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {schoolData.recentTransactions.length === 0 ? (
-                                            <tr>
-                                                <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Belum ada transaksi tercatat.</td>
-                                            </tr>
-                                        ) : (
-                                            schoolData.recentTransactions.map((trx: any) => (
-                                                <tr
-                                                    key={trx.id}
-                                                    className="hover:bg-slate-50 transition-colors cursor-pointer group"
-                                                    onClick={() => setSelectedTransaction(trx)}
-                                                    title="Klik untuk lihat rincian struk belanja"
-                                                >
-                                                    <td className="px-6 py-4 text-xs font-mono text-primary group-hover:underline">{trx.id.substring(0, 8)}</td>
-                                                    <td className="px-6 py-4 text-sm text-slate-600">
-                                                        {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(trx.date))}
-                                                    </td>
-                                                    <td className="px-6 py-4 font-medium text-slate-800">{trx.description}</td>
-                                                    <td className="px-6 py-4 text-sm">
-                                                        <span className="px-2 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200">
-                                                            {trx.category}
-                                                        </span>
-                                                    </td>
-                                                    <td className="px-6 py-4 text-right font-bold text-slate-900">
-                                                        {formatIDR(trx.amount)}
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        )}
-                                    </tbody>
-                                </table>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                                {schoolData.recentTransactions.length === 0 ? (
+                                                    <tr>
+                                                        <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Belum ada transaksi tercatat.</td>
+                                                    </tr>
+                                                ) : (
+                                                    schoolData.recentTransactions.map((trx: any) => (
+                                                        <tr
+                                                            key={trx.id}
+                                                            className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group"
+                                                            onClick={() => setSelectedTransaction(trx)}
+                                                            title="Klik untuk lihat rincian struk belanja"
+                                                        >
+                                                            <td className="px-6 py-4 text-xs font-mono text-primary dark:text-primary-400 group-hover:underline">{trx.id.substring(0, 8)}</td>
+                                                            <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
+                                                                {new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(trx.date))}
+                                                            </td>
+                                                            <td className="px-6 py-4 font-medium text-slate-800 dark:text-slate-200">{trx.description}</td>
+                                                            <td className="px-6 py-4 text-sm">
+                                                                <span className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                                                                    {trx.category}
+                                                                </span>
+                                                            </td>
+                                                            <td className="px-6 py-4 text-right font-bold text-slate-900 dark:text-white">
+                                                                {formatIDR(trx.amount)}
+                                                            </td>
+                                                        </tr>
+                                                    ))
+                                                )}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <div className="p-0">
+                                        <ForecastBoard npsn={npsn} transactions={schoolData.recentTransactions} isInsideTab={true} />
+                                    </div>
+                                )}
                             </div>
                         </div>
 
