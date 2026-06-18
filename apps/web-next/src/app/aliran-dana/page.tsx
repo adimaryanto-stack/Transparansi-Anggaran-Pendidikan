@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase';
 import ApbnFlowChart from '@/components/ApbnFlowChart';
 import IndonesiaMap from '@/components/IndonesiaMap';
 import TopologiAnggaran from '@/components/TopologiAnggaran';
+import { useSearchParams } from 'next/navigation';
 
 function PageVisualisasi({ data, yearData, selectedYear, setSelectedYear }: { data: any, yearData: any[], selectedYear: number, setSelectedYear: (y: number) => void }) {
     return (
@@ -62,12 +63,34 @@ function formatCompact(n: number): string {
 }
 
 export default function AliranDanaPage() {
+    const searchParams = useSearchParams();
+    const sourceParam = searchParams.get('source')?.toUpperCase() || 'APBN';
+    
     const [data, setData] = useState<{ allocations: Allocation[]; flowLinks: FlowLink[] } | null>(null);
     const [apbnYears, setApbnYears] = useState<any[]>([]);
     const [selectedYear, setSelectedYear] = useState(2025);
     const [loading, setLoading] = useState(true);
     const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
-    const [activeSourceTab, setActiveSourceTab] = useState<'APBN' | 'APBD' | 'CSR'>('APBN');
+    
+    const [activeSourceTab, setActiveSourceTab] = useState<'APBN' | 'APBD' | 'CSR'>(sourceParam as any);
+    const [apbdSourceData, setApbdSourceData] = useState<any[]>([]);
+    const [csrSourceData, setCsrSourceData] = useState<any[]>([]);
+    const itemsPerPage = 10;
+    const [currentPage, setCurrentPage] = useState(1); // APBD pagination
+    const [csrCurrentPage, setCsrCurrentPage] = useState(1); // CSR pagination
+
+    // Fetch source specific data
+    useEffect(() => {
+        if (activeSourceTab === 'APBD') {
+            supabase.from('apbd_yearly_data').select('*').order('year', { ascending: true }).then(({ data }) => {
+                if (data) setApbdSourceData(data);
+            });
+        } else if (activeSourceTab === 'CSR') {
+            supabase.from('csr_yearly_data').select('*').order('year', { ascending: true }).then(({ data }) => {
+                if (data) setCsrSourceData(data);
+            });
+        }
+    }, [activeSourceTab]);
 
     const fetchYears = async () => {
         const { data } = await supabase.from('apbn_yearly_data').select('*').order('year', { ascending: false });
@@ -207,19 +230,53 @@ export default function AliranDanaPage() {
                             )}
 
                             {activeSourceTab === 'CSR' && (
-                                <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
-                                    </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
-                                    <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                        Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
-                                    </p>
-                                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
-                                        <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                        Segera Hadir
-                                    </div>
-                                </section>
+                                csrSourceData.length > 0 ? (
+                                    <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                        <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
+                                            <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto w-full max-w-4xl">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="bg-slate-50 border-b border-slate-200">
+                                                        <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {csrSourceData
+                                                        .slice((csrCurrentPage - 1) * itemsPerPage, csrCurrentPage * itemsPerPage)
+                                                        .map(item => (
+                                                            <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 odd:bg-slate-50">
+                                                                <td className="p-4 text-left font-bold">{item.year}</td>
+                                                                <td className="p-4 text-right font-mono text-emerald-700">{formatIDR(item.total_budget)}</td>
+                                                            </tr>
+                                                        ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div className="mt-6 flex items-center gap-4 justify-center">
+                                            <button disabled={csrCurrentPage === 1} onClick={() => setCsrCurrentPage(p => Math.max(p - 1, 1))} className="px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 disabled:opacity-50 font-semibold transition-colors">Prev</button>
+                                            <span className="text-sm font-medium text-slate-500">Page {csrCurrentPage} of {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
+                                            <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 disabled:opacity-50 font-semibold transition-colors">Next</button>
+                                        </div>
+                                    </section>
+                                ) : (
+                                    <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                        <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
+                                            <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
+                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                            Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
+                                        </p>
+                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
+                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                            Segera Hadir
+                                        </div>
+                                    </section>
+                                )
                             )}
 
 
