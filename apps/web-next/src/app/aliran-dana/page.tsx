@@ -217,7 +217,6 @@ export default function AliranDanaPage() {
                                             </thead>
                                             <tbody>
                                                 {apbdSourceData
-                                                    .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                                                     .map(item => (
                                                         <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
                                                             <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
@@ -226,11 +225,6 @@ export default function AliranDanaPage() {
                                                     ))}
                                             </tbody>
                                             </table>
-                                        </div>
-                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50 mt-auto">
-                                            <button disabled={currentPage === 1} onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
-                                            <span className="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-lg border border-slate-200">Halaman {currentPage} dari {Math.max(1, Math.ceil(apbdSourceData.length / itemsPerPage))}</span>
-                                            <button disabled={currentPage >= Math.ceil(apbdSourceData.length / itemsPerPage)} onClick={() => setCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
                                         </div>
                                     </div>
                                 </section>
@@ -270,7 +264,6 @@ export default function AliranDanaPage() {
                                             </thead>
                                             <tbody>
                                                 {csrSourceData
-                                                    .slice((csrCurrentPage - 1) * itemsPerPage, csrCurrentPage * itemsPerPage)
                                                     .map(item => (
                                                         <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
                                                             <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
@@ -279,11 +272,6 @@ export default function AliranDanaPage() {
                                                     ))}
                                             </tbody>
                                             </table>
-                                        </div>
-                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50 mt-auto">
-                                            <button disabled={csrCurrentPage === 1} onClick={() => setCsrCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
-                                            <span className="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-lg border border-slate-200">Halaman {csrCurrentPage} dari {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
-                                            <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
                                         </div>
                                     </div>
                                 </section>
