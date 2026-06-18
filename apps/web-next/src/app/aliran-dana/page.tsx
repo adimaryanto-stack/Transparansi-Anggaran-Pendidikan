@@ -62,6 +62,10 @@ function formatCompact(n: number): string {
     return formatIDR(n);
 }
 
+function formatTriliun(n: number): string {
+    return `Rp ${n.toLocaleString('id-ID')} Triliun`;
+}
+
 export default function AliranDanaPage() {
     const searchParams = useSearchParams();
     const sourceParam = searchParams.get('source')?.toUpperCase() || 'APBN';
@@ -214,52 +218,92 @@ export default function AliranDanaPage() {
                             )}
 
                             {activeSourceTab === 'APBD' && (
-                                <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
-                                    </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
-                                    <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                        Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
-                                    </p>
-                                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
-                                        <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                        Segera Hadir
-                                    </div>
-                                </section>
+                                apbdSourceData.length > 0 ? (
+                                    <section className="mb-12 bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                        <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
+                                            <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
+                                        <p className="text-slate-500 mb-8 max-w-xl mx-auto">
+                                            Total alokasi Anggaran Pendapatan dan Belanja Daerah (APBD) yang disalurkan untuk sektor pendidikan setiap tahunnya.
+                                        </p>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-4xl">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="bg-slate-50 border-b border-slate-200">
+                                                        <th className="text-left p-5 font-bold text-slate-600">Tahun</th>
+                                                        <th className="text-right p-5 font-bold text-slate-600">Total Anggaran</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {apbdSourceData
+                                                        .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+                                                        .map(item => (
+                                                            <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                <td className="p-5 text-left font-bold text-slate-800">{item.year}</td>
+                                                                <td className="p-5 text-right font-mono text-amber-700 font-semibold">{formatTriliun(item.total_budget)}</td>
+                                                            </tr>
+                                                        ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div className="mt-8 flex items-center gap-4 justify-center">
+                                            <button disabled={currentPage === 1} onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
+                                            <span className="text-sm font-medium text-slate-500 bg-slate-100 px-4 py-2 rounded-lg">Halaman {currentPage} dari {Math.max(1, Math.ceil(apbdSourceData.length / itemsPerPage))}</span>
+                                            <button disabled={currentPage >= Math.ceil(apbdSourceData.length / itemsPerPage)} onClick={() => setCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
+                                        </div>
+                                    </section>
+                                ) : (
+                                    <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                        <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
+                                            <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
+                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                            Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
+                                        </p>
+                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
+                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                            Memuat Data...
+                                        </div>
+                                    </section>
+                                )
                             )}
 
                             {activeSourceTab === 'CSR' && (
                                 csrSourceData.length > 0 ? (
-                                    <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                    <section className="mb-12 bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
                                         <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
                                             <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
                                         </div>
                                         <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
-                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto w-full max-w-4xl">
+                                        <p className="text-slate-500 mb-8 max-w-xl mx-auto">
+                                            Kontribusi tanggung jawab sosial perusahaan (CSR) dari berbagai entitas swasta untuk mendukung kemajuan pendidikan nasional.
+                                        </p>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-4xl">
                                             <table className="w-full text-sm">
                                                 <thead>
                                                     <tr className="bg-slate-50 border-b border-slate-200">
-                                                        <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
-                                                        <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
+                                                        <th className="text-left p-5 font-bold text-slate-600">Tahun</th>
+                                                        <th className="text-right p-5 font-bold text-slate-600">Total Anggaran</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {csrSourceData
                                                         .slice((csrCurrentPage - 1) * itemsPerPage, csrCurrentPage * itemsPerPage)
                                                         .map(item => (
-                                                            <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 odd:bg-slate-50">
-                                                                <td className="p-4 text-left font-bold">{item.year}</td>
-                                                                <td className="p-4 text-right font-mono text-emerald-700">{formatIDR(item.total_budget)}</td>
+                                                            <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                <td className="p-5 text-left font-bold text-slate-800">{item.year}</td>
+                                                                <td className="p-5 text-right font-mono text-emerald-700 font-semibold">{formatTriliun(item.total_budget)}</td>
                                                             </tr>
                                                         ))}
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div className="mt-6 flex items-center gap-4 justify-center">
-                                            <button disabled={csrCurrentPage === 1} onClick={() => setCsrCurrentPage(p => Math.max(p - 1, 1))} className="px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 disabled:opacity-50 font-semibold transition-colors">Prev</button>
-                                            <span className="text-sm font-medium text-slate-500">Page {csrCurrentPage} of {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
-                                            <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 disabled:opacity-50 font-semibold transition-colors">Next</button>
+                                        <div className="mt-8 flex items-center gap-4 justify-center">
+                                            <button disabled={csrCurrentPage === 1} onClick={() => setCsrCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
+                                            <span className="text-sm font-medium text-slate-500 bg-slate-100 px-4 py-2 rounded-lg">Halaman {csrCurrentPage} dari {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
+                                            <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
                                         </div>
                                     </section>
                                 ) : (
@@ -273,7 +317,7 @@ export default function AliranDanaPage() {
                                         </p>
                                         <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
                                             <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                            Segera Hadir
+                                            Memuat Data...
                                         </div>
                                     </section>
                                 )
