@@ -325,116 +325,118 @@ export default function AliranDanaPage() {
 
 
 
-                            {/* ---- RECONCILIATION TABLE ---- */}
-                            <section className="mb-10">
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">fact_check</span>
-                                    Rekonsiliasi Dana
-                                </h2>
-                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
-                                    <table className="w-full text-sm">
-                                        <thead>
-                                            <tr className="bg-slate-50 border-b border-slate-200">
-                                                <th className="text-left p-4 font-bold text-slate-500">Entitas</th>
-                                                <th className="text-left p-4 font-bold text-slate-500">Level</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Dialokasikan</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Diterima</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Disalurkan</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Sisa</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Selisih</th>
-                                                <th className="text-center p-4 font-bold text-slate-500">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {data?.allocations?.map(a => {
-                                                const cfg = LEVEL_CONFIG[a.level] || LEVEL_CONFIG.SEKOLAH;
-                                                return (
-                                                    <tr key={a.id} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                        <td className="p-4">
-                                                            <div className="flex items-center gap-2">
-                                                                <span className={`material-symbols-outlined text-lg ${cfg.color}`}>{cfg.icon}</span>
-                                                                <span className="font-semibold">{a.entity_name}</span>
-                                                            </div>
-                                                        </td>
-                                                        <td className="p-4">
-                                                            <span className={`px-2 py-1 rounded-full text-xs font-bold ${cfg.bgColor} ${cfg.color}`}>{cfg.label}</span>
-                                                        </td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.allocated)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.received)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.disbursed)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.remaining)}</td>
-                                                        <td className={`p-4 text-right font-bold ${a.gap > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
-                                                            {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${a.gap_percent}%)`}
-                                                        </td>
-                                                        <td className="p-4 text-center">
-                                                            {a.status === 'FLAGGED' ? (
-                                                                <span className="inline-flex items-center gap-1 text-xs font-bold text-red-600 bg-red-100 px-2.5 py-1 rounded-full">
-                                                                    <span className="material-symbols-outlined text-xs">error</span> FLAG
-                                                                </span>
-                                                            ) : (
-                                                                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
-                                                                    <span className="material-symbols-outlined text-xs">check_circle</span> OK
-                                                                </span>
-                                                            )}
-                                                        </td>
+                            {/* ---- RECONCILIATION TABLE, TRANSFER LOG, PROVINCE MAP (ONLY FOR APBN) ---- */}
+                            {activeSourceTab === 'APBN' && (
+                                <>
+                                    <section className="mb-10">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">fact_check</span>
+                                            Rekonsiliasi Dana
+                                        </h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="bg-slate-50 border-b border-slate-200">
+                                                        <th className="text-left p-4 font-bold text-slate-500">Entitas</th>
+                                                        <th className="text-left p-4 font-bold text-slate-500">Level</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Dialokasikan</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Diterima</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Disalurkan</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Sisa</th>
+                                                        <th className="text-right p-4 font-bold text-slate-500">Selisih</th>
+                                                        <th className="text-center p-4 font-bold text-slate-500">Status</th>
                                                     </tr>
-                                                );
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </section>
-
-                            {/* ---- TRANSFER LOG ---- */}
-                            <section>
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">swap_horiz</span>
-                                    Log Transfer Dana
-                                </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {data?.flowLinks?.map((fl, idx) => (
-                                        <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
-                                            <div className="flex items-center justify-between mb-3">
-                                                <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
-                                                    {fl.status}
-                                                </span>
-                                                <span className="text-xs text-slate-400">{fl.date}</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className="flex-1 text-right">
-                                                    <p className="text-xs text-slate-400 uppercase">Dari</p>
-                                                    <p className="font-bold text-sm truncate">{fl.source}</p>
-                                                </div>
-                                                <div className="flex flex-col items-center">
-                                                    <span className="material-symbols-outlined text-primary text-2xl">arrow_forward</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p className="text-xs text-slate-400 uppercase">Ke</p>
-                                                    <p className="font-bold text-sm truncate">{fl.target}</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                                                <span className="text-xs text-slate-400 font-mono">{fl.reference}</span>
-                                                <span className="font-black text-primary text-lg">{formatCompact(fl.value)}</span>
-                                            </div>
+                                                </thead>
+                                                <tbody>
+                                                    {data?.allocations?.map(a => {
+                                                        const cfg = LEVEL_CONFIG[a.level] || LEVEL_CONFIG.SEKOLAH;
+                                                        return (
+                                                            <tr key={a.id} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                <td className="p-4">
+                                                                    <div className="flex items-center gap-2">
+                                                                        <span className={`material-symbols-outlined text-lg ${cfg.color}`}>{cfg.icon}</span>
+                                                                        <span className="font-semibold">{a.entity_name}</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td className="p-4">
+                                                                    <span className={`px-2 py-1 rounded-full text-xs font-bold ${cfg.bgColor} ${cfg.color}`}>{cfg.label}</span>
+                                                                </td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.allocated)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.received)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.disbursed)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.remaining)}</td>
+                                                                <td className={`p-4 text-right font-bold ${a.gap > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
+                                                                    {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${a.gap_percent}%)`}
+                                                                </td>
+                                                                <td className="p-4 text-center">
+                                                                    {a.status === 'FLAGGED' ? (
+                                                                        <span className="inline-flex items-center gap-1 text-xs font-bold text-red-600 bg-red-100 px-2.5 py-1 rounded-full">
+                                                                            <span className="material-symbols-outlined text-xs">error</span> FLAG
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
+                                                                            <span className="material-symbols-outlined text-xs">check_circle</span> OK
+                                                                        </span>
+                                                                    )}
+                                                                </td>
+                                                            </tr>
+                                                        );
+                                                    })}
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    ))}
-                                </div>
-                            </section>
+                                    </section>
 
-                            {/* ---- PROVINCE MAP ---- */}
-                            <section className="mb-10">
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">map</span>
-                                    Peta Penyaluran per Provinsi
-                                </h2>
-                                <p className="text-slate-500 text-sm mb-6">
-                                    Distribusi sekolah penerima dana riil berdasarkan data yang telah diverifikasi di masing-masing provinsi.
-                                </p>
-                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 overflow-hidden">
-                                    <IndonesiaMap />
-                                </div>
-                            </section>
+                                    <section className="mb-10">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">swap_horiz</span>
+                                            Log Transfer Dana
+                                        </h2>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            {data?.flowLinks?.map((fl, idx) => (
+                                                <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
+                                                    <div className="flex items-center justify-between mb-3">
+                                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
+                                                            {fl.status}
+                                                        </span>
+                                                        <span className="text-xs text-slate-400">{fl.date}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-3 mb-3">
+                                                        <div className="flex-1 text-right">
+                                                            <p className="text-xs text-slate-400 uppercase">Dari</p>
+                                                            <p className="font-bold text-sm truncate">{fl.source}</p>
+                                                        </div>
+                                                        <div className="flex flex-col items-center">
+                                                            <span className="material-symbols-outlined text-primary text-2xl">arrow_forward</span>
+                                                        </div>
+                                                        <div className="flex-1">
+                                                            <p className="text-xs text-slate-400 uppercase">Ke</p>
+                                                            <p className="font-bold text-sm truncate">{fl.target}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center justify-between pt-3 border-t border-slate-100">
+                                                        <span className="text-xs text-slate-400 font-mono">{fl.reference}</span>
+                                                        <span className="font-black text-primary text-lg">{formatCompact(fl.value)}</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+
+                                    <section className="mb-10">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">map</span>
+                                            Peta Penyaluran per Provinsi
+                                        </h2>
+                                        <p className="text-slate-500 text-sm mb-6">
+                                            Distribusi sekolah penerima dana riil berdasarkan data yang telah diverifikasi di masing-masing provinsi.
+                                        </p>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 overflow-hidden">
+                                            <IndonesiaMap />
+                                        </div>
+                                    </section>
+                                </>
+                            )}
                         </>
                     )}
                 </div>
