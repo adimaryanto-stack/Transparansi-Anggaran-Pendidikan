@@ -199,14 +199,20 @@ export default function AliranDanaPage() {
 
                             {/* ---- APBD SECTION ---- */}
                             {apbdSourceData.length > 0 ? (
-                                <section className="mb-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
+                                <section className="mb-12 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col overflow-hidden min-h-[400px]">
+                                    <div className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-amber-500 rounded-lg text-white shadow-lg shadow-amber-100 material-symbols-outlined text-sm">location_city</div>
+                                            <div>
+                                                <h1 className="text-sm font-bold text-slate-900 leading-tight">Dana APBD Daerah</h1>
+                                                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-black">Digital Fiscal Literacy v3.5</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
-                                    <p className="text-slate-500 mb-8 max-w-2xl mx-auto">
-                                        Total alokasi Anggaran Pendapatan dan Belanja Daerah (APBD) yang disalurkan untuk sektor pendidikan setiap tahunnya.
-                                    </p>
+                                    <div className="p-6 md:p-8 flex-1 flex flex-col items-center bg-[#f8fafc]">
+                                        <p className="text-slate-500 mb-8 max-w-2xl mx-auto text-center">
+                                            Total alokasi Anggaran Pendapatan dan Belanja Daerah (APBD) yang disalurkan untuk sektor pendidikan setiap tahunnya.
+                                        </p>
                                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-6xl mx-auto">
                                         <table className="w-full text-sm">
                                             <thead>
@@ -232,33 +238,47 @@ export default function AliranDanaPage() {
                                         <span className="text-sm font-medium text-slate-500 bg-slate-100 px-4 py-2 rounded-lg">Halaman {currentPage} dari {Math.max(1, Math.ceil(apbdSourceData.length / itemsPerPage))}</span>
                                         <button disabled={currentPage >= Math.ceil(apbdSourceData.length / itemsPerPage)} onClick={() => setCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
                                     </div>
+                                    </div>
                                 </section>
                             ) : (
-                                <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
+                                <section className="mb-12 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col overflow-hidden min-h-[400px]">
+                                    <div className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-amber-500 rounded-lg text-white shadow-lg shadow-amber-100 material-symbols-outlined text-sm">location_city</div>
+                                            <div>
+                                                <h1 className="text-sm font-bold text-slate-900 leading-tight">Dana APBD Daerah</h1>
+                                                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-black">Digital Fiscal Literacy v3.5</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
-                                    <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                        Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
-                                    </p>
-                                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
-                                        <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                        Memuat Data...
+                                    <div className="p-12 flex-1 flex flex-col items-center justify-center text-center bg-[#f8fafc]">
+                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                            Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
+                                        </p>
+                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
+                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                            Memuat Data...
+                                        </div>
                                     </div>
                                 </section>
                             )}
 
                             {/* ---- CSR SECTION ---- */}
                             {csrSourceData.length > 0 ? (
-                                <section className="mb-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
+                                <section className="mb-12 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col overflow-hidden min-h-[400px]">
+                                    <div className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-emerald-500 rounded-lg text-white shadow-lg shadow-emerald-100 material-symbols-outlined text-sm">handshake</div>
+                                            <div>
+                                                <h1 className="text-sm font-bold text-slate-900 leading-tight">Dana CSR Perusahaan</h1>
+                                                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-black">Digital Fiscal Literacy v3.5</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
-                                    <p className="text-slate-500 mb-8 max-w-2xl mx-auto">
-                                        Kontribusi tanggung jawab sosial perusahaan (CSR) dari berbagai entitas swasta untuk mendukung kemajuan pendidikan nasional.
-                                    </p>
+                                    <div className="p-6 md:p-8 flex-1 flex flex-col items-center bg-[#f8fafc]">
+                                        <p className="text-slate-500 mb-8 max-w-2xl mx-auto text-center">
+                                            Kontribusi tanggung jawab sosial perusahaan (CSR) dari berbagai entitas swasta untuk mendukung kemajuan pendidikan nasional.
+                                        </p>
                                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-6xl mx-auto">
                                         <table className="w-full text-sm">
                                             <thead>
@@ -284,24 +304,30 @@ export default function AliranDanaPage() {
                                         <span className="text-sm font-medium text-slate-500 bg-slate-100 px-4 py-2 rounded-lg">Halaman {csrCurrentPage} dari {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
                                         <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
                                     </div>
+                                    </div>
                                 </section>
                             ) : (
-                                <section className="mb-12 bg-white rounded-3xl p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
-                                    <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
-                                        <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
+                                <section className="mb-12 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col overflow-hidden min-h-[400px]">
+                                    <div className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-emerald-500 rounded-lg text-white shadow-lg shadow-emerald-100 material-symbols-outlined text-sm">handshake</div>
+                                            <div>
+                                                <h1 className="text-sm font-bold text-slate-900 leading-tight">Dana CSR Perusahaan</h1>
+                                                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-black">Digital Fiscal Literacy v3.5</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
-                                    <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                        Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
-                                    </p>
-                                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
-                                        <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                        Memuat Data...
+                                    <div className="p-12 flex-1 flex flex-col items-center justify-center text-center bg-[#f8fafc]">
+                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                            Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
+                                        </p>
+                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-100 text-slate-600 font-bold border border-slate-200">
+                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                            Memuat Data...
+                                        </div>
                                     </div>
                                 </section>
                             )}
-
-
 
                             {/* ---- RECONCILIATION TABLE, TRANSFER LOG, PROVINCE MAP ---- */}
                             <section className="mb-10">
