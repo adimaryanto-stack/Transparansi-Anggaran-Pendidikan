@@ -62,8 +62,8 @@ function formatCompact(n: number): string {
     return formatIDR(n);
 }
 
-function formatTriliun(n: number): string {
-    return `Rp ${n.toLocaleString('id-ID')} Triliun`;
+function formatFullNumber(nInTrillions: number): string {
+    return formatIDR(nInTrillions * 1_000_000_000_000);
 }
 
 export default function AliranDanaPage() {
@@ -219,20 +219,20 @@ export default function AliranDanaPage() {
 
                             {activeSourceTab === 'APBD' && (
                                 apbdSourceData.length > 0 ? (
-                                    <section className="mb-12 bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                    <section className="mb-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
                                         <div className="w-20 h-20 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-6">
                                             <span className="material-symbols-outlined text-4xl text-amber-500">location_city</span>
                                         </div>
                                         <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana APBD Daerah</h2>
-                                        <p className="text-slate-500 mb-8 max-w-xl mx-auto">
+                                        <p className="text-slate-500 mb-8 max-w-2xl mx-auto">
                                             Total alokasi Anggaran Pendapatan dan Belanja Daerah (APBD) yang disalurkan untuk sektor pendidikan setiap tahunnya.
                                         </p>
-                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-4xl">
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-6xl mx-auto">
                                             <table className="w-full text-sm">
                                                 <thead>
                                                     <tr className="bg-slate-50 border-b border-slate-200">
-                                                        <th className="text-left p-5 font-bold text-slate-600">Tahun</th>
-                                                        <th className="text-right p-5 font-bold text-slate-600">Total Anggaran</th>
+                                                        <th className="text-left p-6 font-bold text-slate-600">Tahun</th>
+                                                        <th className="text-right p-6 font-bold text-slate-600">Total Anggaran</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -240,8 +240,8 @@ export default function AliranDanaPage() {
                                                         .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
                                                         .map(item => (
                                                             <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                                <td className="p-5 text-left font-bold text-slate-800">{item.year}</td>
-                                                                <td className="p-5 text-right font-mono text-amber-700 font-semibold">{formatTriliun(item.total_budget)}</td>
+                                                                <td className="p-6 text-left font-bold text-slate-800 text-base">{item.year}</td>
+                                                                <td className="p-6 text-right font-mono text-amber-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
                                                             </tr>
                                                         ))}
                                                 </tbody>
@@ -272,20 +272,20 @@ export default function AliranDanaPage() {
 
                             {activeSourceTab === 'CSR' && (
                                 csrSourceData.length > 0 ? (
-                                    <section className="mb-12 bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+                                    <section className="mb-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
                                         <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-6">
                                             <span className="material-symbols-outlined text-4xl text-emerald-500">handshake</span>
                                         </div>
                                         <h2 className="text-2xl font-bold text-slate-900 mb-3">Dana CSR Perusahaan</h2>
-                                        <p className="text-slate-500 mb-8 max-w-xl mx-auto">
+                                        <p className="text-slate-500 mb-8 max-w-2xl mx-auto">
                                             Kontribusi tanggung jawab sosial perusahaan (CSR) dari berbagai entitas swasta untuk mendukung kemajuan pendidikan nasional.
                                         </p>
-                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-4xl">
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full max-w-6xl mx-auto">
                                             <table className="w-full text-sm">
                                                 <thead>
                                                     <tr className="bg-slate-50 border-b border-slate-200">
-                                                        <th className="text-left p-5 font-bold text-slate-600">Tahun</th>
-                                                        <th className="text-right p-5 font-bold text-slate-600">Total Anggaran</th>
+                                                        <th className="text-left p-6 font-bold text-slate-600">Tahun</th>
+                                                        <th className="text-right p-6 font-bold text-slate-600">Total Anggaran</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -293,8 +293,8 @@ export default function AliranDanaPage() {
                                                         .slice((csrCurrentPage - 1) * itemsPerPage, csrCurrentPage * itemsPerPage)
                                                         .map(item => (
                                                             <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                                <td className="p-5 text-left font-bold text-slate-800">{item.year}</td>
-                                                                <td className="p-5 text-right font-mono text-emerald-700 font-semibold">{formatTriliun(item.total_budget)}</td>
+                                                                <td className="p-6 text-left font-bold text-slate-800 text-base">{item.year}</td>
+                                                                <td className="p-6 text-right font-mono text-emerald-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
                                                             </tr>
                                                         ))}
                                                 </tbody>
