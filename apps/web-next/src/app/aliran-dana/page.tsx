@@ -359,35 +359,41 @@ export default function AliranDanaPage() {
                                     <span className="material-symbols-outlined text-primary">swap_horiz</span>
                                     Log Transfer Dana APBN
                                 </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {data?.flowLinks?.map((fl, idx) => (
-                                        <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
-                                            <div className="flex items-center justify-between mb-3">
-                                                <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
-                                                    {fl.status}
-                                                </span>
-                                                <span className="text-xs text-slate-400">{fl.date}</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className="flex-1 text-right">
-                                                    <p className="text-xs text-slate-400 uppercase">Dari</p>
-                                                    <p className="font-bold text-sm truncate">{fl.source}</p>
+                                {data?.flowLinks && data.flowLinks.length > 0 ? (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {data.flowLinks.map((fl, idx) => (
+                                            <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
+                                                        {fl.status}
+                                                    </span>
+                                                    <span className="text-xs text-slate-400">{fl.date}</span>
                                                 </div>
-                                                <div className="flex flex-col items-center">
-                                                    <span className="material-symbols-outlined text-primary text-2xl">arrow_forward</span>
+                                                <div className="flex items-center gap-3 mb-3">
+                                                    <div className="flex-1 text-right">
+                                                        <p className="text-xs text-slate-400 uppercase">Dari</p>
+                                                        <p className="font-bold text-sm truncate">{fl.source}</p>
+                                                    </div>
+                                                    <div className="flex flex-col items-center">
+                                                        <span className="material-symbols-outlined text-primary text-2xl">arrow_forward</span>
+                                                    </div>
+                                                    <div className="flex-1">
+                                                        <p className="text-xs text-slate-400 uppercase">Ke</p>
+                                                        <p className="font-bold text-sm truncate">{fl.target}</p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex-1">
-                                                    <p className="text-xs text-slate-400 uppercase">Ke</p>
-                                                    <p className="font-bold text-sm truncate">{fl.target}</p>
+                                                <div className="flex items-center justify-between pt-3 border-t border-slate-100">
+                                                    <span className="text-xs text-slate-400 font-mono">{fl.reference}</span>
+                                                    <span className="font-black text-primary text-lg">{formatCompact(fl.value)}</span>
                                                 </div>
                                             </div>
-                                            <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                                                <span className="text-xs text-slate-400 font-mono">{fl.reference}</span>
-                                                <span className="font-black text-primary text-lg">{formatCompact(fl.value)}</span>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col items-center justify-center text-center">
+                                        <p className="text-slate-500">Belum ada catatan log transfer dana untuk tahun ini.</p>
+                                    </div>
+                                )}
                             </section>
 
                             <section className="mb-10">

@@ -109,6 +109,8 @@ export async function GET(request: Request) {
                     received: Number(d.diterima),
                     disbursed: Number(d.disalurkan),
                     remaining: Number(d.sisa),
+                    gap: Number(d.selisih),
+                    gap_percent: Number(d.persen_selisih),
                     status: d.is_flagged ? 'FLAGGED' : 'OK'
                 });
             });
