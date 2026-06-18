@@ -197,17 +197,20 @@ export default function AliranDanaPage() {
                                 />
                             </Suspense>
 
-                            {/* ---- APBD SECTION ---- */}
-                            {apbdSourceData.length > 0 ? (
-                                <section className="mb-10">
+                            {/* ---- APBD AND CSR GRID SECTION ---- */}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                                {/* ---- APBD SECTION ---- */}
+                                {apbdSourceData.length > 0 ? (
+                                    <section className="h-full flex flex-col">
                                     <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                         <span className="material-symbols-outlined text-amber-500">location_city</span>
                                         Dana APBD Daerah
                                     </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                                        <table className="w-full text-sm">
-                                            <thead>
-                                                <tr className="bg-slate-50 border-b border-slate-200">
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
+                                        <div className="flex-1 overflow-x-auto">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="bg-slate-50 border-b border-slate-200">
                                                     <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
                                                     <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
                                                 </tr>
@@ -222,8 +225,9 @@ export default function AliranDanaPage() {
                                                         </tr>
                                                     ))}
                                             </tbody>
-                                        </table>
-                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50">
+                                            </table>
+                                        </div>
+                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50 mt-auto">
                                             <button disabled={currentPage === 1} onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
                                             <span className="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-lg border border-slate-200">Halaman {currentPage} dari {Math.max(1, Math.ceil(apbdSourceData.length / itemsPerPage))}</span>
                                             <button disabled={currentPage >= Math.ceil(apbdSourceData.length / itemsPerPage)} onClick={() => setCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
@@ -231,12 +235,12 @@ export default function AliranDanaPage() {
                                     </div>
                                 </section>
                             ) : (
-                                <section className="mb-10">
+                                <section className="h-full flex flex-col">
                                     <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                         <span className="material-symbols-outlined text-amber-500">location_city</span>
                                         Dana APBD Daerah
                                     </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex flex-col items-center justify-center text-center">
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
                                         <p className="text-slate-500 mb-6 max-w-md mx-auto">
                                             Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
                                         </p>
@@ -250,15 +254,16 @@ export default function AliranDanaPage() {
 
                             {/* ---- CSR SECTION ---- */}
                             {csrSourceData.length > 0 ? (
-                                <section className="mb-10">
+                                <section className="h-full flex flex-col">
                                     <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                         <span className="material-symbols-outlined text-emerald-500">handshake</span>
                                         Dana CSR Perusahaan
                                     </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                                        <table className="w-full text-sm">
-                                            <thead>
-                                                <tr className="bg-slate-50 border-b border-slate-200">
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
+                                        <div className="flex-1 overflow-x-auto">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="bg-slate-50 border-b border-slate-200">
                                                     <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
                                                     <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
                                                 </tr>
@@ -273,8 +278,9 @@ export default function AliranDanaPage() {
                                                         </tr>
                                                     ))}
                                             </tbody>
-                                        </table>
-                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50">
+                                            </table>
+                                        </div>
+                                        <div className="p-4 flex items-center gap-4 justify-center border-t border-slate-100 bg-slate-50 mt-auto">
                                             <button disabled={csrCurrentPage === 1} onClick={() => setCsrCurrentPage(p => Math.max(p - 1, 1))} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Sebelumnya</button>
                                             <span className="text-sm font-medium text-slate-500 bg-white px-4 py-2 rounded-lg border border-slate-200">Halaman {csrCurrentPage} dari {Math.max(1, Math.ceil(csrSourceData.length / itemsPerPage))}</span>
                                             <button disabled={csrCurrentPage >= Math.ceil(csrSourceData.length / itemsPerPage)} onClick={() => setCsrCurrentPage(p => p + 1)} className="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-slate-600 transition-colors shadow-sm">Selanjutnya</button>
@@ -282,12 +288,12 @@ export default function AliranDanaPage() {
                                     </div>
                                 </section>
                             ) : (
-                                <section className="mb-10">
+                                <section className="h-full flex flex-col">
                                     <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                         <span className="material-symbols-outlined text-emerald-500">handshake</span>
                                         Dana CSR Perusahaan
                                     </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex flex-col items-center justify-center text-center">
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
                                         <p className="text-slate-500 mb-6 max-w-md mx-auto">
                                             Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
                                         </p>
@@ -298,6 +304,7 @@ export default function AliranDanaPage() {
                                     </div>
                                 </section>
                             )}
+                            </div>
 
                             {/* ---- RECONCILIATION TABLE, TRANSFER LOG, PROVINCE MAP ---- */}
                             <section className="mb-10">
