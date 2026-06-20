@@ -16,6 +16,7 @@ function ReportingForm() {
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [schoolId, setSchoolId] = useState<string | null>(null);
 
     const searchParams = useSearchParams();
 
@@ -40,6 +41,19 @@ function ReportingForm() {
                 // We should format or just set it
                 setEstimatedAmount(amt);
             }
+        }
+
+        if (npsn) {
+            supabase
+                .from('schools')
+                .select('id')
+                .eq('npsn', npsn)
+                .maybeSingle()
+                .then(({ data }) => {
+                    if (data) {
+                        setSchoolId(data.id);
+                    }
+                });
         }
     }, [searchParams]);
 
@@ -68,6 +82,7 @@ function ReportingForm() {
                     description: combinedDescription,
                     estimated_amount: parsedAmount,
                     evidence_link: evidenceLink || null,
+                    school_id: schoolId || null,
                 });
 
             if (insertError) throw insertError;

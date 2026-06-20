@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 export default function ForecastBoard({ npsn, transactions = [], isInsideTab = false }: { npsn: string, transactions?: any[], isInsideTab?: boolean }) {
     const [anomalies, setAnomalies] = useState<any[]>([]);
-    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         // Simulasi AI mendeteksi anomali dari data transaksi
@@ -26,7 +25,6 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
             // (Hanya menampilkan anomali jika transaksi nyata melebihi aturan)
 
             setAnomalies(detected);
-            setCurrentPage(1); // Reset to first page when data changes
         };
 
         detectAnomalies();
@@ -41,11 +39,6 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
         );
     }
 
-    const itemsPerPage = 10;
-    const totalPages = Math.ceil(anomalies.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const paginatedAnomalies = anomalies.slice(startIndex, startIndex + itemsPerPage);
-
     const content = (
         <div className="p-6">
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
@@ -53,7 +46,7 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
             </p>
 
             <div className="space-y-4">
-                {paginatedAnomalies.map((anomali, i) => (
+                {anomalies.map((anomali, i) => (
                     <div key={i} className={`p-4 rounded-xl border ${anomali.severity === 'critical' ? 'bg-red-50/50 dark:bg-red-950/10 border-red-200 dark:border-red-900/30' : 'bg-orange-50/50 dark:bg-orange-950/10 border-orange-200 dark:border-orange-900/30'}`}>
                         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div>
@@ -85,31 +78,6 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
                     </div>
                 ))}
             </div>
-
-            {/* Pagination Controls */}
-            {totalPages > 1 && (
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-red-150 dark:border-red-950/30">
-                    <button
-                        type="button"
-                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                        disabled={currentPage === 1}
-                        className="px-4 py-2 text-xs font-bold rounded-lg border border-red-200 dark:border-red-900/50 bg-white dark:bg-slate-900 text-red-700 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                        Sebelumnya
-                    </button>
-                    <span className="text-xs font-semibold text-red-800 dark:text-red-300">
-                        Halaman {currentPage} dari {totalPages}
-                    </span>
-                    <button
-                        type="button"
-                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                        disabled={currentPage === totalPages}
-                        className="px-4 py-2 text-xs font-bold rounded-lg border border-red-200 dark:border-red-900/50 bg-white dark:bg-slate-900 text-red-700 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                        Berikutnya
-                    </button>
-                </div>
-            )}
         </div>
     );
 

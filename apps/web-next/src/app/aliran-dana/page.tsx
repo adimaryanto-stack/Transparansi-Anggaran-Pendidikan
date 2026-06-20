@@ -66,7 +66,7 @@ function formatFullNumber(nInTrillions: number): string {
     return formatIDR(nInTrillions * 1_000_000_000_000);
 }
 
-export default function AliranDanaPage() {
+function AliranDanaPageContent() {
     const searchParams = useSearchParams();
     const sourceParam = searchParams.get('source')?.toUpperCase() || 'APBN';
 
@@ -353,45 +353,44 @@ export default function AliranDanaPage() {
                                     </table>
                                 </div>
                             </section>
-
-                            {/* Log Transfer Dana APBN - Only shown if there is data */}
-                            {data?.flowLinks && data.flowLinks.length > 0 && (
-                                <section className="mb-10">
-                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-primary">swap_horiz</span>
-                                        Log Transfer Dana APBN
-                                    </h2>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        {data.flowLinks.map((fl, idx) => (
-                                            <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
-                                                <div className="flex items-center justify-between mb-3">
-                                                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
-                                                        {fl.status}
-                                                    </span>
-                                                    <span className="text-xs text-slate-400">{fl.date}</span>
-                                                </div>
-                                                <div className="flex items-center gap-3 mb-3">
-                                                    <div className="flex-1 text-right">
-                                                        <p className="text-xs text-slate-400 uppercase">Dari</p>
-                                                        <p className="font-bold text-sm truncate">{fl.source}</p>
-                                                    </div>
-                                                    <div className="flex flex-col items-center">
-                                                        <span className="material-symbols-outlined text-primary text-2xl">arrow_forward</span>
-                                                    </div>
-                                                    <div className="flex-1">
-                                                        <p className="text-xs text-slate-400 uppercase">Ke</p>
-                                                        <p className="font-bold text-sm truncate">{fl.target}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                                                    <span className="text-xs text-slate-400 font-mono">{fl.reference}</span>
-                                                    <span className="font-black text-primary text-lg">{formatCompact(fl.value)}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
+                             {/* Log Transfer Dana APBN - Only shown if there is data */}
+                             {data?.flowLinks && data.flowLinks.length > 0 && (
+                                 <section className="mb-8">
+                                     <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+                                         <span className="material-symbols-outlined text-primary">swap_horiz</span>
+                                         Log Transfer Dana APBN
+                                     </h2>
+                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                         {data.flowLinks.map((fl, idx) => (
+                                             <div key={idx} className="bg-white rounded-xl border border-slate-200 p-4 hover:shadow-md transition-shadow">
+                                                 <div className="flex items-center justify-between mb-2">
+                                                     <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
+                                                         {fl.status}
+                                                     </span>
+                                                     <span className="text-[11px] text-slate-400 font-medium">{fl.date}</span>
+                                                 </div>
+                                                 <div className="flex items-center gap-2 mb-2">
+                                                     <div className="flex-1 text-right">
+                                                         <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Dari</p>
+                                                         <p className="font-bold text-xs truncate text-slate-700">{fl.source}</p>
+                                                     </div>
+                                                     <div className="flex flex-col items-center">
+                                                         <span className="material-symbols-outlined text-primary/70 text-lg">arrow_forward</span>
+                                                     </div>
+                                                     <div className="flex-1">
+                                                         <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Ke</p>
+                                                         <p className="font-bold text-xs truncate text-slate-700">{fl.target}</p>
+                                                     </div>
+                                                 </div>
+                                                 <div className="flex items-center justify-between pt-2.5 border-t border-slate-100">
+                                                     <span className="text-[11px] text-slate-400 font-mono">{fl.reference}</span>
+                                                     <span className="font-extrabold text-primary text-base">{formatCompact(fl.value)}</span>
+                                                 </div>
+                                             </div>
+                                         ))}
+                                     </div>
+                                 </section>
+                             )}
 
                             <section className="mb-10">
                                 <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -410,5 +409,20 @@ export default function AliranDanaPage() {
                 </div>
             </main>
         </>
+    );
+}
+
+export default function AliranDanaPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+                <div className="flex flex-col items-center gap-4">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                    <p className="text-slate-500 font-medium">Memuat Aliran Dana...</p>
+                </div>
+            </div>
+        }>
+            <AliranDanaPageContent />
+        </Suspense>
     );
 }

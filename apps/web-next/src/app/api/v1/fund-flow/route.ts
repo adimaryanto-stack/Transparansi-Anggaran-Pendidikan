@@ -119,6 +119,38 @@ export async function GET(request: Request) {
         const totalFlaggedCount = (provinsi?.filter(p => p.is_flagged || p.is_manual_flagged || p.over_budget_warning).length || 0) + 
                                   (districts?.filter(d => d.is_flagged).length || 0);
 
+        // 5. Fetch Fund Transfers
+        const { data: transfers, error: transfersErr } = await supabase
+            .from('fund_transfers')
+            .select('*');
+        
+        if (transfersErr) throw transfersErr;
+
+        // 6. Fetch Fund Allocations for joining
+        const { data: fundAllocations, error: allocationsErr } = await supabase
+            .from('fund_allocations')
+            .select('id, entity_name');
+        
+        if (allocationsErr) throw allocationsErr;
+
+        // Create a lookup map for allocation names
+        const allocationMap = new Map<string, string>();
+        if (fundAllocations) {
+            fundAllocations.forEach(fa => {
+                allocationMap.set(fa.id, fa.entity_name);
+            });
+        }
+
+        // Map transfers to flowLinks format
+        const flowLinks = (transfers || []).map((t: any) => ({
+            source: allocationMap.get(t.from_allocation_id) || 'Unknown Source',
+            target: allocationMap.get(t.to_allocation_id) || 'Unknown Target',
+            value: Number(t.amount || 0),
+            reference: t.reference_number || '',
+            date: t.transfer_date || '',
+            status: t.status || 'PENDING'
+        }));
+
         return NextResponse.json({
             success: true,
             year: targetYear,
@@ -128,7 +160,7 @@ export async function GET(request: Request) {
                 total_flagged: totalFlaggedCount,
             },
             allocations,
-            flowLinks: []
+            flowLinks
         });
     } catch (err: any) {
         return NextResponse.json({ success: false, error: err.message }, { status: 500 });

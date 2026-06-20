@@ -13,8 +13,17 @@
     "test": "npm run test --workspaces --if-present"
   },
   "dependencies": {
+    "@next/swc-win32-x64-msvc": "^16.2.9",
     "axios": "^1.13.6",
-    "cheerio": "^1.2.0"
+    "buffer-equal-constant-time": "^1.0.1",
+    "cheerio": "^1.2.0",
+    "ecdsa-sig-formatter": "^1.0.11",
+    "extend": "^3.0.2",
+    "has-flag": "^5.0.1",
+    "lightningcss-win32-x64-msvc": "^1.32.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-is": "19.2.7"
   },
   "devDependencies": {
     "cross-env": "^10.1.0"
