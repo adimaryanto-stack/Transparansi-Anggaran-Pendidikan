@@ -1,5 +1,5 @@
 "use client";
-
+export const dynamic = 'force-dynamic';
 import { useState, useEffect, Suspense } from 'react';
 import SharedNavbar from '@/components/SharedNavbar';
 import { formatIDR } from '@/lib/utils';
@@ -12,8 +12,8 @@ import { useSearchParams } from 'next/navigation';
 function PageVisualisasi({ data, yearData, selectedYear, setSelectedYear }: { data: any, yearData: any[], selectedYear: number, setSelectedYear: (y: number) => void }) {
     return (
         <div className="my-8 rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white relative" style={{ height: '800px' }}>
-            <TopologiAnggaran 
-                externalYearData={yearData} 
+            <TopologiAnggaran
+                externalYearData={yearData}
                 externalSelectedYear={selectedYear}
                 onYearChange={setSelectedYear}
                 externalAllocations={data?.allocations || []}
@@ -69,13 +69,13 @@ function formatFullNumber(nInTrillions: number): string {
 export default function AliranDanaPage() {
     const searchParams = useSearchParams();
     const sourceParam = searchParams.get('source')?.toUpperCase() || 'APBN';
-    
+
     const [data, setData] = useState<{ allocations: Allocation[]; flowLinks: FlowLink[] } | null>(null);
     const [apbnYears, setApbnYears] = useState<any[]>([]);
     const [selectedYear, setSelectedYear] = useState(2025);
     const [loading, setLoading] = useState(true);
     const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
-    
+
     const [apbdSourceData, setApbdSourceData] = useState<any[]>([]);
     const [csrSourceData, setCsrSourceData] = useState<any[]>([]);
     const itemsPerPage = 10;
@@ -87,7 +87,7 @@ export default function AliranDanaPage() {
         supabase.from('apbd_yearly_data').select('*').order('year', { ascending: true }).then(({ data }) => {
             if (data) setApbdSourceData(data);
         });
-        
+
         supabase.from('csr_yearly_data').select('*').order('year', { ascending: true }).then(({ data }) => {
             if (data) setCsrSourceData(data);
         });
@@ -189,11 +189,11 @@ export default function AliranDanaPage() {
                         <>
                             {/* ---- DYNAMIC APBN FLOW CHART ---- */}
                             <Suspense fallback={<div className="min-h-[500px] flex justify-center items-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
-                                <PageVisualisasi 
-                                    data={data} 
-                                    yearData={apbnYears} 
-                                    selectedYear={selectedYear} 
-                                    setSelectedYear={setSelectedYear} 
+                                <PageVisualisasi
+                                    data={data}
+                                    yearData={apbnYears}
+                                    selectedYear={selectedYear}
+                                    setSelectedYear={setSelectedYear}
                                 />
                             </Suspense>
 
@@ -202,96 +202,96 @@ export default function AliranDanaPage() {
                                 {/* ---- APBD SECTION ---- */}
                                 {apbdSourceData.length > 0 ? (
                                     <section className="h-full flex flex-col">
-                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-amber-500">location_city</span>
-                                        Dana APBD Daerah
-                                    </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
-                                        <div className="flex-1 overflow-x-auto">
-                                            <table className="w-full text-sm">
-                                                <thead>
-                                                    <tr className="bg-slate-50 border-b border-slate-200">
-                                                    <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
-                                                    <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {apbdSourceData
-                                                    .map(item => (
-                                                        <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                            <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
-                                                            <td className="p-4 text-right font-mono text-amber-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-amber-500">location_city</span>
+                                            Dana APBD Daerah
+                                        </h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
+                                            <div className="flex-1 overflow-x-auto">
+                                                <table className="w-full text-sm">
+                                                    <thead>
+                                                        <tr className="bg-slate-50 border-b border-slate-200">
+                                                            <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
+                                                            <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
                                                         </tr>
-                                                    ))}
-                                            </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                        {apbdSourceData
+                                                            .map(item => (
+                                                                <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                    <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
+                                                                    <td className="p-4 text-right font-mono text-amber-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
+                                                                </tr>
+                                                            ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            ) : (
-                                <section className="h-full flex flex-col">
-                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-amber-500">location_city</span>
-                                        Dana APBD Daerah
-                                    </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
-                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                            Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
-                                        </p>
-                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-slate-600 font-bold border border-slate-200">
-                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                            Memuat Data...
+                                    </section>
+                                ) : (
+                                    <section className="h-full flex flex-col">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-amber-500">location_city</span>
+                                            Dana APBD Daerah
+                                        </h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
+                                            <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                                Data aliran dana pendidikan dari Anggaran Pendapatan dan Belanja Daerah (APBD) di seluruh institusi sedang dalam proses integrasi sistem.
+                                            </p>
+                                            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-slate-600 font-bold border border-slate-200">
+                                                <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                                Memuat Data...
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            )}
+                                    </section>
+                                )}
 
-                            {/* ---- CSR SECTION ---- */}
-                            {csrSourceData.length > 0 ? (
-                                <section className="h-full flex flex-col">
-                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-emerald-500">handshake</span>
-                                        Dana CSR Perusahaan
-                                    </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
-                                        <div className="flex-1 overflow-x-auto">
-                                            <table className="w-full text-sm">
-                                                <thead>
-                                                    <tr className="bg-slate-50 border-b border-slate-200">
-                                                    <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
-                                                    <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {csrSourceData
-                                                    .map(item => (
-                                                        <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                            <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
-                                                            <td className="p-4 text-right font-mono text-emerald-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
+                                {/* ---- CSR SECTION ---- */}
+                                {csrSourceData.length > 0 ? (
+                                    <section className="h-full flex flex-col">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-emerald-500">handshake</span>
+                                            Dana CSR Perusahaan
+                                        </h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-1 flex flex-col">
+                                            <div className="flex-1 overflow-x-auto">
+                                                <table className="w-full text-sm">
+                                                    <thead>
+                                                        <tr className="bg-slate-50 border-b border-slate-200">
+                                                            <th className="text-left p-4 font-bold text-slate-500">Tahun</th>
+                                                            <th className="text-right p-4 font-bold text-slate-500">Total Anggaran</th>
                                                         </tr>
-                                                    ))}
-                                            </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                        {csrSourceData
+                                                            .map(item => (
+                                                                <tr key={item.year} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                    <td className="p-4 text-left font-bold text-slate-800 text-base">{item.year}</td>
+                                                                    <td className="p-4 text-right font-mono text-emerald-700 font-bold text-base">{formatFullNumber(item.total_budget)}</td>
+                                                                </tr>
+                                                            ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            ) : (
-                                <section className="h-full flex flex-col">
-                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-emerald-500">handshake</span>
-                                        Dana CSR Perusahaan
-                                    </h2>
-                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
-                                        <p className="text-slate-500 mb-6 max-w-md mx-auto">
-                                            Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
-                                        </p>
-                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-slate-600 font-bold border border-slate-200">
-                                            <span className="material-symbols-outlined animate-spin text-sm">sync</span>
-                                            Memuat Data...
+                                    </section>
+                                ) : (
+                                    <section className="h-full flex flex-col">
+                                        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-emerald-500">handshake</span>
+                                            Dana CSR Perusahaan
+                                        </h2>
+                                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-12 flex-1 flex flex-col items-center justify-center text-center">
+                                            <p className="text-slate-500 mb-6 max-w-md mx-auto">
+                                                Dataset laporan rekapitulasi Corporate Social Responsibility (CSR) dari sektor perusahaan swasta untuk entitas sekolah sedang dikumpulkan.
+                                            </p>
+                                            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-slate-600 font-bold border border-slate-200">
+                                                <span className="material-symbols-outlined animate-spin text-sm">sync</span>
+                                                Memuat Data...
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            )}
+                                    </section>
+                                )}
                             </div>
 
                             {/* ---- RECONCILIATION TABLE, TRANSFER LOG, PROVINCE MAP ---- */}
@@ -333,7 +333,7 @@ export default function AliranDanaPage() {
                                                         <td className="p-4 text-right font-semibold">{formatCompact(a.disbursed)}</td>
                                                         <td className="p-4 text-right font-semibold">{formatCompact(a.remaining)}</td>
                                                         <td className={`p-4 text-right font-bold ${a.gap > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
-                                                            {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${a.gap_percent}%)`}
+                                                            {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${Number(a.gap_percent).toFixed(1)}%)`}
                                                         </td>
                                                         <td className="p-4 text-center">
                                                             {a.status === 'FLAGGED' ? (
@@ -354,12 +354,13 @@ export default function AliranDanaPage() {
                                 </div>
                             </section>
 
-                            <section className="mb-10">
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">swap_horiz</span>
-                                    Log Transfer Dana APBN
-                                </h2>
-                                {data?.flowLinks && data.flowLinks.length > 0 ? (
+                            {/* Log Transfer Dana APBN - Only shown if there is data */}
+                            {data?.flowLinks && data.flowLinks.length > 0 && (
+                                <section className="mb-10">
+                                    <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary">swap_horiz</span>
+                                        Log Transfer Dana APBN
+                                    </h2>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {data.flowLinks.map((fl, idx) => (
                                             <div key={idx} className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-shadow">
@@ -389,12 +390,8 @@ export default function AliranDanaPage() {
                                             </div>
                                         ))}
                                     </div>
-                                ) : (
-                                    <div className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col items-center justify-center text-center">
-                                        <p className="text-slate-500">Belum ada catatan log transfer dana untuk tahun ini.</p>
-                                    </div>
-                                )}
-                            </section>
+                                </section>
+                            )}
 
                             <section className="mb-10">
                                 <h2 className="text-lg font-bold mb-4 flex items-center gap-2">

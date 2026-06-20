@@ -255,7 +255,7 @@ export default function FundingPage() {
                                                 return null;
                                             }}
                                         />
-                                        <Bar dataKey="total_budget" fill="#f97316" radius={[4, 4, 0, 0]} />
+                                        <Bar dataKey="total_budget" fill="#f97316" radius={[4, 4, 0, 0]} onClick={(data:any)=>router.push(`/aliran-dana?year=${data.payload.year}&source=APBD`)} style={{cursor:'pointer'}} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>
@@ -308,7 +308,7 @@ export default function FundingPage() {
                                                 return null;
                                             }}
                                         />
-                                        <Bar dataKey="total_budget" fill="#a855f7" radius={[4, 4, 0, 0]} />
+                                        <Bar dataKey="total_budget" fill="#a855f7" radius={[4, 4, 0, 0]} onClick={(data:any) => router.push(`/aliran-dana?year=${data.payload.year}&source=CSR`)} style={{ cursor: 'pointer' }} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>

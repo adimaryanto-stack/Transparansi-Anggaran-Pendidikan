@@ -31,7 +31,8 @@ if (!serviceRoleKey) {
 }
 
 if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    console.log('⚠️  SUPABASE_SERVICE_ROLE_KEY is missing. Falling back to NEXT_PUBLIC_SUPABASE_ANON_KEY...');
+    console.error('Error: SUPABASE_SERVICE_ROLE_KEY is required for migration. Set it in .env.local');
+    process.exit(1);
 }
 
 const supabase = createClient(supabaseUrl, serviceRoleKey);

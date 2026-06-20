@@ -58,6 +58,19 @@ export default function SchoolDashboardPage() {
     const [selectedYear, setSelectedYear] = useState<number>(2026);
     const [availableYears, setAvailableYears] = useState<number[]>([2026]);
     const [activeTab, setActiveTab] = useState<'transactions' | 'anomalies'>('transactions');
+    const [txPage, setTxPage] = useState(1);
+    const TX_PER_PAGE = 10;
+
+    // Escape key closes modal
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && selectedTransaction) {
+                setSelectedTransaction(null);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedTransaction]);
 
     // Fetch available years from 'tahun_anggaran'
     useEffect(() => {
@@ -459,7 +472,10 @@ export default function SchoolDashboardPage() {
         <div className="relative flex min-h-screen flex-col bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             {/* Transaction Receipt Modal */}
             {selectedTransaction && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm print:bg-white print:backdrop-blur-none print:p-0 font-sans">
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm print:bg-white print:backdrop-blur-none print:p-0 font-sans"
+                    onClick={(e) => { if (e.target === e.currentTarget) setSelectedTransaction(null); }}
+                >
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden flex flex-col print:shadow-none print:max-w-none print:w-full print:border-none">
                         {/* Header */}
                         <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between print:hidden">
@@ -862,7 +878,9 @@ export default function SchoolDashboardPage() {
                                                         <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Belum ada transaksi tercatat.</td>
                                                     </tr>
                                                 ) : (
-                                                    schoolData.recentTransactions.map((trx: any) => (
+                                                    schoolData.recentTransactions
+                                                        .slice((txPage - 1) * TX_PER_PAGE, txPage * TX_PER_PAGE)
+                                                        .map((trx: any) => (
                                                         <tr
                                                             key={trx.id}
                                                             className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group"
@@ -887,6 +905,43 @@ export default function SchoolDashboardPage() {
                                                 )}
                                             </tbody>
                                         </table>
+                                        {/* Pagination Controls */}
+                                        {schoolData.recentTransactions.length > TX_PER_PAGE && (
+                                            <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30">
+                                                <p className="text-xs text-slate-500 dark:text-slate-400">
+                                                    Menampilkan {((txPage - 1) * TX_PER_PAGE) + 1}–{Math.min(txPage * TX_PER_PAGE, schoolData.recentTransactions.length)} dari {schoolData.recentTransactions.length} transaksi
+                                                </p>
+                                                <div className="flex items-center gap-1">
+                                                    <button
+                                                        onClick={() => setTxPage(p => Math.max(1, p - 1))}
+                                                        disabled={txPage === 1}
+                                                        className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:border-primary disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
+                                                    >
+                                                        <span className="material-symbols-outlined text-[16px]">chevron_left</span>
+                                                    </button>
+                                                    {Array.from({ length: Math.ceil(schoolData.recentTransactions.length / TX_PER_PAGE) }, (_, i) => i + 1).map(page => (
+                                                        <button
+                                                            key={page}
+                                                            onClick={() => setTxPage(page)}
+                                                            className={`w-8 h-8 flex items-center justify-center rounded-lg border text-sm font-bold transition-all ${
+                                                                txPage === page
+                                                                    ? 'bg-primary text-white border-primary'
+                                                                    : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:border-primary/50'
+                                                            }`}
+                                                        >
+                                                            {page}
+                                                        </button>
+                                                    ))}
+                                                    <button
+                                                        onClick={() => setTxPage(p => Math.min(Math.ceil(schoolData.recentTransactions.length / TX_PER_PAGE), p + 1))}
+                                                        disabled={txPage === Math.ceil(schoolData.recentTransactions.length / TX_PER_PAGE)}
+                                                        className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:border-primary disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
+                                                    >
+                                                        <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 ) : (
                                     <div className="p-0">
