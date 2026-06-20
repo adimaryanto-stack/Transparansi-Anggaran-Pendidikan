@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export default function ForecastBoard({ npsn, transactions = [], isInsideTab = false }: { npsn: string, transactions?: any[], isInsideTab?: boolean }) {
     const [anomalies, setAnomalies] = useState<any[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         // Simulasi AI mendeteksi anomali dari data transaksi
@@ -25,6 +26,7 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
             // (Hanya menampilkan anomali jika transaksi nyata melebihi aturan)
 
             setAnomalies(detected);
+            setCurrentPage(1); // Reset to first page when data changes
         };
 
         detectAnomalies();
@@ -39,6 +41,11 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
         );
     }
 
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(anomalies.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedAnomalies = anomalies.slice(startIndex, startIndex + itemsPerPage);
+
     const content = (
         <div className="p-6">
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
@@ -46,7 +53,7 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
             </p>
 
             <div className="space-y-4">
-                {anomalies.map((anomali, i) => (
+                {paginatedAnomalies.map((anomali, i) => (
                     <div key={i} className={`p-4 rounded-xl border ${anomali.severity === 'critical' ? 'bg-red-50/50 dark:bg-red-950/10 border-red-200 dark:border-red-900/30' : 'bg-orange-50/50 dark:bg-orange-950/10 border-orange-200 dark:border-orange-900/30'}`}>
                         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div>
@@ -78,6 +85,47 @@ export default function ForecastBoard({ npsn, transactions = [], isInsideTab = f
                     </div>
                 ))}
             </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+                <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 -mx-6 -mb-6 px-6 py-4">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Menampilkan {((currentPage - 1) * itemsPerPage) + 1}–{Math.min(currentPage * itemsPerPage, anomalies.length)} dari {anomalies.length} anomali
+                    </p>
+                    <div className="flex items-center gap-1">
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                            disabled={currentPage === 1}
+                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-500 hover:text-white hover:border-red-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm font-bold"
+                        >
+                            <span className="material-symbols-outlined text-[16px]">chevron_left</span>
+                        </button>
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                            <button
+                                key={page}
+                                type="button"
+                                onClick={() => setCurrentPage(page)}
+                                className={`w-8 h-8 flex items-center justify-center rounded-lg border text-sm font-bold transition-all ${
+                                    currentPage === page
+                                        ? 'bg-red-500 text-white border-red-500'
+                                        : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-500/10 hover:border-red-500/50'
+                                }`}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                            disabled={currentPage === totalPages}
+                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-500 hover:text-white hover:border-red-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm font-bold"
+                        >
+                            <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 
