@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useCallback, useMemo } from "react";
+import { supabase } from "@/lib/supabase";
 
 /**
  * KOMPONEN: TopologiAnggaran
@@ -33,32 +34,13 @@ const fmtT = (t: number) => {
 
 const fmtIdr = (num: number) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
 
-const genKabKota = (prov: any, limit = 4, expanded = false) => {
-    const count = expanded ? prov.kabkota : Math.min(prov.kabkota, limit);
-    return Array.from({ length: count }, (_, i) => ({
-        id: `${prov.id}_kk${i}`,
-        name: `${i % 2 === 0 ? "Kab." : "Kota"} ${prov.name} ${i + 1}`,
-        hasUniv: true,
-        index: i
-    }));
-};
-
-const genDaftarSekolah = (kabkota: string, jenjang: string) => {
-    // Priority: If it's Jakarta Pusat and MAS, return the real record
-    if ((kabkota.includes("Jakarta Pusat") || kabkota.includes("3171")) && jenjang === "MAS") {
-        return [
-            { id: 'sch_real_1', name: 'MAS JAKARTA PUSAT', npsn: '60725003', kepsek: 'Dr. H. Ahmad Fauzi', anggaran: { total: 1250000000 } }
-        ];
-    }
-    
-    // Fallback to mock
-    return Array.from({ length: 2 }, (_, i) => ({
-        id: `sch_${kabkota}_${jenjang}_${i}`,
-        name: `${jenjang} ${kabkota} ${i + 1}`,
-        npsn: `1000${Math.floor(Math.random() * 9000)}`,
-        kepsek: 'Kepala Sekolah',
-        anggaran: { total: 500000000 + (i * 100000000) }
-    }));
+const getJenjang = (name: string) => {
+    const n = (name || '').toUpperCase();
+    if (n.match(/\b(UNIVERSITAS|INSTITUT|POLITEKNIK|AKADEMI|SEKOLAH TINGGI)\b/)) return 'PT';
+    if (n.match(/\b(SMA|SMAN|SMAS|SMK|SMKN|SMKS|MA|MAN|MAS)\b/)) return 'SMA';
+    if (n.match(/\b(SMP|SMPN|SMPS|MTS|MTSN|MTSS)\b/)) return 'SMP';
+    if (n.match(/\b(SD|SDN|SDS|MI|MIN|MIS)\b/)) return 'SD';
+    return 'PAUD';
 };
 
 // ── KOMPONEN INTERAKTIF ──
@@ -152,6 +134,8 @@ export default function TopologiAnggaran({
     const [pan, setPan] = useState({ x: 0, y: 50 });
     const [expanded, setExpanded] = useState<Record<string, boolean>>({ pusat: true });
     const [expandedOthers, setExpandedOthers] = useState<Record<string, boolean>>({});
+    const [schoolsByList, setSchoolsByList] = useState<Record<string, any[]>>({});
+    const [loadingSchools, setLoadingSchools] = useState<Record<string, boolean>>({});
 
     const canvasRef = useRef<HTMLDivElement>(null);
     const nodeRefs = useRef<Record<string, HTMLElement>>({});
@@ -194,11 +178,14 @@ export default function TopologiAnggaran({
         const provs = externalAllocations.filter(a => a.level === 'DINAS_PROV');
         if (provs.length > 0) {
             return provs.map((p) => {
+                const districtsInProv = externalAllocations.filter(
+                    d => d.level === 'DINAS_KAB' && d.parent_id === p.id
+                );
                 return {
                     id: p.id,
                     name: p.entity_name,
                     alokasi: p.allocated / 1e12,
-                    kabkota: 5, // Fallback dummy to be replaced by DB fetch if needed
+                    kabkota: districtsInProv.length || 5,
                     region: "Wilayah"
                 };
             });
@@ -208,6 +195,52 @@ export default function TopologiAnggaran({
 
     const toggle = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
     const toggleOthers = (provId: string) => setExpandedOthers(prev => ({ ...prev, [provId]: !prev[provId] }));
+
+    const fetchSchoolsForList = useCallback(async (listId: string, kabkotaCode: string, jenjangLabel: string) => {
+        if (schoolsByList[listId] || loadingSchools[listId]) return;
+
+        setLoadingSchools(prev => ({ ...prev, [listId]: true }));
+        try {
+            const { data: regency } = await supabase
+                .from('regencies')
+                .select('id')
+                .eq('code', kabkotaCode)
+                .maybeSingle();
+
+            if (regency) {
+                const { data: schoolsData } = await supabase
+                    .from('schools')
+                    .select('id, name, npsn, location')
+                    .eq('regency_id', regency.id)
+                    .order('name');
+
+                if (schoolsData) {
+                    const filtered = schoolsData.filter(s => {
+                        const j = getJenjang(s.name);
+                        return j.toUpperCase() === jenjangLabel.toUpperCase();
+                    });
+                    setSchoolsByList(prev => ({ ...prev, [listId]: filtered }));
+                } else {
+                    setSchoolsByList(prev => ({ ...prev, [listId]: [] }));
+                }
+            } else {
+                setSchoolsByList(prev => ({ ...prev, [listId]: [] }));
+            }
+        } catch (err) {
+            console.error("Error fetching schools:", err);
+            setSchoolsByList(prev => ({ ...prev, [listId]: [] }));
+        } finally {
+            setLoadingSchools(prev => ({ ...prev, [listId]: false }));
+        }
+    }, [schoolsByList, loadingSchools]);
+
+    const handleToggleList = (listId: string, kabkotaCode: string, jenjangLabel: string) => {
+        const nextExpanded = !expanded[listId];
+        toggle(listId);
+        if (nextExpanded) {
+            fetchSchoolsForList(listId, kabkotaCode, jenjangLabel);
+        }
+    };
 
     const resetToCenter = useCallback(() => {
         if (!canvasRef.current) return;
@@ -407,8 +440,14 @@ export default function TopologiAnggaran({
                                                 <div className="bg-white p-6 rounded-2xl border border-slate-200 text-slate-500 text-sm">Belum ada data alokasi provinsi.</div>
                                             ) : activeProvinces.map(prov => {
                                                 const provId = `${per.id}_${prov.id}`;
-                                                const alokasiProv = (prov.kabkota / TOTAL_KK_NASIONAL) * per.nilai;
-                                                const districts = genKabKota(prov, 4, expandedOthers[provId]);
+                                                const alokasiProv = prov.alokasi;
+                                                
+                                                const allDistricts = externalAllocations.filter(
+                                                    d => d.level === 'DINAS_KAB' && d.parent_id === prov.id
+                                                );
+                                                const districts = expandedOthers[provId]
+                                                    ? allDistricts
+                                                    : allDistricts.slice(0, 4);
 
                                                 return (
                                                     <div key={provId} className="flex flex-col items-center">
@@ -416,7 +455,7 @@ export default function TopologiAnggaran({
                                                             <CardWrapper color={per.color} active={expanded[provId]} onClick={() => toggle(provId)} width={200}>
                                                                 <div className="text-[10px] font-black text-slate-900 mb-1 uppercase text-center">{prov.name}</div>
                                                                 <div className="text-lg font-black text-center" style={{ color: per.color }}>{fmtT(alokasiProv)}</div>
-                                                                <div className="mt-2 text-[9px] text-slate-400 font-bold text-center italic leading-none">{(prov as any).kabkota} Satker Wilayah</div>
+                                                                <div className="mt-2 text-[9px] text-slate-400 font-bold text-center italic leading-none">{prov.kabkota} Satker Wilayah</div>
                                                             </CardWrapper>
                                                         </div>
 
@@ -426,8 +465,8 @@ export default function TopologiAnggaran({
                                                                     <div key={kk.id} className="flex flex-col items-center flex-shrink-0 animate-in slide-in-from-left-4 duration-500">
                                                                         <div ref={el => setRef(`kk_${kk.id}`, el)} data-clickable>
                                                                             <CardWrapper color="#3b82f6" active={expanded[`kk_${kk.id}`]} onClick={() => toggle(`kk_${kk.id}`)} width={180}>
-                                                                                <div className="text-[11px] font-black text-slate-800 mb-1 text-center">{kk.name}</div>
-                                                                                <div className="text-base font-black text-blue-600 text-center">{fmtT(alokasiProv / prov.kabkota)}</div>
+                                                                                <div className="text-[11px] font-black text-slate-800 mb-1 text-center">{kk.entity_name || kk.name}</div>
+                                                                                <div className="text-base font-black text-blue-600 text-center">{fmtT((kk.allocated || 0) / 1e12)}</div>
                                                                             </CardWrapper>
                                                                         </div>
                                                                         {expanded[`kk_${kk.id}`] && (
@@ -436,17 +475,23 @@ export default function TopologiAnggaran({
                                                                                     const listId = `list_${kk.id}_${j.key}`;
                                                                                     return (
                                                                                         <div key={j.key} className="flex flex-col gap-1">
-                                                                                            <div data-clickable onClick={() => toggle(listId)} className={`flex items-center justify-between rounded-xl px-3 py-2 border transition-all cursor-pointer ${expanded[listId] ? 'bg-blue-50 border-blue-200' : 'bg-slate-50 border-slate-100 hover:bg-white'}`}>
+                                                                                            <div data-clickable onClick={() => handleToggleList(listId, kk.kabkota_code, j.label)} className={`flex items-center justify-between rounded-xl px-3 py-2 border transition-all cursor-pointer ${expanded[listId] ? 'bg-blue-50 border-blue-200' : 'bg-slate-50 border-slate-100 hover:bg-white'}`}>
                                                                                                 <div className="flex items-center gap-2"><span className="text-base">{j.icon}</span><span className="text-[9px] font-black text-slate-500 uppercase leading-none">{j.label}</span></div>
-                                                                                                <span className="text-[10px] font-black text-slate-800">{fmtT((alokasiProv / prov.kabkota) / 5)}</span>
+                                                                                                <span className="text-[10px] font-black text-slate-800">{fmtT(((kk.allocated || 0) / 1e12) / 5)}</span>
                                                                                             </div>
                                                                                             {expanded[listId] && (
                                                                                                 <div className="flex flex-col gap-1 ml-2 mt-2 border-l-2 border-blue-100 pl-3 animate-in slide-in-from-top-2">
-                                                                                                    {genDaftarSekolah(kk.name, j.label).map(school => (
-                                                                                                        <div key={school.id} onClick={() => { window.location.href = `/dashboard/${school.npsn}?name=${encodeURIComponent(school.name)}`; }} className="flex items-center justify-between py-2 px-2 bg-white border border-slate-50 rounded-xl shadow-sm hover:border-blue-400 cursor-pointer transition-all active:scale-95 group">
-                                                                                                            <span className="text-[9px] font-bold text-slate-700 leading-tight group-hover:text-blue-600">{school.name}</span>
-                                                                                                        </div>
-                                                                                                    ))}
+                                                                                                    {loadingSchools[listId] ? (
+                                                                                                        <div className="text-[9px] text-slate-400 py-1">Memuat sekolah...</div>
+                                                                                                    ) : !schoolsByList[listId] || schoolsByList[listId].length === 0 ? (
+                                                                                                        <div className="text-[9px] text-slate-400 py-1 italic">Tidak ada sekolah terdaftar</div>
+                                                                                                    ) : (
+                                                                                                        schoolsByList[listId].map(school => (
+                                                                                                            <div key={school.id} onClick={() => { window.location.href = `/dashboard/${school.npsn}?name=${encodeURIComponent(school.name)}`; }} className="flex items-center justify-between py-2 px-2 bg-white border border-slate-50 rounded-xl shadow-sm hover:border-blue-400 cursor-pointer transition-all active:scale-95 group">
+                                                                                                                <span className="text-[9px] font-bold text-slate-700 leading-tight group-hover:text-blue-600">{school.name}</span>
+                                                                                                            </div>
+                                                                                                        ))
+                                                                                                    )}
                                                                                                 </div>
                                                                                             )}
                                                                                         </div>
@@ -456,8 +501,16 @@ export default function TopologiAnggaran({
                                                                         )}
                                                                     </div>
                                                                 ))}
-                                                                {prov.kabkota > 4 && !expandedOthers[provId] && (
-                                                                    <div data-clickable onClick={() => toggleOthers(provId)} className="w-[180px] flex-shrink-0"><CardWrapper color={per.color} isAction={true} width={180}><div className="text-center py-4"><div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Eksplorasi Sisa</div><div className="text-base font-black text-slate-500 mb-1">+{prov.kabkota - 4} Satker</div><div className="px-3 py-1 bg-slate-800 text-white rounded-lg text-[8px] font-black uppercase">Tampilkan Semua</div></div></CardWrapper></div>
+                                                                {allDistricts.length > 4 && !expandedOthers[provId] && (
+                                                                    <div data-clickable onClick={() => toggleOthers(provId)} className="w-[180px] flex-shrink-0">
+                                                                        <CardWrapper color={per.color} isAction={true} width={180}>
+                                                                            <div className="text-center py-4">
+                                                                                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Eksplorasi Sisa</div>
+                                                                                <div className="text-base font-black text-slate-500 mb-1">+{allDistricts.length - 4} Satker</div>
+                                                                                <div className="px-3 py-1 bg-slate-800 text-white rounded-lg text-[8px] font-black uppercase">Tampilkan Semua</div>
+                                                                            </div>
+                                                                        </CardWrapper>
+                                                                    </div>
                                                                 )}
                                                             </HorizontalSlider>
                                                         )}

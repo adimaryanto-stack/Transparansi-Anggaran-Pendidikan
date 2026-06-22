@@ -173,21 +173,21 @@ function ReportingForm() {
                                                 </div>
                                                 {isKPK ? (
                                                     <button
-                                                        onClick={handleWhatsAppKPK}
-                                                        className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-lg shadow-lg transition-all text-base flex items-center justify-center gap-3"
+                                                        disabled
+                                                        className="w-full bg-slate-200 text-slate-400 font-bold py-4 rounded-lg transition-all text-base flex items-center justify-center gap-3 cursor-not-allowed border border-slate-300"
                                                     >
-                                                        <WhatsAppIcon />
-                                                        Laporkan ke KPK
-                                                        <span className="text-emerald-200 text-sm font-normal">(087881527804)</span>
+                                                        <span className="material-symbols-outlined text-lg">lock</span>
+                                                        Laporkan ke KPK (Terkunci)
+                                                        <span className="text-slate-400 text-sm font-normal">(Nonaktif Sementara)</span>
                                                     </button>
                                                 ) : (
                                                     <button
-                                                        onClick={handleWhatsAppBPK}
-                                                        className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-lg shadow-lg transition-all text-base flex items-center justify-center gap-3"
+                                                        disabled
+                                                        className="w-full bg-slate-200 text-slate-400 font-bold py-4 rounded-lg transition-all text-base flex items-center justify-center gap-3 cursor-not-allowed border border-slate-300"
                                                     >
-                                                        <WhatsAppIcon />
-                                                        Laporkan ke Auditor BPK
-                                                        <span className="text-sky-200 text-sm font-normal">(081113401234)</span>
+                                                        <span className="material-symbols-outlined text-lg">lock</span>
+                                                        Laporkan ke Auditor BPK (Terkunci)
+                                                        <span className="text-slate-400 text-sm font-normal">(Nonaktif Sementara)</span>
                                                     </button>
                                                 )}
                                             </>

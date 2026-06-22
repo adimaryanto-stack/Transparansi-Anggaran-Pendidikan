@@ -79,12 +79,12 @@ const Hero = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
                 className="block w-full pl-12 pr-4 py-4 md:py-5 bg-white border-2 border-slate-100 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all text-lg shadow-xl placeholder:text-slate-400 outline-none"
-                placeholder="Cari nama sekolah atau NPSN... (contoh: SDN 01 PAGI)"
+                placeholder="Cari nama sekolah atau NPSN... (contoh: SDN 1 PESAWARAN)"
                 type="text"
               />
               <div className="absolute inset-y-2 right-2 flex">
                 <Link
-                  href={`/dashboard/${search || '12345678'}`}
+                  href={`/dashboard/${search || '10800001'}`}
                   className="bg-primary text-white px-6 flex items-center rounded-xl font-bold hover:bg-primary/90 transition-all font-sans"
                 >
                   Cari

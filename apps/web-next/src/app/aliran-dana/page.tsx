@@ -34,6 +34,11 @@ interface Allocation {
     gap: number;
     gap_percent: number;
     status: string;
+    parent_id?: string;
+    provinsi_code?: string;
+    kabkota_code?: string;
+    isManualFlagged?: boolean;
+    overBudgetWarning?: boolean;
 }
 
 interface FlowLink {
@@ -81,6 +86,9 @@ function AliranDanaPageContent() {
     const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1); // APBD pagination
     const [csrCurrentPage, setCsrCurrentPage] = useState(1); // CSR pagination
+    const [apbnPage, setApbnPage] = useState(1); // APBN pagination
+    const [selectedProvinceId, setSelectedProvinceId] = useState('');
+    const [selectedDistrictId, setSelectedDistrictId] = useState('');
 
     // Fetch source specific data
     useEffect(() => {
@@ -103,7 +111,76 @@ function AliranDanaPageContent() {
         try {
             const r = await fetch(`/api/v1/fund-flow?year=${year}`);
             const d = await r.json();
-            if (d.success) setData(d);
+            if (d.success) {
+                const rawAllocations = d.allocations || [];
+                
+                const apbnItems = rawAllocations.filter((a: any) => a.level === 'APBN');
+                const kemenItems = rawAllocations.filter((a: any) => a.level === 'KEMENDIKBUD');
+                
+                const provItems = rawAllocations.filter((a: any) => a.level === 'DINAS_PROV')
+                    .sort((a: any, b: any) => a.entity_name.localeCompare(b.entity_name));
+                
+                const kabItems = rawAllocations.filter((a: any) => a.level === 'DINAS_KAB')
+                    .sort((a: any, b: any) => a.entity_name.localeCompare(b.entity_name));
+                
+                const sekolahItems = rawAllocations.filter((a: any) => a.level === 'SEKOLAH')
+                    .sort((a: any, b: any) => a.entity_name.localeCompare(b.entity_name));
+
+                const nameMap = new Map<string, string>();
+
+                const maskedProv = provItems.map((p: any, idx: number) => {
+                    const originalName = p.entity_name;
+                    if (idx >= 10) {
+                        const maskedName = `Provinsi ${idx - 9}`;
+                        nameMap.set(originalName, maskedName);
+                        return { ...p, entity_name: maskedName };
+                    }
+                    nameMap.set(originalName, originalName);
+                    return p;
+                });
+
+                const maskedKab = kabItems.map((k: any, idx: number) => {
+                    const originalName = k.entity_name;
+                    if (idx >= 10) {
+                        const maskedName = `Kabupaten/Kota ${idx - 9}`;
+                        nameMap.set(originalName, maskedName);
+                        return { ...k, entity_name: maskedName };
+                    }
+                    nameMap.set(originalName, originalName);
+                    return k;
+                });
+
+                const maskedSekolah = sekolahItems.map((s: any, idx: number) => {
+                    const originalName = s.entity_name;
+                    if (idx >= 10) {
+                        const maskedName = `Sekolah ${idx - 9}`;
+                        nameMap.set(originalName, maskedName);
+                        return { ...s, entity_name: maskedName };
+                    }
+                    nameMap.set(originalName, originalName);
+                    return s;
+                });
+
+                const maskedAllocations = [
+                    ...apbnItems,
+                    ...kemenItems,
+                    ...maskedProv,
+                    ...maskedKab,
+                    ...maskedSekolah
+                ];
+
+                const maskedFlowLinks = (d.flowLinks || []).map((fl: any) => ({
+                    ...fl,
+                    source: nameMap.get(fl.source) || fl.source,
+                    target: nameMap.get(fl.target) || fl.target
+                }));
+
+                setData({
+                    ...d,
+                    allocations: maskedAllocations,
+                    flowLinks: maskedFlowLinks
+                });
+            }
         } catch (error) {
             console.error('Error fetching detail:', error);
         } finally {
@@ -119,6 +196,9 @@ function AliranDanaPageContent() {
     // Fetch Detail for Selected Year
     useEffect(() => {
         fetchDetail(selectedYear);
+        setApbnPage(1);
+        setSelectedProvinceId('');
+        setSelectedDistrictId('');
     }, [selectedYear]);
 
     // Realtime Subscription
@@ -150,6 +230,41 @@ function AliranDanaPageContent() {
         : [];
 
     const flaggedCount = data?.allocations?.filter(a => a.status === 'FLAGGED').length || 0;
+
+    // Get list of provinces
+    const provincesList = data?.allocations
+        ? data.allocations.filter(a => a.level === 'DINAS_PROV').sort((a, b) => a.entity_name.localeCompare(b.entity_name))
+        : [];
+
+    // Get list of districts, optionally filtered by selected province
+    const filteredDistrictsList = data?.allocations
+        ? data.allocations
+            .filter(a => a.level === 'DINAS_KAB' && (!selectedProvinceId || a.parent_id === selectedProvinceId))
+            .sort((a, b) => a.entity_name.localeCompare(b.entity_name))
+        : [];
+
+    // Filter allocations based on selected filters
+    const filteredAllocations = data?.allocations
+        ? data.allocations.filter(a => {
+            if (!selectedProvinceId) return true;
+
+            if (a.id === selectedProvinceId) {
+                return !selectedDistrictId;
+            }
+
+            if (selectedDistrictId) {
+                return a.id === selectedDistrictId;
+            }
+
+            return a.level === 'DINAS_KAB' && a.parent_id === selectedProvinceId;
+        })
+        : [];
+
+    const totalItems = filteredAllocations.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const startIndex = (apbnPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedAllocations = filteredAllocations.slice(startIndex, endIndex);
 
     return (
         <>
@@ -300,57 +415,229 @@ function AliranDanaPageContent() {
                                     <span className="material-symbols-outlined text-primary">fact_check</span>
                                     Rekonsiliasi Dana APBN
                                 </h2>
-                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
-                                    <table className="w-full text-sm">
-                                        <thead>
-                                            <tr className="bg-slate-50 border-b border-slate-200">
-                                                <th className="text-left p-4 font-bold text-slate-500">Entitas</th>
-                                                <th className="text-left p-4 font-bold text-slate-500">Level</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Dialokasikan</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Diterima</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Disalurkan</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Sisa</th>
-                                                <th className="text-right p-4 font-bold text-slate-500">Selisih</th>
-                                                <th className="text-center p-4 font-bold text-slate-500">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {data?.allocations?.map(a => {
-                                                const cfg = LEVEL_CONFIG[a.level] || LEVEL_CONFIG.SEKOLAH;
-                                                return (
-                                                    <tr key={a.id} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                                        <td className="p-4">
-                                                            <div className="flex items-center gap-2">
-                                                                <span className={`material-symbols-outlined text-lg ${cfg.color}`}>{cfg.icon}</span>
-                                                                <span className="font-semibold">{a.entity_name}</span>
+                                {/* Dropdown Filters */}
+                                <div className="flex flex-col md:flex-row gap-4 mb-5 items-end justify-between bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                                    <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                                        {/* Filter Provinsi */}
+                                        <div className="flex flex-col gap-1.5 w-full sm:w-64">
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-sm text-primary">map</span> Provinsi
+                                            </label>
+                                            <div className="relative">
+                                                <select
+                                                    value={selectedProvinceId}
+                                                    onChange={(e) => {
+                                                        setSelectedProvinceId(e.target.value);
+                                                        setSelectedDistrictId(''); // Reset district when province changes
+                                                        setApbnPage(1);
+                                                    }}
+                                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl h-11 px-3 pr-10 appearance-none outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-semibold text-slate-700 shadow-inner"
+                                                >
+                                                    <option value="">Semua Provinsi</option>
+                                                    {provincesList.map(p => (
+                                                        <option key={p.id} value={p.id}>{p.entity_name}</option>
+                                                    ))}
+                                                </select>
+                                                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">keyboard_arrow_down</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Filter Kabupaten/Kota */}
+                                        <div className="flex flex-col gap-1.5 w-full sm:w-64">
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-sm text-amber-500">location_city</span> Kabupaten / Kota
+                                            </label>
+                                            <div className="relative">
+                                                <select
+                                                    value={selectedDistrictId}
+                                                    onChange={(e) => {
+                                                        setSelectedDistrictId(e.target.value);
+                                                        setApbnPage(1);
+                                                    }}
+                                                    disabled={!selectedProvinceId}
+                                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl h-11 px-3 pr-10 appearance-none outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-semibold text-slate-700 shadow-inner disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
+                                                >
+                                                    <option value="">Semua Kabupaten/Kota</option>
+                                                    {filteredDistrictsList.map(d => (
+                                                        <option key={d.id} value={d.id}>{d.entity_name}</option>
+                                                    ))}
+                                                </select>
+                                                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">keyboard_arrow_down</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Quick Reset if filters are active */}
+                                    {(selectedProvinceId || selectedDistrictId) && (
+                                        <button
+                                            onClick={() => {
+                                                setSelectedProvinceId('');
+                                                setSelectedDistrictId('');
+                                                setApbnPage(1);
+                                            }}
+                                            className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 bg-red-50 hover:bg-red-100/80 px-4 h-11 rounded-xl transition-all border border-red-200/50 w-full md:w-auto justify-center shadow-sm"
+                                        >
+                                            <span className="material-symbols-outlined text-sm font-bold">filter_alt_off</span>
+                                            Hapus Filter
+                                        </button>
+                                    )}
+                                </div>
+                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-sm">
+                                            <thead>
+                                                <tr className="bg-slate-50 border-b border-slate-200">
+                                                    <th className="text-left p-4 font-bold text-slate-500">Entitas</th>
+                                                    <th className="text-left p-4 font-bold text-slate-500">Level</th>
+                                                    <th className="text-right p-4 font-bold text-slate-500">Dialokasikan</th>
+                                                    <th className="text-right p-4 font-bold text-slate-500">Diterima</th>
+                                                    <th className="text-right p-4 font-bold text-slate-500">Disalurkan</th>
+                                                    <th className="text-right p-4 font-bold text-slate-500">Sisa</th>
+                                                    <th className="text-right p-4 font-bold text-slate-500">Selisih</th>
+                                                    <th className="text-center p-4 font-bold text-slate-500">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {paginatedAllocations.length === 0 ? (
+                                                    <tr>
+                                                        <td colSpan={8} className="p-8 text-center text-slate-400">
+                                                            <div className="flex flex-col items-center gap-2 py-6">
+                                                                <span className="material-symbols-outlined text-4xl text-slate-300">filter_list_off</span>
+                                                                <p className="font-bold text-slate-500">Tidak ada entitas yang cocok</p>
+                                                                <p className="text-xs text-slate-400">Silakan sesuaikan atau hapus filter Anda</p>
                                                             </div>
                                                         </td>
-                                                        <td className="p-4">
-                                                            <span className={`px-2 py-1 rounded-full text-xs font-bold ${cfg.bgColor} ${cfg.color}`}>{cfg.label}</span>
-                                                        </td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.allocated)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.received)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.disbursed)}</td>
-                                                        <td className="p-4 text-right font-semibold">{formatCompact(a.remaining)}</td>
-                                                        <td className={`p-4 text-right font-bold ${a.gap > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
-                                                            {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${Number(a.gap_percent).toFixed(1)}%)`}
-                                                        </td>
-                                                        <td className="p-4 text-center">
-                                                            {a.status === 'FLAGGED' ? (
-                                                                <span className="inline-flex items-center gap-1 text-xs font-bold text-red-600 bg-red-100 px-2.5 py-1 rounded-full">
-                                                                    <span className="material-symbols-outlined text-xs">error</span> FLAG
-                                                                </span>
-                                                            ) : (
-                                                                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
-                                                                    <span className="material-symbols-outlined text-xs">check_circle</span> OK
-                                                                </span>
-                                                            )}
-                                                        </td>
                                                     </tr>
-                                                );
-                                            })}
-                                        </tbody>
-                                    </table>
+                                                ) : paginatedAllocations.map(a => {
+                                                        const cfg = LEVEL_CONFIG[a.level] || LEVEL_CONFIG.SEKOLAH;
+                                                        return (
+                                                            <tr key={a.id} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                                                <td className="p-4">
+                                                                    <div className="flex items-center gap-2">
+                                                                        <span className={`material-symbols-outlined text-lg ${cfg.color}`}>{cfg.icon}</span>
+                                                                        <span className="font-semibold">{a.entity_name}</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td className="p-4">
+                                                                    <span className={`px-2 py-1 rounded-full text-xs font-bold ${cfg.bgColor} ${cfg.color}`}>{cfg.label}</span>
+                                                                </td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.allocated)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.received)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.disbursed)}</td>
+                                                                <td className="p-4 text-right font-semibold">{formatCompact(a.remaining)}</td>
+                                                                <td className={`p-4 text-right font-bold ${a.gap > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
+                                                                    {a.gap === 0 ? '—' : `${formatCompact(Math.abs(a.gap))} (${Number(a.gap_percent).toFixed(1)}%)`}
+                                                                </td>
+                                                                <td className="p-4 text-center">
+                                                                    {a.status === 'FLAGGED' ? (
+                                                                        <span className="inline-flex items-center gap-1 text-xs font-bold text-red-600 bg-red-100 px-2.5 py-1 rounded-full">
+                                                                            <span className="material-symbols-outlined text-xs">error</span> FLAG
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
+                                                                            <span className="material-symbols-outlined text-xs">check_circle</span> OK
+                                                                        </span>
+                                                                    )}
+                                                                </td>
+                                                            </tr>
+                                                        );
+                                                    })
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    {/* Pagination Controls */}
+                                    {totalPages > 1 && (
+                                        <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/50 px-4 py-3 sm:px-6 text-sm">
+                                            <div className="flex flex-1 justify-between sm:hidden">
+                                                <button
+                                                    onClick={() => setApbnPage(p => Math.max(p - 1, 1))}
+                                                    disabled={apbnPage === 1}
+                                                    className="relative inline-flex items-center rounded-lg border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                                >
+                                                    Sebelumnya
+                                                </button>
+                                                <button
+                                                    onClick={() => setApbnPage(p => Math.min(p + 1, totalPages))}
+                                                    disabled={apbnPage === totalPages}
+                                                    className="relative ml-3 inline-flex items-center rounded-lg border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                                >
+                                                    Selanjutnya
+                                                </button>
+                                            </div>
+                                            <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                                <div>
+                                                    <p className="text-slate-600 font-medium">
+                                                        Menampilkan <span className="font-extrabold text-slate-900">{startIndex + 1}</span> hingga{' '}
+                                                        <span className="font-extrabold text-slate-900">{Math.min(endIndex, totalItems)}</span> dari{' '}
+                                                        <span className="font-extrabold text-slate-900">{totalItems}</span> entitas
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <nav className="isolate inline-flex -space-x-px rounded-xl shadow-sm bg-white border border-slate-200 p-0.5" aria-label="Pagination">
+                                                        <button
+                                                            onClick={() => setApbnPage(p => Math.max(p - 1, 1))}
+                                                            disabled={apbnPage === 1}
+                                                            className="relative inline-flex items-center rounded-lg px-2 py-2 text-slate-400 hover:bg-slate-50 hover:text-slate-700 transition-colors focus:z-20 disabled:opacity-30 disabled:hover:bg-transparent"
+                                                        >
+                                                            <span className="sr-only">Sebelumnya</span>
+                                                            <span className="material-symbols-outlined text-lg">chevron_left</span>
+                                                        </button>
+                                                        {Array.from({ length: totalPages }).map((_, i) => {
+                                                            const pageNum = i + 1;
+                                                            const isSelected = pageNum === apbnPage;
+
+                                                            if (
+                                                                pageNum === 1 ||
+                                                                pageNum === totalPages ||
+                                                                (pageNum >= apbnPage - 2 && pageNum <= apbnPage + 2)
+                                                            ) {
+                                                                return (
+                                                                    <button
+                                                                        key={pageNum}
+                                                                        onClick={() => setApbnPage(pageNum)}
+                                                                        aria-current={isSelected ? 'page' : undefined}
+                                                                        className={`relative inline-flex items-center px-3.5 py-1.5 rounded-lg text-sm font-bold transition-all focus:z-20 ${
+                                                                            isSelected
+                                                                                ? 'bg-primary text-white shadow-md shadow-primary/20'
+                                                                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                                                        }`}
+                                                                    >
+                                                                        {pageNum}
+                                                                    </button>
+                                                                );
+                                                            }
+
+                                                            if (
+                                                                (pageNum === 2 && apbnPage > 4) ||
+                                                                (pageNum === totalPages - 1 && apbnPage < totalPages - 3)
+                                                            ) {
+                                                                return (
+                                                                    <span
+                                                                        key={pageNum}
+                                                                        className="relative inline-flex items-center px-3 py-1.5 text-sm font-bold text-slate-400"
+                                                                    >
+                                                                        ...
+                                                                    </span>
+                                                                );
+                                                            }
+
+                                                            return null;
+                                                        })}
+                                                        <button
+                                                            onClick={() => setApbnPage(p => Math.min(p + 1, totalPages))}
+                                                            disabled={apbnPage === totalPages}
+                                                            className="relative inline-flex items-center rounded-lg px-2 py-2 text-slate-400 hover:bg-slate-50 hover:text-slate-700 transition-colors focus:z-20 disabled:opacity-30 disabled:hover:bg-transparent"
+                                                        >
+                                                            <span className="sr-only">Selanjutnya</span>
+                                                            <span className="material-symbols-outlined text-lg">chevron_right</span>
+                                                        </button>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </section>
                              {/* Log Transfer Dana APBN - Only shown if there is data */}
