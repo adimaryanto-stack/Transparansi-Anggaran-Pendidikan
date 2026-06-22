@@ -231,7 +231,7 @@ Proyek ini dikembangkan dalam beberapa fase:
 
 Untuk menjalankan aplikasi ini secara penuh, diperlukan:
 1. **Langganan Google One**: Dibutuhkan agar fitur AI (Gemini Pro & Vision) dapat berjalan maksimal, termasuk fitur OCR, Auditor AI, dan Suggest AI.
-2. **Penyimpanan Database Remote**: Membutuhkan koneksi ke database eksternal seperti **Supabase** (rekomendasi) atau **Hostinger MySQL** untuk persistensi data yang aman.
+2. **Penyimpanan Database Remote**: Membutuhkan koneksi ke database eksternal seperti **PostgreSQL Server** untuk persistensi data yang aman.
 3. **Server Backend**: Membutuhkan server (VPS/Cloud) untuk menjalankan API dan proses sinkronisasi data.
 4. **Konektor Himbara**: Diperlukan integrasi/konektor dengan sistem perbankan Himbara sebagai eksekutor transaksi dari Kemenkeu langsung ke rekening sekolah.
 5. **Kolaborasi Multisektoral**: Pengembangan aplikasi ini membutuhkan sinergi antar disiplin ilmu (Programmer, UI/UX Designer, Pakar Hukum/Yudikatif, dan Auditor Keuangan).
@@ -247,4 +247,4 @@ Aplikasi ini bersifat Open Source (MIT) sebagai bentuk kontribusi digital untuk 
 ## ⚠️ Pernyataan Penting
 Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini. Sebelumnya telah terjadi "pembungkaman" dalam bentuk intimidasi secara langsung dengan menggunakan perantara "preman bayaran"**
 
-Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia yang Bersih dan kualitasnya mendekati Finland.
+Dibuat dengan ❤️ untuk Masa Depan Pendidikan Indonesia yang menghargai jasa guru pendidik dan dosen.
