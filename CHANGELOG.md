@@ -7,6 +7,17 @@ dan proyek ini menggunakan [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v1.4.2] — 24 Juni 2026
+
+### Added
+- **Screenshot Terang (Light Mode)**: Mengganti seluruh screenshot lama (yang sempat terambil dalam mode gelap) dengan screenshot mode terang beresolusi tinggi (Homepage, Aliran Dana, dan Pelaporan).
+
+### Changed
+- Versi aplikasi `apps/web-next/package.json` diperbarui dari `1.4.1` → `1.4.2`.
+- Query parameter cache-busting gambar di `README.md` dinaikkan ke `?v=1.4.2` untuk memaksa GitHub Camo CDN memuat ulang visual mode terang.
+
+---
+
 ## [v1.4.1] — 24 Juni 2026
 
 ### Added

@@ -143,13 +143,13 @@ Catatan Infrastruktur:
 ## 📸 Screenshot Aplikasi
 
 ### Halaman Utama (Home)
-![Halaman Utama Transparansi Anggaran](docs/screenshots/homepage.png?v=1.4.1)
+![Halaman Utama Transparansi Anggaran](docs/screenshots/homepage.png?v=1.4.2)
 
 ### Halaman Aliran Dana (Topology)
-![Aliran Dana - Visualisasi Topology](docs/screenshots/aliran-dana.png?v=1.4.1)
+![Aliran Dana - Visualisasi Topology](docs/screenshots/aliran-dana.png?v=1.4.2)
 
 ### Halaman Pelaporan (Reporting 5W1H)
-![Formulir Pelaporan 5W1H](docs/screenshots/reporting.png?v=1.4.1)
+![Formulir Pelaporan 5W1H](docs/screenshots/reporting.png?v=1.4.2)
 
 ---
 
