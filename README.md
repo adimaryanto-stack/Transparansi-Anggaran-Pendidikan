@@ -33,9 +33,9 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 ---
 
 ## 📋 Status Proyek
-- **Versi Saat Ini**: `v1.3.0` (Funding Hub & Smart Search)
-- **Status**: Active Development (Fase 8 - PWA & Optimasi Kecepatan)
-- **Update Terakhir**: 13 Juni 2026
+- **Versi Saat Ini**: `v1.4.0` (Dokumentasi, Screenshot & PWA)
+- **Status**: Active Development (Fase 9 - Peluncuran Publik & PWA Optimization)
+- **Update Terakhir**: 24 Juni 2026
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
@@ -140,7 +140,17 @@ Sistem Transparansi Anggaran Pendidikan terdiri dari 5 server yang saling terhub
 
 ---
 
-## �🛠️ Tech Stack
+## 📸 Screenshot Aplikasi
+
+### Halaman Utama (Home)
+![Halaman Utama Transparansi Anggaran Pendidikan](docs/screenshots/homepage.png)
+
+### Halaman Aliran Dana APBN
+![Aliran Dana APBN - Visualisasi Topology](docs/screenshots/aliran-dana.png)
+
+---
+
+## 🛠️ Tech Stack
 - **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS v4, Framer Motion
 - **Backend**: Supabase (PostgreSQL + RLS), Google Gemini 3.1 Pro (Audit AI)
 - **PWA**: `next-pwa` (Ready for offline & mobile dashboard)
@@ -198,13 +208,20 @@ Proyek ini dikembangkan dalam beberapa fase:
 - [x] **Fase 6**: Advanced Dashboards & Multi-level Roles (`SUPER_ADMIN`, `SCHOOL`, dll).
 - [x] **Fase 7**: Dashboard UI Redesign (SaaS Centered Layout, Dark mode prep).
 - [x] **Fase 8**: Super Admin Flow Builder & Real-time Sync.
-- [ ] **Fase 9**: Peluncuran Publik & PWA Optimization.
+- [x] **Fase 9**: Peluncuran Publik & PWA Optimization.
 
 ---
 
 ---
 
 ## 📜 Change Log
+
+### v1.4.0 (24 Juni 2026)
+- **Dokumentasi Komprehensif**: Update README, PRD, dan status proyek secara menyeluruh.
+- **Screenshot Aplikasi**: Penambahan screenshot halaman Home dan Aliran Dana APBN ke dokumentasi.
+- **Fase 9 Selesai**: Peluncuran Publik & PWA Optimization berhasil diselesaikan.
+- **Sinkronisasi Data NPSN Pesawaran**: Sync 967 data sekolah nyata Kabupaten Pesawaran ke database Supabase.
+- **Masking Rekonsiliasi APBN**: Proteksi data sensitif pada tabel rekonsiliasi APBN untuk tampilan publik.
 
 ### v1.3.0 (13 Juni 2026)
 - **Integrasi APBD & CSR**: Visualisasi data pendanaan daerah dan donasi swasta di halaman Sumber Dana (/funding) secara dinamis.
