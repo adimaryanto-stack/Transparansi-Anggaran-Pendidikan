@@ -1,9 +1,21 @@
-# 📜 CHANGELOG — Transparansi Anggaran Pendidikan
+# 📜 CHANGELOG — Transparansi Anggaran
 
 Semua perubahan penting pada proyek ini didokumentasikan di file ini.
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 dan proyek ini menggunakan [Semantic Versioning](https://semver.org/).
+
+---
+
+## [v1.4.1] — 24 Juni 2026
+
+### Added
+- **Dokumentasi MVP (`mvp.md`)**: Membuat file `mvp.md` terdedikasi di project root untuk mempermudah identifikasi fitur minimum layak produk.
+- **Screenshot Pelaporan**: Penambahan screenshot Halaman Pelaporan (Reporting 5W1H) ke `README.md`.
+
+### Changed
+- **Pembersihan Nama Proyek**: Konsistensi penamaan proyek sebagai "Transparansi Anggaran" (bukan "Transparansi Anggaran Pendidikan") di `README.md`, `prd.md`, `CHANGELOG.md`, dan Next.js layout metadata.
+- Versi aplikasi `apps/web-next/package.json` diperbarui dari `1.4.0` → `1.4.1`.
 
 ---
 

@@ -1,4 +1,4 @@
-# 🏦 Transparansi Anggaran Pendidikan (Portal BOS Digital)
+# 🏦 Transparansi Anggaran (Portal BOS Digital)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stack: Next.js + Supabase](https://img.shields.io/badge/Stack-Next.js%20%2B%20Supabase-blue)](https://nextjs.org/)
@@ -123,30 +123,33 @@ Aplikasi ini menggunakan data riil dan terstruktur untuk mensimulasikan penerapa
 
 ## 🖥️ Infrastruktur Server
 
-Sistem Transparansi Anggaran Pendidikan terdiri dari 5 server yang saling terhubung, mencakup frontend publik, dashboard kementerian, perbankan (Himbara), institusi pendidikan, dan auditor negara.
+Sistem Transparansi Anggaran terdiri dari 5 server yang saling terhubung, mencakup frontend publik, dashboard kementerian, perbankan (Himbara), institusi pendidikan, dan auditor negara.
 
 | # | Nama Server | Kategori | Fungsi | Database | Repositori | Demo URL |
 |---|-------------|----------|--------|----------|------------|----------|
-| 1 | Frontend Publik | Dedicated Server | Frontend untuk diakses publik dari 38 Provinsi. | PostgreSQL (sinkron Supabase) | [Transparansi-Anggaran-Pendidikan](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo](https://transparansi-anggaran-pendidikan-we.vercel.app) |
+| 1 | Frontend Publik | Dedicated Server | Frontend untuk diakses publik dari 38 Provinsi. | PostgreSQL (sinkron Supabase) | [Transparansi-Anggaran](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo](https://transparansi-anggaran-pendidikan-we.vercel.app) |
 | 2 | Dashboard Kementerian | VPS Server | Dashboard Kementerian dalam pembagian nominal anggaran. | Supabase | [Dashboard-Kementerian](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [🔗 Live Demo](https://dashboard-kementerian.vercel.app) |
 | 3 | Dashboard Himbara | VPS Server | Manajemen dan status transfer ke rekening Institusi Pendidikan. | Supabase | [Dashboard-Himbara](https://github.com/adimaryanto-stack/Dashboard-Himbara) | [🔗 Live Demo](https://dashboard-bank-alpha.vercel.app/dashboard) |
 | 4 | Dashboard Institusi Pendidikan | Dedicated Server | Manajemen & pendataan belanja institusi dari 38 Provinsi (CDN Indonesia di 5 Pulau). | PostgreSQL (sinkron Supabase) | [Dashboard-Institusi-Pendidikan](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [🔗 Live Demo](https://dashboard-institusi-pendidikan.vercel.app) |
 | 5 | Dashboard Auditor | VPS Server | Pengawasan oleh Auditor resmi negara. | Supabase | [Dashboard-Auditor](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [🔗 Live Demo](https://dashboard-auditor.vercel.app) |
 
-**Catatan Infrastruktur:**
-- Server **Dedicated** (No. 1 & 4) menggunakan PostgreSQL lokal yang disinkronkan dengan Supabase untuk menangani beban akses dari 38 Provinsi.
-- Server **VPS** (No. 2, 3 & 5) menggunakan Supabase sebagai database utama.
-- Server No. 4 direkomendasikan menggunakan **Dedicated** dengan skema CDN (Content Delivery Network) Indonesia untuk coverage 1x5 pulau besar.
+Catatan Infrastruktur:
+- Server Dedicated (No. 1 & 4) menggunakan PostgreSQL lokal yang disinkronkan dengan Supabase untuk menangani beban akses dari 38 Provinsi.
+- Server VPS (No. 2, 3 & 5) menggunakan Supabase sebagai database utama.
+- Server No. 4 direkomendasikan menggunakan Dedicated dengan skema CDN (Content Delivery Network) Indonesia untuk coverage 1x5 pulau besar.
 
 ---
 
 ## 📸 Screenshot Aplikasi
 
 ### Halaman Utama (Home)
-![Halaman Utama Transparansi Anggaran Pendidikan](docs/screenshots/homepage.png)
+![Halaman Utama Transparansi Anggaran](docs/screenshots/homepage.png)
 
-### Halaman Aliran Dana APBN
-![Aliran Dana APBN - Visualisasi Topology](docs/screenshots/aliran-dana.png)
+### Halaman Aliran Dana (Topology)
+![Aliran Dana - Visualisasi Topology](docs/screenshots/aliran-dana.png)
+
+### Halaman Pelaporan (Reporting 5W1H)
+![Formulir Pelaporan 5W1H](docs/screenshots/reporting.png)
 
 ---
 

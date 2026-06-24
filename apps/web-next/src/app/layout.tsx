@@ -8,7 +8,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Transparansi Anggaran Pendidikan | BOS Online",
+  title: "Transparansi Anggaran | BOS Online",
   description: "Pantau penggunaan dana BOS dan anggaran sekolah secara terbuka demi pendidikan Indonesia yang lebih baik.",
   manifest: "/manifest.json",
 };

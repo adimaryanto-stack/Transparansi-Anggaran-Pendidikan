@@ -1,5 +1,5 @@
 # 📋 DOKUMEN KONSOLIDASI: PRD, MVP, & FLOWCHART
-## Portal Transparansi Anggaran Pendidikan Indonesia (BOS Online)
+## Portal Transparansi Anggaran (BOS Online)
 
 > **Status Dokumen:** Konsolidasi Final (v4.0)  
 > **Tanggal Pembaruan:** 24 Juni 2026  
