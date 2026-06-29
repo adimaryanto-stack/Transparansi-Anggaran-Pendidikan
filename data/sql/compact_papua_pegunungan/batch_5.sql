@@ -1,0 +1,172 @@
+-- Compact Batch 5 of 16 (Papua Pegunungan)
+DO $$
+DECLARE
+    v_data json := '[
+{"npsn":"60300784","name":"SMP NEGERI 2 WAMENA","address":"Jl. Panjaitan No.7","village":"Wamena Kota","status":"Negeri","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"a108c67f-682f-4f21-9c2a-4c9dfbf00a97","user_id":"bffa2d86-25de-4e89-a419-c134fc666916"},
+{"npsn":"60301583","name":"SMP NURUL HAQ YAPIS WAMENA","address":"Jl. Yos Sudarso Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"bab58f8b-d720-4dbb-b80a-0ee3782dbc8a","user_id":"8894b508-04d6-41f1-afd4-551e3f018b53"},
+{"npsn":"60301578","name":"SMP PGRI WAMENA","address":"Jln.Bhayangkara Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"5a0d9860-7407-4a6f-8935-0f194504f12b","user_id":"6381593d-8334-4a84-89fe-ffff4c2c4a02"},
+{"npsn":"69960995","name":"SMP TIRANUS WAMENA","address":"Jln. Papua","village":"Sinapuk","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"35184059-0f5a-4735-a922-d767ad1e4dee","user_id":"beba7e3a-8f4b-48c7-9378-a7af39e99143"},
+{"npsn":"60303638","name":"SMP YAKPESMI WAMENA","address":"Jln.Bayangkara Tanah Pendidikan Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ccc5df99-a042-4fc8-a0c8-ceaf8a1a621f","user_id":"e6d0cc0d-6e3e-4e49-894b-e6cb1698179b"},
+{"npsn":"69980270","name":"SMP YAPESLI WAMENA","address":"Jln. Irian","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"e21e06ee-f581-4db2-b435-49d445d3a34a","user_id":"11d41002-26c0-453a-b6ed-8e5eb05f6ba4"},
+{"npsn":"60302960","name":"SMP YASORES WAMENA","address":"Jln SD Percobaan Potikelek","village":"Honelama Dua","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"2df9e450-51f2-44d1-bcb3-88a4d07a230d","user_id":"5fa9ca79-2e80-4b02-b234-331c1d921382"},
+{"npsn":"60301584","name":"SMP YPK BETLEHEM WAMENA","address":"Jl.Bhayangkara  No. 48 Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"424f44aa-6033-433d-8468-ca758fcfd970","user_id":"f40fdb0f-cc3f-46fb-a518-9ae4beaf33d7"},
+{"npsn":"60301587","name":"SMP YPPGI ANIGOU WAMENA","address":"Jln. Yos Sudarso Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"e34c220c-0231-4001-b7e1-b5aa0b8dfc2b","user_id":"93faac81-1e9f-4e13-b03e-de4679c30a36"},
+{"npsn":"60301588","name":"SMP YPPK SANTO THOMAS WAMENA","address":"Jl. Ahmad Yani No.25 Wamena","village":"Wamena Kota","status":"Swasta","jenjang":"SMP","district":"Wamena","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ab54bd3a-b5c3-497a-acc3-2ff447a2af94","user_id":"5dc12103-76d2-4918-9bb5-342d09b7ad7e"},
+{"npsn":"60301378","name":"SD INPRES ABUSA","address":"Abusa","village":"Abusa","status":"Negeri","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ea36c03e-56ca-465f-8415-2b38dd6ed9ec","user_id":"c5c9efcd-7ff3-4388-8824-c89fa29f93d7"},
+{"npsn":"60301468","name":"SD INPRES UMPAKALO","address":"Jl. Jend. Sudirman","village":"Umpagalo","status":"Negeri","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"176b6141-5957-4d22-ae66-2325425cbe46","user_id":"93b39c6e-473e-4142-80c5-50374d65b726"},
+{"npsn":"60301488","name":"SD INPRES YIWIKA","address":"Sd Inpres Yiwika","village":"Jiwika","status":"Negeri","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"bef3359c-63c8-42a0-9123-4e204a311c80","user_id":"01ba8d18-495f-4ab5-b94d-29e1ef55ae50"},
+{"npsn":"69900385","name":"SD NEGERI WOBAREK","address":"Jln. Kampung Eragama","village":"Eragama","status":"Negeri","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"981c0db4-1a4d-4889-9bb2-5f044919e20e","user_id":"ea583057-d904-4c3e-ab05-0f1f01c92088"},
+{"npsn":"60301530","name":"SD YPPK ERAGAMA","address":"Jln. Tulem - Eragama Distrik Wita-Waya","village":"Eragama","status":"Swasta","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"4ddd892f-a2a3-461f-a880-cf71fc1b91bd","user_id":"ec66f03c-4b2f-48a8-921d-82470b08b0ec"},
+{"npsn":"60301539","name":"SD YPPK MULIMA","address":"Jl. Trans wamena-jayapura","village":"Abusa","status":"Swasta","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"8b034696-1afd-4c31-aa49-a5189be9baaa","user_id":"966ade74-9781-44f8-9a20-edb7607f730e"},
+{"npsn":"60301545","name":"SD YPPK WAGA-WAGA","address":"Waga-waga","village":"Waga-Waga","status":"Swasta","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"90d19e3d-ce84-4698-9dd3-2752f46c7a8b","user_id":"0e547599-40a2-486e-b966-0e7bc8d0e3da"},
+{"npsn":"60301550","name":"SD YPPK YIWIKA","address":"Sd Yppk Yiwika","village":"Jiwika","status":"Swasta","jenjang":"SD","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"872b54fc-9e02-4b40-8684-b6b4111903f5","user_id":"6da17aed-f6b8-443f-914f-791845972f3f"},
+{"npsn":"60301557","name":"SMP NEGERI I KURULU","address":"Jalan Cendrawasih","village":"Jiwika","status":"Negeri","jenjang":"SMP","district":"Kurulu","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"f00b6c61-986d-47b4-85a1-19d30866ff6b","user_id":"8e7bb0f0-514b-492e-8fa4-eb04481bd0cc"},
+{"npsn":"60301405","name":"SD INPRES HOLASILI","address":"Holasili","village":"Wanggonoma","status":"Negeri","jenjang":"SD","district":"Asologaima","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"36465bae-61d6-49ff-ac80-8fd44b580e28","user_id":"7e2e8c1f-7b98-4333-9b62-69e1611a7d34"},
+{"npsn":"60301538","name":"SD YPPK MILIGATNEM","address":"Kimbim","village":"Kimbin","status":"Swasta","jenjang":"SD","district":"Asologaima","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"587cc42f-217e-46cb-8408-3f259bb2edf0","user_id":"beacd9d4-682a-429b-a62b-e28e665d3504"},
+{"npsn":"60305292","name":"SDN LOGOTPAGA","address":"Jln. Gang Kimbim - Logot","village":"Logotpaga","status":"Negeri","jenjang":"SD","district":"Asologaima","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"06e3837c-961e-4763-ae8b-58465c7f3440","user_id":"2df33e27-949a-4c75-87ef-2de6ad9279bc"},
+{"npsn":"60300791","name":"SMP NEGERI 1 ASOLOGAIMA","address":"Jln. Wamena - Pyramid","village":"Logotpaga","status":"Negeri","jenjang":"SMP","district":"Asologaima","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7bc1542d-5aaa-48ca-ba77-3b7e327d5877","user_id":"a8751b93-af45-4122-bb78-da15477a6e9f"},
+{"npsn":"70049037","name":"SMP PAPUA CERDAS LOGOTPAGA","address":"Jln. Wamena-LANI, Desa LOGOTPAGA Dist. ASOLOGAIMA","village":"Wanggonoma","status":"Swasta","jenjang":"SMP","district":"Asologaima","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7c4fcc5a-3550-43e0-a307-73c3d5c4db48","user_id":"4229b8b9-f469-4803-9f94-9ef1f3b31b15"},
+{"npsn":"60301404","name":"SD INPRES HEATNOM","address":"HEATNOM","village":"Hubikosi","status":"Negeri","jenjang":"SD","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"c7cf01d8-d708-4aeb-91a4-ca9ff2a5af4b","user_id":"a4f03922-f464-4202-ad34-f8a81190d7a3"},
+{"npsn":"60301417","name":"SD INPRES KULAGAIMA","address":"Jln. Kimbim Piramid Di Kulagaima","village":"Meagama","status":"Negeri","jenjang":"SD","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"4621ff4c-4a15-4396-b631-faeccb1bc716","user_id":"49d04d40-9eed-411b-8869-e87f6ad6314c"},
+{"npsn":"60301436","name":"SD INPRES MOAI","address":"Jln. Moai","village":"Kosihilapok","status":"Negeri","jenjang":"SD","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"2a099d58-89d2-43a3-a9b9-a4d8e82ee9b5","user_id":"cecbc2eb-b4cf-47e4-b6d3-3bc8463b6568"},
+{"npsn":"60303797","name":"SD NEGERI GUNUNG SUSU","address":"GUNUNG SUSU","village":"Isakusa","status":"Negeri","jenjang":"SD","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"730367de-3cbe-45b2-915f-7646da462aaa","user_id":"607a9e69-9ab5-4929-8cab-fae81d7c46c7"},
+{"npsn":"60301529","name":"SD YPPK ELAGAIMA","address":"Elagaima","village":"Hubikosi","status":"Swasta","jenjang":"SD","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"6f401f8e-2ff8-4ab1-8e7f-010c2fe58145","user_id":"456c25f0-167b-46d3-b123-067f1c8482a2"},
+{"npsn":"60301571","name":"SMP NEGERI 4 WAMENA","address":"Jln. Kimbim - Pyramid Wamena","village":"Kikhumo","status":"Negeri","jenjang":"SMP","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"d701dfcd-8163-48be-aed9-7b2f1ae2dfa5","user_id":"9989756e-2887-46e9-b2bd-9d38a9d98871"},
+{"npsn":"69980271","name":"SMP NEGERI ISAKUSA","address":"Jln. Sinakma - LIPI","village":"Isakusa","status":"Negeri","jenjang":"SMP","district":"Hubikosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"972aa6e5-3c3f-48b6-8323-c5d138bfb04b","user_id":"20aad1ff-c278-48ad-9f8e-9c05bd81d47e"},
+{"npsn":"60301386","name":"SD INPRES BANDUA","address":"Jln.Telegai -Bandua","village":"Bandua","status":"Negeri","jenjang":"SD","district":"Bolakme","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7e521ce6-2a0c-4250-bf10-39bdf56d305b","user_id":"29e554f7-8076-4fa3-861e-ba4af28414ae"},
+{"npsn":"60301441","name":"SD INPRES MUNAK","address":"Munak","village":"Munak","status":"Negeri","jenjang":"SD","district":"Bolakme","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7d0bf089-f770-4c02-8059-318cd5d8b371","user_id":"cbf7df68-2ecd-4ac2-b49b-ac268ca8fecc"},
+{"npsn":"60301455","name":"SD INPRES POPUKOBA","address":"Jln.hitigima-popukba","village":"Kec. Walelagama","status":"Negeri","jenjang":"SD","district":"Walelagama","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"d20abef4-7bde-4010-a890-8f2a77ba3d66","user_id":"89808cd1-b222-4973-9fb1-70cdc0323d09"},
+{"npsn":"60301521","name":"SD YPPGI PUGIMA","address":"Jln. Wesaput-Walelagama, Desa Pugima, Distrik Pugima","village":"Pugima","status":"Swasta","jenjang":"SD","district":"Walelagama","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"c8f3f004-f801-4b73-89cd-3a345260570b","user_id":"07acd6a8-f062-4b1c-a438-b899763042f1"},
+{"npsn":"60301543","name":"SD YPPK ST DON BOSCO PUGIMA","address":"Jln. Wesaput Desa Pugima, DIstrik Walelagama","village":"Pugima","status":"Swasta","jenjang":"SD","district":"Walelagama","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"6b8c869e-0550-479e-b8ac-682674dadbb7","user_id":"d32a2f65-5432-4e6c-84c2-6e302abe9288"},
+{"npsn":"70041631","name":"SD YPPP KURU HALUA","address":"Jln. Wesaput - Pugima","village":"Pugima","status":"Swasta","jenjang":"SD","district":"Walelagama","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"cf09af6e-4d88-4912-9c59-d080f1a466b7","user_id":"cbef7ab5-4923-4ff7-8e4c-c0b9e7627368"},
+{"npsn":"69787851","name":"SD INPRES ELABUKAMA","address":"JL. Wamena-Musatfak","village":"Pumasili","status":"Negeri","jenjang":"SD","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"5b1e89ab-fd93-416d-831c-46baa4bbe067","user_id":"e65cc9c1-59b8-4116-95a0-a887c8acf0ed"},
+{"npsn":"60301382","name":"SD NEGERI ANAGERA","address":"Anagera","village":"Siapma","status":"Negeri","jenjang":"SD","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"e2ef51c2-8331-48bb-bb64-6fc99dfccb1e","user_id":"52541424-dfed-4afa-a80c-c24fd0b0754c"},
+{"npsn":"70010694","name":"SD NEGERI ISELEGA","address":"Jln. Agole Iselega Kampung Kosiakve","village":"Kosihave","status":"Negeri","jenjang":"SD","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"15d9b70f-1aa9-4ce0-a0a5-b8888b79054c","user_id":"6e5d736a-e6c8-41f5-a76a-865e716389c0"},
+{"npsn":"60301540","name":"SD YPPK ST PETRUS MUSATFAK","address":"HAMUHI","village":"Hamuhi","status":"Swasta","jenjang":"SD","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"0b69582b-6e70-42c9-9943-45549429155d","user_id":"4b22d5b2-1879-425a-9844-f7efdfcdc874"},
+{"npsn":"60301527","name":"SD YPPK ST YOHANES ABULUKMO","address":"Jl. Hom-hom Moai Desa Abulukmo, Distrik Musatfak","village":"Abulukmo","status":"Swasta","jenjang":"SD","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"9e146452-4ee8-4d62-8a14-e557829c2107","user_id":"eceadc58-5f0d-4aba-8c44-98aac937125e"},
+{"npsn":"70033753","name":"SMP NEGERI ISELEGA","address":"Jln. Agole Iselega","village":"Kosihave","status":"Negeri","jenjang":"SMP","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"dd69f2ac-07f1-4206-8a79-fc9fb04e1281","user_id":"80e4af18-d92b-45cd-b5b7-b75c9c761ac7"},
+{"npsn":"60304584","name":"SMPN MUSATFAK","address":"Jln hamuhi","village":"Hamuhi","status":"Negeri","jenjang":"SMP","district":"Musatfak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"fca844bd-e08d-4297-99bf-e776c726b306","user_id":"c86084c1-8cbe-4973-88ce-bcc1e6b514d1"},
+{"npsn":"60301479","name":"SD NEGERI WOLO","address":"Wolo","village":"Wolo","status":"Negeri","jenjang":"SD","district":"Wolo","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"04d29dbb-4efd-46c1-9c9e-c1c06bed440d","user_id":"550ad9ca-7776-43db-a760-2e86f218d255"},
+{"npsn":"60302989","name":"SMP NEGERI WOLO","address":"Jln.wolo","village":"Wolo","status":"Negeri","jenjang":"SMP","district":"Wolo","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"67f27c8a-97a3-47c2-ae13-b91d134b016c","user_id":"27fe665e-f6d8-4dca-b85b-9d3dbf5e4fc9"},
+{"npsn":"70052033","name":"SD ANUGERAH WIAIMA","address":"JLN. WAMENA-KURIMA DISTRIK ASOLOKOBAL","village":"Wiaima","status":"Swasta","jenjang":"SD","district":"Asolokobal","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"957898ae-1133-470d-bb6b-8f8a3ac12627","user_id":"55a1efb6-a317-4b23-854e-3119ecc8eb7f"},
+{"npsn":"60301431","name":"SD INPRES MEGAPURA","address":"Sinata","village":"Sinata","status":"Negeri","jenjang":"SD","district":"Asolokobal","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"791fede7-f637-4b8b-b7b5-773d30f1853d","user_id":"c66a9e94-79a1-4018-a6d3-e87dfc96ff4d"},
+{"npsn":"60301469","name":"SD INPRES UPIAGAIMA","address":"Upiagaima","village":"Asolokobal","status":"Negeri","jenjang":"SD","district":"Asolokobal","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ed6d5e7e-9b03-4545-8d14-e0405a4ced98","user_id":"0ef4d131-8653-4068-9587-d9825a1327bd"},
+{"npsn":"60301531","name":"SD YPPK SANTO MICHAEL HEPUBA","address":"Jl. Wamena Kurima","village":"Asolokobal","status":"Swasta","jenjang":"SD","district":"Asolokobal","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ec8f4f89-08a1-4d4f-9441-8f1fc9492c5d","user_id":"333c65f8-45ae-4e53-a56a-2bfe4d0219c0"},
+{"npsn":"60301477","name":"SD INPRES WETALAK","address":"WETALAK","village":"Duabalek","status":"Negeri","jenjang":"SD","district":"Pelebaga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"f5b02608-76a0-4948-b4ea-83674ab8410c","user_id":"07db9107-c6d1-4a37-a5b1-7a0bc6258efe"},
+{"npsn":"60301495","name":"SD NEGERI LANDIA","address":"Duabalek","village":"Duabalek","status":"Negeri","jenjang":"SD","district":"Pelebaga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"84b0929d-1cc6-4812-ad72-5a02ab0c7d59","user_id":"658f9c3f-d5f9-4f57-9e62-0395c7825cc5"},
+{"npsn":"60301534","name":"SD YPPK ISUNIK","address":"Jabem","village":"Duabalek","status":"Swasta","jenjang":"SD","district":"Pelebaga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"2d17f90b-cd5b-43ce-bf8d-f29018890efe","user_id":"3da4a388-e112-408b-8568-1258ec3797b4"},
+{"npsn":"60301484","name":"SD INPRES YALENGGA","address":"Yalengga","village":"Yalengga","status":"Negeri","jenjang":"SD","district":"Yalengga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"8d33aec0-0656-4bd3-94a4-591e47441e27","user_id":"31cab4df-a5e2-4f72-ad2a-130fc914b2da"},
+{"npsn":"60301542","name":"SD YPPK ST ANTONIUS PILIMO","address":"Pilimo","village":"Aipakma","status":"Swasta","jenjang":"SD","district":"Yalengga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"0084fb98-2183-42e5-bb36-6f9eea797b06","user_id":"a8d1e507-820f-4fc1-b5da-f51525cabe83"},
+{"npsn":"60301577","name":"SMPN YALENGGA","address":"YALENGGA","village":"Yalengga","status":"Negeri","jenjang":"SMP","district":"Yalengga","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"57c1d236-9f04-49bf-816a-049dcf448c02","user_id":"15f2b20d-5f69-4a53-8d78-9c2327a97eb6"},
+{"npsn":"60304582","name":"SD NEGERI MARUMA","address":"Desa Nanggo Distrik Trikora","village":"Trikora","status":"Negeri","jenjang":"SD","district":"Trikora","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"c4e7b458-3733-443d-9266-930aa56c9973","user_id":"5000c039-f6e1-423f-823f-2a3a833ae6d5"},
+{"npsn":"70031785","name":"SD NEGERI WEAK ABUA","address":"Jln. Trikora","village":"Trikora","status":"Negeri","jenjang":"SD","district":"Trikora","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"32914181-ba47-415f-a729-ef97f0b1f8b8","user_id":"8506c927-9b5f-465a-852b-476ac69eec8d"},
+{"npsn":"60301447","name":"SD INPRES OKILIK WAMENA","address":"JLN OKILIK","village":"Okilik","status":"Negeri","jenjang":"SD","district":"Napua","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"1fb6e8e6-7692-45da-9272-3136b29bffbc","user_id":"66006196-c508-4cc1-b9a7-70312b07c41b"},
+{"npsn":"60301517","name":"SD YPPGI NAPUA","address":"Jln. Napua Walesi Desa Wilekama, Distrik Napua","village":"Wilekama","status":"Swasta","jenjang":"SD","district":"Napua","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"f07167f8-559e-40bc-ba2b-438d596296df","user_id":"791d7925-7bdc-4239-9feb-d5db02add567"},
+{"npsn":"60301544","name":"SD YPPK SINATMA WALESI","address":"Walesi","village":"Napua","status":"Swasta","jenjang":"SD","district":"Napua","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"032f4a0a-f8ca-45a6-bb3d-27a2d9bd4995","user_id":"93bac522-7c5e-4d1a-a24b-2ebe78626fa9"},
+{"npsn":"70036719","name":"SD YPPP SAPALEK","address":"Jln. Wamena - Habema","village":"Sapalek","status":"Swasta","jenjang":"SD","district":"Napua","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"690af25c-25e3-4964-a38a-7de630766cb5","user_id":"dfcb2bb2-f8cc-444f-9720-8b4c2a576256"},
+{"npsn":"70049194","name":"SMP YPPP SAPALEK","address":"SAPALEK","village":"Sapalek","status":"Swasta","jenjang":"SMP","district":"Napua","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"94a65d78-f833-4640-ae3b-27e600af79d7","user_id":"a02ec518-e26e-4d14-9e25-e78e9a2775e8"},
+{"npsn":"60301470","name":"SD INPRES WALAIK","address":"Desa Walaik","village":"Walaik","status":"Negeri","jenjang":"SD","district":"Walaik","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"6591039a-d439-43cf-bd04-3abcd255f3fb","user_id":"4d1fe3b0-e7f0-489c-ac45-e96888c3a651"},
+{"npsn":"60305290","name":"SD KRISTEN VICTORY WAMENA","address":"Jln. Gang Victory Desa Ketemavit Distrik Wouma","village":"Ketimavit","status":"Swasta","jenjang":"SD","district":"Wouma","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"962d4e43-2417-4544-bfc0-befc64e8aacf","user_id":"c06cccc7-db00-4761-a26f-b97b42cdd603"},
+{"npsn":"69965980","name":"SD YPK ELIM WOUMA ATAS","address":"Jln. Welesi, Kompleks GKI Elim Wouma Atas","village":"Ketimavit","status":"Swasta","jenjang":"SD","district":"Wouma","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"faa92432-a2ad-4901-8827-aa32d3d41379","user_id":"7ddbfbdf-1136-497f-93d5-8f834adea04f"},
+{"npsn":"60301549","name":"SD YPPK ST STEVANUS WOUMA","address":"Wouma","village":"Logonoba","status":"Swasta","jenjang":"SD","district":"Wouma","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ba467cb2-2dd9-499f-a219-e4397b80f5df","user_id":"0b23f3cd-8e27-412f-a2af-dc7eaaf174ee"},
+{"npsn":"69786906","name":"SD ALFA AGAPE MUSIAIMA","address":"JLN. HOM-HOM - MUSIAIMA MOAI","village":"Likino","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ca95a75f-2d4e-4e59-88be-92f0d02fac43","user_id":"a30ff967-ded5-440a-b488-394bad66824a"},
+{"npsn":"60303895","name":"SD IMANUEL OBAMBO","address":"JLN. HOM-HOM","village":"Musiamia Dua","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"58594730-9b61-499e-8712-9355d9f81f01","user_id":"97096bc8-9771-4f1f-8e4f-eaa68b87b238"},
+{"npsn":"69990130","name":"SD PANORAMA PIKHE","address":"Jln. Hom-Hom - Pikhe","village":"Dokopku","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"1717016c-06ee-4aa1-8a0d-76efa5939151","user_id":"b941b805-0052-470e-baf7-7cb119c76542"},
+{"npsn":"69900386","name":"SD SINAR BALIEM","address":"Jln. Hom-hom Moai","village":"Dokopku","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"91bcff29-21c2-4f13-ab9e-239ae62488b4","user_id":"5d370ac0-2797-4a33-83d5-a3cd764bfb08"},
+{"npsn":"69970439","name":"SD TERPADU NURUL HIDAYAH","address":"Jln. JB. Wenas","village":"Hetuma","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"4174ab38-80dd-4a1f-b899-f96956acdb05","user_id":"db30900c-129a-4360-a98e-bdacefe143bb"},
+{"npsn":"60301503","name":"SD YPK LACHAIROI HOM-HOM","address":"Hom-Hom","village":"Musiamia Dua","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"e26ece1f-5fc8-4b51-9f6f-335b28600bcb","user_id":"bcc2a2c2-0817-4a70-b1d1-2ea2075cbdbd"},
+{"npsn":"60301532","name":"SD YPPK SANTO PETRUS HOLIMA","address":"Hubikiak","village":"Musiamia Dua","status":"Swasta","jenjang":"SD","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"bc7b72ad-b0dc-4593-a122-db86e86f0515","user_id":"c9715d1a-fa77-4ff9-9c4c-0e51b114a17e"},
+{"npsn":"69896511","name":"SMP KRISTEN BIJI SESAWI WAMENA","address":"Jln. Raya hom hom - Moai","village":"Hetuma","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"92d4295e-3549-4b1b-bb29-9f7c3ea2431d","user_id":"c921b80e-e92e-438d-ae2f-5626978b71da"},
+{"npsn":"60301554","name":"SMP KRISTEN WAMENA","address":"Jln.hom-hom,moai","village":"Musiamia Dua","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"037e45f4-a085-4021-a376-5af2216213ff","user_id":"331aea31-07fd-4be5-a84f-937928342934"},
+{"npsn":"70049242","name":"SMP SINAR BALIEM WAMENA","address":"DOKOPKU","village":"Dokopku","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"1e5539ef-14bd-4e35-a45a-a5b4b8425bfd","user_id":"d7739683-6385-4e6b-afe2-5b5adb4024d2"},
+{"npsn":"70053397","name":"SMP TERPADU NURUL HIDAYAH WAMENA","address":"JL.JB. WENAS JIBAMA WAMENA","village":"Hetuma","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"d047dbdd-7669-458d-bd76-6d4e7b22ebe4","user_id":"69bf5f65-e4a4-4b1d-87c2-1a9b1a947feb"},
+{"npsn":"70050965","name":"SMP YAPESLI 2 LIKINO WAMENA","address":"JLN. WAMENA-KURULU/GANG SMA UNGGULAN LAPAGO","village":"Likino","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"86f41907-ec50-4f35-ae33-6a20fcefe29f","user_id":"8611d3ff-e79b-4046-9302-ae4fefb53f28"},
+{"npsn":"69787021","name":"SMP YPK LACHAIROI HOM-HOM","address":"Jln. Hom-hom","village":"Hom-hom","status":"Swasta","jenjang":"SMP","district":"Hubikiak","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"034956b5-e6b9-4fa6-9cca-1dad46c3b575","user_id":"7f179f21-137e-4e4b-89d6-17a3f6b60502"},
+{"npsn":"60301408","name":"SD INPRES IBELE","address":"Sd Inpres Ibele","village":"Yelebarek","status":"Negeri","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"9fe8afe0-6e34-453b-878e-692edb5e43ae","user_id":"92e9f7e7-d021-464e-a330-bbfe14ae6ee8"},
+{"npsn":"60301449","name":"SD INPRES PELEBAGA","address":"Pelebaga Jalan Hebema","village":"Tipalok","status":"Negeri","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"c0aec627-9f29-4601-b9f3-a04e2d881906","user_id":"e53dade4-d01b-42c5-a57b-521490b3a6cf"},
+{"npsn":"60301466","name":"SD INPRES TIPALOK","address":"Jln.hubikosi-tipalok","village":"Yelebarek","status":"Negeri","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"a82515c6-5e57-4e5c-a2a3-70670a5fc3d6","user_id":"e6f0aae8-09fb-4732-bb06-508c0b9434cf"},
+{"npsn":"69896506","name":"SD NEGERI INOPORIK","address":"Jln. Gunung Susu","village":"Yagarobak","status":"Negeri","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"c8faccbc-8ef5-40a4-9361-dc5d2b120e01","user_id":"36dd11d2-eaeb-4728-95b5-701458403cf8"},
+{"npsn":"70004843","name":"SD YPPGI HALELUYA KISUMO","address":"Jln. Ibele-Kisumo Kampung Ayobaibur","village":"Yelebarek","status":"Swasta","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"fd470c2b-be55-42e0-acea-0966b6a8aa23","user_id":"0e95d065-961c-44aa-ad3e-2a5a44faca8b"},
+{"npsn":"70039824","name":"SD YPPP HITAWI ZAPMA","address":"Jln. Ibele - Zapma","village":"Zapma","status":"Swasta","jenjang":"SD","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"70395842-5bcc-4f20-b1ce-0538dc569826","user_id":"ac496ef5-11c7-4f9d-9b96-32d658e7baee"},
+{"npsn":"69980304","name":"SMP SATU ATAP  NEGERI PELEBAGA","address":"Jln. Habema Pelebaga","village":"Holaliba","status":"Negeri","jenjang":"SMP","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7c735733-a9f7-47bb-bfae-882287d2207f","user_id":"38f301fc-ca69-46e4-afb1-df5e6f050895"},
+{"npsn":"60303802","name":"SMPN IBELE","address":"yagarobak","village":"Yagarobak","status":"Negeri","jenjang":"SMP","district":"Ibele","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"85326e70-ac0b-43f3-ba54-56850a906d88","user_id":"83b8203f-0c63-47f1-9f1d-73a3916dc7b4"},
+{"npsn":"60301464","name":"SD INPRES TAILAREK","address":"Sd N Inpres Tailarek","village":"Iyora","status":"Negeri","jenjang":"SD","district":"Taelarek","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"7ad8d892-0b59-4284-8fb5-e3bff184a050","user_id":"6800f5eb-5c8a-417a-a870-3fbe48678f62"},
+{"npsn":"60304198","name":"SD NEGERI TAELA","address":"TAILAREK","village":"Budliem","status":"Negeri","jenjang":"SD","district":"Taelarek","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"90b3c12e-6081-4d7c-a4a6-bd2efaaa3c24","user_id":"3b8fff2c-c462-4b65-ad7e-baa8dc47c53e"},
+{"npsn":"60301463","name":"SD INPRES SUMINIKAMA","address":"Lukaken","village":"Kemisake","status":"Negeri","jenjang":"SD","district":"Itlay Hisage","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"b67016af-cb39-4cf4-8d3f-216c61a3b799","user_id":"ad9a2677-9c8a-49ad-b159-7744dba0b523"},
+{"npsn":"60301482","name":"SD INPRES WUROBA","address":"Wuroba","village":"Kemisake","status":"Negeri","jenjang":"SD","district":"Itlay Hisage","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"4bfb0055-ee5a-4032-9972-f429557229aa","user_id":"daa2e432-fb7c-4b96-9ad2-6da0639a69b3"},
+{"npsn":"60301458","name":"SD INPRES SEKAN","address":"Sekan","village":"Lunaima","status":"Negeri","jenjang":"SD","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"d605af82-5fd5-4408-a4dd-f5f36dd82983","user_id":"389e9c96-d08a-4c55-9aa4-2928e9a81391"},
+{"npsn":"60301459","name":"SD Inpres Sekan Ganda","address":"Sekan Ganda","village":"Wekia","status":"Negeri","jenjang":"SD","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"18d6cda3-4558-486b-8e6e-e8cf827ec3b1","user_id":"ef9f47dc-e2fe-4e44-ba19-552371b9928b"},
+{"npsn":"60301460","name":"SD INPRES SIEPKOSI","address":"Jln. Siopkosi","village":"Lunaima","status":"Negeri","jenjang":"SD","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"ec69af4e-c10c-4e82-84e5-b5b1d3a9c6ac","user_id":"8439ef26-51da-46d5-a362-3650d14e5427"},
+{"npsn":"60301551","name":"SD YPPK SANTO YOSEP YUMUGIMA","address":"Yumugima","village":"Yumogima","status":"Swasta","jenjang":"SD","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"cad29c75-c34d-4dac-8469-72888a909f96","user_id":"49350fc1-7230-497c-8e67-1814778f3b8a"},
+{"npsn":"69947833","name":"SMP NEGERI SIEPKOSI","address":"Jln. Raya Siepkosi-Puawaga KM.10 Yumugima","village":"Yumogima","status":"Negeri","jenjang":"SMP","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"eb1f8563-fea4-4c0d-a1f8-df1bcbda251f","user_id":"4d964e4b-58a7-4089-a8c6-6ea1466c6827"},
+{"npsn":"60303711","name":"SMPN WALELAGAMA","address":"Walelagama","village":"Sekan Dalam","status":"Negeri","jenjang":"SMP","district":"Siepkosi","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"1cc0f90b-dfe7-4aba-9ee1-95087e82dd1f","user_id":"21fdfd66-a00a-459a-81e6-cef20ef2ecec"},
+{"npsn":"60301410","name":"SD INPRES ISAIMA","address":"Jl. Yos Sudarso","village":"Isaiman","status":"Negeri","jenjang":"SD","district":"Usilimo","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"d8924c89-a819-4a2a-a709-9f4fcde450d1","user_id":"73f43f46-4018-4ee6-ab60-b19c6841e8a1"},
+{"npsn":"60301430","name":"SD INPRES MEAGAIMA","address":"Siba","village":"Abutpuk","status":"Negeri","jenjang":"SD","district":"Usilimo","regencyBpsCode":"9501","regencyName":"Kabupaten Jayawijaya","school_id":"a90ca363-13f6-4ded-b335-ff52dbe8e46e","user_id":"5ece418f-185f-4e00-b37b-dcb6dcfc9465"}
+]'::json;
+BEGIN
+    -- 1. Insert schools
+    INSERT INTO public.schools (id, name, npsn, location, accreditation, regency_id)
+    SELECT 
+        (x.school_id)::uuid, 
+        x.name, 
+        x.npsn, 
+        concat_ws(', ', nullif(x.address, ''), nullif(x.village, ''), nullif(x.district, ''), nullif(x."regencyName", ''), 'Papua Pegunungan'),
+        'C',
+        r.id
+    FROM json_to_recordset(v_data) AS x(
+        school_id text, name text, npsn text, address text, village text, district text, "regencyName" text, "regencyBpsCode" text
+    )
+    JOIN public.regencies r ON r.code = x."regencyBpsCode"
+    WHERE NOT EXISTS (SELECT 1 FROM public.schools s WHERE s.npsn = x.npsn);
+
+    -- 2. Insert auth.users
+    INSERT INTO auth.users (
+        instance_id, id, aud, role, email, encrypted_password, 
+        email_confirmed_at, recovery_sent_at, last_sign_in_at, 
+        raw_app_meta_data, raw_user_meta_data, created_at, updated_at, 
+        confirmation_token, email_change, email_change_token_new, recovery_token
+    )
+    SELECT 
+        '00000000-0000-0000-0000-000000000000'::uuid, 
+        (x.user_id)::uuid, 
+        'authenticated', 
+        'authenticated', 
+        x.npsn || '@mail.com', 
+        crypt(x.npsn, gen_salt('bf')), 
+        now(), now(), now(), 
+        json_build_object('provider', 'email', 'providers', json_build_array('email'))::jsonb, 
+        '{}'::jsonb, 
+        now(), now(), '', '', '', ''
+    FROM json_to_recordset(v_data) AS x(
+        user_id text, npsn text
+    )
+    WHERE NOT EXISTS (SELECT 1 FROM auth.users u WHERE u.email = x.npsn || '@mail.com');
+
+    -- 3. Insert auth.identities
+    INSERT INTO auth.identities (
+        id, user_id, provider_id, identity_data, provider, last_sign_in_at, created_at, updated_at
+    )
+    SELECT 
+        (x.user_id)::uuid, 
+        (x.user_id)::uuid, 
+        x.user_id, 
+        json_build_object('sub', x.user_id, 'email', x.npsn || '@mail.com')::jsonb, 
+        'email', 
+        now(), now(), now()
+    FROM json_to_recordset(v_data) AS x(
+        user_id text, npsn text
+    )
+    WHERE NOT EXISTS (SELECT 1 FROM auth.identities i WHERE i.id = (x.user_id)::uuid);
+
+    -- 4. Insert public.profiles
+    INSERT INTO public.profiles (id, role, school_id, created_at)
+    SELECT 
+        (x.user_id)::uuid, 
+        'SCHOOL', 
+        (x.school_id)::uuid, 
+        now()
+    FROM json_to_recordset(v_data) AS x(
+        user_id text, school_id text, npsn text
+    )
+    WHERE NOT EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = (x.user_id)::uuid);
+END $$;

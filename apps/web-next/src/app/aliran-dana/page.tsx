@@ -128,35 +128,20 @@ function AliranDanaPageContent() {
 
                 const nameMap = new Map<string, string>();
 
-                const maskedProv = provItems.map((p: any, idx: number) => {
+                const maskedProv = provItems.map((p: any) => {
                     const originalName = p.entity_name;
-                    if (idx >= 10) {
-                        const maskedName = `Provinsi ${idx - 9}`;
-                        nameMap.set(originalName, maskedName);
-                        return { ...p, entity_name: maskedName };
-                    }
                     nameMap.set(originalName, originalName);
                     return p;
                 });
 
-                const maskedKab = kabItems.map((k: any, idx: number) => {
+                const maskedKab = kabItems.map((k: any) => {
                     const originalName = k.entity_name;
-                    if (idx >= 10) {
-                        const maskedName = `Kabupaten/Kota ${idx - 9}`;
-                        nameMap.set(originalName, maskedName);
-                        return { ...k, entity_name: maskedName };
-                    }
                     nameMap.set(originalName, originalName);
                     return k;
                 });
 
-                const maskedSekolah = sekolahItems.map((s: any, idx: number) => {
+                const maskedSekolah = sekolahItems.map((s: any) => {
                     const originalName = s.entity_name;
-                    if (idx >= 10) {
-                        const maskedName = `Sekolah ${idx - 9}`;
-                        nameMap.set(originalName, maskedName);
-                        return { ...s, entity_name: maskedName };
-                    }
                     nameMap.set(originalName, originalName);
                     return s;
                 });
