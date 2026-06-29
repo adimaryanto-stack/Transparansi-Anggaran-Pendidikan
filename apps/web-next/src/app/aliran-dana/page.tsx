@@ -429,6 +429,19 @@ function AliranDanaPageContent() {
                             {/* ---- RECONCILIATION TABLE, TRANSFER LOG, PROVINCE MAP ---- */}
                             <section className="mb-10">
                                 <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                    <span className="material-symbols-outlined text-primary">map</span>
+                                    Peta Penyaluran per Provinsi
+                                </h2>
+                                <p className="text-slate-500 text-sm mb-6">
+                                    Distribusi sekolah penerima dana riil berdasarkan data yang telah diverifikasi di masing-masing provinsi.
+                                </p>
+                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 overflow-hidden">
+                                    <IndonesiaMap />
+                                </div>
+                            </section>
+
+                            <section className="mb-10">
+                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                                     <span className="material-symbols-outlined text-primary">fact_check</span>
                                     Rekonsiliasi Dana APBN
                                 </h2>
@@ -812,18 +825,7 @@ function AliranDanaPageContent() {
                                  </section>
                              )}
 
-                            <section className="mb-10">
-                                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary">map</span>
-                                    Peta Penyaluran per Provinsi
-                                </h2>
-                                <p className="text-slate-500 text-sm mb-6">
-                                    Distribusi sekolah penerima dana riil berdasarkan data yang telah diverifikasi di masing-masing provinsi.
-                                </p>
-                                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 overflow-hidden">
-                                    <IndonesiaMap />
-                                </div>
-                            </section>
+
                         </>
                     )}
                 </div>
