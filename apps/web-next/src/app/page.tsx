@@ -130,6 +130,8 @@ const Content = () => {
   const [schoolCount, setSchoolCount] = useState<number | null>(null);
   const [recentActivities, setRecentActivities] = useState<any[]>([]);
   const [loadingActivities, setLoadingActivities] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -226,6 +228,32 @@ const Content = () => {
     fetchStats();
   }, []);
 
+  // Marquee auto-scrolling effect with pause on hover
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || loadingActivities || recentActivities.length === 0) return;
+
+    let intervalId: any;
+
+    const startScrolling = () => {
+      intervalId = setInterval(() => {
+        if (isHovered) return;
+        
+        container.scrollTop += 1;
+
+        if (container.scrollTop >= container.scrollHeight / 2) {
+          container.scrollTop = 0;
+        }
+      }, 35);
+    };
+
+    startScrolling();
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [isHovered, loadingActivities, recentActivities]);
+
   return (
     <div className="space-y-20">
       <section className="py-12 bg-white">
@@ -301,37 +329,76 @@ const Content = () => {
               ) : recentActivities.length === 0 ? (
                 <p className="text-slate-500 text-center py-6">Belum ada aktivitas terekam hari ini.</p>
               ) : (
-                <div className="relative border-l-2 border-slate-100 pl-6 ml-2 space-y-8">
-                  {recentActivities.map((activity, idx) => (
-                    <div key={activity.id} className="relative">
-                      {/* Timeline Dot */}
-                      <span className={`absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full border-4 border-white shadow-sm ring-1 ring-slate-100 ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'
-                        }`}>
-                        <span className="material-symbols-outlined text-[16px]">
-                          {activity.type === 'COMMENT' ? 'forum' : 'receipt_long'}
+                <div
+                  ref={scrollRef}
+                  className="overflow-y-hidden max-h-[380px] relative pr-2"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <div className="relative border-l-2 border-slate-100 pl-6 ml-2 space-y-8 pb-8">
+                    {recentActivities.map((activity) => (
+                      <div key={activity.id} className="relative">
+                        {/* Timeline Dot */}
+                        <span className={`absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full border-4 border-white shadow-sm ring-1 ring-slate-100 ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'
+                          }`}>
+                          <span className="material-symbols-outlined text-[16px]">
+                            {activity.type === 'COMMENT' ? 'forum' : 'receipt_long'}
+                          </span>
                         </span>
-                      </span>
 
-                      {/* Content */}
-                      <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:shadow-md transition-shadow">
-                        <div className="flex items-start justify-between gap-4 mb-2">
-                          <Link href={activity.link} className="font-bold text-slate-900 hover:text-primary transition-colors line-clamp-2">
-                            {activity.schoolName}
-                          </Link>
-                          <span className="text-xs font-medium text-slate-400 shrink-0 whitespace-nowrap mt-1">
-                            {new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }).format(new Date(activity.date))}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xs px-2 py-1 rounded-full font-medium ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
-                            }`}>
-                            {activity.type === 'COMMENT' ? 'Diskusi Baru' : 'Laporan Belanja'}
-                          </span>
-                          <p className="text-sm text-slate-600 truncate">{activity.content}</p>
+                        {/* Content */}
+                        <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:shadow-md transition-shadow">
+                          <div className="flex items-start justify-between gap-4 mb-2">
+                            <Link href={activity.link} className="font-bold text-slate-900 hover:text-primary transition-colors line-clamp-2">
+                              {activity.schoolName}
+                            </Link>
+                            <span className="text-xs font-medium text-slate-400 shrink-0 whitespace-nowrap mt-1">
+                              {new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }).format(new Date(activity.date))}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className={`text-xs px-2 py-1 rounded-full font-medium ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
+                              }`}>
+                              {activity.type === 'COMMENT' ? 'Diskusi Baru' : 'Laporan Belanja'}
+                            </span>
+                            <p className="text-sm text-slate-600 truncate">{activity.content}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+
+                    {/* Duplicated list for seamless infinite loop */}
+                    {recentActivities.map((activity) => (
+                      <div key={`${activity.id}-dup`} className="relative">
+                        {/* Timeline Dot */}
+                        <span className={`absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full border-4 border-white shadow-sm ring-1 ring-slate-100 ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-600' : 'bg-emerald-100 text-emerald-600'
+                          }`}>
+                          <span className="material-symbols-outlined text-[16px]">
+                            {activity.type === 'COMMENT' ? 'forum' : 'receipt_long'}
+                          </span>
+                        </span>
+
+                        {/* Content */}
+                        <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:shadow-md transition-shadow">
+                          <div className="flex items-start justify-between gap-4 mb-2">
+                            <Link href={activity.link} className="font-bold text-slate-900 hover:text-primary transition-colors line-clamp-2">
+                              {activity.schoolName}
+                            </Link>
+                            <span className="text-xs font-medium text-slate-400 shrink-0 whitespace-nowrap mt-1">
+                              {new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }).format(new Date(activity.date))}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className={`text-xs px-2 py-1 rounded-full font-medium ${activity.type === 'COMMENT' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
+                              }`}>
+                              {activity.type === 'COMMENT' ? 'Diskusi Baru' : 'Laporan Belanja'}
+                            </span>
+                            <p className="text-sm text-slate-600 truncate">{activity.content}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
