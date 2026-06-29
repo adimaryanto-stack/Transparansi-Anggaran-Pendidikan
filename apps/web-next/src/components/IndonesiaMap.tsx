@@ -40,9 +40,10 @@ export default function IndonesiaMap() {
 
     const getColor = (count: number) => {
         if (count === 0) return '#e2e8f0';
-        if (count < 3) return '#93c5fd';
-        if (count < 10) return '#3b82f6';
-        return '#1d4ed8';
+        if (count < 5000) return '#93c5fd';
+        if (count < 10001) return '#3b82f6';
+        if (count < 20001) return '#1d4ed8';
+        return '#1e3a8a';
     };
 
     const handleMouseMove = (e: React.MouseEvent) => {
@@ -124,13 +125,16 @@ export default function IndonesiaMap() {
                         <span className="w-3 h-3 rounded-sm bg-[#e2e8f0]"></span> 0 Sekolah
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="w-3 h-3 rounded-sm bg-[#93c5fd]"></span> 1-2 Sekolah
+                        <span className="w-3 h-3 rounded-sm bg-[#93c5fd]"></span> &lt;5.000
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="w-3 h-3 rounded-sm bg-[#3b82f6]"></span> 3-9 Sekolah
+                        <span className="w-3 h-3 rounded-sm bg-[#3b82f6]"></span> 5.000–10.000
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="w-3 h-3 rounded-sm bg-[#1d4ed8]"></span> 10+ Sekolah
+                        <span className="w-3 h-3 rounded-sm bg-[#1d4ed8]"></span> 10.001–20.000
+                    </span>
+                    <span className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-sm bg-[#1e3a8a]"></span> 20.001+
                     </span>
                 </div>
             </div>
