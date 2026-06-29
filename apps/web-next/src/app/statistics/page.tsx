@@ -39,68 +39,18 @@ export default function StatisticsPage() {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                // Fetch all data in parallel
-                // Fetch all data in parallel
-                const [schoolsRes, incomingFundsRes, transactionsRes, reportsRes] = await Promise.all([
-                    supabase.from('schools').select('id, name, npsn, accreditation'),
-                    supabase.from('incoming_funds').select('amount, school_id'),
-                    supabase.from('transactions').select('id, date, category, amount, school_id'),
-                    supabase.from('reports').select('id', { count: 'exact', head: true }),
-                ]);
-
-                const schools = schoolsRes.data || [];
-                const incomingFunds = incomingFundsRes.data || [];
-                const transactions = transactionsRes.data || [];
-                const reportCount = reportsRes.count || 0;
-
-                // Aggregate budget totals
-                const totalReceived = incomingFunds.reduce((s, f) => s + Number(f.amount || 0), 0);
-                const totalSpent = transactions.reduce((s, t) => s + Number(t.amount || 0), 0);
-
-                // Category breakdown from transactions
-                const catMap: Record<string, number> = {};
-                transactions.forEach((t) => {
-                    const cat = t.category || 'Lainnya';
-                    catMap[cat] = (catMap[cat] || 0) + Number(t.amount || 0);
-                });
-                const categoryBreakdown = Object.entries(catMap)
-                    .map(([name, value]) => ({ name, value, color: CATEGORY_COLORS[name] || '#94a3b8' }))
-                    .sort((a, b) => b.value - a.value);
-
-                // Monthly expenses
-                const monthMap: Record<number, number> = {};
-                transactions.forEach((t) => {
-                    const m = new Date(t.date).getMonth();
-                    monthMap[m] = (monthMap[m] || 0) + Number(t.amount || 0);
-                });
-                const monthlyExpenses = Object.entries(monthMap)
-                    .map(([idx, amount]) => ({ month: MONTH_NAMES[Number(idx)], amount, _idx: Number(idx) }))
-                    .sort((a, b) => a._idx - b._idx)
-                    .map(({ month, amount }) => ({ month, amount }));
-
-                // School-level spending
-                const spentBySchool: Record<string, number> = {};
-                transactions.forEach((t) => {
-                    spentBySchool[t.school_id] = (spentBySchool[t.school_id] || 0) + Number(t.amount || 0);
-                });
-                const schoolList = schools.map((s) => ({
-                    name: s.name,
-                    npsn: s.npsn,
-                    accreditation: s.accreditation || '-',
-                    totalSpent: spentBySchool[s.id] || 0,
-                })).sort((a, b) => b.totalSpent - a.totalSpent);
-
-                setStats({
-                    schoolCount: schools.length,
-                    totalReceived,
-                    totalSpent,
-                    totalRemaining: totalReceived - totalSpent,
-                    transactionCount: transactions.length,
-                    reportCount,
-                    categoryBreakdown,
-                    monthlyExpenses,
-                    schools: schoolList,
-                });
+                const res = await fetch('/api/v1/statistics');
+                const d = await res.json();
+                if (d.success && d.data) {
+                    const categoryBreakdown = (d.data.categoryBreakdown || []).map((cb: any) => ({
+                        ...cb,
+                        color: CATEGORY_COLORS[cb.name] || '#94a3b8'
+                    }));
+                    setStats({
+                        ...d.data,
+                        categoryBreakdown
+                    });
+                }
             } catch (err) {
                 console.error('Stats fetch error:', err);
             } finally {
