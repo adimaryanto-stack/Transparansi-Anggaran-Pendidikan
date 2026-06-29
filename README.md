@@ -33,9 +33,9 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 ---
 
 ## 📋 Status Proyek
-- **Versi Saat Ini**: `v1.4.0` (Dokumentasi, Screenshot & PWA)
+- **Versi Saat Ini**: `v1.5.0` (Statistik Terpadu, Paginasi & Pencarian Dinamis)
 - **Status**: Active Development (Fase 9 - Peluncuran Publik & PWA Optimization)
-- **Update Terakhir**: 24 Juni 2026
+- **Update Terakhir**: 29 Juni 2026
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
@@ -218,6 +218,14 @@ Proyek ini dikembangkan dalam beberapa fase:
 ---
 
 ## 📜 Change Log
+
+### v1.5.0 (29 Juni 2026)
+- **Sinkronisasi Statistik Nasional**: Migrasi 100% data transaksi legacy (32.089 transaksi, 3.135 anggaran) ke tabel modern dengan kalkulasi database berkinerja tinggi (PostgreSQL RPC).
+- **Paginasi Log Transfer Dana**: Batasan tampilan 4 kartu per halaman dengan navigasi halaman yang responsif pada halaman Aliran Dana.
+- **Pencarian Wilayah & Sekolah**: Kotak pencarian kabupaten dan sekolah di halaman detail Provinsi (`/provinces/[code]`) dengan filter debounced langsung ke database.
+- **Aktivitas Nasional Auto-Scrolling**: Implementasi umpan aktivitas berjalan otomatis dengan jeda saat kursor diarahkan (hover) di halaman Beranda.
+- **Filter Wilayah Mandiri**: Penambahan filter independen (Tahun, Provinsi, Kabupaten/Kota) di bagian Log Transfer Dana APBN.
+- **Pembersihan Data Pengujian**: Menghapus data sekolah uji coba (`99999991` - `99999999`) beserta seluruh transaksi terkait demi integritas data rill 100%.
 
 ### v1.4.0 (24 Juni 2026)
 - **Dokumentasi Komprehensif**: Update README, PRD, dan status proyek secara menyeluruh.
