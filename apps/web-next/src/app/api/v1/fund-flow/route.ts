@@ -129,27 +129,59 @@ export async function GET(request: Request) {
         // 6. Fetch Fund Allocations for joining
         const { data: fundAllocations, error: allocationsErr } = await supabase
             .from('fund_allocations')
-            .select('id, entity_name');
+            .select('id, entity_name, level, entity_id, source_allocation_id');
         
         if (allocationsErr) throw allocationsErr;
 
-        // Create a lookup map for allocation names
+        // Create a lookup map for allocation names and province codes
         const allocationMap = new Map<string, string>();
+        const allocationProvMap = new Map<string, string>();
+        
         if (fundAllocations) {
+            // First pass: map DINAS_PROV to their province code
             fundAllocations.forEach(fa => {
                 allocationMap.set(fa.id, fa.entity_name);
+                if (fa.level === 'DINAS_PROV') {
+                    allocationProvMap.set(fa.id, fa.entity_id);
+                }
+            });
+            
+            // Second pass: map DINAS_KAB to parent's province code
+            fundAllocations.forEach(fa => {
+                if (fa.level === 'DINAS_KAB' && fa.source_allocation_id) {
+                    const provCode = allocationProvMap.get(fa.source_allocation_id);
+                    if (provCode) {
+                        allocationProvMap.set(fa.id, provCode);
+                    }
+                }
+            });
+            
+            // Third pass: map SEKOLAH to parent's province code
+            fundAllocations.forEach(fa => {
+                if (fa.level === 'SEKOLAH' && fa.source_allocation_id) {
+                    const provCode = allocationProvMap.get(fa.source_allocation_id);
+                    if (provCode) {
+                        allocationProvMap.set(fa.id, provCode);
+                    }
+                }
             });
         }
 
         // Map transfers to flowLinks format
-        const flowLinks = (transfers || []).map((t: any) => ({
-            source: allocationMap.get(t.from_allocation_id) || 'Unknown Source',
-            target: allocationMap.get(t.to_allocation_id) || 'Unknown Target',
-            value: Number(t.amount || 0),
-            reference: t.reference_number || '',
-            date: t.transfer_date || '',
-            status: t.status || 'PENDING'
-        }));
+        const flowLinks = (transfers || []).map((t: any) => {
+            const provCode = allocationProvMap.get(t.to_allocation_id) || 
+                             allocationProvMap.get(t.from_allocation_id) || 
+                             '';
+            return {
+                source: allocationMap.get(t.from_allocation_id) || 'Unknown Source',
+                target: allocationMap.get(t.to_allocation_id) || 'Unknown Target',
+                value: Number(t.amount || 0),
+                reference: t.reference_number || '',
+                date: t.transfer_date || '',
+                status: t.status || 'PENDING',
+                provinsi_code: provCode
+            };
+        });
 
         return NextResponse.json({
             success: true,

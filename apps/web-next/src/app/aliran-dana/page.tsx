@@ -251,6 +251,16 @@ function AliranDanaPageContent() {
     const endIndex = startIndex + itemsPerPage;
     const paginatedAllocations = filteredAllocations.slice(startIndex, endIndex);
 
+    const selectedProv = provincesList.find(p => p.id === selectedProvinceId);
+    const selectedProvCode = selectedProv?.provinsi_code;
+
+    const filteredFlowLinks = data?.flowLinks
+        ? data.flowLinks.filter(fl => {
+            if (!selectedProvinceId) return true;
+            return (fl as any).provinsi_code === selectedProvCode || (fl as any).provinsi_code === '';
+        })
+        : [];
+
     return (
         <>
             <SharedNavbar />
@@ -403,6 +413,27 @@ function AliranDanaPageContent() {
                                 {/* Dropdown Filters */}
                                 <div className="flex flex-col md:flex-row gap-4 mb-5 items-end justify-between bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
                                     <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                                        {/* Filter Tahun */}
+                                        <div className="flex flex-col gap-1.5 w-full sm:w-32">
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-sm text-primary">calendar_month</span> Tahun
+                                            </label>
+                                            <div className="relative">
+                                                <select
+                                                    value={selectedYear}
+                                                    onChange={(e) => {
+                                                        setSelectedYear(parseInt(e.target.value));
+                                                    }}
+                                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl h-11 px-3 pr-10 appearance-none outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-semibold text-slate-700 shadow-inner"
+                                                >
+                                                    {apbnYears.map(y => (
+                                                        <option key={y.year} value={y.year}>{y.year}</option>
+                                                    ))}
+                                                </select>
+                                                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">keyboard_arrow_down</span>
+                                            </div>
+                                        </div>
+
                                         {/* Filter Provinsi */}
                                         <div className="flex flex-col gap-1.5 w-full sm:w-64">
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
@@ -626,14 +657,14 @@ function AliranDanaPageContent() {
                                 </div>
                             </section>
                              {/* Log Transfer Dana APBN - Only shown if there is data */}
-                             {data?.flowLinks && data.flowLinks.length > 0 && (
+                             {filteredFlowLinks && filteredFlowLinks.length > 0 && (
                                  <section className="mb-8">
                                      <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
                                          <span className="material-symbols-outlined text-primary">swap_horiz</span>
                                          Log Transfer Dana APBN
                                      </h2>
                                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                         {data.flowLinks.map((fl, idx) => (
+                                         {filteredFlowLinks.map((fl, idx) => (
                                              <div key={idx} className="bg-white rounded-xl border border-slate-200 p-4 hover:shadow-md transition-shadow">
                                                  <div className="flex items-center justify-between mb-2">
                                                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
