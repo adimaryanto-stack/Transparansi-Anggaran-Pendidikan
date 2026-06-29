@@ -91,6 +91,8 @@ function AliranDanaPageContent() {
     const [selectedDistrictId, setSelectedDistrictId] = useState('');
     const [xferSelectedProvinceId, setXferSelectedProvinceId] = useState('');
     const [xferSelectedDistrictId, setXferSelectedDistrictId] = useState('');
+    const [xferPage, setXferPage] = useState(1);
+    const xferItemsPerPage = 4;
 
     // Fetch source specific data
     useEffect(() => {
@@ -188,6 +190,7 @@ function AliranDanaPageContent() {
         setSelectedDistrictId('');
         setXferSelectedProvinceId('');
         setXferSelectedDistrictId('');
+        setXferPage(1);
     }, [selectedYear]);
 
     // Realtime Subscription
@@ -282,6 +285,12 @@ function AliranDanaPageContent() {
             return true;
         })
         : [];
+
+    const totalXferItems = filteredFlowLinks.length;
+    const totalXferPages = Math.ceil(totalXferItems / xferItemsPerPage);
+    const startXferIndex = (xferPage - 1) * xferItemsPerPage;
+    const endXferIndex = startXferIndex + xferItemsPerPage;
+    const paginatedFlowLinks = filteredFlowLinks.slice(startXferIndex, endXferIndex);
 
     return (
         <>
@@ -734,6 +743,7 @@ function AliranDanaPageContent() {
                                                          onChange={(e) => {
                                                              setXferSelectedProvinceId(e.target.value);
                                                              setXferSelectedDistrictId(''); // Reset district when province changes
+                                                             setXferPage(1);
                                                          }}
                                                          className="w-full bg-slate-50 border border-slate-200 rounded-xl h-11 px-3 pr-10 appearance-none outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-semibold text-slate-700 shadow-inner"
                                                      >
@@ -756,6 +766,7 @@ function AliranDanaPageContent() {
                                                          value={xferSelectedDistrictId}
                                                          onChange={(e) => {
                                                              setXferSelectedDistrictId(e.target.value);
+                                                             setXferPage(1);
                                                          }}
                                                          disabled={!xferSelectedProvinceId}
                                                          className="w-full bg-slate-50 border border-slate-200 rounded-xl h-11 px-3 pr-10 appearance-none outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-semibold text-slate-700 shadow-inner disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
@@ -776,6 +787,7 @@ function AliranDanaPageContent() {
                                                  onClick={() => {
                                                      setXferSelectedProvinceId('');
                                                      setXferSelectedDistrictId('');
+                                                     setXferPage(1);
                                                  }}
                                                  className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 bg-red-50 hover:bg-red-100/80 px-4 h-11 rounded-xl transition-all border border-red-200/50 w-full md:w-auto justify-center shadow-sm"
                                              >
@@ -793,7 +805,7 @@ function AliranDanaPageContent() {
                                                  <p className="text-xs text-slate-400">Silakan pilih provinsi lain atau hapus filter Anda</p>
                                              </div>
                                          ) : (
-                                             filteredFlowLinks.map((fl, idx) => (
+                                             paginatedFlowLinks.map((fl, idx) => (
                                                  <div key={idx} className="bg-white rounded-xl border border-slate-200 p-4 hover:shadow-md transition-shadow">
                                                      <div className="flex items-center justify-between mb-2">
                                                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${fl.status === 'COMPLETED' ? 'bg-emerald-100 text-emerald-700' : fl.status === 'FLAGGED' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'}`}>
@@ -822,6 +834,94 @@ function AliranDanaPageContent() {
                                              ))
                                          )}
                                      </div>
+
+                                     {/* Pagination for Log Transfer */}
+                                     {totalXferPages > 1 && (
+                                         <div className="flex items-center justify-between border-t border-slate-200 bg-white rounded-xl border p-4 mt-4 shadow-sm">
+                                             <div className="flex flex-1 justify-between sm:hidden">
+                                                 <button
+                                                     onClick={() => setXferPage(p => Math.max(p - 1, 1))}
+                                                     disabled={xferPage === 1}
+                                                     className="relative inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-30"
+                                                 >
+                                                     Sebelumnya
+                                                 </button>
+                                                 <button
+                                                     onClick={() => setXferPage(p => Math.min(p + 1, totalXferPages))}
+                                                     disabled={xferPage === totalXferPages}
+                                                     className="relative ml-3 inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-30"
+                                                 >
+                                                     Selanjutnya
+                                                 </button>
+                                             </div>
+                                             <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                                 <div>
+                                                     <p className="text-sm text-slate-600">
+                                                         Menampilkan <span className="font-semibold">{startXferIndex + 1}</span> hingga <span className="font-semibold">{Math.min(endXferIndex, totalXferItems)}</span> dari <span className="font-semibold">{totalXferItems}</span> transfer
+                                                     </p>
+                                                 </div>
+                                                 <div>
+                                                     <nav className="isolate inline-flex -space-x-px rounded-md gap-1" aria-label="Pagination">
+                                                         <button
+                                                             onClick={() => setXferPage(p => Math.max(p - 1, 1))}
+                                                             disabled={xferPage === 1}
+                                                             className="relative inline-flex items-center rounded-lg px-2 py-2 text-slate-400 hover:bg-slate-50 hover:text-slate-700 transition-colors focus:z-20 disabled:opacity-30 disabled:hover:bg-transparent"
+                                                         >
+                                                             <span className="sr-only">Sebelumnya</span>
+                                                             <span className="material-symbols-outlined text-lg">chevron_left</span>
+                                                         </button>
+                                                         {Array.from({ length: totalXferPages }, (_, idx) => {
+                                                             const pageNum = idx + 1;
+                                                             const isSelected = pageNum === xferPage;
+                                                             if (
+                                                                 pageNum === 1 ||
+                                                                 pageNum === totalXferPages ||
+                                                                 (pageNum >= xferPage - 2 && pageNum <= xferPage + 2)
+                                                             ) {
+                                                                 return (
+                                                                     <button
+                                                                         key={pageNum}
+                                                                         onClick={() => setXferPage(pageNum)}
+                                                                         className={`relative inline-flex items-center rounded-lg px-4 py-1.5 text-sm font-bold transition-all focus:z-20 ${
+                                                                             isSelected
+                                                                                 ? 'bg-primary text-white shadow-md shadow-primary/20'
+                                                                                 : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                                                         }`}
+                                                                     >
+                                                                         {pageNum}
+                                                                     </button>
+                                                                 );
+                                                             }
+
+                                                             if (
+                                                                 (pageNum === 2 && xferPage > 4) ||
+                                                                 (pageNum === totalXferPages - 1 && xferPage < totalXferPages - 3)
+                                                             ) {
+                                                                 return (
+                                                                     <span
+                                                                         key={pageNum}
+                                                                         className="relative inline-flex items-center px-3 py-1.5 text-sm font-bold text-slate-400"
+                                                                     >
+                                                                         ...
+                                                                     </span>
+                                                                 );
+                                                             }
+
+                                                             return null;
+                                                         })}
+                                                         <button
+                                                             onClick={() => setXferPage(p => Math.min(p + 1, totalXferPages))}
+                                                             disabled={xferPage === totalXferPages}
+                                                             className="relative inline-flex items-center rounded-lg px-2 py-2 text-slate-400 hover:bg-slate-50 hover:text-slate-700 transition-colors focus:z-20 disabled:opacity-30 disabled:hover:bg-transparent"
+                                                         >
+                                                             <span className="sr-only">Selanjutnya</span>
+                                                             <span className="material-symbols-outlined text-lg">chevron_right</span>
+                                                         </button>
+                                                     </nav>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     )}
                                  </section>
                              )}
 
