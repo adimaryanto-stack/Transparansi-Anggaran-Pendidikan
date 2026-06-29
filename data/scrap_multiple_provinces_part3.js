@@ -27,12 +27,9 @@ if (!supabaseUrl || !serviceRoleKey) {
 
 const supabase = createClient(supabaseUrl, serviceRoleKey);
 
-// Target provinces configuration (Batch 3 - Resume)
+// Target provinces configuration (Batch 3 - Jakarta fix)
 const TARGET_PROVINCES = [
   { name: 'Daerah Khusus Ibukota Jakarta', kemendikbudCode: '010000', bpsProvinceCode: '31' },
-  { name: 'Banten', kemendikbudCode: '280000', bpsProvinceCode: '36' },
-  { name: 'Bali', kemendikbudCode: '220000', bpsProvinceCode: '51' },
-  { name: 'Nusa Tenggara Barat', kemendikbudCode: '230000', bpsProvinceCode: '52' }
 ];
 
 const EDUCATION_LEVELS = [
@@ -73,7 +70,7 @@ function normalize(name) {
     type = 'kabupaten';
   }
   const clean = lower
-      .replace(/\b(kab|kabupaten|kota|administrasi)\.?\b/gi, '')
+      .replace(/\b(kab|kabupaten|kota|administrasi|adm)\.?\b/gi, '')
       .replace(/sidempuan/g, 'sidimpuan')
       .replace(/[^a-z0-9]/g, '')
       .trim();
