@@ -138,25 +138,37 @@ export default function SchoolDashboardPage() {
                             location: instData.alamat || `${instData.kabupaten_kota_nama}, ${instData.provinsi_nama}`
                         };
                     } else {
-                        // Auto-create school profile if completely missing
-                        const nameParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('name') : null;
-                        const defaultName = nameParam || `Institusi Pendidikan (NPSN: ${npsn})`;
+                        // Auto-scrape school dynamically from the Kemendikbud reference portal in real-time
+                        try {
+                            const scrapeRes = await fetch(`/api/v1/scrape-school?npsn=${npsn}`);
+                            const scrapeData = await scrapeRes.json();
+                            if (scrapeData.success && scrapeData.school) {
+                                school = scrapeData.school;
+                            } else {
+                                throw new Error(scrapeData.error || 'Scrape failed');
+                            }
+                        } catch (scrapeErr) {
+                            console.warn('Real-time scrape failed, falling back to local creation:', scrapeErr);
+                            // Fallback to local profile creation if scraping fails or is blocked
+                            const nameParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('name') : null;
+                            const defaultName = nameParam || `Institusi Pendidikan (NPSN: ${npsn})`;
 
-                        const { data: newSchool, error: insertError } = await supabase
-                            .from('schools')
-                            .insert([
-                                {
-                                    npsn: npsn,
-                                    name: defaultName,
-                                    location: 'Indonesia',
-                                    accreditation: 'B'
-                                }
-                            ])
-                            .select()
-                            .single();
+                            const { data: newSchool, error: insertError } = await supabase
+                                .from('schools')
+                                .insert([
+                                    {
+                                        npsn: npsn,
+                                        name: defaultName,
+                                        location: 'Indonesia',
+                                        accreditation: 'B'
+                                    }
+                                ])
+                                .select()
+                                .single();
 
-                        if (insertError) throw insertError;
-                        school = newSchool;
+                            if (insertError) throw insertError;
+                            school = newSchool;
+                        }
                     }
                 }
 
