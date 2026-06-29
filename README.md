@@ -226,6 +226,7 @@ Proyek ini dikembangkan dalam beberapa fase:
 - **Aktivitas Nasional Auto-Scrolling**: Implementasi umpan aktivitas berjalan otomatis dengan jeda saat kursor diarahkan (hover) di halaman Beranda.
 - **Filter Wilayah Mandiri**: Penambahan filter independen (Tahun, Provinsi, Kabupaten/Kota) di bagian Log Transfer Dana APBN.
 - **Pembersihan Data Pengujian**: Menghapus data sekolah uji coba (`99999991` - `99999999`) beserta seluruh transaksi terkait demi integritas data rill 100%.
+- **Auto-Scraping Real-Time**: Integrasi pencarian dan scraping data profil sekolah (nama, lokasi, akreditasi) secara otomatis dan real-time dari portal referensi resmi Kemendikbud ketika pengguna mengakses NPSN baru yang belum terdaftar.
 
 ### v1.4.0 (24 Juni 2026)
 - **Dokumentasi Komprehensif**: Update README, PRD, dan status proyek secara menyeluruh.
