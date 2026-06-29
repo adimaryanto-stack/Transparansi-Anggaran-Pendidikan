@@ -133,9 +133,10 @@ export async function GET(request: Request) {
         
         if (allocationsErr) throw allocationsErr;
 
-        // Create a lookup map for allocation names and province codes
+        // Create a lookup map for allocation names and province/district codes
         const allocationMap = new Map<string, string>();
         const allocationProvMap = new Map<string, string>();
+        const allocationKabMap = new Map<string, string>();
         
         if (fundAllocations) {
             // First pass: map DINAS_PROV to their province code
@@ -146,22 +147,29 @@ export async function GET(request: Request) {
                 }
             });
             
-            // Second pass: map DINAS_KAB to parent's province code
+            // Second pass: map DINAS_KAB to parent's province code and own kabkota code
             fundAllocations.forEach(fa => {
-                if (fa.level === 'DINAS_KAB' && fa.source_allocation_id) {
-                    const provCode = allocationProvMap.get(fa.source_allocation_id);
-                    if (provCode) {
-                        allocationProvMap.set(fa.id, provCode);
+                if (fa.level === 'DINAS_KAB') {
+                    allocationKabMap.set(fa.id, fa.entity_id);
+                    if (fa.source_allocation_id) {
+                        const provCode = allocationProvMap.get(fa.source_allocation_id);
+                        if (provCode) {
+                            allocationProvMap.set(fa.id, provCode);
+                        }
                     }
                 }
             });
             
-            // Third pass: map SEKOLAH to parent's province code
+            // Third pass: map SEKOLAH to parent's province/kabkota code
             fundAllocations.forEach(fa => {
                 if (fa.level === 'SEKOLAH' && fa.source_allocation_id) {
                     const provCode = allocationProvMap.get(fa.source_allocation_id);
                     if (provCode) {
                         allocationProvMap.set(fa.id, provCode);
+                    }
+                    const kabCode = allocationKabMap.get(fa.source_allocation_id);
+                    if (kabCode) {
+                        allocationKabMap.set(fa.id, kabCode);
                     }
                 }
             });
@@ -172,6 +180,9 @@ export async function GET(request: Request) {
             const provCode = allocationProvMap.get(t.to_allocation_id) || 
                              allocationProvMap.get(t.from_allocation_id) || 
                              '';
+            const kabCode = allocationKabMap.get(t.to_allocation_id) || 
+                            allocationKabMap.get(t.from_allocation_id) || 
+                            '';
             return {
                 source: allocationMap.get(t.from_allocation_id) || 'Unknown Source',
                 target: allocationMap.get(t.to_allocation_id) || 'Unknown Target',
@@ -179,7 +190,8 @@ export async function GET(request: Request) {
                 reference: t.reference_number || '',
                 date: t.transfer_date || '',
                 status: t.status || 'PENDING',
-                provinsi_code: provCode
+                provinsi_code: provCode,
+                kabkota_code: kabCode
             };
         });
 
