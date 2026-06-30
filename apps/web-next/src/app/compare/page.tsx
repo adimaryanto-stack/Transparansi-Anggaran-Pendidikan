@@ -80,12 +80,11 @@ export default function ComparePage() {
     const fetchStats = async (schoolId: string, setStats: Function) => {
         setLoading(true);
         try {
-            // Get Budget
-            const { data: budget } = await supabase
-                .from("budgets")
-                .select("total_received")
-                .eq("school_id", schoolId)
-                .single();
+            // Get Budget from incoming_funds
+            const { data: funds } = await supabase
+                .from("incoming_funds")
+                .select("amount")
+                .eq("school_id", schoolId);
 
             // Get Transactions
             const { data: txs } = await supabase
@@ -93,12 +92,12 @@ export default function ComparePage() {
                 .select("category, amount")
                 .eq("school_id", schoolId);
 
-            const totalBudget = budget?.total_received || 0;
-            const totalSpent = txs?.reduce((acc, curr) => acc + Number(curr.amount), 0) || 0;
+            const totalBudget = funds?.reduce((acc, curr) => acc + Number(curr.amount || 0), 0) || 0;
+            const totalSpent = txs?.reduce((acc, curr) => acc + Number(curr.amount || 0), 0) || 0;
 
             const categoryMap: Record<string, number> = {};
             txs?.forEach((tx) => {
-                categoryMap[tx.category] = (categoryMap[tx.category] || 0) + Number(tx.amount);
+                categoryMap[tx.category] = (categoryMap[tx.category] || 0) + Number(tx.amount || 0);
             });
 
             const categories = Object.entries(categoryMap).map(([name, amount]) => ({
