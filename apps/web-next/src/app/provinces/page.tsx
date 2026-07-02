@@ -17,6 +17,32 @@ export default function ProvincesPage() {
     const [provinces, setProvinces] = useState<ProvinceItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
+    const [stats, setStats] = useState({ PAUD: 0, SD: 0, SMP: 0, SMA: 0, Universitas: 0 });
+    const [statsLoading, setStatsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchStats = async () => {
+            try {
+                const { data, error } = await supabase.rpc('get_national_school_stats');
+                if (!error && data) {
+                    const statsMap = { PAUD: 0, SD: 0, SMP: 0, SMA: 0, Universitas: 0 };
+                    data.forEach((item: any) => {
+                        if (item.jenjang === 'PAUD') statsMap.PAUD = Number(item.school_count || 0);
+                        if (item.jenjang === 'SD') statsMap.SD = Number(item.school_count || 0);
+                        if (item.jenjang === 'SMP') statsMap.SMP = Number(item.school_count || 0);
+                        if (item.jenjang === 'SMA') statsMap.SMA = Number(item.school_count || 0);
+                        if (item.jenjang === 'Universitas') statsMap.Universitas = Number(item.school_count || 0);
+                    });
+                    setStats(statsMap);
+                }
+            } catch (err) {
+                console.error('Error fetching national school stats:', err);
+            } finally {
+                setStatsLoading(false);
+            }
+        };
+        fetchStats();
+    }, []);
 
     useEffect(() => {
         const fetch = async () => {
@@ -59,6 +85,50 @@ export default function ProvincesPage() {
                         </div>
                         <h1 className="text-4xl font-black tracking-tight text-slate-900">Daftar Provinsi</h1>
                         <p className="text-slate-600 text-lg mt-2">Pilih provinsi untuk melihat data kabupaten/kota dan sekolah yang terdaftar.</p>
+                    </div>
+
+                    {/* Stats cards for schools */}
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                            <span className="text-slate-500 font-bold text-sm text-center">PAUD/TK/KB</span>
+                            {statsLoading ? (
+                                <div className="h-7 w-12 bg-slate-100 animate-pulse rounded-md mt-1"></div>
+                            ) : (
+                                <span className="text-2xl font-black text-slate-900 mt-1">{stats.PAUD}</span>
+                            )}
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                            <span className="text-slate-500 font-bold text-sm text-center">SD/Sederajat</span>
+                            {statsLoading ? (
+                                <div className="h-7 w-12 bg-slate-100 animate-pulse rounded-md mt-1"></div>
+                            ) : (
+                                <span className="text-2xl font-black text-slate-900 mt-1">{stats.SD}</span>
+                            )}
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                            <span className="text-slate-500 font-bold text-sm text-center">SMP/Sederajat</span>
+                            {statsLoading ? (
+                                <div className="h-7 w-12 bg-slate-100 animate-pulse rounded-md mt-1"></div>
+                            ) : (
+                                <span className="text-2xl font-black text-slate-900 mt-1">{stats.SMP}</span>
+                            )}
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                            <span className="text-slate-500 font-bold text-sm text-center">SMA/SMK</span>
+                            {statsLoading ? (
+                                <div className="h-7 w-12 bg-slate-100 animate-pulse rounded-md mt-1"></div>
+                            ) : (
+                                <span className="text-2xl font-black text-slate-900 mt-1">{stats.SMA}</span>
+                            )}
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                            <span className="text-slate-500 font-bold text-sm text-center">Universitas</span>
+                            {statsLoading ? (
+                                <div className="h-7 w-12 bg-slate-100 animate-pulse rounded-md mt-1"></div>
+                            ) : (
+                                <span className="text-2xl font-black text-slate-900 mt-1">{stats.Universitas}</span>
+                            )}
+                        </div>
                     </div>
 
                     <div className="relative">

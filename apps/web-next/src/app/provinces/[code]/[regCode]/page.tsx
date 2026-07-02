@@ -18,6 +18,11 @@ export default function RegencyDetailPage() {
     const [filterKecamatan, setFilterKecamatan] = useState<string>('Semua');
     const [searchQuery, setSearchQuery] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
+    const [displayLimit, setDisplayLimit] = useState(24);
+
+    useEffect(() => {
+        setDisplayLimit(24);
+    }, [filterJenjang, filterKecamatan, searchQuery]);
 
     const getJenjang = (name: string) => {
         const n = (name || '').toUpperCase();
@@ -30,9 +35,13 @@ export default function RegencyDetailPage() {
 
     const getKecamatan = (loc: string) => {
         if (!loc) return 'Lainnya';
-        const match = loc.match(/Kecamatan\s+([A-Za-z\s]+)(?:,|$)/i) || loc.match(/Kec\.\s+([A-Za-z\s]+)(?:,|$)/i);
-        if (match) return match[1].trim();
-        // Fallback for dummy data or unknown
+        const match = loc.match(/.*Kec(?:amatan|\.)\s+([A-Za-z0-9\s]+?)(?:,|$)/i);
+        if (match) {
+            const cleanKec = match[1].trim();
+            if (cleanKec && !cleanKec.toLowerCase().includes('kabupaten') && !cleanKec.toLowerCase().includes('kota') && !cleanKec.toLowerCase().includes('provinsi')) {
+                return cleanKec;
+            }
+        }
         return 'Lainnya';
     };
 
@@ -221,31 +230,46 @@ export default function RegencyDetailPage() {
                             <p className="font-bold text-lg">Tidak ada sekolah yang cocok dengan filter</p>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {filteredSchools.map(s => (
-                                <Link
-                                    key={s.id}
-                                    href={`/dashboard/${s.npsn}`}
-                                    className="bg-white rounded-xl p-6 border border-slate-200 hover:border-primary/40 hover:shadow-md transition-all group"
-                                >
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined text-2xl">school</span>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">{s.name}</h3>
-                                            <p className="text-sm text-slate-500 mt-0.5">NPSN: {s.npsn}</p>
-                                            <div className="flex gap-3 mt-3">
-                                                <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">{s.accreditation}</span>
-                                                {s.totalReceived > 0 && (
-                                                    <span className="text-xs text-slate-500">Dana: {formatIDR(s.totalReceived)}</span>
-                                                )}
-                                                <span className="text-xs text-slate-500 ml-auto bg-slate-100 px-2 rounded-md flex items-center">{getKecamatan(s.location)}</span>
+                        <div className="flex flex-col gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {filteredSchools.slice(0, displayLimit).map(s => (
+                                    <Link
+                                        key={s.id}
+                                        href={`/dashboard/${s.npsn}`}
+                                        className="bg-white rounded-xl p-6 border border-slate-200 hover:border-primary/40 hover:shadow-md transition-all group"
+                                    >
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                                                <span className="material-symbols-outlined text-2xl">school</span>
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">{s.name}</h3>
+                                                <p className="text-sm text-slate-500 mt-0.5">NPSN: {s.npsn}</p>
+                                                <div className="flex gap-3 mt-3">
+                                                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">{s.accreditation}</span>
+                                                    {s.totalReceived > 0 && (
+                                                        <span className="text-xs text-slate-500">Dana: {formatIDR(s.totalReceived)}</span>
+                                                    )}
+                                                    <span className="text-xs text-slate-500 ml-auto bg-slate-100 px-2 rounded-md flex items-center">{getKecamatan(s.location)}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            ))}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Load More Button */}
+                            {filteredSchools.length > displayLimit && (
+                                <div className="flex justify-center mt-4">
+                                    <button
+                                        onClick={() => setDisplayLimit(prev => prev + 24)}
+                                        className="px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-bold rounded-xl border border-slate-200 shadow-sm transition-all flex items-center gap-2"
+                                    >
+                                        <span className="material-symbols-outlined text-lg">expand_more</span>
+                                        Muat Lebih Banyak
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
