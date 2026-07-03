@@ -53,6 +53,8 @@ export default function SchoolDashboardPage() {
 
     // RAB states
     const [rabItems, setRabItems] = useState<any[]>([]);
+    const [rabPage, setRabPage] = useState(1);
+    const RAB_PER_PAGE = 10;
 
     // Receipt Modal State
     const [selectedTransaction, setSelectedTransaction] = useState<any | null>(null);
@@ -107,6 +109,7 @@ export default function SchoolDashboardPage() {
         const fetchSchoolFromSupabase = async () => {
             try {
                 setLoading(true);
+                setRabPage(1);
 
                 // Fetch school basic info
                 let { data: school, error: supabaseError } = await supabase
@@ -998,7 +1001,6 @@ export default function SchoolDashboardPage() {
                                 )}
                             </div>
                         </div>
-
                         {/* Rencana Anggaran Biaya (RAB) Section */}
                         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
                             <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-indigo-50 dark:bg-indigo-950/20">
@@ -1006,7 +1008,7 @@ export default function SchoolDashboardPage() {
                                     <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-[24px]">description</span>
                                     <h3 className="text-xl font-bold text-indigo-900 dark:text-indigo-300">Rencana Anggaran Biaya (RAB) - {selectedYear}</h3>
                                 </div>
-                                <span className="text-sm bg-indigo-100 dark:bg-indigo-900/50 text-indigo-850 dark:text-indigo-350 px-3 py-1 rounded-full font-medium">
+                                <span className="text-sm bg-indigo-100 dark:bg-indigo-900/50 text-indigo-855 dark:text-indigo-350 px-3 py-1 rounded-full font-medium">
                                     {rabItems.length} Rencana Kegiatan
                                 </span>
                             </div>
@@ -1028,7 +1030,7 @@ export default function SchoolDashboardPage() {
                                                 </td>
                                             </tr>
                                         ) : (
-                                            rabItems.map((item: any) => (
+                                            rabItems.slice((rabPage - 1) * RAB_PER_PAGE, rabPage * RAB_PER_PAGE).map((item: any) => (
                                                 <tr key={item.id} className="hover:bg-indigo-50/10 dark:hover:bg-indigo-950/10 transition-colors">
                                                     <td className="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">
                                                         <span className="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-100/30 text-xs">
@@ -1046,7 +1048,59 @@ export default function SchoolDashboardPage() {
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                            {/* Pagination Controls */}
+                            {rabItems.length > RAB_PER_PAGE && (
+                                <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                                        Menampilkan <span className="font-bold text-slate-800 dark:text-slate-200">{(rabPage - 1) * RAB_PER_PAGE + 1}</span>–
+                                        <span className="font-bold text-slate-800 dark:text-slate-200">{Math.min(rabPage * RAB_PER_PAGE, rabItems.length)}</span> dari{' '}
+                                        <span className="font-bold text-slate-800 dark:text-slate-200">{rabItems.length}</span> rencana kegiatan
+                                    </span>
+                                    <div className="flex items-center gap-1">
+                                        <button
+                                            onClick={() => setRabPage(p => Math.max(1, p - 1))}
+                                            disabled={rabPage === 1}
+                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-650 dark:text-slate-400 hover:bg-indigo-50 hover:border-indigo-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
+                                        >
+                                            <span className="material-symbols-outlined text-[16px]">chevron_left</span>
+                                        </button>
+                                        {Array.from({ length: Math.ceil(rabItems.length / RAB_PER_PAGE) }, (_, i) => i + 1)
+                                            .filter(page => {
+                                                const totalPages = Math.ceil(rabItems.length / RAB_PER_PAGE);
+                                                return page === 1 || page === totalPages || Math.abs(page - rabPage) <= 1;
+                                            })
+                                            .map((page, index, array) => {
+                                                const showEllipsisBefore = index > 0 && page - array[index - 1] > 1;
+                                                return (
+                                                    <div key={page} className="flex items-center gap-1">
+                                                        {showEllipsisBefore && (
+                                                            <span className="text-slate-400 text-xs">...</span>
+                                                        )}
+                                                        <button
+                                                            onClick={() => setRabPage(page)}
+                                                            className={`w-8 h-8 flex items-center justify-center rounded-lg border text-sm font-bold transition-all ${
+                                                                rabPage === page
+                                                                    ? 'bg-indigo-650 text-white border-indigo-600 shadow-sm'
+                                                                    : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-indigo-50 hover:border-indigo-300'
+                                                            }`}
+                                                        >
+                                                            {page}
+                                                        </button>
+                                                    </div>
+                                                );
+                                            })
+                                        }
+                                        <button
+                                            onClick={() => setRabPage(p => Math.min(Math.ceil(rabItems.length / RAB_PER_PAGE), p + 1))}
+                                            disabled={rabPage === Math.ceil(rabItems.length / RAB_PER_PAGE)}
+                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-650 dark:text-slate-400 hover:bg-indigo-50 hover:border-indigo-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
+                                        >
+                                            <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>v>
 
                         {/* Public Forum / Comments Section */}
                         <div id="forum" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6 scroll-mt-24">
