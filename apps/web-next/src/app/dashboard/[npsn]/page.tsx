@@ -51,6 +51,9 @@ export default function SchoolDashboardPage() {
     const [userName, setUserName] = useState("");
     const [isSubmittingComment, setIsSubmittingComment] = useState(false);
 
+    // RAB states
+    const [rabItems, setRabItems] = useState<any[]>([]);
+
     // Receipt Modal State
     const [selectedTransaction, setSelectedTransaction] = useState<any | null>(null);
 
@@ -273,6 +276,39 @@ export default function SchoolDashboardPage() {
                         })
                         : [];
                 }
+
+                // Fetch RAB items
+                let rabFetched: any[] = [];
+                if (!isLegacy) {
+                    const { data: rabData } = await supabase
+                        .from('rencana_anggaran')
+                        .select('*')
+                        .eq('school_id', school.id)
+                        .eq('year', selectedYear)
+                        .order('amount', { ascending: false });
+                    rabFetched = rabData || [];
+                } else if (isLegacy && legacySchoolData) {
+                    const { data: itemsData } = await supabase
+                        .from('rincian_pengeluaran_item')
+                        .select('*')
+                        .eq('institusi_id', legacySchoolData.id)
+                        .order('nomor_bulan', { ascending: false })
+                        .order('nomor', { ascending: false });
+                    
+                    const legacyRab = (itemsData || []).map((item: any) => {
+                        const cat = getCategoryFromName(item.nama_produk_jasa);
+                        return {
+                            id: item.id,
+                            category: cat,
+                            item_name: item.nama_produk_jasa,
+                            amount: Number(item.jumlah || 0),
+                            quantity: Number(item.qty || 1),
+                            unit: 'pcs'
+                        };
+                    });
+                    rabFetched = legacyRab;
+                }
+                setRabItems(rabFetched);
 
                 // --- Compute DYNAMIC Totals ---
                 const totalSpent = transactions.reduce((sum, trx) => sum + Number(trx.amount || 0), 0);
@@ -960,6 +996,55 @@ export default function SchoolDashboardPage() {
                                         <ForecastBoard npsn={npsn} transactions={schoolData.recentTransactions} isInsideTab={true} />
                                     </div>
                                 )}
+                            </div>
+                        </div>
+
+                        {/* Rencana Anggaran Biaya (RAB) Section */}
+                        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
+                            <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-indigo-50 dark:bg-indigo-950/20">
+                                <div className="flex items-center gap-2.5">
+                                    <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-[24px]">description</span>
+                                    <h3 className="text-xl font-bold text-indigo-900 dark:text-indigo-300">Rencana Anggaran Biaya (RAB) - {selectedYear}</h3>
+                                </div>
+                                <span className="text-sm bg-indigo-100 dark:bg-indigo-900/50 text-indigo-850 dark:text-indigo-350 px-3 py-1 rounded-full font-medium">
+                                    {rabItems.length} Rencana Kegiatan
+                                </span>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left">
+                                    <thead className="bg-indigo-50/30 dark:bg-indigo-950/10 text-indigo-800 dark:text-indigo-400 uppercase text-xs font-bold">
+                                        <tr>
+                                            <th className="px-6 py-4">Kategori</th>
+                                            <th className="px-6 py-4">Nama Rencana Kegiatan / Barang</th>
+                                            <th className="px-6 py-4 text-center">Volume</th>
+                                            <th className="px-6 py-4 text-right">Estimasi Anggaran</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                        {rabItems.length === 0 ? (
+                                            <tr>
+                                                <td colSpan={4} className="px-6 py-8 text-center text-slate-400 dark:text-slate-500 font-medium">
+                                                    Belum ada rencana anggaran (RAB) yang diinput untuk tahun {selectedYear}.
+                                                </td>
+                                            </tr>
+                                        ) : (
+                                            rabItems.map((item: any) => (
+                                                <tr key={item.id} className="hover:bg-indigo-50/10 dark:hover:bg-indigo-950/10 transition-colors">
+                                                    <td className="px-6 py-4 text-sm font-semibold text-slate-600 dark:text-slate-400">
+                                                        <span className="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-100/30 text-xs">
+                                                            {item.category}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-6 py-4 font-semibold text-slate-800 dark:text-slate-200 text-sm">{item.item_name}</td>
+                                                    <td className="px-6 py-4 text-center text-slate-600 dark:text-slate-400 text-sm font-medium">{item.quantity} {item.unit}</td>
+                                                    <td className="px-6 py-4 text-right font-black text-indigo-650 dark:text-indigo-400 text-sm font-mono">
+                                                        {formatIDR(item.amount)}
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        )}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
