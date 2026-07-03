@@ -1100,7 +1100,7 @@ export default function SchoolDashboardPage() {
                                     </div>
                                 </div>
                             )}
-                        </div>v>
+                        </div>
 
                         {/* Public Forum / Comments Section */}
                         <div id="forum" className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6 scroll-mt-24">
