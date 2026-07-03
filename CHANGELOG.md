@@ -7,6 +7,26 @@ dan proyek ini menggunakan [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v1.6.0] — 3 Juli 2026
+
+### Added
+- **RAB Dashboard Publik**: Tabel Rencana Anggaran Biaya (RAB) ditampilkan di halaman dashboard sekolah, tepat di atas Forum Diskusi Publik. Data bersumber langsung dari Supabase tabel `rencana_anggaran`.
+- **Paginasi RAB (10 baris/halaman)**: Navigasi halaman bernomor (1, 2, 3...) dengan elipsis cerdas untuk sekolah yang memiliki ratusan item RAB (misal ITB: 133 item → 14 halaman).
+- **Statistik Jenjang Pendidikan per Provinsi**: Rincian PAUD/TK/KB, SD/Sederajat, SMP/Sederajat, SMA/SMK, dan Universitas ditampilkan di halaman `/provinces` melalui Materialized View PostgreSQL berkecepatan tinggi.
+- **Sinkronisasi Data DIY Yogyakarta**: Berhasil seed ulang 4.569 sekolah Yogyakarta yang sebelumnya kosong dengan skema bypass auth trigger untuk menghindari timeout transaksi.
+- **SQL Data Pipeline Tools**: Penambahan SQL dumps, compact SQL per provinsi, dan helper scraper scripts untuk 20+ provinsi (Bali, Banten, DKI Jakarta, Gorontalo, Jawa Barat, Jawa Tengah, Jawa Timur, Kalimantan Barat/Selatan/Tengah/Timur, Kaltara, Lampung, NTB, Papua Barat/Tengah, Sulawesi Barat/Selatan/Tengah/Tenggara).
+
+### Fixed
+- **Duplikasi Kecamatan**: Memperbaiki alamat STEBI Lampung (NPSN 213606) yang menampilkan nama kecamatan dua kali (`Kec. Kedondong, Kec. Padang Cermin, Padang Cermin`).
+- **Data Kosong DIY Yogyakarta**: Perbaikan bug sekolah Yogyakarta yang menampilkan 0 sekolah akibat kegagalan seeding sebelumnya.
+- **Syntax Typo Dashboard Page**: Memperbaiki typo `</div>v>` yang menyebabkan build error pada Turbopack.
+
+### Changed
+- Versi aplikasi `apps/web-next/package.json` diperbarui dari `1.4.2` → `1.6.0`.
+- Roadmap: Fase 10 (Transparansi RAB & Data Publik) dimulai.
+
+---
+
 ## [v1.4.2] — 24 Juni 2026
 
 ### Added

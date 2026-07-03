@@ -1,0 +1,6872 @@
+[
+  {
+    "npsn": "69892548",
+    "name": "KB GLORIA",
+    "address": "LONG NAWANG",
+    "village": "Long Nawang",
+    "status": "Swasta",
+    "district": "Kayan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69960801",
+    "name": "TK NEGERI BINA BUAH HATI",
+    "address": "Desa Nawang Baru",
+    "village": "Nawang Baru",
+    "status": "Negeri",
+    "district": "Kayan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30407351",
+    "name": "TK NEGERI TADING MUDIP",
+    "address": "DESA LONG NAWANG",
+    "village": "Long Nawang",
+    "status": "Negeri",
+    "district": "Kayan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69950640",
+    "name": "KB LEDUNG MENGUN",
+    "address": "Jl. Rambutan Rt.1 Desa Data Dian",
+    "village": "Data Dian",
+    "status": "Swasta",
+    "district": "Kayan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69944933",
+    "name": "KB MUDIP MADING",
+    "address": "Desa Long Metun RT.001",
+    "village": "Metun",
+    "status": "Swasta",
+    "district": "Kayan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892542",
+    "name": "KB TIRING OLUNG",
+    "address": "LONG SILE",
+    "village": "Long Sule",
+    "status": "Swasta",
+    "district": "Kayan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892556",
+    "name": "KB URIP MANGAN",
+    "address": "LONG PIPA",
+    "village": "Long Pipa",
+    "status": "Swasta",
+    "district": "Kayan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70025183",
+    "name": "TK NEGERI UYANG LAHAI",
+    "address": "DESA DATA DIAN RT.01 KECAMATAN KAYAN HILIR",
+    "village": "Data Dian",
+    "status": "Negeri",
+    "district": "Kayan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892544",
+    "name": "KB BUNGA BAKUNG",
+    "address": "LONG ARAN",
+    "village": "Long Aran",
+    "status": "Swasta",
+    "district": "Pujungan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69975653",
+    "name": "KB PALIRAN KASIH",
+    "address": "Desa Long Paliran RT.01",
+    "village": "Long Paliran",
+    "status": "Swasta",
+    "district": "Pujungan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69975654",
+    "name": "KB PELITA BENA",
+    "address": "Desa Long Bena RT.01",
+    "village": "Long Bena",
+    "status": "Swasta",
+    "district": "Pujungan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892555",
+    "name": "KB TUNAS KASIH",
+    "address": "LONG PUJUNGAN",
+    "village": "Long Pujungan",
+    "status": "Swasta",
+    "district": "Pujungan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30407348",
+    "name": "TK NEGERI CA HIMET",
+    "address": "Desa Pujungan",
+    "village": "Long Pujungan",
+    "status": "Negeri",
+    "district": "Pujungan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892537",
+    "name": "KB ALHIDAYAH",
+    "address": "MALINAU HULU",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892613",
+    "name": "KB HARAPAN BANGSA",
+    "address": "MALINAU HULU",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892614",
+    "name": "KB HARAPAN KITA",
+    "address": "Jl. Udau Jalung RT. 02",
+    "village": "Tanjung Keranjang",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69934452",
+    "name": "KB KASIH BUNDA",
+    "address": "JL.Gereja Toraja Rt.X",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69922203",
+    "name": "KB KESUMA JAYA",
+    "address": "Jl. Raja Alam",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892616",
+    "name": "KB PELITA KASIH",
+    "address": "Jl. Pelita Kanaan RT. 01",
+    "village": "Pelita Kanaan",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892617",
+    "name": "KB PERTIWI",
+    "address": "MALINAU HULU",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892618",
+    "name": "KB SEKAR MELATI",
+    "address": "MALINAU HILIR",
+    "village": "Malinau Hilir",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69955180",
+    "name": "KB TUNAS KASIH",
+    "address": "Desa Batu Lidung",
+    "village": "Batu Lidung",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69947234",
+    "name": "KB. TAMAN HATI",
+    "address": "JL. Aji Nata jaya RT. 15 Desa Malinau Kota",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69989302",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL",
+    "address": "Jl. Swadaya RT.08",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405912",
+    "name": "TK AL - HIDAYAH",
+    "address": "JL. RAJA PANDITA",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69944931",
+    "name": "TK ALFA OMEGA",
+    "address": "Jl. Gunung Belah RT.04",
+    "village": "Batu Lidung",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69948800",
+    "name": "TK HENRICUS LEVEN",
+    "address": "Jl. Raja Pandita",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405903",
+    "name": "TK KASIH BUNDA",
+    "address": "JL.Gereja Toraja Rt.X",
+    "village": "Malinau Hulu",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405898",
+    "name": "TK NEGERI DEWI SARTIKA",
+    "address": "JL. RAJA ALAM",
+    "village": "Malinau Kota",
+    "status": "Negeri",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405896",
+    "name": "TK NEGERI PRATAMA",
+    "address": "Jl. Perumahan Pemda II RT VIII Tg. Belimbing",
+    "village": "Malinau Hulu",
+    "status": "Negeri",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69922224",
+    "name": "TK NEGERI RA.KARTINI",
+    "address": "MALINAU KOTA",
+    "village": "Malinau Hilir",
+    "status": "Negeri",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69947404",
+    "name": "TK TAMAN HATI",
+    "address": "jl. Aji Nata jaya Malinau Kota",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405899",
+    "name": "TK YAA BUNAYA",
+    "address": "JL.Pesantren Hidayatullah",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892737",
+    "name": "TKIT ULINNUHAA",
+    "address": "Penambahan",
+    "village": "Malinau Kota",
+    "status": "Swasta",
+    "district": "Malinau Kota",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892535",
+    "name": "KB AGAPE",
+    "address": "PULAU SAPI",
+    "village": "Pulau Sapi",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892538",
+    "name": "KB ANGGREK",
+    "address": "LIDUNG KEMENCI",
+    "village": "Lidung Kemenci",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892545",
+    "name": "KB CEMPAKA",
+    "address": "MENTARANG BARU",
+    "village": "Mentarang Baru",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69944709",
+    "name": "KB HARAPAN INAN",
+    "address": "KB HARAPAN INAN",
+    "village": "Harapan Maju",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892579",
+    "name": "KB KOMPAK",
+    "address": "SINGAI",
+    "village": "Long Bisai",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892667",
+    "name": "KB PELANGI HATI",
+    "address": "PAKING",
+    "village": "Paking",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892582",
+    "name": "KB TUMBUH BERSAMA",
+    "address": "TULID FASAN",
+    "village": "Temalang",
+    "status": "Swasta",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69955473",
+    "name": "TK NEGERI CEMPAKA",
+    "address": "Desa Mentarang",
+    "village": "Mentarang Baru",
+    "status": "Negeri",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892624",
+    "name": "TK NEGERI HANDAYANI",
+    "address": "Pulau Sapi",
+    "village": "Pulau Sapi",
+    "status": "Negeri",
+    "district": "Mentarang",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69963774",
+    "name": "KB CAHAYA KASIH",
+    "address": "Desa Agung Baru",
+    "village": "Agung Baru",
+    "status": "Swasta",
+    "district": "Sungai Boh",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69975648",
+    "name": "KB MUDIP MADENG",
+    "address": "Desa Data Baru RT.01",
+    "village": "Data Baru",
+    "status": "Swasta",
+    "district": "Sungai Boh",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69992421",
+    "name": "KB PKK Long Lebusan",
+    "address": "Jl. Gereja Katolik RT 1",
+    "village": "Long Lebusan",
+    "status": "Swasta",
+    "district": "Sungai Boh",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892554",
+    "name": "KB TEBENGANG",
+    "address": "MAHAK BARU",
+    "village": "Mahak Baru",
+    "status": "Swasta",
+    "district": "Sungai Boh",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892632",
+    "name": "TK NEGERI SUNGAI BOH",
+    "address": "Dumu Mahak RT 02",
+    "village": "Dumu Mahak",
+    "status": "Negeri",
+    "district": "Sungai Boh",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69982451",
+    "name": "KB ARING GELAFUN",
+    "address": "Desa Bila Bekayuk",
+    "village": "Bila Bekayuk",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892547",
+    "name": "KB DENA TAWAI",
+    "address": "MALINAU SELATAN",
+    "village": "Paya Seturan",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892623",
+    "name": "KB GUNUNG SIDI",
+    "address": "LANGAP",
+    "village": "Langap",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70046625",
+    "name": "KB LARAI RUIQ LUI",
+    "address": "DESA SENGAYAN RT. 03",
+    "village": "Sengayan",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70053807",
+    "name": "KB LENDUNG PANYUT",
+    "address": "Jl. Lawai Lerang RT.003",
+    "village": "Long Loreh",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70050899",
+    "name": "KB LUN TERO JAN",
+    "address": "JL. Serba Guna RT. 01",
+    "village": "Nunuk Tanah Kibang",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892580",
+    "name": "KB MENTARI KASIH",
+    "address": "KECEMATAN MALINAU SELATAN",
+    "village": "Pelencau",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892581",
+    "name": "KB SENGAYAN",
+    "address": "LONG LOREH",
+    "village": "Long Loreh",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69974734",
+    "name": "KB TUNAS HARAPAN",
+    "address": "JL. TIGA SERANGKAI RT. 02",
+    "village": "Laban Nyarit",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892622",
+    "name": "TK NEGERI CERIA",
+    "address": "Long Loreh",
+    "village": "Long Loreh",
+    "status": "Negeri",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30407349",
+    "name": "TK NEGERI GUNUNG SIDI",
+    "address": "DESA LANGAP",
+    "village": "Long Loreh",
+    "status": "Negeri",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892712",
+    "name": "TKIT TUNAS GEMILANG",
+    "address": "Jl. Gang Masjid Desa Sengayan Kecamatan Malinau Selatan",
+    "village": "Sengayan",
+    "status": "Swasta",
+    "district": "Malinau Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892536",
+    "name": "KB ALFA OMEGA",
+    "address": "SESUA",
+    "village": "Sesua",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892541",
+    "name": "KB BERKAT",
+    "address": "TARAS",
+    "village": "Taras",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892531",
+    "name": "KB BUAH HATI",
+    "address": "JL.E.Mou RT.III Desa Tanjung Lapang",
+    "village": "Tanjung Lapang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69948245",
+    "name": "KB HARAPAN INDAH",
+    "address": "Jl. Sempayang RT.2",
+    "village": "Sempayang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69955488",
+    "name": "KB KASIH AGAPE",
+    "address": "Desa Sentaban",
+    "village": "Sentaban",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892668",
+    "name": "KB KASIH IBU",
+    "address": "KUALA LAPANG",
+    "village": "Kuala Lapang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892670",
+    "name": "KB SHALOM",
+    "address": "TANJUNG LAPANG",
+    "village": "Tanjung Lapang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69985954",
+    "name": "KB. HIDUP BARU",
+    "address": "KB. HIDUP BARU",
+    "village": "Long Bila",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69948732",
+    "name": "TK BUAH HATI",
+    "address": "JL.E.Mou RT.III Desa Tanjung Lapang",
+    "village": "Tanjung Lapang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405910",
+    "name": "TK NEGERI WANA KENCANA",
+    "address": "Jl.Jend.Sudirman RT XIII",
+    "village": "Tanjung Lapang",
+    "status": "Negeri",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892710",
+    "name": "TK NURUL IMAN",
+    "address": "TANJUNG LAPANG",
+    "village": "Tanjung Lapang",
+    "status": "Swasta",
+    "district": "Malinau Barat",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892664",
+    "name": "KB GETSEMANI",
+    "address": "KELAPIS",
+    "village": "Kelapis",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69970979",
+    "name": "KB LENDUNG BENUANG",
+    "address": "Desa Lubak Manis",
+    "village": "Lubok Manis",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69932121",
+    "name": "KB LENTERA KASIH",
+    "address": "Ds. Semengaris",
+    "village": "Semengaris",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892698",
+    "name": "KB MAWAR SHARON",
+    "address": "RESPEN TUBUH",
+    "village": "Respen Tubu",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892699",
+    "name": "KB MEKAR JAYA",
+    "address": "BELAYAN",
+    "village": "Belayan",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892701",
+    "name": "KB PENTES",
+    "address": "jl. Pangeran Mahraja dinda rt 04",
+    "village": "Malinau Seberang",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892703",
+    "name": "KB RESTU",
+    "address": "RESPEN TUBUH",
+    "village": "Respen Tubu",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69922212",
+    "name": "KB STABUN SEMBUAK",
+    "address": "MALINAU UTARA",
+    "village": "Luso",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69950590",
+    "name": "KB SUMINGKAY",
+    "address": "Desa Seruyung",
+    "village": "Seruyung",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892672",
+    "name": "KB TUMAHOH",
+    "address": "SALAP",
+    "village": "Salap",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892705",
+    "name": "KB TUNAS HARAPAN",
+    "address": "KALIAMOK",
+    "village": "Kaliamok",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892673",
+    "name": "KB TUNAS KARTIKA",
+    "address": "BELAYAN",
+    "village": "Belayan",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892674",
+    "name": "KB TUNAS TAHOL",
+    "address": "PUTAT",
+    "village": "Putat",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69946371",
+    "name": "KB. IMAKULATA",
+    "address": "JL. Lokasi Baru Rt. III",
+    "village": "Sembuak Warod",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69885932",
+    "name": "RA. Al Falah",
+    "address": "Jl. Aki Topan Kompleks Islamic Center Rt. 07",
+    "village": "Malinau Seberang",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "30405909",
+    "name": "TK MAWAR SHARON",
+    "address": "JL. RSU RESPEN",
+    "village": "Respen Tubu",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69984023",
+    "name": "TK NEGERI EMBRIO",
+    "address": "Jl. Tagang Buet RT 1",
+    "village": "Kelapis",
+    "status": "Negeri",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892625",
+    "name": "TK NEGERI INTIMUNG",
+    "address": "Malinau utara",
+    "village": "Malinau Seberang",
+    "status": "Negeri",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892629",
+    "name": "TK PERMAI",
+    "address": "SEMENGARIS",
+    "village": "Semengaris",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892635",
+    "name": "TK TUNAS HARAPAN",
+    "address": "KALIAMOK",
+    "village": "Kaliamok",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892711",
+    "name": "TK TUNAS KARTIKA",
+    "address": "BELAYAN",
+    "village": "Belayan",
+    "status": "Swasta",
+    "district": "Malinau Utara",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892540",
+    "name": "KB BANGEN TAWAI",
+    "address": "Long Ampung",
+    "village": "Long Ampung",
+    "status": "Swasta",
+    "district": "Kayan Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70009807",
+    "name": "KB PEKALAI MENCAM MUDIP TIGA SAHEQ",
+    "address": "Jl. Kebaktian RT.03",
+    "village": "Long Uro",
+    "status": "Swasta",
+    "district": "Kayan Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69981610",
+    "name": "KB PESIQ KIMET MADING",
+    "address": "Jl. Bendungan Indah",
+    "village": "Long Sungai Barang",
+    "status": "Swasta",
+    "district": "Kayan Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69956355",
+    "name": "KB. PEKALAI MENCAM",
+    "address": "JL. SD RT. 1",
+    "village": "Lidung Payau",
+    "status": "Swasta",
+    "district": "Kayan Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70046818",
+    "name": "TK NEGERI PEKALAI MENCAM",
+    "address": "Jl. Ilau",
+    "village": "Lidung Payau",
+    "status": "Negeri",
+    "district": "Kayan Selatan",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892546",
+    "name": "KB CERIA BAHAU",
+    "address": "LONG ALONG",
+    "village": "Long Alango",
+    "status": "Swasta",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69922204",
+    "name": "KB HARAPAN BUNDA",
+    "address": "Desa long kemuat",
+    "village": "Long Atua/Long Kemuat",
+    "status": "Swasta",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69944997",
+    "name": "KB HARAPAN IBU",
+    "address": "Desa Long Tebulo",
+    "village": "Long Tebulo",
+    "status": "Swasta",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892697",
+    "name": "KB MARARIAN",
+    "address": "LONG BERINI",
+    "village": "Long Berini",
+    "status": "Swasta",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69949656",
+    "name": "KB MUDUNG MELAING",
+    "address": "Desa Apau Ping",
+    "village": "Apau Ping",
+    "status": "Swasta",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69962989",
+    "name": "TK NEGERI CERIA ALANGO",
+    "address": "Long Alango",
+    "village": "Long Alango",
+    "status": "Negeri",
+    "district": "Bahau Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "70051703",
+    "name": "KB EDELWEISS LUNG SIMAU",
+    "address": "LUNG SIMAU",
+    "village": "Long Simau",
+    "status": "Swasta",
+    "district": "Mentarang Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69980483",
+    "name": "KB LIUK BADAI",
+    "address": "Desa Long Semamu",
+    "village": "Semamu",
+    "status": "Swasta",
+    "district": "Mentarang Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892669",
+    "name": "KB MAWAR",
+    "address": "LONG SULIT",
+    "village": "Long Sulit",
+    "status": "Swasta",
+    "district": "Mentarang Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69991868",
+    "name": "KB MELATI",
+    "address": "Desa Lung Berang RT 2",
+    "village": "Long Berang",
+    "status": "Swasta",
+    "district": "Mentarang Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69991705",
+    "name": "TK NEGERI MELATI",
+    "address": "Desa Lung Berang RT 2",
+    "village": "Long Berang",
+    "status": "Negeri",
+    "district": "Mentarang Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892539",
+    "name": "KB APAU DEMA",
+    "address": "GONG SOLOK",
+    "village": "Gong Solok",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69934455",
+    "name": "KB BINTANG KECIL",
+    "address": "Desa Setarap",
+    "village": "Setarap",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69967260",
+    "name": "KB BUNDA TERESA",
+    "address": "Desa Gong Solok",
+    "village": "Gong Solok",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69962285",
+    "name": "KB CAHAYA BAKA",
+    "address": "Desa Batu Kajang",
+    "village": "Batu Kajang",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892460",
+    "name": "KB INSAN CERIA",
+    "address": "PUNAN ADIU",
+    "village": "Punan Long Adiu",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69945001",
+    "name": "KB SYALOM FAMILY",
+    "address": "Desa Long Adiu",
+    "village": "Long Adiu",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892704",
+    "name": "KB TANE OLEN",
+    "address": "SETULANG",
+    "village": "Setulang",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69948423",
+    "name": "KB. HATI BUNDA MARIA",
+    "address": "Jl. Laing Kingan Rt.2",
+    "village": "Punan Setarap",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892634",
+    "name": "TK NEGERI TANE OLEN",
+    "address": "SETULANG",
+    "village": "Setulang",
+    "status": "Negeri",
+    "district": "Malinau Selatan Hilir",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892543",
+    "name": "KB BILA KALUNG",
+    "address": "TANJUNG NANGA",
+    "village": "Tanjung Nanga",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69964074",
+    "name": "KB JIA TAWE",
+    "address": "JL.GEREJA RT.08",
+    "village": "Tanjung Nanga",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69952253",
+    "name": "KB LAFUN LECURUN",
+    "address": "JL. ALANG IBUNG RT. II",
+    "village": "Punan Mirau",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69892700",
+    "name": "KB NUAN CILING",
+    "address": "METUT",
+    "village": "Metut",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69952251",
+    "name": "KB. LAFUN LEMINUNG",
+    "address": "JL. AJANG RT. II",
+    "village": "Long Rat",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69969952",
+    "name": "TK NUAN CILING",
+    "address": "Desa Metut",
+    "village": "Metut",
+    "status": "Swasta",
+    "district": "Malinau Selatan Hulu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69961057",
+    "name": "KB KLOFIH ARING MELAKAP",
+    "address": "Desa Long Ranau",
+    "village": "Long Ranau",
+    "status": "Swasta",
+    "district": "Sungai Tubu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69970013",
+    "name": "KB LAFUN JARAU",
+    "address": "Desa Long Pada",
+    "village": "Long Pada",
+    "status": "Swasta",
+    "district": "Sungai Tubu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69970980",
+    "name": "KB NYONG URIP JAN",
+    "address": "Desa Long Nyau",
+    "village": "Long Nyau",
+    "status": "Swasta",
+    "district": "Sungai Tubu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69969383",
+    "name": "KB TUKUK U,AN",
+    "address": "Desa Long Titi",
+    "village": "Long Titi",
+    "status": "Swasta",
+    "district": "Sungai Tubu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69948248",
+    "name": "KB. LAFUN BAWE",
+    "address": "JL. Tuman Gang Batu Leboung Rt. III",
+    "village": "Rian Tubu",
+    "status": "Swasta",
+    "district": "Sungai Tubu",
+    "regencyBpsCode": "6502",
+    "regencyName": "Kabupaten Malinau"
+  },
+  {
+    "npsn": "69797833",
+    "name": "KB BHAKTI",
+    "address": "Jl. IKHLAS",
+    "village": "Gunung Putih/Kr. Jenawi",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797763",
+    "name": "KB BINA KASIH",
+    "address": "Jl. PUSKESMAS RT. 13",
+    "village": "Gunung Putih/Kr. Jenawi",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797830",
+    "name": "KB BINTANG KECIL",
+    "address": "Jl. PADAT KARYA",
+    "village": "Tanjung Palas Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797809",
+    "name": "KB GERBANG",
+    "address": "Jl. PERDANA RT. 1",
+    "village": "Tanjung Palas Hulu",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886841",
+    "name": "KB INDAH ABADI",
+    "address": "JL PKT RT 10 SUNGAI URANG",
+    "village": "Tanjung Palas Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797818",
+    "name": "KB KARYA BUNDA",
+    "address": "Jl. PADAT KARYA RT 06",
+    "village": "Tanjung Palas Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797781",
+    "name": "KB KEMAH KASIH",
+    "address": "Abu Bakar",
+    "village": "Pejalin",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797794",
+    "name": "KB LESTARI",
+    "address": "Jl. PADAT KARYA",
+    "village": "Pejalin",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69957128",
+    "name": "KB MARTURIA",
+    "address": "JL. MULAWARMAN NO 27 RT 8",
+    "village": "Antutan",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797774",
+    "name": "KB MELATI",
+    "address": "Jl. KROMO RT. 3",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797816",
+    "name": "KB PELANGI",
+    "address": "Jl. Kasimudin",
+    "village": "Tanjung Palas Tengah",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797754",
+    "name": "KB PEMUNG TAWAI",
+    "address": "Jl. PADAT KARYA TERAS BARU",
+    "village": "Teras Baru",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797804",
+    "name": "KB PERMATA HATI",
+    "address": "JL. Lapangan Bola",
+    "village": "Teras Nawang",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69958974",
+    "name": "KB SANTO ALOYSIUS",
+    "address": "JL. AKUI TADAN RT 01",
+    "village": "Antutan",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69972395",
+    "name": "KB TUNAS KALTARA",
+    "address": "UPT TANJUNG BUKA SP. 3 RT. 13",
+    "village": "Tanjung Palas Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797760",
+    "name": "KB TUNAS MULIA",
+    "address": "Jl. AMD RT.04 SEKANG",
+    "village": "Antutan",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70032976",
+    "name": "RA NURUDZULAAM",
+    "address": "Jalan Puskesmas RT/RW 013/003",
+    "village": "Gunung Putih/Kr. Jenawi",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69950722",
+    "name": "TK BHAKTI CERIA",
+    "address": "JL. IKHLAS RT 15",
+    "village": "Gunung Putih/Kr. Jenawi",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797787",
+    "name": "TK IT NURUL HIKMAH",
+    "address": "Jl. KASIMUDIN RT.1",
+    "village": "Tanjung Palas Tengah",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69969260",
+    "name": "TK MEKAR SARI",
+    "address": "Jl. Taman Siswa RT.01 Pangin",
+    "village": "Antutan",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406473",
+    "name": "TK N PEMBINA 001 TANJUNG PALAS",
+    "address": "TANJUNG PALAS",
+    "village": "Tanjung Palas Hilir",
+    "status": "Negeri",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69987951",
+    "name": "TKIT ASSHAFIYAH",
+    "address": "Jl. Kasimuddin RT. 03",
+    "village": "Tanjung Palas Tengah",
+    "status": "Swasta",
+    "district": "Tanjung Palas",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69974738",
+    "name": "KB ANAK TAKAU",
+    "address": "JL. FAISAL RT.03",
+    "village": "Paru Abang",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70048854",
+    "name": "KB Bulungan Surya Mas Pratama",
+    "address": "Perkebunan Kelapa Sawit PT. PMI Ds. Sekatak Buji, Kec. Sekatak Kabupaten Bulunga",
+    "village": "Sekatak Buji",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69955277",
+    "name": "KB HARAPAN KASIH",
+    "address": "JL. KAMBOJA RT 01 NO 03",
+    "village": "Turung",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69965142",
+    "name": "KB MUTIARA",
+    "address": "JL. GARUDA RT.3 MENTADAU",
+    "village": "Sekatak Bengara",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797776",
+    "name": "KB MUTIARA INDAH",
+    "address": "JL. SUNGAI MANTALAPAN",
+    "village": "Sekatak Buji",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797810",
+    "name": "KB NURUL KHAIRAAT",
+    "address": "JL. LAPANGAN RT. 1",
+    "village": "Sekatak Buji",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797791",
+    "name": "KB PERMATA HANDAYANI",
+    "address": "LAPANGAN",
+    "village": "Liagu",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886823",
+    "name": "KB SENCUYON",
+    "address": "Jl. MITRA RT 01",
+    "village": "Pungit",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70048861",
+    "name": "KB TUMU BAGU",
+    "address": "Jl. Lapang RT.02",
+    "village": "Kelising",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886822",
+    "name": "KB TUNAS BANGSA",
+    "address": "Jl. Aji Rindu",
+    "village": "Sekatak Bengara",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797795",
+    "name": "KB TUNAS BARU",
+    "address": "JL. AKI TAWANG UNCUT JOLOK",
+    "village": "Punan Dulau",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886819",
+    "name": "KB. MUTIARA INDAH",
+    "address": "Jl. Kampung Baru",
+    "village": "Ujang",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69943706",
+    "name": "PAUD KARTINI",
+    "address": "JL. GEREJA RT 02",
+    "village": "Bekiliu",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69915356",
+    "name": "PAUD TUNAS MANDIRI",
+    "address": "JL MERANTI",
+    "village": "Kendari",
+    "status": "Swasta",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886830",
+    "name": "TK NEGERI 001 PEMBINA SEKATAK",
+    "address": "JL. LAPANGAN RT.01",
+    "village": "Sekatak Buji",
+    "status": "Negeri",
+    "district": "Sekatak",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797767",
+    "name": "KB ANGGREK",
+    "address": "JL. SEI BAUNG RT.19",
+    "village": "Bunyu Timur",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886821",
+    "name": "KB MUTIARA KASIH BUNDA",
+    "address": "JL. MANUNGGAL RT. 16 BUNYU BARAT",
+    "village": "Bunyu Barat",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69885923",
+    "name": "RA. Al Iman",
+    "address": "Jl. Manunggal IX Bunyu Barat",
+    "village": "Bunyu Barat",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69885924",
+    "name": "RA. Al Khairaat",
+    "address": "JL.SEJAHTERA RT II",
+    "village": "Bunyu Selatan",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406462",
+    "name": "TK PERMATA",
+    "address": "JL. KEBUN BAKTI",
+    "village": "Bunyu Barat",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886828",
+    "name": "TK TUNAS TERATAI",
+    "address": "JL. BUNYU RAYA",
+    "village": "Bunyu Timur",
+    "status": "Swasta",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886836",
+    "name": "TK. NEGERI 001 PEMBINA BUNYU",
+    "address": "JL. SERDANG",
+    "village": "Bunyu Timur",
+    "status": "Negeri",
+    "district": "Pulau Bunyu",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69915967",
+    "name": "KB HARAPAN BUNDA",
+    "address": "JL. LAMIN ADAT RT. III",
+    "village": "Long Beluah",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797772",
+    "name": "KB MUTIARA MARA I",
+    "address": "Jl. GEREJA RT 4",
+    "village": "Mara Satu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797805",
+    "name": "KB TUNAS BANGSA",
+    "address": "Jl. Poros PU RT.04",
+    "village": "Long Sam",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797803",
+    "name": "KB TUNAS BARU",
+    "address": "Jl. Balai Desa/Masjid RT.IV",
+    "village": "Mara Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797756",
+    "name": "KB TUNAS KASIH",
+    "address": "Jl. Kakao RT 3",
+    "village": "Long Pari",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69914838",
+    "name": "PAUD SANTA THERESIA",
+    "address": "JL RESPEN DESA MARA SATU",
+    "village": "Mara Satu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886818",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL",
+    "address": "JALAN KAMPUNG BARU RT.VIII DESA LONG BELUAH",
+    "village": "Long Beluah",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70032129",
+    "name": "TK CAHAYA MEGA BINTANG",
+    "address": "Jl. Poros PU RT.04",
+    "village": "Long Sam",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886817",
+    "name": "TK KAYAN RAYA",
+    "address": "JLN HOUSING GANG. TK RT. IX",
+    "village": "Long Beluah",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406459",
+    "name": "TK NEGERI PEMBINA TANJUNG PALAS BARAT",
+    "address": "JL. RA. KARTINI RT.04 DESA LONG BELUAH",
+    "village": "Long Beluah",
+    "status": "Negeri",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886845",
+    "name": "TK PELITA HATI",
+    "address": "Jl. PETAI RT. VIII DESA MARA SATU",
+    "village": "Mara Satu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Barat",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797785",
+    "name": "KB AS SALAM I",
+    "address": "Jl. TERATAI RT. 9 RW. 3 DESA KARANG AGUNG",
+    "village": "Karang Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797782",
+    "name": "KB CAKRAWALA",
+    "address": "Jl. BELIBIS DESA PANCA AGUNG",
+    "village": "Panca Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797755",
+    "name": "KB TUNAS HARAPAN",
+    "address": "Jl. ANGGUR RT.6 RW.2",
+    "village": "Kelubir",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70008618",
+    "name": "KB. AL-FATIH",
+    "address": "Desa Ruhui Rahayu",
+    "village": "Ruhui Rahayu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69949298",
+    "name": "KB. TRI SAKTI",
+    "address": "JL. GEREJA RT.4 RW.4",
+    "village": "Pimping",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69885925",
+    "name": "RA. As Salam",
+    "address": "Jl. Kinabalu RT. 002 RW.002 Desa Ardi Mulyo",
+    "village": "Ardi Mulya",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69750983",
+    "name": "RA/BA/TA RA/BA AT-TAQWA",
+    "address": "DS. KELUBIR",
+    "village": "Kelubir",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406471",
+    "name": "TK NEGERI PEMBINA TANJUNG PALAS UTARA",
+    "address": "KARANG AGUNG",
+    "village": "Karang Agung",
+    "status": "Negeri",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69954943",
+    "name": "TK NURUL HIKMAH",
+    "address": "JL. ANGGREK RT 7 RW 22",
+    "village": "Karang Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406448",
+    "name": "TK PERTIWI",
+    "address": "PANCA AGUNG",
+    "village": "Panca Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886832",
+    "name": "TK TRISAKTI",
+    "address": "JL.GEREJA RT. 004/004",
+    "village": "Pimping",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69962893",
+    "name": "TK TUNAS KASIH",
+    "address": "JL. Sungai Uma RT 8",
+    "village": "Pimping",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886831",
+    "name": "TK TUNAS RAHAYU",
+    "address": "JL. JENDRAL SUDIRMAN RT 13 RW 04",
+    "village": "Ruhui Rahayu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Utara",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797761",
+    "name": "KB AISYIYAH BUSTANUL ATHFAL",
+    "address": "Jl. Poros Tanah Kuning RT.4 RW.1",
+    "village": "Tanjung Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797765",
+    "name": "KB ANANDA PERTIWI",
+    "address": "Jl. DESA SAJAU HILIR",
+    "village": "Sajau Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69914857",
+    "name": "KB BUAH HATI",
+    "address": "JL LAPANGAN BOLA DESA SAJAU",
+    "village": "Sajau",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797793",
+    "name": "KB TUNAS BUNDA UMI PRANATA",
+    "address": "Jl. KAMPUNG BARU RT.06",
+    "village": "Mangku Padi",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70059892",
+    "name": "KB TUNAS CENDEKIA",
+    "address": "Jl. Provinsi RT.10 Desa Sajau Hilir",
+    "village": "Sajau Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797831",
+    "name": "KB TUNAS HARAPAN BANGSA",
+    "address": "Jl. Reflesia RT.04",
+    "village": "Binai",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797801",
+    "name": "KB TUNAS KASIH",
+    "address": "Jl. DESA PURAU SAJAU RT.4 RW.01",
+    "village": "Pura Sajau",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797806",
+    "name": "KB TUNAS MEKAR",
+    "address": "Jl. AZIJURAHMAN RT.2",
+    "village": "Mangku Padi",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70036574",
+    "name": "KB TUNAS PELITA",
+    "address": "Jl. Mirah RT.02 RW.01",
+    "village": "Wono Mulyo",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886833",
+    "name": "TK AL-IKHLAS Tanjung Palas Timur",
+    "address": "JL. Kampung Baru RT.06",
+    "village": "Tanah Kuning",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70057654",
+    "name": "TK BINA KARYA",
+    "address": "Jl. Ahmad Yani KM 57 Poros Bulungan - Berau",
+    "village": "Sajau",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69914830",
+    "name": "TK NEGERI 001 PEMBINA TANJUNG PALAS TIMUR",
+    "address": "JL. PATAWARI TANAH KUNING",
+    "village": "Tanah Kuning",
+    "status": "Negeri",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69979414",
+    "name": "TK TRIDAYA PRATAMA",
+    "address": "Lokasi PT. Kayan Makmur Sejahtera",
+    "village": "Binai",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406468",
+    "name": "TK TUNAS HARAPAN",
+    "address": "JL. Mulang Udau RT 01 RW )1 Metun Sajau",
+    "village": "Sajau",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406470",
+    "name": "TK TUNAS HARAPAN",
+    "address": "JL. SUNGAI BARITO RT.7 RW.2",
+    "village": "Tanjung Agung",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70038000",
+    "name": "TK TUNAS MULIA",
+    "address": "Jl. Merang Mentan RT.013",
+    "village": "Binai",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797789",
+    "name": "TK TUNAS PERTIWI",
+    "address": "JL. MIRAH RT.2 RW.1",
+    "village": "Wono Mulyo",
+    "status": "Swasta",
+    "district": "Tanjung Palas Timur",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70002984",
+    "name": "KB AGAPE",
+    "address": "Jl. Kol. Soetadji",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797823",
+    "name": "KB AISY -II",
+    "address": "JL. Sengkawit gg. Mandala",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69952970",
+    "name": "KB AISYIYAH",
+    "address": "JL. SENGKAWIT RT 85 RW 31",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70003177",
+    "name": "KB AL MUBARAK HIDAYATULLAH",
+    "address": "JL. JELARAI RAYA RT.36",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797764",
+    "name": "KB AL-KHAIRAAT",
+    "address": "JL. UPT DESA TANJUNG BUKA SP. 1",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797812",
+    "name": "KB AN-NUUR",
+    "address": "JL. Durian - Meranti RT.96 RW.36",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70049060",
+    "name": "KB ANANDA",
+    "address": "Jl. Kamboja RT.02 RW.01 No 73",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886826",
+    "name": "KB APUNG MANDIRI",
+    "address": "JALAN POROS APUNG",
+    "village": "Apung",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69960467",
+    "name": "KB AT-TAQWA",
+    "address": "JL. Mulawarman RT 12 RW 4",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69909818",
+    "name": "KB AZKA",
+    "address": "JL. SENGKAWIT GANG KUMIS RT.24 KELURAHAN TANJUNG SELOR HILIR",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886843",
+    "name": "KB BHAKTI PERSADA",
+    "address": "JL. SUNAN GIRI RT.11 RW.4 SELIMAU III",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886844",
+    "name": "KB BINA AL MUQARROBIN",
+    "address": "Sabanar Lama / Sabanar RT. 28. RW. 08 Gg. Masjid Al-muqarrobin",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886839",
+    "name": "KB BUDDHIS PARAMITA",
+    "address": "JL. H. MASKUR NO. 59",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797832",
+    "name": "KB BUKIT INDAH",
+    "address": "JL. BUKIT RAYA RT. 18",
+    "village": "Apung",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797808",
+    "name": "KB BUNDA ASIH",
+    "address": "JL. PEMBANGUNAN RT.02 GUNUNG SARI",
+    "village": "Gunung Sari",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797770",
+    "name": "KB DAMAI RAHAYU",
+    "address": "Jl.Igusti Ngurah Rai rt 03 rw 01",
+    "village": "Bumi Rahayu",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797790",
+    "name": "KB DOA IBU",
+    "address": "JL. AHMAD NIKO RT. 1",
+    "village": "Gunung Seriang",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69981182",
+    "name": "KB HANDAYANI",
+    "address": "Sepungur RT.035",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70031808",
+    "name": "KB INSAN CITA ASSYAILI",
+    "address": "Jl. Sengkawit",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886840",
+    "name": "KB KARTIKA V-42",
+    "address": "Asmil  Korem Jalan Semangka RT.28 RW.08",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69909813",
+    "name": "KB KEMALA BHAYANGKARI 02 BULUNGAN",
+    "address": "JL. AGATIS NO. 04 TANJUNG SELOR HILIR KECAMATAN TANJUNG SELOR",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69981083",
+    "name": "KB KI HAJAR DEWANTARA",
+    "address": "JL. KI HAJAR DEWANTARA RT.23 RW.08",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70060700",
+    "name": "KB LENTERA GEMILANG",
+    "address": "Jl. Logpon Punan, Desa Apung, Rt.002, Rw.001",
+    "village": "Apung",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797828",
+    "name": "KB MEKAR SARI",
+    "address": "JL. PEMBAGUNAN RT 08",
+    "village": "Gunung Sari",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797807",
+    "name": "KB NUSA INDAH",
+    "address": "DESA TENGKAPAK",
+    "village": "Tengkapak",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797751",
+    "name": "KB PELANGI HARAPAN KITA",
+    "address": "JL. LAING USAT TELUK SELIMAU RT.16 RW.6",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797779",
+    "name": "KB PELANGI KASIH",
+    "address": "JL. PADAT KARYA SABANAR BARU RT. 3 RW.1",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797753",
+    "name": "KB RAHMAS",
+    "address": "JL. POROS SELIMAU I RT.8 RW.3",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886842",
+    "name": "KB SEKAR WANGI",
+    "address": "JALAN BOUGENVILL JELARAI SELOR KM 2",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797820",
+    "name": "KB SEROJA",
+    "address": "JL. Mayjend Sutoyo",
+    "village": "Tanjung Selor Hulu",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797817",
+    "name": "KB TUNAS CERIA",
+    "address": "JL. GEREJA RT. 10",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797780",
+    "name": "KB TUNAS KASIH",
+    "address": "JL. BILUNG- LUNG JELARAI SELOR DUSUN 1 RT. 30",
+    "village": "Tanjung Selor Hulu",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69932270",
+    "name": "PAUD DEVI",
+    "address": "JL DURIAN Komp Ruko No.4C",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70031372",
+    "name": "RA IMAM IBNU KATSIR",
+    "address": "JL.NUSANTARA SABANAR LAMA RT.066/RW.024",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69885927",
+    "name": "RA. Al Ikhlas",
+    "address": "KOL.SOETADJIE GG.MUALLAF",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69885928",
+    "name": "RA. Al Khairaat",
+    "address": "Jl. S. Parman",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69750984",
+    "name": "RA/BA/TA RA/BA AL-ANSHAR",
+    "address": "JL. SABANAR LAMA RT. 31",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797784",
+    "name": "TK AGAPE",
+    "address": "Jl. KOL.SOETADJI RT. 98 RW. 36",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69918877",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL",
+    "address": "JL. Sengkawit, Gang Lestari",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797783",
+    "name": "TK AL-MUQARROBIN",
+    "address": "JL. SABANAR LAMA",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70049039",
+    "name": "TK ANANDA",
+    "address": "Jl. Kamboja RT.02 RW.01 No 73",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886834",
+    "name": "TK BUDDHIS PARAMITA",
+    "address": "JL. H. MASKUR RT. 15 RW. 06",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70060432",
+    "name": "TK INKLUSI TRI NARAPATI SCHOOL",
+    "address": "Jl.  Cendana RT. 051 RW. 015",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406458",
+    "name": "TK ISLAM AL-MUBARAK",
+    "address": "JL. JELARAI RAYA",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70061945",
+    "name": "TK KARTIKA V-42",
+    "address": "Asmil Korem Jl. Semangka RT. 28 RW. 08, Kel. Tanjung Selor Hilir",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69987931",
+    "name": "TK KARTIKA V-7",
+    "address": "Jl. Poros Tanah Kuning",
+    "village": "Gunung Sari",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797758",
+    "name": "TK KATOLIK SANTA MARIA",
+    "address": "JL. MANGGIS 3 RT.12",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69988711",
+    "name": "TK KEMALA BHAYANGKARI 02 BULUNGAN",
+    "address": "JL AGATIS NO.4",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70002562",
+    "name": "TK KEMALA BHAYANGKARI 03 CABANG PIM STAF DAERAH KALIMANTAN UTARA",
+    "address": "Jl. Pros Berau Tanjung Selor KM.2 RT.14 RW.8",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406460",
+    "name": "TK MELATI",
+    "address": "JL. MELATI",
+    "village": "Tanjung Selor Hulu",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69952550",
+    "name": "TK MUSLIMAT AN-NUUR",
+    "address": "JL. DURIAN - MERANTI RT.96 RW.36",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406472",
+    "name": "TK NEGERI PEMBINA 001 TANJUNG SELOR",
+    "address": "JL. KAKAK TUA",
+    "village": "Tanjung Selor Hilir",
+    "status": "Negeri",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70041539",
+    "name": "TK PRIMA HANDAYANI",
+    "address": "Tanjung Rumbia RT.16",
+    "village": "Tanjung Selor Hulu",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406464",
+    "name": "TK SRI MULYA",
+    "address": "JL. Mawar KM 2 Jelarai Selor",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69918085",
+    "name": "TK TUNAS CENDEKIA",
+    "address": "JL. MENGKUDU - TANJUNG SELOR HILIR",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406450",
+    "name": "TK TUNAS RIMBA",
+    "address": "JL. SKIP 1",
+    "village": "Jelarai Selor",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69960355",
+    "name": "TK. INSAN BERTAQWA",
+    "address": "JL. GARUDA, SELIMAU I,  RT. 06 / RW.03",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69969178",
+    "name": "TKIT BABUSSALAM",
+    "address": "JL. PERJUANGAN SABANAR BARU",
+    "village": "Tanjung Selor Timur",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69970518",
+    "name": "TKIT IMAM ASY SYAFII",
+    "address": "JL. HM. THAMRIN RT 53 RW 20",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406465",
+    "name": "TKIT QURROTA A’YUN",
+    "address": "Jl. Semangka Gg. Masjid",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797825",
+    "name": "TPA AISYIYAH",
+    "address": "JL. SENGKAWIT 85 RT. 85 RW. 31",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797813",
+    "name": "TPA AN-NUUR",
+    "address": "JL. Durian - Meranti RT.96 RW.36",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70002611",
+    "name": "TPA ANANDA",
+    "address": "Jl. Kamboja RT.2 RW.1",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797759",
+    "name": "TPA AZKA",
+    "address": "JL. SENGKAWIT",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70031809",
+    "name": "TPA INSAN CITA ASSYAILI",
+    "address": "Jl. Sengkawit",
+    "village": "Tanjung Selor Hilir",
+    "status": "Swasta",
+    "district": "Tanjung Selor",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797797",
+    "name": "KB ANANDA I",
+    "address": "Tanjung Buka Sp.2",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69943637",
+    "name": "KB AR-ROFIQI",
+    "address": "JL. UPT SP 5 A",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69939112",
+    "name": "KB BALQIS",
+    "address": "JL.Dekon RT.19 SP2",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70053726",
+    "name": "KB BUSAK LUMOT CERIA",
+    "address": "Jl. DT. Adil RT.54",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70054577",
+    "name": "KB CAHAYA ANTAL",
+    "address": "Antal RT.17",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797788",
+    "name": "KB ENDELESS",
+    "address": "TANJUNG BUKA SP.7",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69948996",
+    "name": "KB FIRDAUS",
+    "address": "JL. POROS SP8-SP9",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797822",
+    "name": "KB FLORA DAN FAUNA",
+    "address": "JL. MH TAMRIN RT.4 RW.2",
+    "village": "Silva Rahayu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69909918",
+    "name": "KB HIDAYAH",
+    "address": "UPT TANJUNG BUKA SP 5",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797792",
+    "name": "KB KESAPUL PENEKINDI",
+    "address": "JL. PEMBANGUNAN RT.5 DESA SALIMBATU",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69954196",
+    "name": "KB MAKARIMA",
+    "address": "JL. POROS DESA TANJUNG BUKA SP 6",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886824",
+    "name": "KB MAWAR",
+    "address": "RT 5 TIAS",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797771",
+    "name": "KB PELITA KASIH",
+    "address": "Tanjung Buka SP.8",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69954935",
+    "name": "KB SINAR PELANGI",
+    "address": "JL. BETIANG RT 16",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797768",
+    "name": "KB TUTUN PIYASAU",
+    "address": "JL. DATU IQRO RT. 9 SALIMBATU",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69942919",
+    "name": "PAUD ATFAL KALTARA",
+    "address": "TANJUNG BUKA SP 7 RT 24",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70029749",
+    "name": "RA AN-NUUR",
+    "address": "Jl. Poros Tanjung Buka",
+    "village": "Tanjung Buka",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69994663",
+    "name": "RA SABILUL MUNIJAT TUJUH SATU",
+    "address": "JL SABILUL MUJIAT FU LEBAK KAPUK UPT TANJUNG BUKA SP.6 RT.049 DESA SALIMBA",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70030162",
+    "name": "TK AALIYA NUR ABADI",
+    "address": "Jl. Patimura RT.03 RW.01",
+    "village": "Silva Rahayu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69950777",
+    "name": "TK INSAN KAMIL",
+    "address": "JL. PEMBANGUNAN RT.13 (Kebun SKI Salimbatu)",
+    "village": "Salim Batu",
+    "status": "Swasta",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797802",
+    "name": "TK NEGERI 001 PEMBINA TANJUNG PALAS TENGAH",
+    "address": "Jl. Datu Iqro RT.11 SALIMBATU",
+    "village": "Salim Batu",
+    "status": "Negeri",
+    "district": "Tanjung Palas Tengah",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797799",
+    "name": "KB BALI HARAPAN KITA",
+    "address": "JL. Kuleh Jalung RT.02",
+    "village": "Naha Aya",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797829",
+    "name": "KB KASIH IBU",
+    "address": "BELIEN RT III LONG BANG",
+    "village": "Long Bang",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886825",
+    "name": "KB TUNAS HARAPAN",
+    "address": "JL. LAING SONG RT.11",
+    "village": "Long Bang Hulu",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797798",
+    "name": "KB TUNAS MEKAR",
+    "address": "DESA LONG LEMBU",
+    "village": "Long Lembu",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69953036",
+    "name": "PAUD TUNAS BUNDA",
+    "address": "JL. PEMBANGUNAN RT 1",
+    "village": "Long Telenjau",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69923953",
+    "name": "PAUD TUNAS TUNGU",
+    "address": "JL. GEREJA LONG TUNGU",
+    "village": "Long Tungu",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70061971",
+    "name": "TAMAN KANAK-KANAK NEGERI PEMBINA PESO HILIR",
+    "address": "Jalan Jualung Apui RT.01",
+    "village": "Long Tungu",
+    "status": "Negeri",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69937582",
+    "name": "TK BUNGA BAKUNG",
+    "address": "Long Bang RT II",
+    "village": "Long Bang",
+    "status": "Swasta",
+    "district": "Peso Hilir",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797800",
+    "name": "KB ANAKITA I",
+    "address": "JL. SAMUAL RT.1",
+    "village": "Long Bia",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69954412",
+    "name": "KB AURORA",
+    "address": "JL. JALIL UTUI",
+    "village": "Long Yiin/Pelaah",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69962509",
+    "name": "KB GLORIA",
+    "address": "LONG LASAN",
+    "village": "Long Lasan",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69955272",
+    "name": "KB HARAPAN IBU",
+    "address": "JL. GEREJA RT 02",
+    "village": "Long Peleban",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69954659",
+    "name": "KB MATA HATIKU",
+    "address": "JL. PAU KULEH",
+    "village": "Long Lejuh",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886827",
+    "name": "KB MENTARI PANGEAN",
+    "address": "JLN. PEJURIT RT. 002",
+    "village": "Muara Pengean",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69970646",
+    "name": "KB MULYA BAKTI",
+    "address": "JL. NYIE LEHUNG RT.01",
+    "village": "Long Buang",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "70010300",
+    "name": "KB MUTIARA BANGSA",
+    "address": "Jl. Harapan RT.03",
+    "village": "Lepak Aru",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797757",
+    "name": "KB PERMATA HATI BUNDA",
+    "address": "LAPANGAN RT 3",
+    "village": "Long Peso",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69797811",
+    "name": "KB PERMATA IBU",
+    "address": "DESA LONG PESO",
+    "village": "Long Peso",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69942587",
+    "name": "PAUD PELITA BUNDA",
+    "address": "DESA LONG LIAN",
+    "village": "Long Lian",
+    "status": "Swasta",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "30406447",
+    "name": "TK NEGERI 001 PESO",
+    "address": "LONG PESO",
+    "village": "Long Peso",
+    "status": "Negeri",
+    "district": "Peso",
+    "regencyBpsCode": "6501",
+    "regencyName": "Kabupaten Bulungan"
+  },
+  {
+    "npsn": "69886966",
+    "name": "KB AL AMIN HIDAYATULLAH",
+    "address": "Jl. Kuburan",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886967",
+    "name": "KB AL-KHAIRAAT",
+    "address": "Jend. Sudirman RT VI",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70027120",
+    "name": "KB ALAM INDAH",
+    "address": "Jl. Padat Karya RT 1 RW 1 Desa Tideng Pale Timur",
+    "village": "Tideng Pale Timur",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886970",
+    "name": "KB KASIH BUNDA",
+    "address": "PADAT KARYA RT IV",
+    "village": "SEBIDAI",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925842",
+    "name": "PAUD BAGU TUMU",
+    "address": "DESA SEBAWANG",
+    "village": "Sebawang",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886965",
+    "name": "PAUD HARAPAN BUNDA",
+    "address": "KEBUN SAYUR RT. 4 TIDENG PALA",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925113",
+    "name": "PAUD MELATI",
+    "address": "KM.10 DESA GUNAWAN",
+    "village": "Gunawan",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924951",
+    "name": "PAUD NURUL JADID",
+    "address": "JL. SWADAYA RT. 02 DESA TIDENG PALE",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924956",
+    "name": "PAUD PERMATA BUNDA",
+    "address": "JL. AHMAD YANI RT. 02",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "30407387",
+    "name": "PAUD ST.URSULA",
+    "address": "JL. TANAH ABANG",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886962",
+    "name": "PELANGI",
+    "address": "Jl. Wisma",
+    "village": "Sedulun",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69930799",
+    "name": "Taman Kanak-kanak Negeri Pembina",
+    "address": "JL. Manunggal Abri RT.4",
+    "village": "SEBIDAI",
+    "status": "Negeri",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886959",
+    "name": "TK AL-KHAIRAAT",
+    "address": "Jl. Jend. Sudirman Rt, 6",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69981720",
+    "name": "TK Trurich 02",
+    "address": "Komp PT. Usaha Kaltim Mandirib Estate Baiduri Desa Sedulun Kec. sesayap",
+    "village": "Sedulun",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886960",
+    "name": "TKIT TIDUNG CERIA",
+    "address": "MULAWARMAN GANG.PANDAN WANGI RT.02 NO.97",
+    "village": "Tideng Pale Timur",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70031147",
+    "name": "TPA CAHAYA MAHKOTA",
+    "address": "JL. Manunggal RT.004/RW.001",
+    "village": "Tideng Pale Timur",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886974",
+    "name": "TPA PERMATA HATI",
+    "address": "JL.TANAH ABANG RT.V.TIDENG PALE",
+    "village": "Tideng Pale",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886963",
+    "name": "Tunas Anugrah",
+    "address": "Jendral Sudirman RT II",
+    "village": "Limbu Sedulun",
+    "status": "Swasta",
+    "district": "Sesayap",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70050173",
+    "name": "KB CINTA IBU",
+    "address": "Desa Sesayap Selor",
+    "village": "Sesayap Selor",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70031854",
+    "name": "KB HARAPAN TAKAU",
+    "address": "Jl. Aki Iyung RT.001",
+    "village": "Seludau",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886972",
+    "name": "KB KASIH IBU",
+    "address": "MEMBANGAN RT 1 SEPALA DALUNG",
+    "village": "Sepala Dalung",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924952",
+    "name": "PAUD AMIR ABDUL ROHIM",
+    "address": "DESA BEBATU",
+    "village": "Bebatu",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925112",
+    "name": "PAUD NUR ILMI",
+    "address": "JL. AKI MANINJOM DESA MANJULUTUNG",
+    "village": "Menjelutung",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925269",
+    "name": "PAUD NURUL HUDA",
+    "address": "DESA SENGKONG SESAYAP",
+    "village": "Sengkong",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924953",
+    "name": "PAUD TUBUS SEPALA",
+    "address": "DESA SESAYAP INDUK",
+    "village": "Sesayap",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924955",
+    "name": "PAUD TUNAS HARAPAN",
+    "address": "DESA BANDAN BIKIS",
+    "village": "BANDAN BIKIS",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69969325",
+    "name": "TK TRURICH",
+    "address": "Komplek PT. Teknik Utama Mandiri Estate Intan",
+    "village": "Sepala Dalung",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886973",
+    "name": "TK TUNAS MEKAR 02",
+    "address": "DESA BEBATU SUPA",
+    "village": "Bebatu",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886961",
+    "name": "TK.TUNAS MEKAR O3 SESAYAP HILIR",
+    "address": "JL.PEMBANGUNAN RT.4",
+    "village": "BANDAN BIKIS",
+    "status": "Swasta",
+    "district": "Sesayap Hilir",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70042645",
+    "name": "KB KASIH BUNDA LESTARI",
+    "address": "JL. DERMAGA GANG MASJID RT.06",
+    "village": "Tanah Merah",
+    "status": "Swasta",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69990235",
+    "name": "KB TUNAS HARAPAN",
+    "address": "JL. CENDRAWASIH RT. 02",
+    "village": "Sambungan Selatan",
+    "status": "Swasta",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925847",
+    "name": "PAUD AL-HUDA",
+    "address": "DESA TENGKU DACING",
+    "village": "Tengku Dacing",
+    "status": "Swasta",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925273",
+    "name": "PAUD TUNAS BANGSA",
+    "address": "Jl. Manunggal Rt 01 Desa Sambungan",
+    "village": "Sambungan",
+    "status": "Swasta",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925109",
+    "name": "PAUD TUNAS INDAH",
+    "address": "JL. PANGERAN TEMANGGUNG DESA TANA MERAH",
+    "village": "Tanah Merah Barat",
+    "status": "Swasta",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69981170",
+    "name": "TK Negeri Terpadu Unggulan Tana Tidung",
+    "address": "Jl. Tarakan Jaya RT.3 Sambungan , Kec. Tana Lia",
+    "village": "Sambungan",
+    "status": "Negeri",
+    "district": "Tanah Lia",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70039556",
+    "name": "KB INTIMUNG TAKAU",
+    "address": "Jl. Sungai Ali-ali RT.001 Desa Maning",
+    "village": "Maning",
+    "status": "Swasta",
+    "district": "Betayau",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70036638",
+    "name": "KB TUNAS ANGGREK",
+    "address": "Jl. Yaki Agoy RT.001",
+    "village": "Mendupo",
+    "status": "Swasta",
+    "district": "Betayau",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69886971",
+    "name": "KB TUNAS MEKAR",
+    "address": "JALAN POROS TRANS KALTIM",
+    "village": "Bebakung",
+    "status": "Swasta",
+    "district": "Betayau",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925271",
+    "name": "PAUD CAHAYA KAMIL",
+    "address": "DESA BUANG BARU KEC. BETAYAU",
+    "village": "Buong Baru",
+    "status": "Swasta",
+    "district": "Betayau",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69924950",
+    "name": "PAUD TUNAS BAKTI",
+    "address": "Jl.Trans.Kaltim RT.05,Ds.Kujau,Kec.Betayau Kab.Tana Tidung",
+    "village": "Kujau",
+    "status": "Swasta",
+    "district": "Betayau",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69976963",
+    "name": "KB MUTIARA HATI",
+    "address": "Jl. Pelajar RT.02 Desa Kapuak",
+    "village": "Kapuak",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "70029549",
+    "name": "KB PELITA",
+    "address": "Jl.Poros Kalimantan RT.001",
+    "village": "Balayan Ari",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69974808",
+    "name": "KB SINAR KASIH",
+    "address": "Jl. Trans Kalimantan RT. 02",
+    "village": "Rian Rayo",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925272",
+    "name": "PAUD MULIA",
+    "address": "JL. Pantai Indah RT.02",
+    "village": "Rian",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925849",
+    "name": "PAUD PERINTIS",
+    "address": "DESA SEPUTUK",
+    "village": "Seputuk",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69925022",
+    "name": "PAUD SEHATI",
+    "address": "DESA SAPARI",
+    "village": "Sapari",
+    "status": "Swasta",
+    "district": "Muruk Rian",
+    "regencyBpsCode": "6504",
+    "regencyName": "Kabupaten Tana Tidung"
+  },
+  {
+    "npsn": "69985473",
+    "name": "KB ANUGRAH WA LAYA",
+    "address": "Jl. Tanah Merah Ds. Wa Laya",
+    "village": "Wa Laya",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985840",
+    "name": "KB GRACEA",
+    "address": "Jl. Tanah Merah RT. 01",
+    "village": "Pa Kebuan",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69986304",
+    "name": "KB HOSANAH",
+    "address": "Jl. Tanah Merah",
+    "village": "Brian Baru",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69982133",
+    "name": "KB INDOMAL",
+    "address": "Jl. Long Tugul Lembudud",
+    "village": "Long Tugul",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69987728",
+    "name": "KB KASIH KARUNIA",
+    "address": "Jl. Yuvai Semaring",
+    "village": "Long Katung",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69963653",
+    "name": "KB. RAUDHATUL JANNAH",
+    "address": "Jl. Pelita No. 22",
+    "village": "Liang Butan",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985555",
+    "name": "PAUD GLORI BUDUK TUMU",
+    "address": "Desa Buduk Tumu",
+    "village": "Buduk Tumu",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69982269",
+    "name": "PAUD HAPPY KIDS",
+    "address": "Jl. Aken Ada",
+    "village": "Pa Sire",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985039",
+    "name": "PAUD MALINDO",
+    "address": "Jl. Damai RT. 02 Long Midang",
+    "village": "Pa Nado",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69988342",
+    "name": "PAUD PADE SAGEM",
+    "address": "Jl. Bukit Jaitun",
+    "village": "Pa Padi",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405860",
+    "name": "TK KRISTEN BUAH HATI TERPADU KRAYAN",
+    "address": "JL YUVAI SEMARING",
+    "village": "Long Bawan",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405862",
+    "name": "TK MAWAR SARON TERPADU",
+    "address": "Jl. Sri Menanti",
+    "village": "Liang Turan",
+    "status": "Swasta",
+    "district": "Krayan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69970324",
+    "name": "KB  SULON PELANGI PERBATASAN",
+    "address": "JL. Pa ..Loo",
+    "village": "Pa Loo",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70009269",
+    "name": "KB Permata Bunda",
+    "address": "Desa Tanjung Hilir",
+    "village": "Tanjung Hilir",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70030920",
+    "name": "KB SEHATI KALAMPISING",
+    "address": "Desa Kalampising",
+    "village": "Kalampising",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70040951",
+    "name": "KB TIPUON TIPODON",
+    "address": "JL.DESA BULAN-BULAN RT.02",
+    "village": "Bulan Bulan",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70008797",
+    "name": "KB. LASUON TONODON",
+    "address": "Jl. Desa Tanjung Hulu Rt.02",
+    "village": "Tanjung Hulu",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802907",
+    "name": "KB. TAKA",
+    "address": "Pembangunan RT. 03",
+    "village": "Mansalong",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405859",
+    "name": "TK  AJI  KUNING",
+    "address": "Jln. Trans Kaltim RT. III",
+    "village": "Mansalong",
+    "status": "Swasta",
+    "district": "Lumbis",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69960777",
+    "name": "KB  RAUSYANDHOMIR",
+    "address": "Jl. Manu Bungkul",
+    "village": "Manuk Bungkul",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70015386",
+    "name": "KB BINA KASIH",
+    "address": "Desa Tujung",
+    "village": "Tujung",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70015660",
+    "name": "KB CERIA",
+    "address": "Desa Tagul",
+    "village": "Tagul",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70057012",
+    "name": "KB EMBUN KASIH PAGAR",
+    "address": "Jl. Sengai Sepakung",
+    "village": "Pagar",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70051047",
+    "name": "KB IQHA ALSI",
+    "address": "Jl.Desa Pelaju",
+    "village": "Plaju",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69922316",
+    "name": "KB Tunas Kasih",
+    "address": "Tunas Kasih",
+    "village": "Labuk",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69922318",
+    "name": "KB Zacky Anisa",
+    "address": "Jalan Kanal baru RT.04",
+    "village": "Lubakan",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69938639",
+    "name": "KB.  CITRA  ATULAI",
+    "address": "Desa Katul RT. 01 Kec. Sembakung Atulai",
+    "village": "Atap",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802901",
+    "name": "KB.  FAUZI  RAHMAN",
+    "address": "Jl. Padat Karya  RT.09",
+    "village": "Atap",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70053327",
+    "name": "KB. KASIH SEHATI",
+    "address": "Jl. Perumahan",
+    "village": "Butas Bagu",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405861",
+    "name": "TK HANDAYANI SEMBAKUNG",
+    "address": "JL. Gor RT 03",
+    "village": "Atap",
+    "status": "Swasta",
+    "district": "Sembakung",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802913",
+    "name": "KB.  ABI  AL- UMMI",
+    "address": "Jalan Tien Soeharto,  RT. 12",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802925",
+    "name": "Ar-Rahima",
+    "address": "Pasar Baru Dalam",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69921147",
+    "name": "Biji Sesawi",
+    "address": "Jl. Cut Nyak Dien RT. 05",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802908",
+    "name": "Bintang Sejahtera",
+    "address": "Aji Muda RT. 01",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802932",
+    "name": "Ikhwanul Muslim",
+    "address": "Pangkalan Posal Rt. 12",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886917",
+    "name": "KB  NUSANTARA",
+    "address": "Jalan Kampung Rambutan  RT.02",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803805",
+    "name": "KB  ULUL ALBAB",
+    "address": "Jalan  Pasar Sentral Inhutani , RT. 10",
+    "village": "Nunukan Utara",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803807",
+    "name": "KB . KUSUMA BANGSA",
+    "address": "Jalan Sungai Banjar Kilometer 8 , RT.10",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70015806",
+    "name": "KB EDUKASI UTAMA",
+    "address": "Jl. Sei Banjar Rt.007",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802892",
+    "name": "KB.  AL-MUNAJAB",
+    "address": "JL.IMAM BONJOL,  RT . 06",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802896",
+    "name": "KB.  PELANGI",
+    "address": "Jl. PLN lama RT.17",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802898",
+    "name": "KB.  PERMATA BUNDA",
+    "address": "Jl. Angkasa  Rt.10",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802937",
+    "name": "KB.  PUTRA CERIA",
+    "address": "Jalan Iskandar Muda RT. 16",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69961072",
+    "name": "KB. AGAPE",
+    "address": "Jl. Km.08.Rt.10",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69971086",
+    "name": "KB. AISYAH",
+    "address": "Jln. Sungai Apuk Rt. 013",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802906",
+    "name": "KB. AL - IKHLAS",
+    "address": "Jl.Pattimura Gang H.Daeng Toba Rt 020 Nunukan Timur",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802927",
+    "name": "KB. ANANDA",
+    "address": "Cik Dik Tiro RT 21",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802923",
+    "name": "KB. AZ - ZAHRA",
+    "address": "Mulawarman RT.07",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802890",
+    "name": "KB. BORNEO",
+    "address": "Jl. Arief Rahman Hakim, RT. 09",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69947034",
+    "name": "KB. IMANUEL",
+    "address": "Jl. Pongtiku Rt. 16 Kel. Nunukan Tengah",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69946308",
+    "name": "KB. Rahmat Sentosa",
+    "address": "Jl. Sanusi Gg. Sahabat RT. 07",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886846",
+    "name": "KB. Sangrilla 2",
+    "address": "Jl. Tanjung  RT. 24",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803809",
+    "name": "KB. SURYA",
+    "address": "Sentral Rt. 15",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886916",
+    "name": "Purnama",
+    "address": "Flabamora",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803804",
+    "name": "Qolbun Salim",
+    "address": "Jl. Pattimura (TVRI)  Rt.01",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69752975",
+    "name": "RA AR RAHMA",
+    "address": "JL.PEMBANGUNAN RT.10",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70060555",
+    "name": "RA INSAN CENDEKIA",
+    "address": "JL. MOH HATTA",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69752976",
+    "name": "RA NUR IZZAH NUNUKAN",
+    "address": "JL.Manunggal Bhakti Rt 011",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69752974",
+    "name": "RA SITI FATIMAH NUNUKAN",
+    "address": "JL.TENGKU UMAR RT12",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886918",
+    "name": "Sangrilla I",
+    "address": "Hasanuddin Rt.09",
+    "village": "Nunukan Utara",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69960297",
+    "name": "SPS   MANUSELA",
+    "address": "Jl. Fatahillah ,  RT. 10",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802920",
+    "name": "SPS Al-Ikhlas",
+    "address": "Pattimura Gang H. Toba RT. 02",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69935252",
+    "name": "SPS. PAK  GRACE",
+    "address": "Jalan Cut Nyak Dien , RT. 15",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70024507",
+    "name": "TK ABA 2",
+    "address": "Jl. Mulawarman Rt.07",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405250",
+    "name": "TK ABA NUNUKAN",
+    "address": "JL. PASAR BARU, RT.07",
+    "village": "Nunukan Utara",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30406280",
+    "name": "TK BUKIT ZAITUN NUNUKAN",
+    "address": "JL. CUT NYAK DIEN Rt.23",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70038337",
+    "name": "TK EBEN HAEZER",
+    "address": "JL. SUTANTO No.100",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802902",
+    "name": "TK Islam Handayani Nunukan",
+    "address": "Jl. Iskandar Muda Rt.30",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405254",
+    "name": "TK IT IBNU SINA",
+    "address": "JL. K.H. Agus Salim RT. 08",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70004770",
+    "name": "TK Malaikat Gabriel",
+    "address": "Jl. Tawakal Rt.02",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405249",
+    "name": "TK PERMATA BARUNAWATI",
+    "address": "JALAN PASAR BARU RT 5",
+    "village": "Nunukan Utara",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30406160",
+    "name": "TK SETIA NEGARA NUNUKAN",
+    "address": "JL. FATAHILLAH",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405251",
+    "name": "TK SION NUNUKAN",
+    "address": "JL. CUT NYAK DIEN",
+    "village": "Nunukan Tengah",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405248",
+    "name": "TK TUNAS RIMBA",
+    "address": "JL. BNI LAMA",
+    "village": "Nunukan Utara",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802921",
+    "name": "TPA Mutiara Bunda",
+    "address": "KH. Agus Salim Rt. 08",
+    "village": "Nunukan Barat",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886922",
+    "name": "TPA. PRIMALIKY KID.S",
+    "address": "Jl. Angkasa RT. 10",
+    "village": "Nunukan Timur",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802935",
+    "name": "Tunas Bangsa",
+    "address": "Jl. Sei Fatimah  RT.03",
+    "village": "Binusan",
+    "status": "Swasta",
+    "district": "Nunukan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69933395",
+    "name": "KB.   HARAPAN    BUNDA",
+    "address": "Jalan Jendral Sudirman  RT. 02",
+    "village": "SEI MANURUNG",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803802",
+    "name": "KB. HUSNUL KHOTIMAH",
+    "address": "Pustu RT.02",
+    "village": "Tanjung Karang",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803817",
+    "name": "KB. NUR  ANNISA",
+    "address": "Tanjung Pura Dusun Rawa Indah",
+    "village": "Tanjung Karang",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803812",
+    "name": "KB. NURUL ILMI",
+    "address": "Jln.Jendral sudirman  RT . 03",
+    "village": "PADAIDI",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69750994",
+    "name": "RA YIIPS SEBATIK TIMUR",
+    "address": "JL.RA.KARTINI NO.16",
+    "village": "Tanjung Karang",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405259",
+    "name": "TK AS ADIYAH SEBATIK",
+    "address": "JL JEND SUDIRMAN RT.04",
+    "village": "SEI MANURUNG",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802891",
+    "name": "TK Nurul A laa",
+    "address": "Jl.Somel RT. 06",
+    "village": "BALANSIKU",
+    "status": "Swasta",
+    "district": "Sebatik",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70035251",
+    "name": "KB Buntol Harapan Baru",
+    "address": "Poros Pemda Rt. 01",
+    "village": "Kekayap",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70029835",
+    "name": "KB Meladi Subur",
+    "address": "Desa Lulu",
+    "village": "Lulu",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69932559",
+    "name": "KB.   AL - FURQON  KALAS",
+    "address": "Jalan  Poros Kalas , RT. 04",
+    "village": "Pembeliangan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69971761",
+    "name": "KB.  FANGIONO",
+    "address": "JLN. Komplek Pendidikan KHL",
+    "village": "Tetaban",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69979002",
+    "name": "KB.  TUNAS KASIH BUNDA",
+    "address": "Simpang, Rt. 001 Tetaban",
+    "village": "Tetaban",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802894",
+    "name": "KB. HARAPAN JAYA",
+    "address": "Flamboyan RT. 06",
+    "village": "Harapan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69932568",
+    "name": "KB. SION MANDIRI",
+    "address": "Jalan Aki Tinudin , RT. 02",
+    "village": "Apas",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985237",
+    "name": "PAUD IMPIAN KASIH INDAH",
+    "address": "Pembangunan RT. 02",
+    "village": "Melasu Baru",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69960752",
+    "name": "SPS AL- IKHLAS",
+    "address": "JL. KAMBOJA RT. 07",
+    "village": "Harapan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30407260",
+    "name": "TK BINA BERSAMA SEBUKU",
+    "address": "Jl. Padat Karya Rt.002",
+    "village": "Pembeliangan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70057292",
+    "name": "TK FANGIONO 3 SEBUKU",
+    "address": "Jl. Kompleks Pendidikan PT.BHP",
+    "village": "Sujau",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405870",
+    "name": "TK LESTARI SEBUKU",
+    "address": "JL. PULAU KALIMANTAN",
+    "village": "Harapan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405871",
+    "name": "TK PELITA SEBAKIS SEBUKU",
+    "address": "Jln. Sentral Sebakis",
+    "village": "Pembeliangan",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405869",
+    "name": "TK SINAR FAJAR SEBUKU",
+    "address": "JL.MANGGA RT. 01",
+    "village": "Kunyit",
+    "status": "Swasta",
+    "district": "Sebuku",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802914",
+    "name": "KB Tunas Harapan",
+    "address": "Tang Laan",
+    "village": "Pa Upan",
+    "status": "Swasta",
+    "district": "Krayan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69987940",
+    "name": "PAUD Harapan Bunda",
+    "address": "Jl. Desa Pa Tera",
+    "village": "Pa Tera",
+    "status": "Swasta",
+    "district": "Krayan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405864",
+    "name": "TK TUNAS HARAPAN TERPADU",
+    "address": "Jl.. Lapangan Long Layu",
+    "village": "Long Budung",
+    "status": "Swasta",
+    "district": "Krayan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69933393",
+    "name": "KB.   HARAPAN SEJAHTERA",
+    "address": "Jalan Muhammad Atung  RT. 03",
+    "village": "Liang Bunyu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69933388",
+    "name": "KB.   TUNAS  BARU",
+    "address": "Jalan Iman Bonjol   RT. 02",
+    "village": "Setabu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802916",
+    "name": "KB.  HARAPAN KITA",
+    "address": "Jl. Kampung Tellang",
+    "village": "Binalawan",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803821",
+    "name": "KB.  TAPAS",
+    "address": "Jl. Pendidikan RT. 03",
+    "village": "Binalawan",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69960295",
+    "name": "KB. AL - WILDAN",
+    "address": "JL. Muslimin, RT. 02",
+    "village": "Liang Bunyu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802900",
+    "name": "KB. KHAZANUL FIKRI",
+    "address": "Sei Lappio RT. 08",
+    "village": "Setabu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69960194",
+    "name": "KB. MERAH PUTIH",
+    "address": "JL. UJANG MUDJADJI",
+    "village": "BAMBANGAN",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803814",
+    "name": "KB. PERTIWI",
+    "address": "Mantikas Rt. 01",
+    "village": "Setabu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802936",
+    "name": "RA. Kartini",
+    "address": "Ds Setabu",
+    "village": "Liang Bunyu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886913",
+    "name": "TK   AN  NUR",
+    "address": "JL.LIANG BUNYU RT. 06",
+    "village": "Liang Bunyu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30406475",
+    "name": "TK IT NURUL IHSAN",
+    "address": "JALAN PERINTIS RT 01 MUARA SUNGAI DESA BINALAWAN",
+    "village": "Setabu",
+    "status": "Swasta",
+    "district": "Sebatik Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802931",
+    "name": "Al-Farizih",
+    "address": "Jl. Lingkar Pantai RT. 15",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802897",
+    "name": "Bina Bangsa",
+    "address": "Ujang Dewa. RT,06/RW.01",
+    "village": "Nunukan Selatan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69926139",
+    "name": "KB .  NURKASIH",
+    "address": "Jl. Dewi Sartika RT. 04",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70051604",
+    "name": "KB MUTIARA INSANI NUNUKAN",
+    "address": "Jl. Perumahan Nelayan",
+    "village": "Mansapa",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802911",
+    "name": "KB.  AL - HIDAYAH",
+    "address": "Jln . Kristanto RT.06",
+    "village": "Mansapa",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69928610",
+    "name": "KB.  ALFARIZIH  II",
+    "address": "Jl. Dewi Sartika RT. 08",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802917",
+    "name": "KB.  WISMA CERIA",
+    "address": "Yos Sudarso  RT. 03",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802926",
+    "name": "KB. AS - SYIFA",
+    "address": "Wana Wisata RT.15",
+    "village": "Nunukan Selatan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803803",
+    "name": "KB. TUNAS PERTIWI",
+    "address": "jl.Ujang Dewa sedadap",
+    "village": "Nunukan Selatan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70028916",
+    "name": "RA WAHDAH ISLAMIYAH NUNUKAN",
+    "address": "GANG DAMAI",
+    "village": "Nunukan Selatan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70014674",
+    "name": "TK BAITUL IZZA",
+    "address": "Jl. Pattimura Rt. 02 Rw. 01",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405252",
+    "name": "TK FRANSISCO YASHINTA NUNUKAN SELATAN",
+    "address": "JALAN TERUSAN ANTASARI RT.013",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405873",
+    "name": "TK KIHAJAR DEWANTARA NUNUKAN",
+    "address": "JL.Pattimura Rt.02 Rw.01",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405253",
+    "name": "TK NUR ISLAM HIDAYAHTULLAH NUNUKAN SELATAN",
+    "address": "JL. PESANTREN HIDAYATULLAH",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405256",
+    "name": "TK PEMBINA NUNUKAN SELATAN",
+    "address": "JL. UJANG DEWA , RT.04",
+    "village": "Nunukan Selatan",
+    "status": "Negeri",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69946720",
+    "name": "TPA Kasih Bunda",
+    "address": "Jl. Ujang Dewa RT.02 RW.01 Sedadap",
+    "village": "Nunukan Selatan",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802899",
+    "name": "Yaabunayyah",
+    "address": "Pon-Pes Hidayatullah",
+    "village": "Selisun",
+    "status": "Swasta",
+    "district": "Nunukan Selatan",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802934",
+    "name": "KB.  SEJAHTERA",
+    "address": "Jalan Bhayangkara  Rt. 01",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70008345",
+    "name": "KB Al-Kautsar",
+    "address": "Jl. Bakti Husada Rt.03",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802938",
+    "name": "KB.  BABUL HASANAH I",
+    "address": "Jln. Lapangan RT. 05",
+    "village": "Tanjung Aru",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803816",
+    "name": "KB.  MELATI",
+    "address": "Bhayangkara RT. 06",
+    "village": "Bukit Aru Indah",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803820",
+    "name": "KB.  NATASYA",
+    "address": "Bhayangkara RT.10",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803808",
+    "name": "KB.  NUR HIKMAH",
+    "address": "KH. Agusalim   RT.17 Dsn. Bukit Indah",
+    "village": "Bukit Aru Indah",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803819",
+    "name": "KB. CERIA WIA",
+    "address": "Jln Pantai Indah",
+    "village": "Bukit Aru Indah",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70010750",
+    "name": "KB. Islam Al-Hiro",
+    "address": "Jl. Ahmad Yani Rt.11",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802903",
+    "name": "KB. MULIA",
+    "address": "Puskesmas Lama",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70008658",
+    "name": "RA AS`ADIYAH SUNGAI NYAMUK",
+    "address": "JL. HAJI BADANNU",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69752978",
+    "name": "RA NURUL IMAN SEBATIK TIMUR",
+    "address": "JLN.NURUL IMAN NO.06",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405867",
+    "name": "TK AL HUDA SEBATIK TIMUR",
+    "address": "JALAN AHMAD YANI RT 010",
+    "village": "Tanjung Harapan",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405258",
+    "name": "TK NURPAISAH SEBATIK TIMUR",
+    "address": "JALAN AHMAD YANI",
+    "village": "Sungai Nyamuk",
+    "status": "Swasta",
+    "district": "Sebatik Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802929",
+    "name": "Al Amin",
+    "address": "H. Beddu Rahim RT. 02",
+    "village": "DESA PANCANG",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803815",
+    "name": "KB. AR RAWDAH",
+    "address": "Hasanuddin Rt.12",
+    "village": "DESA PANCANG",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803818",
+    "name": "KB. BABUL HASANAH II",
+    "address": "JLN. AHMAD BASRAB RT.05",
+    "village": "Seberang",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803822",
+    "name": "KB. FASTABIQUL KHAERAT",
+    "address": "TVRI RT.04",
+    "village": "Lapri",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69977325",
+    "name": "RA HAJI BEDDURAHIM",
+    "address": "JL. AHMAD YANI NO 66 RT 08",
+    "village": "DESA PANCANG",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405257",
+    "name": "TK PEMBINA SEBATIK UTARA",
+    "address": "JL. MANUNGGAL NO 34 Rt. 09",
+    "village": "DESA PANCANG",
+    "status": "Negeri",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405260",
+    "name": "TK SAISABIL SEBATIK UTARA",
+    "address": "JL. H BEDURAHIM NO 33 RT 09 RW 02",
+    "village": "DESA PANCANG",
+    "status": "Swasta",
+    "district": "Sebatik Utara",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802905",
+    "name": "KB Al-Ikhlas 2",
+    "address": "Asur Dg. Pasau RT.12 Dusun Berjoko",
+    "village": "Sungai Limau",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802909",
+    "name": "KB.   BUMI   BERTUAH",
+    "address": "P. Ramli RT. 04 Maspul",
+    "village": "Maspul",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886921",
+    "name": "KB.  NUR  AMALIAH",
+    "address": "Makatutu RT.01",
+    "village": "Bukit Harapan",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69933834",
+    "name": "KB. AR - RAHMAN",
+    "address": "Jln . Asnur Dg. Pasau RT. 03",
+    "village": "Sungai Limau",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802918",
+    "name": "KB. MEKAR BANGSA",
+    "address": "Jl.Perbatasan RT. 04",
+    "village": "Aji Kuning",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405872",
+    "name": "TK AS SALAM HIDAYATULLAH SEBATIK TENGAH",
+    "address": "JL. BAMBANGAN RT 07 DUSUN ABADI II",
+    "village": "Aji Kuning",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30406266",
+    "name": "TK ST MARIA LODRES SEBATIK TENGAH",
+    "address": "KAMPUNG LORDES",
+    "village": "Sungai Limau",
+    "status": "Swasta",
+    "district": "Sebatik Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802915",
+    "name": "KB.   NURUL YAQIN",
+    "address": "Jln. Kartini  RT.03",
+    "village": "Srinanti",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886914",
+    "name": "KB.  CITRA LESTARI",
+    "address": "Jl. Toddopulli Rt.09",
+    "village": "Tabur Lestari",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886915",
+    "name": "KB.  TUNAS LESTARI",
+    "address": "Jln. Pohon Emas Lestari Rt.12",
+    "village": "Srinanti",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802924",
+    "name": "KB. Citra Ananda",
+    "address": "Seimenggaris",
+    "village": "Srinanti",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803806",
+    "name": "KB. KARTIKA",
+    "address": "Jl. Dewi Sartika Rt. 06",
+    "village": "Tabur Lestari",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69943191",
+    "name": "KB. MANDIRI PERBATASAAN",
+    "address": "Jl. Sei Kelayan RT.08",
+    "village": "Sekaduyan Taka",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69803801",
+    "name": "KB. Srikandi",
+    "address": "Desa Tabur Lestari",
+    "village": "Tabur Lestari",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405866",
+    "name": "TK ANANDA LESTARI SEI MENGGARIS",
+    "address": "JL. MERPATI RT 11",
+    "village": "Tabur Lestari",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70057291",
+    "name": "TK FANGIONO 2 SEI MENGGARIS",
+    "address": "Jl. Kompleks Pendidikan PT.BSI",
+    "village": "Sekaduyan Taka",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70060785",
+    "name": "TK TUNAS MULIA",
+    "address": "Jl. Sei Kapal RT.02",
+    "village": "Sekaduyan Taka",
+    "status": "Swasta",
+    "district": "Sei Menggaris",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69802912",
+    "name": "Harapan Makmur",
+    "address": "Poros Kalas RT.05",
+    "village": "Makmur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70036748",
+    "name": "KB GENERASI SALANG",
+    "address": "JL. Pemda Rt.01",
+    "village": "Salang",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69928889",
+    "name": "KB Tunas Kasih",
+    "address": "Jl. Pembangunan",
+    "village": "Sekikilan",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69943690",
+    "name": "KB. AL - FAJAROH",
+    "address": "Jl. Merak  RT. 10",
+    "village": "Makmur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69932562",
+    "name": "KB. SOTERIA",
+    "address": "Jalan  Tawi, RT.02",
+    "village": "Semunad",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69928892",
+    "name": "Paud Kasih Ibu",
+    "address": "Jl. Mangga RT.05",
+    "village": "Sanur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69992734",
+    "name": "Taman Seminari Santa Maria Asumpta",
+    "address": "Jl. Cermai",
+    "village": "Sanur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70057645",
+    "name": "TK FANGIONO 4 TULIN ONSOI",
+    "address": "Jl. Kompleks Pendidikan PT.TMSJ 2",
+    "village": "Sekikilan",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "30405868",
+    "name": "TK MAKARTI TULIN ONSOI",
+    "address": "JL. MANGGA RT. 05",
+    "village": "Sanur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70032689",
+    "name": "TKIT SEVILLA",
+    "address": "Jl. Nangka",
+    "village": "Sanur",
+    "status": "Swasta",
+    "district": "Tulin Onsoi",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70015384",
+    "name": "KB KOLOTON AJI KUNING",
+    "address": "DESA LONG BULU",
+    "village": "Long Bulu",
+    "status": "Swasta",
+    "district": "Lumbis Ogong",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70046193",
+    "name": "KB TUNAS MUDA TUKULON",
+    "address": "Jl. Aki Bangkong",
+    "village": "Tukulon",
+    "status": "Swasta",
+    "district": "Lumbis Ogong",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69987702",
+    "name": "PAUD ANSILULUM TAKA",
+    "address": "Desa Tau Lumbis",
+    "village": "Tau Lumbis",
+    "status": "Swasta",
+    "district": "Lumbis Ogong",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70034973",
+    "name": "KB Ganggalin Bandasin",
+    "address": "Jl. Poros Provinsi Rt.003",
+    "village": "Lubok Buat",
+    "status": "Swasta",
+    "district": "Sembakung Atulai",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70007701",
+    "name": "KB Mentari Atulai",
+    "address": "Jl. Desa Binanun Rt.02",
+    "village": "Binanun",
+    "status": "Swasta",
+    "district": "Sembakung Atulai",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70028938",
+    "name": "KB PELANGI KASIH",
+    "address": "KB PELANGI KASIH",
+    "village": "Pagaluyon",
+    "status": "Swasta",
+    "district": "Sembakung Atulai",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70015381",
+    "name": "KB YALANDUG YASINGKUL",
+    "address": "Desa Mambulu Rt.01",
+    "village": "Mambulu",
+    "status": "Swasta",
+    "district": "Sembakung Atulai",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69939821",
+    "name": "KB.  ATULAI",
+    "address": "Jln. Simpang Tiga Tanjung Harapan",
+    "village": "Saduman",
+    "status": "Swasta",
+    "district": "Sembakung Atulai",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "70062589",
+    "name": "KB CAHAYA BARU",
+    "address": "Jl. Welman No.04, RT 001",
+    "village": "Ba Liku",
+    "status": "Swasta",
+    "district": "Krayan Tengah",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985839",
+    "name": "KB REFLESIA PA RAYE",
+    "address": "Jl. Ayu RT. 02",
+    "village": "Pa Raye",
+    "status": "Swasta",
+    "district": "Krayan Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69982146",
+    "name": "PAUD KHARISMA",
+    "address": "Jl. Ferinuen Long Umung",
+    "village": "Long Umung",
+    "status": "Swasta",
+    "district": "Krayan Timur",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985217",
+    "name": "KB BUDUK UDAN",
+    "address": "Desa Pa Kidang Tang Paye",
+    "village": "Pa Kidang",
+    "status": "Swasta",
+    "district": "Krayan Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69985844",
+    "name": "KB GENERASI KASIH",
+    "address": "Jl. Pembangunan",
+    "village": "Pa Pani",
+    "status": "Swasta",
+    "district": "Krayan Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69987914",
+    "name": "KB MAWAR SARI",
+    "address": "Jl. Desa Pa Delung",
+    "village": "Pa Delung",
+    "status": "Swasta",
+    "district": "Krayan Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69982149",
+    "name": "PAUD GRESIA",
+    "address": "Jl. Harapan Rt.002",
+    "village": "Liang Bua",
+    "status": "Swasta",
+    "district": "Krayan Barat",
+    "regencyBpsCode": "6503",
+    "regencyName": "Kabupaten Nunukan"
+  },
+  {
+    "npsn": "69886864",
+    "name": "KB AL MARHAMAH",
+    "address": "JL BINALATUNG RT 10",
+    "village": "Pantai Amal",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70058492",
+    "name": "KB AL-ISTIQLAL TARAKAN",
+    "address": "JL.MESJID AL ISTIQLAL RT.3",
+    "village": "Kampung Empat",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886861",
+    "name": "KB AMANAH",
+    "address": "JL SEI MAHAKAM RT 1",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886865",
+    "name": "KB BINTANG TARAKANITA",
+    "address": "JL. IMAM BONJOL GG. 3 MARKONI",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886863",
+    "name": "KB FAJAR MENTARI",
+    "address": "JL BINALATUNG RT 07",
+    "village": "Pantai Amal",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886866",
+    "name": "KB GENIUS",
+    "address": "JL KUSUMA BANGSA",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886862",
+    "name": "KB HARAPAN BUNDA",
+    "address": "JL BINALATUNG",
+    "village": "Pantai Amal",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69966059",
+    "name": "KB MENTARI",
+    "address": "Jl. Binalatung Rt.13",
+    "village": "Pantai Amal",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886867",
+    "name": "KB MUSLIMAT",
+    "address": "JL BENGKIRAI",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69979895",
+    "name": "KB.AZ ZAHRA",
+    "address": "JL.SEI NGINGITAN RT.09 N0.02",
+    "village": "Mamburungan Timur",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69981482",
+    "name": "KB.LENTERA",
+    "address": "JL.CENDANA RT.10",
+    "village": "Lingkas Ujung",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70027021",
+    "name": "RA TAUD Raudhatul Qur`an Tarakan",
+    "address": "Jl. Kusuma Bangsa Rt. 01 No. 01 kel. Gunung Lingkas Kec. Tarakan Timur Provinsi",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751019",
+    "name": "RA/BA/TA DARUSSALAM",
+    "address": "JL. P. HIDAYATULLAH",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751016",
+    "name": "RA/BA/TA DDI",
+    "address": "JL. YUOS UDARSO",
+    "village": "Lingkas Ujung",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751018",
+    "name": "RA/BA/TA QURRATU AYYUN",
+    "address": "JL. SEI SEMBAKUNG",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886909",
+    "name": "SPS SERUNI 2",
+    "address": "JL.Malundung RT.12 Rw.2",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69948801",
+    "name": "TK ABA 3",
+    "address": "JALAN SEI.NGINGITAN RT.02",
+    "village": "Mamburungan Timur",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69946335",
+    "name": "TK ADINDA",
+    "address": "Jalan Palem RT.006 No.2",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407315",
+    "name": "TK AL ISTIQLAL",
+    "address": "JL. MASJID ISTIQLAL RT. III",
+    "village": "Kampung Empat",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407702",
+    "name": "TK BAITURROHIM",
+    "address": "JL. TANJUNG PASIR",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69982637",
+    "name": "TK EKKLESIA",
+    "address": "TK EKKLESIA",
+    "village": "Kampung Enam",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70051902",
+    "name": "TK INTEGRAL AR-RABBANI",
+    "address": "JALAN KUSUMA BANGSA RT.II",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886849",
+    "name": "TK ISLAM TERPADU IBNU ABBAS",
+    "address": "JL. PENINGKI LAID RT.14, MAMBURUNGAN",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30405727",
+    "name": "TK IT AL MUSTAKIM",
+    "address": "JL. Mahoni RT. VII / II NO. 22",
+    "village": "Lingkas Ujung",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407191",
+    "name": "TK IT MUSLIMAT I",
+    "address": "JL. BANGKIRAI RT. IV",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69937860",
+    "name": "TK NEGERI PANTAI AMAL TARAKAN",
+    "address": "JL. Sei Kayan RT 03 Pantai Amal",
+    "village": "Pantai Amal",
+    "status": "Negeri",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30405723",
+    "name": "TK NEGERI PEMBINA 1",
+    "address": "JL. GUNUNG KELUA NO. 50 RT. IV",
+    "village": "Kampung Enam",
+    "status": "Negeri",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886848",
+    "name": "TK. NUR IFTITAH TARAKAN",
+    "address": "TG. BATU RT. 22",
+    "village": "Mamburungan",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69948244",
+    "name": "TKIT IBNU ABBAS 2",
+    "address": "JL.KUSUMA BANGSA RT.03",
+    "village": "Gunung Lingkas",
+    "status": "Swasta",
+    "district": "Tarakan Timur",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886869",
+    "name": "KB AL MUSTAQIM",
+    "address": "JL BERINGIN III",
+    "village": "Selumit Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70009696",
+    "name": "KB CAHAYA PELITA",
+    "address": "JL.YOS SUDARSO RT.29 NO.68",
+    "village": "Selumit Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886878",
+    "name": "KB MUTIARA HATI",
+    "address": "SEBENGKOK TIRAM",
+    "village": "Sebengkok",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886874",
+    "name": "KB PERMATA BUNDA",
+    "address": "CENDANA RT 20 NO 29",
+    "village": "Sebengkok",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886883",
+    "name": "KB RAINBOW",
+    "address": "KUSUMA BANGSA RT. 27 NO. 152",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932399",
+    "name": "KB SI JEMPOL",
+    "address": "JL. PULAU NIAS RT. 11 NO. 7",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886882",
+    "name": "KB TELKOM TARAKAN",
+    "address": "JL DIPONEGORO RT 1",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886885",
+    "name": "KB TUNAS BANGSA TARAKAN",
+    "address": "PURNA BHAKTI RT 12",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886872",
+    "name": "KB. BUSAK SILOW",
+    "address": "JL.KH.AGUS SALIM RT.02",
+    "village": "Selumit",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69955426",
+    "name": "KB. HARAPAN KASIH",
+    "address": "Jl. Danau Jempang Kampung Baru Rt. 5",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886868",
+    "name": "KB.AZ ZIKRI",
+    "address": "JL.YOS SUDARSO RT.19 NO.01",
+    "village": "Selumit Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886884",
+    "name": "KB.BINA ANAPRASA ACI",
+    "address": "Jl. Pulau Banda Rt. 11",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69981183",
+    "name": "KB.HANG TUAH",
+    "address": "JLPANGLIMA BATUR RT.13 NO.1",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886870",
+    "name": "KB.INSAN CITA",
+    "address": "JL.DEWI SARTIKA RT.12",
+    "village": "Selumit",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69854712",
+    "name": "RA. Al-Fawaid",
+    "address": "Jl. Purna Bhakti Rt. 6 Kel. Kampung Satu Skip",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70000298",
+    "name": "SPS IMBAYA",
+    "address": "JL. Kusuma Bangsa RT. 25",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69989040",
+    "name": "SPS MERAK",
+    "address": "Jl. Yos Sudarso Rt. 23",
+    "village": "Selumit Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69957338",
+    "name": "SPS. TARUMANEGARA",
+    "address": "JL. PATIMURA GANG ETAM 5 RT. 16",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69987488",
+    "name": "TK  SI JEMPOL",
+    "address": "Jl. Pulau Nias RT. 11 No. 07",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407179",
+    "name": "TK ABA II",
+    "address": "JL. KH. ACHMAD DAHLAN RT. 26 NO. 09",
+    "village": "Sebengkok",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69971725",
+    "name": "TK ANNISA",
+    "address": "Jl. Kusuma Bangsa Rt 27 Gg. Bahasa",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407181",
+    "name": "TK BUDI UTOMO",
+    "address": "JL. P. BUNYU RT. 5",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407705",
+    "name": "TK CARSA KIDS",
+    "address": "JL. HALMAHERA NO. 165",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407183",
+    "name": "TK CITRA BINA ISLAMY",
+    "address": "JL. P. DIPONEGORO RT. 19",
+    "village": "Sebengkok",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407176",
+    "name": "TK FRATER DON BOSCO",
+    "address": "JL. PATTIMURA NO. 1",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407174",
+    "name": "TK HANG TUAH",
+    "address": "JL. JENDERAL SUDIRMAN RT. 02 NO. 5",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407175",
+    "name": "TK IMMANUEL",
+    "address": "JL. DANAU SEMAYANG NO. 13 - 14",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886853",
+    "name": "TK ISLAM TERPADU ULUL ALBAB",
+    "address": "Jl. LADANG SAWAH LUNTO NO. 33 RT. 8 LADANG",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407177",
+    "name": "TK KUNCUP MEKAR",
+    "address": "JL. LADANG I RT. 08",
+    "village": "Pamusian",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886852",
+    "name": "TK NUR AMALIA",
+    "address": "JL.CENDAWAN RT.13 NO.68 BERINGIN.SELUMIT PANTAI",
+    "village": "Selumit Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70026669",
+    "name": "TK PAMBUDI MULYA TARAKAN",
+    "address": "JL.PULAU BUNYU NO.52 RT.05",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932392",
+    "name": "TKIT AL MUSTAQIM 2",
+    "address": "JL. PULAU IRIAN GANG PERMATA MERAH RT. 02",
+    "village": "Kampung Satu Skip",
+    "status": "Swasta",
+    "district": "Tarakan Tengah",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70059392",
+    "name": "KB ABDI WIYATA",
+    "address": "Jl.Akik Babu Rt.01 Blok A No.20",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886871",
+    "name": "KB ADITYAWARMAN",
+    "address": "Jl. WR. Supratman, Gg. Bapindo Rt. 66 No. 74.A",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69980658",
+    "name": "KB ANGKASA MERPATI",
+    "address": "JL.AKIK BALAK RT.33",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886891",
+    "name": "KB CAHAYA FIRDAUS",
+    "address": "JL JEND SUDIRMAN NO 54 RT 1",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886880",
+    "name": "KB CARSA KIDS",
+    "address": "Jl.Mulawarman RT.44 No.34",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70041511",
+    "name": "KB CINTA AYAH BUNDA",
+    "address": "Jl. Mulawarman RT 43 No 66 Tarakan Barat",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886890",
+    "name": "KB INDO TIONGHOA TARAKAN",
+    "address": "SLAMET RIYADI RT 13 NO.32",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886892",
+    "name": "KB JASMINE",
+    "address": "JL GAJAH MADA",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932379",
+    "name": "KB KASIH BUNDA",
+    "address": "KB KASIH BUNDA",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70047370",
+    "name": "KB KASIH PARAMITHA",
+    "address": "JL.BHAYANGKARA NO.103 RT.16",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886887",
+    "name": "KB KRISTEN TUNAS KASIH",
+    "address": "KI HAJAR DEWANTARA RT. 8 NO. 19",
+    "village": "Karang Balik",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886893",
+    "name": "KB YASINTA",
+    "address": "JALAN RUKUN",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886886",
+    "name": "KB. JUNJUNG BUIH",
+    "address": "JL.DR. SUTOMO NO. 47 RT. 7",
+    "village": "Karang Balik",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886895",
+    "name": "KB. TUNAS CENDIKIA",
+    "address": "Jl. Gajah Mada Rt.25 No.52 Jembatan Bongkok",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70027266",
+    "name": "RA AS SYIFA",
+    "address": "Jl. Wijaya Kusuma IV Blok E RT 49 No 5",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70045543",
+    "name": "RA MULTAZAM",
+    "address": "JL.MULAWARMAN GG KELUARGA RT 42 KARANG ANYAR",
+    "village": "Kec. Tarakan Barat",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70045405",
+    "name": "RA NU 1 TARAKAN",
+    "address": "Jl. Matahari RT. 63",
+    "village": "Kec. Tarakan Barat",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69854711",
+    "name": "RA. Cordova",
+    "address": "Jl. Kenanga No. 40",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751013",
+    "name": "RA/BA/TA ARRAYYAN 2",
+    "address": "JL. FLAMBOYAN RT. 30 KARANG ANYAR KEC. TARAKAN BARAT",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751011",
+    "name": "RA/BA/TA CENDIKIA",
+    "address": "JL. YOS. SUDARSO",
+    "village": "Karang Rejo",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69751014",
+    "name": "RA/BA/TA HANDAYANI",
+    "address": "JL. JENDRAL SUDIRMAN",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407178",
+    "name": "TK ABA I",
+    "address": "JL. KAMBOJA RT. 31 NO. 07",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70060227",
+    "name": "TK ADITYAWARMAN TARAKAN",
+    "address": "Jalan WR. Supratman Gg. Bapindo Rt. 66 No. 74 A",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70005163",
+    "name": "TK AL - AMIN",
+    "address": "Jl. Bersama I RT. 45 Pasir Putih",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407180",
+    "name": "TK AL-IRSYAD",
+    "address": "JL. CENDERAWASIH RT. 09 NO. 01",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70015449",
+    "name": "TK ALAM GREENARIS",
+    "address": "JL.NUSA INDAH RT,44 NO.14",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70041558",
+    "name": "TK ANAK TERANG KARANG ANYAR",
+    "address": "JL.AKI BALAK NO.69 RT.61",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70049412",
+    "name": "TK ANGKASA MERPATI",
+    "address": "JL. Akik Balak RT.33",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932390",
+    "name": "TK CAHAYA CINTA  SASIKIRANA",
+    "address": "Jl. Sei Bengawan Perum TKBM RT 2 Blok B10 Kel. Juata Permai, Kec. Tarakan Utara",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407699",
+    "name": "TK CAHYA SURYA",
+    "address": "JL. SESANIP NO. 77 RT. 60",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407182",
+    "name": "TK CITRA BANGSA",
+    "address": "JL. DAMAI BAKTI RT. 7",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407184",
+    "name": "TK INDO TiONGHOA",
+    "address": "JL. SLAMET RIYADI RT. 13",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70053649",
+    "name": "TK INSPIRATIF TARAKAN",
+    "address": "Jl. Damai Bhakti Rt.09 Gang Terong",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70047367",
+    "name": "TK KASIH PARAMITHA",
+    "address": "JL.BHAYANGKARA NO.103 RT.16",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407173",
+    "name": "TK KEMALA BHAYANGKARI 01",
+    "address": "JL. JENDRAL SUDIRMAN",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886857",
+    "name": "TK KRISTEN TUNAS KASIH",
+    "address": "KI HAJAR DEWANTARA RT. 8 NO. 19",
+    "village": "Karang Balik",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932381",
+    "name": "TK MANSURIN",
+    "address": "JL. JEMBATAN BONGKOK RT. 32",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30405725",
+    "name": "TK NEGERI PEMBINA 3",
+    "address": "JL. SLAMET RIYADI",
+    "village": "Karang Anyar",
+    "status": "Negeri",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69948042",
+    "name": "TK PELITA KRISTEN JUATA TARAKAN",
+    "address": "JL.AKI BALIK RT.55 NO.09",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407698",
+    "name": "TK PRIMAMULYA TARAKAN",
+    "address": "JL. GAJAH MADA NO. 8 KOMPLEKS RUKO PERUSDA TARAKAN",
+    "village": "Karang Rejo",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886856",
+    "name": "TK. KARYA PERTIWI",
+    "address": "JL. KI HAJAR DEWANTARA RT. 12",
+    "village": "Karang Balik",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69953723",
+    "name": "TK.CINTA AYAH BUNDA",
+    "address": "Jl. Mulawarman Rt. 43 No. 66",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69979880",
+    "name": "TK.KASIH IBU",
+    "address": "JL.CAHAYA BARU RT.04",
+    "village": "Karang Harapan",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69989047",
+    "name": "TKIT AR-ROYYAN TARAKAN",
+    "address": "Jl. Anggrek Rt. 15 No. 06",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70014772",
+    "name": "TKIT INSAN LUHUR",
+    "address": "JL.GAJAH MADAH RT.01",
+    "village": "Karang Rejo",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886902",
+    "name": "TPA ADITYAWARMAN",
+    "address": "Jl. WR. Supratman, Gg. Bapindo Rt. 66 No. 74.A",
+    "village": "Karang Anyar",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69971483",
+    "name": "TPA Cahaya Cinta Sasikirana",
+    "address": "Jl. Mulawarman Rt.15",
+    "village": "Karang Anyar Pantai",
+    "status": "Swasta",
+    "district": "Tarakan Barat",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886899",
+    "name": "K B CAHAYA BENGAWAN",
+    "address": "JL SEI BENGAWAN",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886897",
+    "name": "KB BALITA INOVATIF",
+    "address": "Albatros 76",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69952115",
+    "name": "KB BINA INSAN",
+    "address": "Jalan Ekspan Rt 02",
+    "village": "Juata Kerikil",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886901",
+    "name": "KB BINTANG HARAPAN",
+    "address": "SEMENISASI",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886900",
+    "name": "PLAY GROUP BINAMUSTIKA",
+    "address": "JLN MERPATI PERUM KORPRI JUATA KRIKIL TARAKAN UTARA",
+    "village": "Juata Kerikil",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70045525",
+    "name": "RA Handayani 2",
+    "address": "Jalan Meranti 1 RT 19 Blok A",
+    "village": "Kec. Tarakan Utara",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69994523",
+    "name": "RA Pangeran Antasari Tarakan",
+    "address": "JL. AJI ISKANDAR GANG.ARWANA  RT 12 JUATA LAUT",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70059393",
+    "name": "TK BINA MUSTIKA TARAKAN",
+    "address": "Jl. Merpati Blok D No.34/ 35",
+    "village": "Juata Kerikil",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69932396",
+    "name": "TK BUDI LUHUR",
+    "address": "Jl. Karya bersama RT. 18 No. 5",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69918225",
+    "name": "TK CAHAYA BENGAWAN",
+    "address": "TK CAHAYA BENGAWAN",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407185",
+    "name": "TK INTRACA PUTRA",
+    "address": "JL.ALBATROS NO. 76",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "70047362",
+    "name": "TK ISLAM TERPADU CITRA INSANI",
+    "address": "Jalan Sei Bengawan RT.02",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407193",
+    "name": "TK K FRANSISKUS XAVERIUS",
+    "address": "JL. AKI PINGKA RT. 02 NO. 02",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407186",
+    "name": "TK KARTIKA",
+    "address": "KOMPLEKS ASRAMA YONIF RAIDER 613 RAJA ALAM Rt.04",
+    "village": "Juata Kerikil",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69950551",
+    "name": "TK KRISTEN FILADELFIA",
+    "address": "Jalan Bukit Indah Rt. 19",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30405724",
+    "name": "TK NEGERI PEMBINA 2",
+    "address": "JL. MURAI BATU RT. 5",
+    "village": "Juata Kerikil",
+    "status": "Negeri",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407188",
+    "name": "TK NURUL FALAH",
+    "address": "JL. ANGSA N0. 88",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407189",
+    "name": "TK TUNAS HARAPAN",
+    "address": "JL. P. AJI ISKANDAR RT. 08",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "30407190",
+    "name": "TK TUNAS RIMBA",
+    "address": "KOMPLEKS PT. INHUTANI RT. 04",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886859",
+    "name": "TKIT AL BINA TARAKAN",
+    "address": "Jl. P. AJI ISKANDAR RT .09 NO.01",
+    "village": "Juata Laut",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886907",
+    "name": "TPA  KASIH  IBU",
+    "address": "ALBATROS NO. 96",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886908",
+    "name": "TPA BINACERIA",
+    "address": "JL.NURI RT 08 NO 145",
+    "village": "Juata Kerikil",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  },
+  {
+    "npsn": "69886906",
+    "name": "TPA MIZAN TAMIMI",
+    "address": "CENDRAWASIH",
+    "village": "Juata Permai",
+    "status": "Swasta",
+    "district": "Tarakan Utara",
+    "regencyBpsCode": "6571",
+    "regencyName": "Kota Tarakan"
+  }
+]

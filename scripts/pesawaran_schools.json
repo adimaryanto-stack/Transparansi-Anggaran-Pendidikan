@@ -1,0 +1,7044 @@
+[
+  {
+    "npsn": "69779701",
+    "name": "AL-BAITI",
+    "location": "TEGAL REJO, Way Urang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784657",
+    "name": "ANNISA",
+    "location": "JL.TNI AL, Sanggi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782410",
+    "name": "AS SABILI",
+    "location": "PROYEK WAY RATAI, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780995",
+    "name": "HANDAYANI MARGODADI",
+    "location": "JL.RAYA WAY RATAI, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70035883",
+    "name": "KB AIYRA",
+    "location": "JL. Raya Dusun Sidorejo RT/RW 002/004 Desa Banjaran Kecamatan Padang Cermin Kabu, Banjaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940076",
+    "name": "PAUD AL HELWA",
+    "location": "DESA TAMBANGAN, Tambangan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923031",
+    "name": "PAUD ASY SYIFA",
+    "location": "JL. WAY RATAI, KHEPONG JAYA, KHEPONG JAYA",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923034",
+    "name": "PAUD BINA BALITA",
+    "location": "JLN. TRI MULYO, TRIMULYO",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923053",
+    "name": "PAUD DARUL ATHFAL",
+    "location": "JLN. TNI AL PIABUNG, DESA SANGGI, Sanggi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923048",
+    "name": "PAUD INSANUL KAMIL",
+    "location": "JL. BUMI MARINIR PIABUNG, Durian",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69987434",
+    "name": "PAUD KINASIH",
+    "location": "DUSUN BANJARHARJO, DESA GAYAU KECAMATAN PADANG CERMIN, Gayau",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923035",
+    "name": "PAUD NUR FADHILAH",
+    "location": "JL. LUBUK BAKAK, DESA PADANG CERMIN, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70006360",
+    "name": "PAUD NURUL IMAN",
+    "location": "JL. DAMAREJO, DESA PAYA KEC. PADANG CERMIN, Paya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923052",
+    "name": "PAUD RAUDHATUL ILMI",
+    "location": "JL. PANORAMAN ,DESA GAYAU, Gayau",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732029",
+    "name": "RA  HIDAYATUL ATHFAL",
+    "location": "Hanau Berak, Hanau Berak",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732034",
+    "name": "RA  NURUL IMAN",
+    "location": "Way Ratay, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732032",
+    "name": "RA MIFTAHUL HUDA",
+    "location": "Sinar Dua, Harapan Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69975984",
+    "name": "RA MIFTAHUL HUDA",
+    "location": "DUSUN GUNUNGREJO, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732033",
+    "name": "RA NURUL HUDA",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732035",
+    "name": "RA NURUL IMAN",
+    "location": "Pesawaran Indah, Pesawaran Indah",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70023793",
+    "name": "SPS CAHAYA BUNDA",
+    "location": "TIMBUL HARJO, Banjaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940093",
+    "name": "TK BINTANG KEJORA",
+    "location": "JL. PUNDUH PEDADA DESA GAYAU, Gayau",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940068",
+    "name": "TK DHARMA WANITA PADANG CERMIN",
+    "location": "JL. RAYA WAY RATAI DUSUN TANJUNG MAS RT/RW 004/006 DESA PADANG CERMIN, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923022",
+    "name": "TK HANG TUAH",
+    "location": "Jalan Pematang Awi, Sanggi, Pesawaran, Lampung, Sanggi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70030232",
+    "name": "TK RAUDHATUL NUR AZKIYYAH",
+    "location": "Jl. Lubuk Bakak Dusun Bambu Kuning Desa Padang Cermin Kabupaten Pesawaran, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69923030",
+    "name": "TK SATU ATAP",
+    "location": "JL. WAY RATAI , RANTE REJO I, PADANG CERMIN, Banjaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69961326",
+    "name": "KB GEMILANG",
+    "location": "DUSUN TANJUNG KARANG KOTA JAWA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69964139",
+    "name": "KB SEROJA",
+    "location": "DESA BATURAJA, PUNDUH PEDADA, Batu Raja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779722",
+    "name": "MELATI SUKAMAJU",
+    "location": "SUKAMAJU, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69924975",
+    "name": "PAUD AL-HUDA",
+    "location": "JLN. PUNDUH PEDADA DESA RUSABA, Rusaba",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932714",
+    "name": "PAUD AMANDA",
+    "location": "SUKAJAYA PEDADA, Sukajaya Pidada",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932715",
+    "name": "PAUD AZ - ZAHRA",
+    "location": "JL. BATU RAJA INDUK, Batu Raja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69983699",
+    "name": "PAUD BINA INSANI",
+    "location": "DUSUN KARANG TENGAH, DESA RUSABA KEC. PUNDUH PEDADA, Rusaba",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69982363",
+    "name": "PAUD CAHAYA BUNDA",
+    "location": "DESA BANDING AGUNG KEC. PUNDUH PEDADA, Banding Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784232",
+    "name": "PAUD HARAPAN BUNDA",
+    "location": "BANGUN REJO, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925581",
+    "name": "PAUD KARTIKA",
+    "location": "DUSUN JAYA TANI, Pagar Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925582",
+    "name": "PAUD KARTINI",
+    "location": "PAGAR JAYA INDUK, Pagar Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784226",
+    "name": "PAUD NURUL FALAH",
+    "location": "SUKARAME, Sukarame",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925585",
+    "name": "PAUD PELANGI",
+    "location": "DESA KOTA JAWA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932716",
+    "name": "PAUD PERMATA BAHARI",
+    "location": "DESA PULAU LEGUNDI, Pulau Legundi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69938790",
+    "name": "PAUD RESTU BUNDA",
+    "location": "JL. BAWANG DESA BAWANG, Bawang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925587",
+    "name": "PAUD TELUK HARAPAN",
+    "location": "JLN. FAJAR HARAPAN DESA SUKARAME, Sukarame",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784227",
+    "name": "PAUD TERPADU ALHIDAYAH",
+    "location": "JL.CURUP JAYA DESA BATURAJA, Batu Raja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925583",
+    "name": "PAUD TERPADU KASIH BUNDA",
+    "location": "JLN. PURWOREJO BAWANG, Bawang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69979432",
+    "name": "PAUD TUNAS BANGSA",
+    "location": "Desa Bawang, Kec. Punduh Pidada, Bawang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782402",
+    "name": "PAUD UNWANUL FALAH",
+    "location": "DUSUN KUPANG REJO RT/RW 1/1, KELURAHAN DESA BANDING AGUNG, Banding Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732038",
+    "name": "RA AZZAHRA",
+    "location": "Jalan Ringin Sari I, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69957920",
+    "name": "RA MANBAUL HUDA",
+    "location": "Dusun 02 Purwokerto, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732037",
+    "name": "RA UNWANUL FALAH",
+    "location": "Bangun Rejo, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69925588",
+    "name": "TK AGUNG BAHARI",
+    "location": "JLN. PUNDUH PEDADA DESA SUKARAME, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782401",
+    "name": "TK BINTANG LAUT",
+    "location": "DUSUN BANGUN HARJO RT/RW 1/1, KELURAHAN DESA BANGUN REJO, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70005457",
+    "name": "TK FARAZ CERIA",
+    "location": "DUSUN WONOREJO KELURAHAN DESA BANGUN REJO, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70053576",
+    "name": "TK MELATI",
+    "location": "DESA SUKAMAJU KECAMATAN PUNDUH PEDADA, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69788805",
+    "name": "AL MA ARIF",
+    "location": "Jl. Pramuka, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807927",
+    "name": "AL-AZAHRA",
+    "location": "KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779731",
+    "name": "ALMUTTAQIN",
+    "location": "Jln.Raya Kedondong Gunung Sugih, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780857",
+    "name": "BUNDA AMAR",
+    "location": "NABANG SARI, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784950",
+    "name": "BUNDA HIDAYAH",
+    "location": "KALI DUREN, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69974860",
+    "name": "KB AL HAFIZDOH",
+    "location": "DUSUN TANJUNG JATI RT008 RW009 KELURAHAN DESA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939232",
+    "name": "KB MAWAR",
+    "location": "PTPN VII AFDELLING III PE5 DESA PESAWARAN, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807929",
+    "name": "KB MIFTAKHUL KHAIR",
+    "location": "KADUPANDAK, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779752",
+    "name": "MUARA IBU",
+    "location": "KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782118",
+    "name": "NURUL YAQIN",
+    "location": "SINAR HARAPAN, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939233",
+    "name": "PAUD AL ABDALA",
+    "location": "DESA TEBA JAWA, Tebajawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69990927",
+    "name": "PAUD AL-MAHIR",
+    "location": "DESA SUKAMAJU KEC. KEDONDONG, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69938789",
+    "name": "PAUD MANGKU BANDAKH",
+    "location": "SUNGAI DUA DESA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69933321",
+    "name": "PAUD MUTIARA KASIH",
+    "location": "JL. HI ALFIAN DESA PASAR BARU, Pasar Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939230",
+    "name": "PAUD TUNAS BANGSA",
+    "location": "TALANG BARU RT04 RW02 DESA BABAKAN LOA, Babakan Loa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70027270",
+    "name": "RA AL FURQON KURIPAN",
+    "location": "Jalan Kuripan RT 006 RW 003, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732004",
+    "name": "RA AL HIDAYAH",
+    "location": "Pesawaran, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70027597",
+    "name": "RA AL MUHTARAM",
+    "location": "Jalan H. Aliyuddin Gg. MTsN Kedondong Dusun Kuta Batu, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897679",
+    "name": "RA INSAN AL-KAMIL",
+    "location": "Jalan Raya Kedondong, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732008",
+    "name": "RA MA TEMPELREJO",
+    "location": "Tempel Rejo, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732009",
+    "name": "RA MANBAUL HUDA",
+    "location": "Tempel Rejo, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897680",
+    "name": "RA MIFTAHUL KHAIR",
+    "location": "Jalan Kertasana Kadupandak, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732011",
+    "name": "RA NURUL HIKMAH",
+    "location": "RT.017/RW.004 Desa Pesawaran, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732012",
+    "name": "RA QURROTA AYUN",
+    "location": "Kedondong, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779790",
+    "name": "SABILA",
+    "location": "KERTASANA, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782117",
+    "name": "SEANDANAN",
+    "location": "SINAR HARAPAN, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782141",
+    "name": "TAPAS ANUGRAH",
+    "location": "JLN RAYA KEDONDONG, Waykepayang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70041445",
+    "name": "TK AL MAHIR",
+    "location": "Jln.Way Ratai Desa Suka Maju, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939661",
+    "name": "TK ANNISA",
+    "location": "KEAGUNGAN DESA SINAR HARAPAN, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921055",
+    "name": "TK DHARMA WANITA",
+    "location": "JL. TRITURA PASAR BARU, Pasar Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781620",
+    "name": "TK HARAPAN KITA",
+    "location": "JLN. PTPN AFD III, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932782",
+    "name": "TK JAYA MUSTIKA",
+    "location": "JL. H. ALIUDIN NO.7 DESA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69991067",
+    "name": "TK MANGKU BANDAKH",
+    "location": "DESA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939231",
+    "name": "TK MARUYAH",
+    "location": "JL. WAY RATAI PELINDUKAN DESA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921050",
+    "name": "TK MATHLAUL ANWAR KEDONDONG",
+    "location": "JL. POS DAN GIRO SUKARAME DESA PASAR BARU, Pasar Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69933328",
+    "name": "TK PANJI BANGSA",
+    "location": "JL. RAYA KEDONDONG DESA GUNUNG SUGIH, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69930607",
+    "name": "TK SABIHI",
+    "location": "TK SABIHI, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779798",
+    "name": "AL-AZHAR",
+    "location": "DUSUN TANJUNG RAHAYU, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779815",
+    "name": "AL-IKHLAS",
+    "location": "PADANG MANIS, Padang Manis",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779795",
+    "name": "AZ-ZUMAR",
+    "location": "SUGIWARAS, Banjar Negeri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780810",
+    "name": "CEMPAKA",
+    "location": "GEDUNG DALOM, Gedung Dalam",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780821",
+    "name": "DAHLIA",
+    "location": "GUNUNG TANJUNG, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69976594",
+    "name": "KB MULYA",
+    "location": "DUSUN TANJUNG LOM KELURAHAN DESA PEKONDOH GEDUNG, Pekondoh Gedung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807945",
+    "name": "MAWAR",
+    "location": "pekondoh, Pekondoh Gedung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779794",
+    "name": "MUNYAI",
+    "location": "BATURAJA, Baturaja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779818",
+    "name": "NURUL HIDAYAH",
+    "location": "PAGUYUBAN, Paguyuban",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779823",
+    "name": "NURUL IMAN",
+    "location": "SINDANG GARUT, Sindang Garut",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784615",
+    "name": "NURUL QOLBI",
+    "location": "JLN.RAYA KEDONDONG, Kotadalam",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779800",
+    "name": "NURUL YAQIN",
+    "location": "SUKAMANDI, Sukamandi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69920217",
+    "name": "PAUD AL IMAN",
+    "location": "DUSUN SIDOMULYO DESA MARGODADI, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939109",
+    "name": "PAUD AL KAUTSAR",
+    "location": "SIMPANG GUNUNG KASO DESA WAY HARONG, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921054",
+    "name": "PAUD CERIA",
+    "location": "JL. RAYA KEDONDONG , DESA BANJAR NEGERI, Banjar Negeri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69920214",
+    "name": "PAUD INSAN KHAMIL",
+    "location": "WAY MATI, Pekondoh",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70057074",
+    "name": "PAUD KARTA",
+    "location": "DUSUN WAY LAGA DESA BANJAR NEGERI, Banjar Negeri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69920218",
+    "name": "PAUD NURUL ISLAM",
+    "location": "JL. KARTINI DESA WAY HARONG, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807947",
+    "name": "PAUD SATU ATAP MARGODADI",
+    "location": "PTP X MARGODADI, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917945",
+    "name": "PAUD SEHATI",
+    "location": "JL. RAYA SIDODADI, DESA SIDODADI, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69978757",
+    "name": "PAUD SEHATI II",
+    "location": "DESA SIDODADI, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779820",
+    "name": "PKK HANDAYANI",
+    "location": "GUNUNG REJO, Gunungrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732046",
+    "name": "RA  AL HIKMAH",
+    "location": "Gunung Kaso, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897683",
+    "name": "RA  AT TAQWA",
+    "location": "Jalan PTPN VII, Sukamandi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732047",
+    "name": "RA MATHLAUL ANWAR",
+    "location": "Margodadi, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779799",
+    "name": "TELADAN",
+    "location": "JLN.RAYA KEDONDONG,PEKONDOH, Pekondoh",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70029638",
+    "name": "TK AL BASRI",
+    "location": "DESA GUNUNG REJO KECAMATAN WAY LIMA, Gunungrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781860",
+    "name": "TK AL-FALAH",
+    "location": "BANJAR NEGERI, Banjar Negeri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781866",
+    "name": "TK ANDALAN BINA CENDIKIA",
+    "location": "JALAN RAYA KEDONDONG, Padang Manis",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781856",
+    "name": "TK ANDAN JEJAMA",
+    "location": "KEDONDONG, Cimanuk",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917944",
+    "name": "TK ARRAHMAN",
+    "location": "JL. RAYA CONDONG SARI, DESA SINDANG GARUT, Sindang Garut",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69920219",
+    "name": "TK CAHAYA",
+    "location": "JL. RAYA PANGUYUBAN KECAMATAN WAY LIMA, Paguyuban",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69973927",
+    "name": "TK IT DARUL AMANAH",
+    "location": "DESA SIDODADI KEC. WAY LIMA, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917939",
+    "name": "TK NAINI AT-TAQWA",
+    "location": "JL. RAYA SIDODADI, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70054787",
+    "name": "TK NAJA BELEZA",
+    "location": "DESA SIDODADI KEC. WAY LIMA KAB.PESAWARAN, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768915",
+    "name": "TK PGRI WAY AWI",
+    "location": "JALAN KRAMAT RAYA, Kotadalam",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917943",
+    "name": "TK TUNAS HARAPAN",
+    "location": "JL. RAYA BATURAJA, DESA BATURAJA, Baturaja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780829",
+    "name": "AL FATHIR",
+    "location": "DUSUN KEJADIAN, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784349",
+    "name": "AL ISHLAH",
+    "location": "WIYONO, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779584",
+    "name": "AL-MUTTAQIN",
+    "location": "SUKADADI, Sukadadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775858",
+    "name": "ANNUR",
+    "location": "GEDONG TATAAN, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784468",
+    "name": "ANNUR",
+    "location": "JLN. RAYA BRANTI RAYA KRANG ANYAR, Karang Anyar",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784554",
+    "name": "AULIYA AKBAR",
+    "location": "JL.PERWIRA, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780826",
+    "name": "BINTANG KECIL",
+    "location": "JL. MATA AIR KM.12, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775849",
+    "name": "BINTANG KEJORA",
+    "location": "SUNGAI LANGKA, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784374",
+    "name": "BUNGA KRISMA",
+    "location": "PRAMUKA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775853",
+    "name": "CEMPAKA",
+    "location": "GEDONG TATAAN, Tamansari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784609",
+    "name": "HARAPAN BUNDA",
+    "location": "DHARMO WIYONO, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784606",
+    "name": "HARAPAN BUNDA",
+    "location": "DUSUN CITEMEN, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70038804",
+    "name": "KB AL BASITH",
+    "location": "JL. A. YANI KOMPLEKS PASAR DESA WIYONO KECAMATAN GEDONG TATAAN KABUPATEN PESAWAR, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917910",
+    "name": "KB BUNGA PANDAN",
+    "location": "PADANG TERANG, Padang Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917898",
+    "name": "KB CEMPAKA",
+    "location": "JL. BHAYANGKARA , DESA BAGELEN V, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69964555",
+    "name": "KB GUNUNG BATU",
+    "location": "Desa pampangan, Pampangan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70042385",
+    "name": "KB KARANG TARUNA",
+    "location": "JL. MATA AIR DUSUN UMBUL PALEM DESA KURUNGAN NYAWA KECAMATAN GEDUNG TATAAN KABUP, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807936",
+    "name": "KB MAWAR",
+    "location": "RAYA KEDONDONG, Pampangan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70056658",
+    "name": "KB MUTIARA HATI BUNDA",
+    "location": "PERUMAHAN PESAWARAN RESIDENCE CLUSTER PLAMBOYAN DESA NEGERI SAKTI KECAMATAN GEDO, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70039639",
+    "name": "KB RUMAH BELAJAR ISLAMI",
+    "location": "JL. Airlangga 4 Dusun 02 Desa Bogorejo Kecamatan Gedong Tataan Kabupaten Pesawar, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917895",
+    "name": "KB SEKAR WANGI",
+    "location": "JL. PRAMUKA DESA SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807937",
+    "name": "KENANGA",
+    "location": "TANJUNG GUNUNG, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780830",
+    "name": "KENARI",
+    "location": "JLN.GELORA KUTOARJO, Kutoarjo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780831",
+    "name": "MAWAR PUTIH",
+    "location": "SUMBER SARI, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779586",
+    "name": "MELATI",
+    "location": "JLN.PTPN VII WAY LIMA, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807933",
+    "name": "MUTIARA",
+    "location": "A.YANI GEDONG TATAAN, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780827",
+    "name": "MUTIARA INDAH",
+    "location": "JLN. BRANTI RAYA KARANG ANYAR, Karang Anyar",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782390",
+    "name": "NASHIHUSH SHOLIHIN",
+    "location": "DESA BAGELEN, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775932",
+    "name": "NUSA INDAH",
+    "location": "CIPADANG, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921742",
+    "name": "PAUD AISYIYAH BUSTANUL ATHFAL (ABA) 1",
+    "location": "SUKADADI VII, Sukadadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70003210",
+    "name": "PAUD AL KAUTSAR",
+    "location": "PERUMNAS SUKARAJA INDAH BLOK J NO.16 DESA SUKARAJA IV, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917911",
+    "name": "PAUD ANANDA",
+    "location": "JL. SENTANA KUTOARJO, DESA KUTOARJO, Kutoarjo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917914",
+    "name": "PAUD BAITUL ILMI",
+    "location": "DUSUN SUKAJAYA, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69988330",
+    "name": "PAUD CAHAYA BUNDA",
+    "location": "DESA BERNUNG KECAMATAN GEDUNG TATAAN, Bernung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921052",
+    "name": "PAUD CAHAYA INSANI",
+    "location": "JL. BHAYANGKARA , DESA BAGELEN V, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69990799",
+    "name": "PAUD CEMARA",
+    "location": "DESA WAY LAYAP KECAMATAN GEDUNG TATAAN, Waylayap",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69988925",
+    "name": "PAUD DAMAI BERSERI",
+    "location": "DUSUN SUKADAMAI DESA POAMPANGAN, Pampangan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917899",
+    "name": "PAUD INSAN KAMIL",
+    "location": "JL. BHAYANGKARA , DESA BAGELEN V, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69980789",
+    "name": "PAUD KHAIRA",
+    "location": "JL. A. YANI KOMPLEK PLN, DUSUN KUDA MATI RT 001 RW 006, KELURAHAN DESA GEDUNG TA, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807930",
+    "name": "PAUD MAWAR",
+    "location": "JLN.SRIYONO BOGOREJO, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69922242",
+    "name": "PAUD MAWAR INDAH",
+    "location": "WAY HUI DESA WIYONO, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69988430",
+    "name": "PAUD NEGERI PERCONTOHAN",
+    "location": "JL. COKRO SUWARNO LAPANGAN MERAH SUKARAJA IV, KELURAHAN DESA SUKARAJA, Sukaraja",
+    "status": "NEGERI",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69980790",
+    "name": "PAUD WARKOP",
+    "location": "KOMPLEK PERUMAHAN WARKOP KELURAHAN DESA SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775857",
+    "name": "PELANGI",
+    "location": "IMAM BONJOL, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69975983",
+    "name": "RA AL IRSYAD",
+    "location": "Dusun Taman Rejo, Bernung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732001",
+    "name": "RA ASH SHIDDIQIYAH",
+    "location": "Jalan Tamtama Gang Pesantren No.96, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940904",
+    "name": "RA DAARUL QULUUB",
+    "location": "Jalan Dusun x Markasi, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732002",
+    "name": "RA DINIYYAH PUTRI",
+    "location": "Jalan Raya Negeri Sakti, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897678",
+    "name": "RA DZURIYATUNA",
+    "location": "Jalan  A. Yani, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897682",
+    "name": "RA MAHMUDAH",
+    "location": "Jalan Dusun Bernung 1 RT 03 RW 01, Bernung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775938",
+    "name": "SEKAR INDAH",
+    "location": "GEDONG TATAAN, Bernung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70056720",
+    "name": "TAMAN KANAK-KANAK ISLAM AL-QUDDUS",
+    "location": "JL. BATIN SERIBU DUSUN BANJAR NEGERI KECAMATAN GEDONG TATAAN KABUPATEN PESAWARAN, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775860",
+    "name": "TERATAI",
+    "location": "BANGUN HARJO, Tamansari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69945913",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL II (ABA II)",
+    "location": "JL. PDAM DUSUN SUKARAJA VI DESA SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921049",
+    "name": "TK AL IMAN",
+    "location": "JL. AHMAD YANI DESA TAMAN SARI, Tamansari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70053636",
+    "name": "TK AL-FATTAH",
+    "location": "DUSUN CIWANGI DESA CIPADANG KECAMATAN GEDONG TATAAN, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939666",
+    "name": "TK AN - NIDA",
+    "location": "DESA SUNGAI LANGKA, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939668",
+    "name": "TK AR - RAHMAH",
+    "location": "DESA NEGERI SAKTI, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70003633",
+    "name": "TK AR RASYID",
+    "location": "DESA BOGOREJO KEC. GEDONG TATAAN, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70025757",
+    "name": "TK BABUNNAJAH",
+    "location": "Jl.Sukma Hilang, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781347",
+    "name": "TK BHAKTI KESUMA",
+    "location": "JLN DALOM KESUMA RATU, Sukabanjar",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939672",
+    "name": "TK BUNGA MELATI",
+    "location": "DESA SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70053654",
+    "name": "TK CEMPAKA HIJAU",
+    "location": "DESA TAMAN SARI KECAMATAN GEDONG TATAAN, Tamansari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939678",
+    "name": "TK CERIA",
+    "location": "DESA SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781755",
+    "name": "TK DARMA WANITA BAGELEN",
+    "location": "JALAN TAMTAMA BAGELEN, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768921",
+    "name": "TK DARMA WANITA WIYONO",
+    "location": "RAYA PASAR WIYONO, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768918",
+    "name": "TK DARMAWANITA",
+    "location": "KARANG ANYAR, Karang Anyar",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768922",
+    "name": "TK DARMAWANITA SUNGAI LANGKA",
+    "location": "SUKMO HILANG, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70014022",
+    "name": "TK DARUSSALAM AL RIZKY",
+    "location": "JL.BRANTI RAYA, DESA GEDONG TATAAN, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784217",
+    "name": "TK DHARMA ANANDA",
+    "location": "JL. PTP N VII WAY LIMA, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921745",
+    "name": "TK DHARMA WANITA SUKADADI",
+    "location": "MANUNGGAL, Sukadadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781315",
+    "name": "TK HARAPAN KITA IKI PTPN",
+    "location": "KOMPLEK PTPN VII WAY LIMA, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781814",
+    "name": "TK IKI PTPN VII WAY BERULU",
+    "location": "PTPN WAY BERULU, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70059895",
+    "name": "TK INSAN MADINA",
+    "location": "PERUM QUEEN RESIDENCE II BLOK H KEC. GEDONG TATAAN, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70002129",
+    "name": "TK ISLAM AR - RAHMAN",
+    "location": "JL. SRIMULYO GG. ASEM KELURAHAN DESA NEGERI SAKTI, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69983701",
+    "name": "TK ISLAM TERPADU BAITUL INSAN",
+    "location": "DESA KURUNGAN NYAWA, KEC. GEDONG TATAAN, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70038410",
+    "name": "TK IT AL-KAUTSAR",
+    "location": "Jalan Raya Kedondong Desa Way Layap Binong Kabupaten Pesawaran, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70002275",
+    "name": "TK IT HUSNUL KHOTIMAH",
+    "location": "JL. ASIKIN II DUSUN MARGOREJO II DESA KURUNGAN NYAWA, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69917402",
+    "name": "TK IT IQRO",
+    "location": "SUKARAJA V, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69990517",
+    "name": "TK IT RAIHANAH",
+    "location": "DESA BERNUNG KECAMATAN GEDUNG TATAAN, Bernung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69974859",
+    "name": "TK KASIH BUNDA",
+    "location": "DESA PADANG RATU RT 001 RW 002, Padang Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939673",
+    "name": "TK KURNIA BUNDA",
+    "location": "DESA CIPADANG, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781832",
+    "name": "TK LITTLE EAGLE",
+    "location": "JL. RAYA PENENGAHAN, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939671",
+    "name": "TK MULIA",
+    "location": "DESA KUTOARJO, Kutoarjo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "10814497",
+    "name": "TK NEGERI PEMBINA",
+    "location": "JL. RAYA PENENGAHAN, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781712",
+    "name": "TK NURUL IMAN",
+    "location": "SUKARAJA, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939674",
+    "name": "TK RAUDHOTUL MUTTAQIN",
+    "location": "DESA SUKADADI, Sukadadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69949186",
+    "name": "TK RUMAH PINTAR",
+    "location": "JL. Raya Kedondong, Way Layap, Waylayap",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70041734",
+    "name": "TK SHAKILA",
+    "location": "JL. LAJOKHAN BATHIN DUSUN NEGERI AMPAI DESA NEGERI SAKTI, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781760",
+    "name": "TK TAMAN SISWA",
+    "location": "JALAN AHMAD YANI GEDONG TATAAN, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781754",
+    "name": "TK TUNAS BANGSA",
+    "location": "JALAN SURO AMIJOYO KAMPUNG SAWAH, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69950596",
+    "name": "TK TUNAS CENDIKIA",
+    "location": "Jl. Imam Bonjol, Desa Kurungan Nyawa, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70045958",
+    "name": "TKIT ANAK CERDAS 2",
+    "location": "Jl. Baru Dusun Gedong Dalom RT.002 RW.01, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69775939",
+    "name": "TUNAS BANGSA",
+    "location": "JL.A.YANI, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784261",
+    "name": "AL-IKHLAS",
+    "location": "BRANTI RAYA, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779710",
+    "name": "HARAPAN BANGSA",
+    "location": "NEGARA SAKA, Negarasaka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779712",
+    "name": "HARAPAN BUNDA",
+    "location": "PEJAMBON, Pejambon",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784360",
+    "name": "KASIH BUNDA",
+    "location": "ADI MULYO I, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70030335",
+    "name": "KB ASA AL-BARKATI",
+    "location": "Jl. Jambu Batu RT 003,RW 001 Kecamatan Negeri Katon Pesawaran, Pujorahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70010023",
+    "name": "KB BUNDA KURNIA",
+    "location": "Desa Negeri Katon, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779720",
+    "name": "MIFTAHUL JANNAH",
+    "location": "Jl. Raya Bangun sari, Bangun Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70061219",
+    "name": "Nava Dhammasekha Widya Dhamma",
+    "location": "Jalan Srinusabangsa Timur, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69945914",
+    "name": "PAUD AR-RAHMAN",
+    "location": "DUSUN KAMULYAN DESA KALIREJO, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69992730",
+    "name": "PAUD IT ARIFAH",
+    "location": "DESA KARANG REJO, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807952",
+    "name": "PAUD RESTU ILAHI",
+    "location": "GURUH NANGI, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932711",
+    "name": "PAUD TUNAS HARAPAN",
+    "location": "DUSUN SINAR BARU DESA NEGARA SAKA, Negarasaka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932712",
+    "name": "PAUD TUNAS MANDIRI",
+    "location": "JL. RAYA BRANTI DESA KALI REJO II, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807953",
+    "name": "PEMBINA",
+    "location": "JLN.TRIRAHAYU, Tri Rahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732020",
+    "name": "RA  MAARIF III",
+    "location": "Sinar Bandung, Sinarbandung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732021",
+    "name": "RA  MAARIF VI",
+    "location": "Wonosari II, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732022",
+    "name": "RA  MAARIF VII",
+    "location": "Tresno Maju, Trisno Maju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940905",
+    "name": "RA  MAARIF XI",
+    "location": "Srinusa Bangsa, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732015",
+    "name": "RA AL HIDAYAH",
+    "location": "Negarasaka, Negarasaka",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732016",
+    "name": "RA AL HIDAYAH",
+    "location": "Lumbirejo, Lumbi Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732017",
+    "name": "RA AL IMRON",
+    "location": "Pejambon, Pejambon",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732018",
+    "name": "RA FATHUL ULUM",
+    "location": "Negerikaton, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732019",
+    "name": "RA ISLAMIYAH",
+    "location": "Sidomulyo, Sidomulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732023",
+    "name": "RA MAARIF VIII",
+    "location": "Kota Baru Selatan, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70027913",
+    "name": "RA MAMBA`UL HUSNA",
+    "location": "Jalan Lapangan Mutiara Trirahayu RT 07 RW 04, Tri Rahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732024",
+    "name": "RA MIFTAHUL FALAH",
+    "location": "Roworejo, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732025",
+    "name": "RA MIFTAHUL HUDA",
+    "location": "Karangrejo, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732026",
+    "name": "RA MIFTAHUL JANNAH",
+    "location": "Bangun Sari, Bangun Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732027",
+    "name": "RA NURUL HIDAYAH",
+    "location": "Roworejo, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807942",
+    "name": "SUKAMAJU",
+    "location": "SRI MULYO, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781716",
+    "name": "TK ABA BANGUN SARI",
+    "location": "BANGUN SARI, Bangun Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69783760",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL",
+    "location": "SIDOREJO,TRISNOMAJU, Trisno Maju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781726",
+    "name": "TK AL - HIDAYAH",
+    "location": "JALAN SINAR BANDUNG, Sinarbandung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69949640",
+    "name": "TK AL FATTEH",
+    "location": "Jl. Sidomulyo, Negri Katon, Pesawaran, Sidomulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781780",
+    "name": "TK AN NUR TANJUNG REJO",
+    "location": "JALAN RAYA DESA TANJUNG REJO, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69942574",
+    "name": "TK ANGKASA",
+    "location": "DESA TANJUNG REJO, Pujorahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69942573",
+    "name": "TK ASA AL-BARKATI",
+    "location": "JL. RAYA PUJO RAHAYU, DESA PUJORAHAYU, Pujorahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70039485",
+    "name": "TK AZ-ZAHRA",
+    "location": "Jl. Puniakan Dalam, Dusun Way Ratay, Negeri Ulangan Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69930609",
+    "name": "TK BINA PERTIWI",
+    "location": "JL. RAYA BRANTI DESA PEJAMBON, Pejambon",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781788",
+    "name": "TK BUDI MULYA",
+    "location": "JALAN TERUSAN BRANTI RAYA KM.6, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69921747",
+    "name": "TK BUNDA RAHAYU",
+    "location": "JL. RAYA DESA PUJO RAHAYU, Pujorahayu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69957376",
+    "name": "TK CAHAYA GEMILANG",
+    "location": "Jl. Raya Lumbrejo, Lumbi Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940036",
+    "name": "TK CINTA BACA",
+    "location": "JL. RAYA BRANTI DESA NEGERI KATUN, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69938021",
+    "name": "TK DHARMA WANITA",
+    "location": "LUMBIREJO 1, DESA LUMBIREJO, Lumbi Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781619",
+    "name": "TK GOTONG ROYONG",
+    "location": "Jalan Sastro Miharjo Rt 12 Rw 04, Purworejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781656",
+    "name": "TK HARAPAN BANGSA",
+    "location": "JALAN RAYA DESA TRISNO MAJU, Trisno Maju",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781653",
+    "name": "TK HARUM SARI",
+    "location": "TERUSAN PTPN VII, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70030237",
+    "name": "TK ISLAM TERPADU AL-HAADII",
+    "location": "Jl. PTPN VII Way Berulu Dusun Simbaretno, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70048705",
+    "name": "TK IT ABAYAZID AL KATTANI",
+    "location": "Karang rejo Kecamatan Negeri katon Pesawaran, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70049131",
+    "name": "TK IT NURUL HUDA",
+    "location": "DESA NEGERI KATON, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70049518",
+    "name": "TK IT SHOFA MARWAH",
+    "location": "Desa Tanjung Rejo, Kec. Negeri Katon, Kabupaten Pesawaran, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940719",
+    "name": "TK KASIH BUNDA",
+    "location": "DUDUN ADI MULYO 1 DESA KALI REJO, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940040",
+    "name": "TK NURUL IMAN",
+    "location": "DESA PURWOREJO, Purworejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768924",
+    "name": "TK SATU ATAP SDN 3 TANJUNG REJO",
+    "location": "JALAN PTP NUSANTARA VII WAY BERULU, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781618",
+    "name": "TK SIILANDA PURI",
+    "location": "PUJODADI TIMUR PONCO KRESNO, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781708",
+    "name": "TK SRI KANDI",
+    "location": "PONCOKRESNO, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69986470",
+    "name": "TK SUKA MAJU",
+    "location": "DESA NEGERI KATON KECAMATAN NEGERI KATON, Negerikatun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69982329",
+    "name": "TK SUKA RAHAYU",
+    "location": "Karang Rejo kec. negeri katon kab pesawaran, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69990519",
+    "name": "TK TARBIYATUL ATHFAL",
+    "location": "DESA TANJUNG REJO KECAMATAN NEGERI KATON, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782130",
+    "name": "TUNAS HARAPAN",
+    "location": "BRANTI RAYA, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779715",
+    "name": "YUDHA PUTRA",
+    "location": "TUGU SARI, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779830",
+    "name": "ANANDA BODHI",
+    "location": "MARGO DADI, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779839",
+    "name": "ANNISA",
+    "location": "BUMI AGUNG, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779833",
+    "name": "ASRI",
+    "location": "KRESNI WIDODO, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779838",
+    "name": "BHAKTI IBU",
+    "location": "REJO AGUNG, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779828",
+    "name": "DWI ASRI",
+    "location": "MARGO REJO, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784364",
+    "name": "HIKMAH",
+    "location": "OGAN DUA, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70049520",
+    "name": "KB NURUL FUAD SRIWEDARI",
+    "location": "Desa Sriwedari Kecamatan Tegineneng, Kabupaten Pesawaran, SRIWEDARI",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69962929",
+    "name": "KB SRIWUNGU",
+    "location": "DESA SRIWERDARI, SRIWEDARI",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69788809",
+    "name": "MA ARIF I",
+    "location": "Tri Mulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69788810",
+    "name": "MA ARIF IV",
+    "location": "JAT HARJO, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69788808",
+    "name": "MA ARIF V",
+    "location": "Tri Mulyo, Kejadian",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779840",
+    "name": "MELATI",
+    "location": "PANCA BAKTI, Panca Bakti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779836",
+    "name": "MINHADLUL ULUM",
+    "location": "JLN.CENDANA SARI, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926457",
+    "name": "PAUD AN-NAML",
+    "location": "KRESNO KRAJAN DESA KRESNO WIDODO, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939818",
+    "name": "PAUD BUNDA KASIH",
+    "location": "JL. LINTAS SUMATERA DESA GUNUNG SUGIH BARU, Gunung Sugih Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939819",
+    "name": "PAUD HARAPAN KITA",
+    "location": "ENGGAL MULYO GEDUNG GUMANTI, DESA GEDUNG GUMANTI, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926458",
+    "name": "PAUD HIKMAH JAYA",
+    "location": "MARGO MULYO, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926438",
+    "name": "PAUD IQMA JAYA",
+    "location": "SIMPANG METRO, GANG PANJI KESUMA 1, DESA BUMI AGUNG, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926460",
+    "name": "PAUD KARTINI",
+    "location": "MARGODADI DESA GEDUNG GUMANTI, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939932",
+    "name": "PAUD MA ARIF X",
+    "location": "DUSUN PANGGUNG ASRI, DESA MARGO REJO, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70000946",
+    "name": "PAUD NURUL ILMI",
+    "location": "DESA BUMI AGUNG KEC TEGINENENG, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69987908",
+    "name": "PAUD NURUL IMAN REJO AGUNG",
+    "location": "Purworejo, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926461",
+    "name": "PAUD PELITA",
+    "location": "DUSUN 3 RAJA BUNGSU, DESA BATANG HARI OGAN, Batang Hari Ogan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779826",
+    "name": "PERINTIS",
+    "location": "MARGO MULYO, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784692",
+    "name": "PRATAMA",
+    "location": "SINARJATI, Sinar Jati",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732040",
+    "name": "RA  MAARIF II",
+    "location": "Ogan 1, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732039",
+    "name": "RA MAARIF I",
+    "location": "Trimulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732041",
+    "name": "RA MAARIF IV",
+    "location": "Jati Harjo, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732042",
+    "name": "RA MAARIF V",
+    "location": "Dusun Simpang IV, Kejadian",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732043",
+    "name": "RA MINHADLUL ULUM",
+    "location": "Trimluyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732044",
+    "name": "RA MUSLIMAT NU",
+    "location": "Srimulyo, Gerning",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732045",
+    "name": "RA NURUL IMAN REJO AGUNG",
+    "location": "Rejo Agung, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779835",
+    "name": "ROUDHATUL ULUM",
+    "location": "MASGAR BUMI AGUNG, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70061195",
+    "name": "TAMAN KANAK - KANAK HARAPAN KITA",
+    "location": "Jalan Simpang Trimulyo Dusun Enggal mulyo RT 001/ RW 001 Desa gedung gumanti Kec, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70061496",
+    "name": "TAMAN KANAK - KANAK IQMA JAYA",
+    "location": "Jl. Simpang Metro Gang Pandji Kesuma 1 Dusun Sri Agung RT 011/ RW 006 Desa Bumi, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70061468",
+    "name": "TAMAN KANAK - KANAK WINDU ELEGAN",
+    "location": "Jalan Simpang Masgar, Dusun Windu Mulyo RT 010/ RW 003 Desa Margomulyo Kecamatan, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781848",
+    "name": "TK 171 MARGOMULYO",
+    "location": "JL.SIMPANG MASGAR, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926464",
+    "name": "TK ABA 3",
+    "location": "DUSUN KRESNO AJI, DESA KRESNO WIDODO, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768935",
+    "name": "TK ABA I TEGINENENG",
+    "location": "Jl. KH. Ahmad Dahlan No. 27 Desa Trimulyo, Kec. Tegineneng, Kab. Pesawaran, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781842",
+    "name": "TK ABA II TEGINENEG",
+    "location": "JALAN LINTAS SUMATRA KM.36, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69783676",
+    "name": "TK AISIYAH BUSTANUL ATHFAL (ABA) 4",
+    "location": "DUSUN KALANGAN 1, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781800",
+    "name": "TK AN NUR",
+    "location": "KALANGAN II REJO AGUNG, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "10814474",
+    "name": "TK CATHARINA KRESNO WIDODO",
+    "location": "JL. DESA KRESNO WIDODO, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926466",
+    "name": "TK DARSA BAKTI",
+    "location": "JL. SIMPANG MASGAR 3000M, DESA MARGO MULYO, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "10814476",
+    "name": "TK DARUTTAUHID TITIPASAN",
+    "location": "Jl. Simpang Masgar Desa Bumi Agung Kecamatan Tegineneng Kabupaten Pesawaran, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69783683",
+    "name": "TK DHARMA WANITA BBIP",
+    "location": "LINTAS SUMATRA, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70033210",
+    "name": "TK DWI MULYA",
+    "location": "DUSUN BERNAI RT 004 RW 002 DESA KOTA AGUNG KEC. TEGINENENG KAB. PESAWARAN, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69926468",
+    "name": "TK HARAPAN",
+    "location": "JL. RAYA BATANG HARI OGAN, Batang Hari Ogan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70053492",
+    "name": "TK HIKMAH 1",
+    "location": "DESA KRESNO WIDODO, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70037908",
+    "name": "TK IT RIYADHUL MUBTADIIN",
+    "location": "Dusun Bangun Jaya 1 Desa Gerning Kecamatan Tegineneng Kabupaten Pesawaran, Gerning",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70059414",
+    "name": "TK KARTINI",
+    "location": "Dusun Margodadi, RT 002 /RW 002 Desa Gedung Gumanti Kecamatan Tegineneng Kabupat, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "10814501",
+    "name": "TK NURUL FUAD SRIWEDARI",
+    "location": "JL. DESA SRIWEDARI, SRIWEDARI",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69973930",
+    "name": "TK PERDANA",
+    "location": "DESA REJO AGUNG, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781659",
+    "name": "TK QOMARUL HIDAYAH",
+    "location": "MARGOREJO, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70030457",
+    "name": "TK TAHFIDZ MODERN AR RAHMAN",
+    "location": "Jl. SUTTAN SAKTI RT 010 RW 005 DUSUN WONOREJO DESA TRIMULYO, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69754003",
+    "name": "TKS PRATAMA",
+    "location": "SINAR JATI TEGINENENG, Sinar Jati",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779827",
+    "name": "TUNAS BANGSA",
+    "location": "MARGO REJO, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807949",
+    "name": "WARRAHMAH",
+    "location": "JANUR KUNING, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69783917",
+    "name": "KB KULINTANG",
+    "location": "DESA MAJA, Maja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779721",
+    "name": "KB MELATI SUKAJAYA",
+    "location": "DUSUN PEMATANG AWI RT/RW 1/3 , KELURAHAN DESA SUKAJAYA PUNDUH, Sukajaya Punduh",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779724",
+    "name": "KB MUTIARA",
+    "location": "PELABUHAN KETAPANG DUSUN PAHAWANG RT/RW 1/5 , KELURAHAN DESA PULAU PAHAWANG,, Pulau Pahawang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768785",
+    "name": "KB QURROTA AYUN",
+    "location": "DUSUN KAMPUNG BARU INDUK RT/RW 1/1, KELURAHAN DESA KAMPUNG BARU, Kampung Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932710",
+    "name": "PAUD ALISHA",
+    "location": "PEMATANG AWI RT002 RW003 DESA SUKAJAYA PUNDUH, Sukajaya Punduh",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932704",
+    "name": "PAUD BAKTI IBU",
+    "location": "DESA PENYANDINGAN, Penyandingan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69939108",
+    "name": "PAUD CAHAYA",
+    "location": "DUSUN MAJA INDUK DESA MAJA, Maja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932709",
+    "name": "PAUD CINTA BUNDA",
+    "location": "JL. DESA UMBUL LIMUS, Umbul Limus",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69932703",
+    "name": "PAUD KASIH IBU",
+    "location": "JL. RAYA DESA PEKON AMPAI, Pekon Ampai",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69725551",
+    "name": "TK AL-KHAIRIYAH KAMPUNG BARU",
+    "location": "DUSUN KAMPUNG BARU INDUK RT/RW 1/1,KELURAHAN DESA KAMPUNG BARU, Kampung Baru",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70033386",
+    "name": "TK ASIYIYAH BUSTANUL ATHFAL",
+    "location": "DESA KEKATANG,KECAMATAN MARGA PUNDUH, Kekatang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70051514",
+    "name": "TK BAKTI IBU PENYANDINGAN",
+    "location": "DESA PENYANDINGAN KECAMATAN MARGA PUNDUH, Penyandingan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781230",
+    "name": "TK Pedesaan MUTIARA BUNDA",
+    "location": "JLN.PASAR MAJA RT 001/ RW 001, Maja",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779788",
+    "name": "AL-ATHFAL",
+    "location": "JL. RAYA KEDONDONG, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807932",
+    "name": "KB ANDAN JEJAMA",
+    "location": "DUSUN KAGUNGAN RT/RW 1/1,KELURAHAN DESA KUBU BATU, Kec. Way Khilau, Kubu Batu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768806",
+    "name": "KB AZ-ZAHRA",
+    "location": "Dusun Bayas, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807957",
+    "name": "KB CAHAYA ILMU",
+    "location": "JL. RAYA TANJUNG KERTA, DUSUN 4 RT 003 RW 006 KELURAHAN DESA TANJUNG KERTA, Tanjung Kerta",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807944",
+    "name": "KILU ANDAN",
+    "location": "JL. RAYA TANJUNG KERTA, DESA TANJUNG KERTA, Tanjung Kerta",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780899",
+    "name": "NURUL IMAN",
+    "location": "JL. RAYA PENENGAHAN, Penengahan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780863",
+    "name": "PAUD AL BAROKAH",
+    "location": "DESA TANJUNG REJO, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69922766",
+    "name": "PAUD AL HUSNA",
+    "location": "JL. RAYA MADA JAYA NO 15, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940416",
+    "name": "PAUD AN-NIHAYAH",
+    "location": "BABAKAN LOA RT.020/RW.022, DESA KOTA JAWA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768807",
+    "name": "PAUD AS SYAADAH",
+    "location": "DESA PADANG CERMIN, JAYA  AGUNG, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807934",
+    "name": "PAUD AS-SYIFA",
+    "location": "Dusun Lebak Damar, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69930635",
+    "name": "PAUD BINA MULYA",
+    "location": "DESA PADANG CERMIN, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69949343",
+    "name": "PAUD CAHYA TAGAMA",
+    "location": "Jalan Penegahan, Way Khilau, Penengahan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70002619",
+    "name": "PAUD HARAPAN KITA",
+    "location": "DUSUN SINAR HARAPAN DESA PENENGAHAN, Penengahan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69980349",
+    "name": "PAUD SEANDANAN",
+    "location": "KELURAHAN DESA SUKAJAYA, Sukajaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732006",
+    "name": "RA ASSYAFIIYAH",
+    "location": "Dusun Mada Tengah, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69968101",
+    "name": "TK AL FAIZA",
+    "location": "JL. RAYA KUBU BATU, DUSUN KUBU BATU RT 004 RW 002 KELURAHAN DESA KUBU BATU, Kubu Batu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807946",
+    "name": "TK AL- ANWAR",
+    "location": "DUSUN TANJUNG REJO RT/RW 10/4, KELURAHAN DESA TANJUNG REJO, KEC. WAY KHILAU, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69930613",
+    "name": "TK AL-JAUHAROTUNNAQIYYAH",
+    "location": "MADA HILIR DESA MADA JAYA, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69945110",
+    "name": "TK AN-NAJAH",
+    "location": "JL. MADA JAYA NOMOR 25, RT 14 RW 07, DESA MADA JAYA, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807940",
+    "name": "TK CENDANA",
+    "location": "SINAR JAYA, Kubu Batu",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69961155",
+    "name": "TK HARAPAN BANGSA",
+    "location": "Tanjung Rejo, Way Khilau, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69956364",
+    "name": "TK IQRO",
+    "location": "Dusun III Rt/Rw 008/003, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807950",
+    "name": "TK KUSUMA SUKAJAYA",
+    "location": "SUKAJAYA WAY KHILAU, Sukajaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69973929",
+    "name": "TK LA-TANSA",
+    "location": "DUSUN KELAPA DUA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69922767",
+    "name": "TK MAISA",
+    "location": "JL. RAYA KOTA JAWA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69922769",
+    "name": "TK NURUL HIDAYAH",
+    "location": "JL. KESEHATAN NO. 05 DESA GUNUNG SARI, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780847",
+    "name": "TK TITIAN",
+    "location": "BABAKAN LOA, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940720",
+    "name": "TK TUNAS BANGSA",
+    "location": "PASAR GUNUNG SARI RT.008 RW.009, DESA GUNUNG SARI, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807939",
+    "name": "KB ANUGRAH",
+    "location": "Jl. Perintis Blok.YSM Gd. D, Cilimus",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69975479",
+    "name": "KB DAHLIA AL YUSUF",
+    "location": "DUSUN MUNCA RT002 RW002 KELURAHAN DESA MUNCA, Munca",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69780988",
+    "name": "KB KHOIRUNNAS",
+    "location": "JL. SOEPRAPTO, DUSUN A  RT/RW 2/2, KELURAHAN DESA HANURA, Hanura",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782414",
+    "name": "KB KUNTUM MEKAR",
+    "location": "JL.WATES WAY RATAI, DESA HURUN, Hurun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940086",
+    "name": "KB PELANGI",
+    "location": "DUSUN SUKA AGUNG RT 003 / RW 003, KELURAHAN DESA GEBANG, Gebang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779706",
+    "name": "KB PRATAMA MUDA",
+    "location": "SINAR BANTEN NO. 70, DESA SIDODADI, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784693",
+    "name": "PAUD AL KIROM",
+    "location": "JL.SINAR BARU, DUSUN SIDODADI I RT/RW 0/0, KELURAHAN DESA SIDODADI, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70004501",
+    "name": "PAUD CAHAYA ANUGRAH",
+    "location": "Desa Tanjung Agung Kec. Teluk Pandan, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69987898",
+    "name": "PAUD TRI MULYA",
+    "location": "DESA TALANG MULYA KECAMATAN TELUK PANDAN, Talang Mulya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732028",
+    "name": "RA AL IRSYAD",
+    "location": "Hanura, Hanura",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732030",
+    "name": "RA HIDAYATUL MUBTADIIN",
+    "location": "KALIGUHA,DESA PESAWARAN INDAH, KEC.WAY RATAI,KAB. PESAWARAN, PROV. LAMPUNG, Batu Menyan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70046001",
+    "name": "TK AL HIKMAH",
+    "location": "Jl BATIH TIHANG 1 KAMPUNG SAWAH  KOSAMBI RT 03 03, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782374",
+    "name": "TK ANNUR",
+    "location": "PERUM SUKAJAYA DARAT,KELURAHAN DESA SUKAJAYA LEMPASING, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70034750",
+    "name": "TK AZ – ZHORIF",
+    "location": "Jl. RE. Marthadinata Perum Pondok Indah Lestari No.123 Dusun Magan Desa Hurun, Hurun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69973928",
+    "name": "TK DHARMA KUSUMA JAYA",
+    "location": "DUSUN SUKABUMI II RT.002 RW.003 KELURAHAN DESA SUKAJAYA LEMPASING, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940066",
+    "name": "TK DHARMA WANITA HANURA",
+    "location": "DUSUN A, RT/RW 003/005, KELURAHAN DESA HANURA, Hanura",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69987860",
+    "name": "TK IT TUNAS MUDA CENDIKIA",
+    "location": "DESA HANURA KECAMATAN TELUK PANDAN, Hanura",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70049233",
+    "name": "TK MEIRA 2",
+    "location": "Jl. Minak Baca Perum. Graha Asri, Block. C/8 Teluk Pandan,Pesawaran, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940069",
+    "name": "TK MUTIARA",
+    "location": "JL. TELUK RATAI DUSUN GEBANG INDUK RT 003 / RW 001, DESA GEBANG, Gebang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69991821",
+    "name": "TK PERMATA BANGSA",
+    "location": "DESA BATU MENYAN KEC. TELUK PANDAN, Batu Menyan",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70039078",
+    "name": "TK Pesona Tadika",
+    "location": "Perumahan Melana  Blok H No. 38-39 RT 004, RW. 002, Desa Gebang Kecamatan Teluk, Gebang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69768911",
+    "name": "TK PURI HANDAYANI",
+    "location": "JL.RAYA WAY RATAI, DUSUN HURUN KELURAHAN DESA HURUN, Hurun",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69987855",
+    "name": "TKIT AR RAHMAN",
+    "location": "DESA HANURA KECAMATAN TELUK PANDAN, Hanura",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69974863",
+    "name": "KB ADZKYATUL ATHFAL",
+    "location": "DUSUN TANJUNG JAYA RT.001 RW.008, Sumber Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69974864",
+    "name": "KB AL-ANSHOR",
+    "location": "DUSUN UMBUL BARU KELURAHAN DESA SUMBER JAYA, Sumber Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70013987",
+    "name": "KB AYAADUL ATHFAL",
+    "location": "DESA SUMBER JAYA KECAMATAN WAY RATAI, Sumber Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781002",
+    "name": "KB LARAS HIDAYAH",
+    "location": "JL. RAYA WAY RATAI, DUSUN TAMAN SARI RT/RW 3/1,KELURAHAN DESA GUNUNG REJO, Mulyo Sari",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940084",
+    "name": "KB NURUL FATIH",
+    "location": "DUSUN MARGOREJO RT/RW 002/003, KELURAHAN DESA PESAWARAN INDAH, Pesawaran Indah",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69781008",
+    "name": "KB NURUL HUDA",
+    "location": "DUSUN CANDI SARI RT/RW 1/1, KELURAHAN DESA GUNUNG REJO, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779698",
+    "name": "KB SABILUL MUTAQIN",
+    "location": "DUSUN MEKAR SARI RT/RW 2/5, KELURAHAN DESA HARAPAN JAYA, Harapan Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779696",
+    "name": "KB SAHARA",
+    "location": "DUSUN SINAR HARAPAN RT/RW 2/3,KELURAHAN DESA HARAPAN JAYA, Harapan Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69949663",
+    "name": "KB TUNAS MULYA",
+    "location": "DUSUN BANYUMAS RT 002 / RW 004, KELURAHAN DESA CERINGIN ASRI, Ceringin Asri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69784821",
+    "name": "PAUD AL HIKMAH",
+    "location": "JLN.WAY RATAI, DUSUN SELOREJO RT/RW 2/1, KELURAHAN DESA WATES WAY RATAI, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940077",
+    "name": "PAUD AMANAH",
+    "location": "JL. RAYA WAY RATAI, DUSUN CERINGIN RT/RW 001/002, KELURAHAN DESA CERINGIN ASRI, Ceringin Asri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940080",
+    "name": "PAUD AN NIDA",
+    "location": "JL. RAYA WAY RATAI, DUSUN TOTOHARJO, RT/RW 002/004, KELURAHAN DESA PONCOREJO, Poncorejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69943886",
+    "name": "PAUD LATHIFATUL ATHFAL",
+    "location": "DUSUN CERINGIN RT 002 RW 002, KELURAHAN DESA SUMBERJAYA, Sumber Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779591",
+    "name": "PAUD MIFTAHUL HUDA",
+    "location": "JLN.SINAR DUA, DUSUN SINAR DUA RT/RW 2/1,KELURAHAN DESA HARAPAN JAYA, Harapan Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69942861",
+    "name": "PAUD NUR HIDAYAH",
+    "location": "DUSUN MEKAR SARI RT/RW 1/5, KELURAHAN DESA WATES WAY RATAI, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940082",
+    "name": "PAUD NURUL FALAH",
+    "location": "JL. WAY RATAI DUSUN TAMAN ASRI RT/RW 002/005, DESA CERINGIN ASRI, Ceringin Asri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69779592",
+    "name": "PAUD RIYADHUL FAWWAZ",
+    "location": "DUSUN BUNUT TENGAH DESA BUNUT, Bunut",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69897681",
+    "name": "RA MATHLAUL ANWAR MUHARA",
+    "location": "Jalan Raya Tanggamus Simpang Muhara, Bunut Seberang",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69732036",
+    "name": "RA RIYADHUL FAWWAZ",
+    "location": "Jalan Raya Way Bunut, Bunut",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69940081",
+    "name": "SPS BUSTANUL ATHFAL",
+    "location": "JLN. BRAJA WIJAYA, DUSUN SIDO RAHAYU RT/RW 2/1, KELURAHAN DESA SUMBER JAYA, Sumber Jaya",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69782372",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL WATES",
+    "location": "JL. RAYA WAY RATAI, DUSUN SIDOMULYO RT/RW 3/2,DESA WATES WAY RATAI, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "70054812",
+    "name": "TK NURUL FALAH",
+    "location": "DESA CERINGIN ASRI KEC. WAY RATAI, Ceringin Asri",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "69807956",
+    "name": "TK TUNAS HARAPAN BANGSA",
+    "location": "DUSUN SALAK PONDOH, KELURAHAN DESA GUNUNG REJO, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "PAUD"
+  },
+  {
+    "npsn": "60705882",
+    "name": "MIS AL RIDLO",
+    "location": "Jl. Raya Way Ratai Dusun Rabterejo 2, Banjaran",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705875",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Kecapi, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816880",
+    "name": "MTSS AL  IKHLAS",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816891",
+    "name": "MTSS AL FALAH",
+    "location": "Muncak, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816881",
+    "name": "MTSS AL ISLAM",
+    "location": "Bunut, Bunut",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816879",
+    "name": "MTSS DARUR RIDHO",
+    "location": "Hanura, Hanura",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816892",
+    "name": "MTSS HAQQUL YAQIN",
+    "location": "Sukajaya Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816878",
+    "name": "MTSS HASANUDDIN KALIGUHA",
+    "location": "Jalan Tugu Kodam III Siliwangi No. 01 Kaliguha, Pesawaran Indah",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816889",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Seribu, Gebang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816882",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Tanjung Agung, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816890",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Pematang, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816877",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Kecapi, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816887",
+    "name": "MTSS MIFTAHUL HUDA",
+    "location": "Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69975999",
+    "name": "MTSS NURUL ISLAM",
+    "location": "Dusun Kecapi, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816885",
+    "name": "MTSS PSA NURUL HUDA",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816884",
+    "name": "MTSS SHOLAWATUL FALAH",
+    "location": "Sukajaya Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816888",
+    "name": "MTSS SUNAN MURIA",
+    "location": "Cilimus, Hurun",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69975169",
+    "name": "SD HANG TUAH PWK PANJANG",
+    "location": "Jl. Raya Pematang Awi, Sanggi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810573",
+    "name": "SD S HANDAYANI",
+    "location": "Jl. Raya Way Ratai Margodadi, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801382",
+    "name": "SDS DARMA ASIH PUJORAHARJO",
+    "location": "Pujoraharjo, Banjaran",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70013755",
+    "name": "SMP DARUL MUKHTAR",
+    "location": "Dusun Karang Anyar Desa Sanggi, Sanggi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800441",
+    "name": "SMP DHARMA ASIH WATES",
+    "location": "Jl. Raya Way Ratai Wates, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814570",
+    "name": "SMP REMAJA GAYAU",
+    "location": "Gayau, Gayau",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801434",
+    "name": "UPTD SDN 1 PADANG CERMIN",
+    "location": "Jl. Tanjung Mas Padang cermin, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800313",
+    "name": "UPTD SDN 10 PADANG CERMIN",
+    "location": "Rawa Subur Padang cermin, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800189",
+    "name": "UPTD SDN 11 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai Desa Khepong Jaya, KHEPONG JAYA",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801342",
+    "name": "UPTD SDN 12 PADANG CERMIN",
+    "location": "Jalan TNI AL Desa Durian, Durian",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801334",
+    "name": "UPTD SDN 13 PADANG CERMIN",
+    "location": "Jalan Lubuk Bakak Desa Padang cermin, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800612",
+    "name": "UPTD SDN 14 PADANG CERMIN",
+    "location": "Jalan Raya TNI AL Piabung Desa Sanggi, Sanggi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800355",
+    "name": "UPTD SDN 15 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai  Kecapi, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800610",
+    "name": "UPTD SDN 16 PADANG CERMIN",
+    "location": "Jalan Damarejo Desa Paya, Paya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801320",
+    "name": "UPTD SDN 17 PADANG CERMIN",
+    "location": "Jalan Petai Jajar Desa Hanau Berak, Hanau Berak",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800229",
+    "name": "UPTD SDN 18 PADANG CERMIN",
+    "location": "Jalan Punduh Pedada Desa Gayau, Gayau",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800133",
+    "name": "UPTD SDN 19 PADANG CERMIN",
+    "location": "Jalan Raya Punduh Pedada Tegal Arum, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801086",
+    "name": "UPTD SDN 2 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai Desa Tambangan, Tambangan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800141",
+    "name": "UPTD SDN 3 PADANG CERMIN",
+    "location": "Tegal Rejo, Way Urang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801311",
+    "name": "UPTD SDN 4 PADANG CERMIN",
+    "location": "Jalan Sidorejo Desa Banjaran, Banjaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800156",
+    "name": "UPTD SDN 5 PADANG CERMIN",
+    "location": "Jl. Raya Way Ratai Kejadian, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800236",
+    "name": "UPTD SDN 6 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai Dantar, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801369",
+    "name": "UPTD SDN 7 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai Desa Hanau Berak, Hanau Berak",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801405",
+    "name": "UPTD SDN 8 PADANG CERMIN",
+    "location": "Jalan Rante Rejo Desa Banjaran, Banjaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800367",
+    "name": "UPTD SDN 9 PADANG CERMIN",
+    "location": "Jalan Raya Way Ratai Desa Trimulyo, TRIMULYO",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800533",
+    "name": "UPTD SMPN 10 PESAWARAN",
+    "location": "Jl. Damarejo, Paya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800510",
+    "name": "UPTD SMPN 14 PESAWARAN",
+    "location": "Jl. Raya Padangcermin Km. 36, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800544",
+    "name": "UPTD SMPN 4 PESAWARAN",
+    "location": "Jl. Raya Way Ratai Desa Way Urang Kec.Padangcermin Kab.Pesawaran Lampung, Way Urang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70041906",
+    "name": "MIS AL BINA",
+    "location": "Jalan Raya Punduh Pidada, Batu Raja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705901",
+    "name": "MIS AL KHAIRIYAH",
+    "location": "Selesung, Pulau Legundi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705896",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Sukarame, Sukarame",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705895",
+    "name": "MIS TAMAN PENDIDIKAN ISLAM",
+    "location": "Pedada, Rusaba",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705900",
+    "name": "MIS UNWANUL FALAH",
+    "location": "Kupang Rejo, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70027038",
+    "name": "MTs AL BINA",
+    "location": "Jalan Raya Punduh Pidada, Batu Raja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816893",
+    "name": "MTSS UNWANUL FALAH",
+    "location": "Kupang Rejo, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800641",
+    "name": "UPTD SDN 1 PUNDUH PEDADA",
+    "location": "Dusun Induk Desa Banding Agung, Banding Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800351",
+    "name": "UPTD SDN 10 PUNDUH PEDADA",
+    "location": "Dusun Labuhan Agung, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800312",
+    "name": "UPTD SDN 11 PUNDUH PEDADA",
+    "location": "Dusun Jaya Tani, Pagar Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800241",
+    "name": "UPTD SDN 12 PUNDUH PEDADA",
+    "location": "Dusun Siuncal Desa.Pulau Legundi, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800637",
+    "name": "UPTD SDN 2 PUNDUH PEDADA",
+    "location": "Jl. 2 Ringin Sari, Bangun Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801149",
+    "name": "UPTD SDN 3 PUNDUH PEDADA",
+    "location": "Jl.Raya Punduh Pedada Ds.Sukarame, Sukarame",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800719",
+    "name": "UPTD SDN 4 PUNDUH PEDADA",
+    "location": "Jln. Raya Desa Sukamaju, Sukamaju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800295",
+    "name": "UPTD SDN 5 PUNDUH PEDADA",
+    "location": "Fajar Harapan Desa Sukarame, Sukarame",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801187",
+    "name": "UPTD SDN 6 PUNDUH PEDADA",
+    "location": "Dusun Keramat Desa Pulau Legundi, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801492",
+    "name": "UPTD SDN 7 PUNDUH PEDADA",
+    "location": "Dusun Selesung Desa.Pulau Legundi, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800604",
+    "name": "UPTD SDN 8 PUNDUH PEDADA",
+    "location": "Jl.Raya Punduh Pedada Desa.Kota jawa, Kota Jawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801431",
+    "name": "UPTD SDN 9 PUNDUH PEDADA",
+    "location": "Pagar Bandung, Pagar Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800541",
+    "name": "UPTD SMPN 13 PESAWARAN",
+    "location": "Banding Agung, Banding Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814578",
+    "name": "UPTD SMPN 20 PESAWARAN",
+    "location": "SUKAMAJU, Sukamaju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814572",
+    "name": "UPTD SMPN SATAP 4 PESAWARAN",
+    "location": "Desa Pulau Legundi, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69894603",
+    "name": "AL MUKAROMAH",
+    "location": "Boloran Salak, Babakan Loa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705846",
+    "name": "MIN 1 PESAWARAN",
+    "location": "Jalan Tri Tura, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705849",
+    "name": "MIS AL FATAH",
+    "location": "Jalan Manggris, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60728838",
+    "name": "MIS AL FURQON",
+    "location": "Jalan Way Ratai KM 09, Babakan Loa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705857",
+    "name": "MIS AL ISLAH",
+    "location": "Sukamaju, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705858",
+    "name": "MIS ANWARUL HIDAYAH",
+    "location": "Cikantor, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705852",
+    "name": "MIS ISLAMIYAH",
+    "location": "Jalan Pahmungan, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705859",
+    "name": "MIS JAMIATUL ISLAMIYAH",
+    "location": "Tebajawa, Tebajawa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705867",
+    "name": "MIS MAMBAUL HUDA",
+    "location": "Tempel Rejo, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705856",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Tempel Rejo, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705850",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Kertasana, Kerta Sana",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705851",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Jalan Citangkil, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705865",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Pesawaran, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705864",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Gunung Sugih, Gunung Sugih",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705860",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Jalan Pasar Baru, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705868",
+    "name": "MIS NURUL HIKMAH",
+    "location": "Pesawaran, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816863",
+    "name": "MTSN 1 PESAWARAN",
+    "location": "Jalan H. Aliudin, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816869",
+    "name": "MTSS AL AMIN",
+    "location": "Cikantor, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816871",
+    "name": "MTSS AL ISLAH",
+    "location": "Sukamaju, Sukamaju",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69976000",
+    "name": "MTSS DAARUL IKROM",
+    "location": "Jalan Raya Tempel Rejo Dusun Suka Bakti, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69927973",
+    "name": "MTSS MANBAUL HUDA",
+    "location": "Tempel Rejo, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816866",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Tempel Rejo, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816865",
+    "name": "MTSS MATHLAUL ANWAR KEDONDONG",
+    "location": "Jalan Pos dan Giro, Pasar Baru",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69963871",
+    "name": "SD IT ASMAUL HUSNA",
+    "location": "JL. LAPANGAN TRITURA, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70059751",
+    "name": "SMP AL-ASNA",
+    "location": "JL.MAHIR ARRIYADL PESAWARAN II DESA PESAWARAN KEC. KEDONDONG KAB.PESAWARAN, Pesawaran",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70050835",
+    "name": "SMP PLUS DAARUSY SYIFAA",
+    "location": "JL. WAY RATAI DESA SINAR HARAPAN KEC. KEDONDONG, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800201",
+    "name": "UPTD SDN  1 KEDONDONG",
+    "location": "Jl. Tritura Kedondong, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800395",
+    "name": "UPTD SDN  12 KEDONDONG",
+    "location": "JL. Tempel rejo, Tempel Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801439",
+    "name": "UPTD SDN  13 KEDONDONG",
+    "location": "Jl. Desa Pesawaran, Pesawaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800377",
+    "name": "UPTD SDN  14 KEDONDONG",
+    "location": "Jl. Desa Kedondong, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800629",
+    "name": "UPTD SDN  15 KEDONDONG",
+    "location": "jl. Desa Kertasana, Kerta Sana",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800421",
+    "name": "UPTD SDN  16 KEDONDONG",
+    "location": "Jl. Desa Way Kepayang, Waykepayang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800643",
+    "name": "UPTD SDN  17 KEDONDONG",
+    "location": "Jl. Way Ratai, Babakan Loa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800265",
+    "name": "UPTD SDN  22 KEDONDONG",
+    "location": "Jl. Desa Sinar Harapan, Sinar Harapan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800662",
+    "name": "UPTD SDN  3 KEDONDONG",
+    "location": "Jl Raya Kedondong, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801178",
+    "name": "UPTD SDN 10 KEDONDONG",
+    "location": "Jl. Way Ratai, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801102",
+    "name": "UPTD SDN 11 KEDONDONG",
+    "location": "JL. Dusun Pahmungan, Waykepayang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800175",
+    "name": "UPTD SDN 18 KEDONDONG",
+    "location": "Jl. Desa Harapan Jaya, HARAPAN JAYA",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800302",
+    "name": "UPTD SDN 19  KEDONDONG",
+    "location": "Jl. Desa Suka Maju, Sukamaju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800343",
+    "name": "UPTD SDN 2  KEDONDONG",
+    "location": "Jl. Desa Pesawaran, Pesawaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800220",
+    "name": "UPTD SDN 20 KEDONDONG",
+    "location": "Jl. Taman Jaya, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800192",
+    "name": "UPTD SDN 21 KEDONDONG",
+    "location": "Jl. Desa Sinar Harapan, Sinar Harapan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800103",
+    "name": "UPTD SDN 23 KEDONDONG",
+    "location": "Jl. Tempelrejo, Tempel Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800152",
+    "name": "UPTD SDN 24 KEDONDONG",
+    "location": "Jl. Desa Pesawaran, Pesawaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800244",
+    "name": "UPTD SDN 4  KEDONDONG",
+    "location": "Jl. Tritura Kedondong, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801156",
+    "name": "UPTD SDN 5  KEDONDONG",
+    "location": "Jl. Desa Suka Maju, Sukamaju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801076",
+    "name": "UPTD SDN 6 KEDONDONG",
+    "location": "Jl. Lapangan Tempelrejo, Tempel Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801133",
+    "name": "UPTD SDN 7  KEDONDONG",
+    "location": "Jl. Way Ratai, Sinar Harapan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800276",
+    "name": "UPTD SDN 8  KEDONDONG",
+    "location": "Jl. Sinar Harapan, Sinar Harapan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801424",
+    "name": "UPTD SDN 9 KEDONDONG",
+    "location": "Jl. Sukarame Pasar Baru, Pasar Baru",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814998",
+    "name": "UPTD SMPN 24 PESAWARAN",
+    "location": "Jl. PTPN VII, Pesawaran",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800523",
+    "name": "UPTD SMPN 3 PESAWARAN",
+    "location": "Jalan Raya Pasar Lama Kedondong, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814573",
+    "name": "UPTD SMPN SATAP 5 PESAWARAN",
+    "location": "Desa Way Kepayang, Waykepayang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705917",
+    "name": "MIS AL HIKMAH",
+    "location": "Gunung Kaso, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705913",
+    "name": "MIS DARUL MUTTAQIN",
+    "location": "WAY HARONG, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705916",
+    "name": "MIS ISLAMIYAH",
+    "location": "Sediamaju, Sidodadi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705918",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Sumber Agung, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705911",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Way Harong, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705912",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Cimanuk, Cimanuk",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705919",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Margodadi, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816904",
+    "name": "MTSN 2 PESAWARAN",
+    "location": "Jl. H. Subeki Desa Gunungrejo Kec. Waylima Kab. Pesawaran, Gunungrejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816905",
+    "name": "MTSS AL HIKMAH",
+    "location": "Gunung Kaso, Way Harong",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816907",
+    "name": "MTSS MATHLAUL ANWAR",
+    "location": "Margodadi, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816908",
+    "name": "MTSS SA RIYADHUL MUBTADIIN",
+    "location": "Tanjung Rahayu, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810588",
+    "name": "UPTD SDN  10 WAY LIMA",
+    "location": "Condongsari, Sindang Garut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800423",
+    "name": "UPTD SDN  12 WAY LIMA",
+    "location": "Jl. Raya Gunung Kaso, Way Harong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801360",
+    "name": "UPTD SDN  13 WAY LIMA",
+    "location": "Gedung Dalom, Gedung Dalam",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800606",
+    "name": "UPTD SDN  14 WAY LIMA",
+    "location": "Kuta Dalom, Kotadalam",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800638",
+    "name": "UPTD SDN  15 WAY LIMA",
+    "location": "Baturaja, Baturaja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800179",
+    "name": "UPTD SDN  16 WAY LIMA",
+    "location": "Jl. Raya Sidodadi Desa Sidodadi Kec. Way Lima Kab. Pesawaran Prov. Lampung, Sidodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800325",
+    "name": "UPTD SDN  17 WAY LIMA",
+    "location": "Gunung Tanjung Margodadi, Margodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800368",
+    "name": "UPTD SDN  19 WAY LIMA",
+    "location": "Sugi Waras, Banjar Negeri, Banjar Negeri",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801103",
+    "name": "UPTD SDN  2 WAY LIMA",
+    "location": "Way Harong, Way Harong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811241",
+    "name": "UPTD SDN  20 WAY LIMA",
+    "location": "Sindang Garut, Sindang Garut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800268",
+    "name": "UPTD SDN  21 WAY LIMA",
+    "location": "JLN Raya Pengayunan, Sidodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801085",
+    "name": "UPTD SDN  22 WAY LIMA",
+    "location": "Tanjung Agung, Tanjung Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801190",
+    "name": "UPTD SDN  23 WAY LIMA",
+    "location": "Way Kijing, Kuta Dalom, Kotadalam",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800214",
+    "name": "UPTD SDN  25 WAY LIMA",
+    "location": "Suka Menah, Way Harong, Way Harong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800227",
+    "name": "UPTD SDN  26 WAY LIMA",
+    "location": "Suka Karya, Way Harong, Way Harong",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800194",
+    "name": "UPTD SDN  27 WAY LIMA",
+    "location": "Paguyuban, Paguyuban",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800166",
+    "name": "UPTD SDN  28 WAY LIMA",
+    "location": "Sidomulyo Margodadi, Margodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801325",
+    "name": "UPTD SDN  29 WAY LIMA",
+    "location": "Jl.Desa Gunung Rejo, Gunungrejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811228",
+    "name": "UPTD SDN  30 WAY LIMA",
+    "location": "Desa Rawa Kijing, Sindang Garut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801419",
+    "name": "UPTD SDN  4 WAY LIMA",
+    "location": "Paguyuban, Paguyuban",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811229",
+    "name": "UPTD SDN  5 WAY LIMA",
+    "location": "Sukamandi, Sukamandi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801375",
+    "name": "UPTD SDN  7 WAY LIMA",
+    "location": "Jl. Desa Gunung Rejo, Gunungrejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810587",
+    "name": "UPTD SDN  9 WAY LIMA",
+    "location": "Padang Manis, Padang Manis",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801312",
+    "name": "UPTD SDN 1 WAY LIMA",
+    "location": "Banjar Negeri, Banjar Negeri",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801336",
+    "name": "UPTD SDN 11  WAY LIMA",
+    "location": "Jl Raya Cimanuk, Cimanuk",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801421",
+    "name": "UPTD SDN 18 WAY LIMA",
+    "location": "Jembangan Pekondoh, Pekondoh",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811240",
+    "name": "UPTD SDN 24  WAY LIMA",
+    "location": "Tanjung Rahayu, Pekondoh, Pekondoh",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801346",
+    "name": "UPTD SDN 3  WAY LIMA",
+    "location": "Cimanuk, Cimanuk",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801482",
+    "name": "UPTD SDN 6  WAY LIMA",
+    "location": "Margodadi, Margodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800284",
+    "name": "UPTD SDN 8  WAY LIMA",
+    "location": "Sidodadi Way Lima, Sidodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810289",
+    "name": "UPTD SMPN 16 PESAWARAN",
+    "location": "Jln. Raya Desa Baturaja, Baturaja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810947",
+    "name": "UPTD SMPN 5 PESAWARAN",
+    "location": "Jl. Kramat Raya, Kotadalam",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810946",
+    "name": "UPTD SMPN SATAP 1 PESAWARAN",
+    "location": "Magodadi, Margodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69975991",
+    "name": "MI NGUDI UTOMO",
+    "location": "JL. TAMTAMA NO 96, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60728837",
+    "name": "MIS DARUL HUFFAZ",
+    "location": "Jalan Raya Bernung No. 36, Bernung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705843",
+    "name": "MIS DINIYYAH PUTRI",
+    "location": "Jalan Raya Negeri Sakti, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705845",
+    "name": "MIS ISLAMIYAH",
+    "location": "Jalan Sukasari, Sukadadi",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705844",
+    "name": "MIS TAMRINUL ATHFAL",
+    "location": "Jalan Binong, Waylayap",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70042512",
+    "name": "MTSS ASH SHIDDIQIYAH",
+    "location": "Jalan Tamtama No.96 RT 003 RW 001, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69955871",
+    "name": "MTSS AULIMA NUSANTARA",
+    "location": "Jalan Suro Amijoyo, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60728877",
+    "name": "MTSS DARUL HUFFAZ",
+    "location": "Jalan Raya Bernung No. 36, Bernung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816859",
+    "name": "MTSS DINIYYAH PUTRI",
+    "location": "Jalan Raya Negeri Sakti, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816862",
+    "name": "MTSS MUHAMMAD DAUD",
+    "location": "Jalan Raya Kedondong Gang M. Daud No. 1, Pampangan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816861",
+    "name": "MTSS NURUL IMAN",
+    "location": "Jalan Pramuka, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816860",
+    "name": "MTSS PELITA",
+    "location": "Jalan Raya Penengahan, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70013906",
+    "name": "SD ISLAM AL IRSYAD BERNUNG",
+    "location": "DUSUN TAMAN REJO DESA BERNUNG, Bernung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69989461",
+    "name": "SD IT AL ANSHOR",
+    "location": "Dusun Sukaraja 6 Desa Sukaraja, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70008982",
+    "name": "SD IT BAITUL INSAN",
+    "location": "JL. RAYA KURUNGAN NYAWA PAL 12 , GG. SHOLEHA, Kurungannyawa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69893875",
+    "name": "SD IT IQRO",
+    "location": "SUKARAJA V KOMPLEKS SMAN 1 GEDONG TATAAN KABUPATEN PESAWARAN, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70037312",
+    "name": "SD KAMPUNG QURAN AL FUSHHA",
+    "location": "Jl. Gajah Mada, Bogorejo Gedongtataan Pesawaran Indonesia, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10815086",
+    "name": "SD RAJAWALI",
+    "location": "Jl. Penengahan I, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70055375",
+    "name": "SD TAHFIZHUL QURAN ATS TSAQIB",
+    "location": "JALAN RAYA DUSUN SUKA MAJU,RT/RW 005/005, Waylayap",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69975134",
+    "name": "SDIT AN NUR GEDONGTATAAN",
+    "location": "JL. HANOMAN, KUTOARJO, Kutoarjo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810583",
+    "name": "SMP 17.1 GEDONG TATAAN",
+    "location": "Jl.  Sungai Langka, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70047884",
+    "name": "SMP ALKARIM RASYID",
+    "location": "Desa Sukabanjar, Kec. gedong Tataan Kab. Pesawaran .Lampung, Sukabanjar",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70049234",
+    "name": "SMP BABUNNAJAH AL MUNAWIR",
+    "location": "Sukma ilang, Desa Sungai Langka,Kecamatan Gedong tataan Kabupaten Pesawaran, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800436",
+    "name": "SMP GOTONG ROYONG",
+    "location": "Jl. PTPN VII, Cipadang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69968690",
+    "name": "SMP I AS-SA ADAH",
+    "location": "JL. DWI  KARYA TAMAN SARI, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70057512",
+    "name": "SMP IT AL HADI",
+    "location": "JL. SUKMA ILANG DESA SUNGAI LANGKA KEC. GEDONG TATAAN, Sungai Langka",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70013677",
+    "name": "SMP IT IQRO",
+    "location": "Jl. Swadaya, Sukaraja V Desa Sukaraja, Sukaraja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70058163",
+    "name": "SMP KAMPUNG QURAN AL-FUSHHA",
+    "location": "DESA BOGOREJO KECAMATAN GEDONG TATAAN KAB. PESAWARAN, Bogorejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70049433",
+    "name": "SMP KHADIJAH PESAWARAN",
+    "location": "JL. ABDUL WAHID DUSUN NEGERI AMPAI, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800458",
+    "name": "SMP MUHAMADIYAH GEDONG TATAAN",
+    "location": "Jl. Raya Penengahan, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800583",
+    "name": "SMP TAMAN SISWA",
+    "location": "Jl. Jend. A. Yani No. 67, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70013988",
+    "name": "SMPQTA AN NUR",
+    "location": "Jl. HANOMAN DESA KUTOARJO, Kutoarjo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801098",
+    "name": "UPTD SDN 1 GEDONG TATAAN",
+    "location": "Wiyono, Wiyono",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801427",
+    "name": "UPTD SDN 10 GEDONG TATAAN",
+    "location": "Pampangan, Pampangan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801125",
+    "name": "UPTD SDN 11 GEDONG TATAAN",
+    "location": "Jalan Dalom Kesuma Ratu, Sukabanjar",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800417",
+    "name": "UPTD SDN 12 GEDONG TATAAN",
+    "location": "A. Yani, Wiyono",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801094",
+    "name": "UPTD SDN 13 GEDONG TATAAN",
+    "location": "Jl. Bhayangkara, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800414",
+    "name": "UPTD SDN 14 GEDONG TATAAN",
+    "location": "Jl. Satria No.42, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800307",
+    "name": "UPTD SDN 15 GEDONG TATAAN",
+    "location": "Sukadadi, Sukadadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801343",
+    "name": "UPTD SDN 16 GEDONG TATAAN",
+    "location": "Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801359",
+    "name": "UPTD SDN 17 GEDONG TATAAN",
+    "location": "Gedung Tataan, Gedung Tataan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810367",
+    "name": "UPTD SDN 18 GEDONG TATAAN",
+    "location": "Jln. Taman Praloyo, Kutoarjo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801459",
+    "name": "UPTD SDN 19 GEDONG TATAAN",
+    "location": "Jl. Raya Negeri Sakti, Negeri Sakti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801150",
+    "name": "UPTD SDN 2 GEDONG TATAAN",
+    "location": "Jl. Pasar Baru, Sukaraja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801472",
+    "name": "UPTD SDN 20 GEDONG TATAAN",
+    "location": "Jl Ptpn VII Way Berlulu, Kebagusan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801335",
+    "name": "UPTD SDN 21 GEDONG TATAAN",
+    "location": "Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801101",
+    "name": "UPTD SDN 22 GEDONG TATAAN",
+    "location": "Jl.raya Kedondong, Waylayap",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801164",
+    "name": "UPTD SDN 23 GEDONG TATAAN",
+    "location": "Jl PTPN VII Way Berulu, Kebagusan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800145",
+    "name": "UPTD SDN 24 GEDONG TATAAN",
+    "location": "Jl.bhayangkara, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800636",
+    "name": "UPTD SDN 26 GEDONG TATAAN",
+    "location": "Desa Bernung, Bernung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800270",
+    "name": "UPTD SDN 27 GEDONG TATAAN",
+    "location": "Sungai Langka, Sungai Langka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800110",
+    "name": "UPTD SDN 28 GEDONG TATAAN",
+    "location": "Sungai Langka, Sungai Langka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801306",
+    "name": "UPTD SDN 29 GEDONG TATAAN",
+    "location": "Bogorejo, Bogorejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801087",
+    "name": "UPTD SDN 3 GEDONG TATAAN",
+    "location": "Tamansari, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800150",
+    "name": "UPTD SDN 30 GEDONG TATAAN",
+    "location": "Jl. Sukaharum Sukadadi, Sukadadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800365",
+    "name": "UPTD SDN 31 GEDONG TATAAN",
+    "location": "Bogorejo, Bogorejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801189",
+    "name": "UPTD SDN 32 GEDONG TATAAN",
+    "location": "Kutoarjo, Kutoarjo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800134",
+    "name": "UPTD SDN 33 GEDONG TATAAN",
+    "location": "Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801479",
+    "name": "UPTD SDN 34 GEDONG TATAAN",
+    "location": "Jl. Terusan Imam Bonjol, Kurungannyawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800261",
+    "name": "UPTD SDN 35 GEDONG TATAAN",
+    "location": "Sungai Langka, Sungai Langka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800108",
+    "name": "UPTD SDN 36 GEDONG TATAAN",
+    "location": "Tamansari, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800379",
+    "name": "UPTD SDN 37 GEDONG TATAAN",
+    "location": "Jl. Ahmad Yani Desa Kebagusan  Gedong Tataan, Kebagusan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800114",
+    "name": "UPTD SDN 38 GEDONG TATAAN",
+    "location": "Jalan Murai, Sukaraja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801329",
+    "name": "UPTD SDN 39 GEDONG TATAAN",
+    "location": "jl. kedondong Penengahan Gedung Tataan, Gedung Tataan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801121",
+    "name": "UPTD SDN 4 GEDONG TATAAN",
+    "location": "Jalan Manunggal Desa Sukadadi, Sukadadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801418",
+    "name": "UPTD SDN 40 GEDONG TATAAN",
+    "location": "Jl. Branti Karang Anyar, Karang Anyar",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801170",
+    "name": "UPTD SDN 41 GEDONG TATAAN",
+    "location": "Jl. Branti Raya, Karang Anyar",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800206",
+    "name": "UPTD SDN 42 GEDONG TATAAN",
+    "location": "Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800259",
+    "name": "UPTD SDN 43 GEDONG TATAAN",
+    "location": "Tamansari, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800147",
+    "name": "UPTD SDN 44 GEDONG TATAAN",
+    "location": "Wiyono, Wiyono",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800254",
+    "name": "UPTD SDN 45 GEDONG TATAAN",
+    "location": "Wiyono, Wiyono",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800226",
+    "name": "UPTD SDN 46 GEDONG TATAAN",
+    "location": "Jl. Bayangkara, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800382",
+    "name": "UPTD SDN 47 GEDONG TATAAN",
+    "location": "Karang Anyar, Karang Anyar",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800420",
+    "name": "UPTD SDN 48 GEDONG TATAAN",
+    "location": "Waylayap, Waylayap",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800225",
+    "name": "UPTD SDN 49 GEDONG TATAAN",
+    "location": "Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801143",
+    "name": "UPTD SDN 5 GEDONG TATAAN",
+    "location": "Jl. Sukma Ilang Desa Sungai Langka, Sungai Langka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801432",
+    "name": "UPTD SDN 50 GEDONG TATAAN",
+    "location": "Padang Ratu, Padang Ratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810368",
+    "name": "UPTD SDN 51 GEDONG TATAAN",
+    "location": "Padang Ratu, Padang Ratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800208",
+    "name": "UPTD SDN 52 GEDONG TATAAN",
+    "location": "Sungai Langka, Sungai Langka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800245",
+    "name": "UPTD SDN 53 GEDONG TATAAN",
+    "location": "Jalan Suro Amijoyo Kampung Sawah, Kebagusan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800310",
+    "name": "UPTD SDN 54 GEDONG TATAAN",
+    "location": "Gunung Batu Pampangan, Pampangan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800316",
+    "name": "UPTD SDN 55 GEDONG TATAAN",
+    "location": "Negeri Sakti, Negeri Sakti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800212",
+    "name": "UPTD SDN 57 GEDONG TATAAN",
+    "location": "Jalan Citeman Cipadang, Cipadang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800372",
+    "name": "UPTD SDN 58 GEDONG TATAAN",
+    "location": "Jl. Kurungan Nyawa, Kurungannyawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800406",
+    "name": "UPTD SDN 6 GEDONG TATAAN",
+    "location": "Jl. A. Yani Gg. STIAL Taman Sari, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801398",
+    "name": "UPTD SDN 7 GEDONG TATAAN",
+    "location": "Jl. Syuhada, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800296",
+    "name": "UPTD SDN 8 GEDONG TATAAN",
+    "location": "sukaraja, Sukaraja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10791306",
+    "name": "UPTD SDN 9 GEDONG TATAAN",
+    "location": "Jalan Gajah Mada, Bogorejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800527",
+    "name": "UPTD SMPN 1 PESAWARAN",
+    "location": "Desa Bagelen, Bagelen",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810696",
+    "name": "UPTD SMPN 17 PESAWARAN",
+    "location": "Desa Negeri Sakti, Negeri Sakti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810430",
+    "name": "UPTD SMPN 19 PESAWARAN",
+    "location": "Jl. Manunggal, Sukadadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814579",
+    "name": "UPTD SMPN 22 PESAWARAN",
+    "location": "Jl.Dwi Karya Desa Tamansari, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69849415",
+    "name": "UPTD SMPN 26 PESAWARAN",
+    "location": "JL. BRANTI KARANG ANYAR, Karang Anyar",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69978091",
+    "name": "UPTD SMPN 27 PESAWARAN",
+    "location": "JL. TERUSAN IMAM BONJOL, Kurungannyawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811574",
+    "name": "UPTD SMPN 30 PESAWARAN",
+    "location": "Desa Way layap, Waylayap",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705871",
+    "name": "MIN 2 PESAWARAN",
+    "location": "Ulangan Jaya, Negeri Ulangan Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705874",
+    "name": "MIS AL HIDAYAH",
+    "location": "Lumbirejo, Lumbi Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70041908",
+    "name": "MIS DAARUL QURAN AL MAHBUBIYAH",
+    "location": "Dusun Waydadi RT 003 RW 009, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705872",
+    "name": "MIS ISLAMIYAH",
+    "location": "Sidomulyo, Sidomulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69956122",
+    "name": "MIS Ma arif I",
+    "location": "Kota Baru Utara, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705873",
+    "name": "MIS NURUL HIDAYAH",
+    "location": "Roworejo, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69956121",
+    "name": "MIS Nusa Bangsa",
+    "location": "Srinusabangsa Barat RT.001 RW.007, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69975992",
+    "name": "MIS TARBIYATUDDINIYAH",
+    "location": "DESA TRIRAHAYU, Tri Rahayu",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816872",
+    "name": "MTSS AL HIDAYAH",
+    "location": "Jalan Raya Pujodadi, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816875",
+    "name": "MTSS AL ISLAH",
+    "location": "Kalirejo, Kalirejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816873",
+    "name": "MTSS GUPPI",
+    "location": "Jl. Lapangan Mutiara, Tri Rahayu",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816874",
+    "name": "MTSS NURUL HIDAYAH",
+    "location": "Roworejo, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816876",
+    "name": "MTSS SA RAUDLATUL HUDA AL ISLAMY",
+    "location": "Sidomulyo, Sidomulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70032690",
+    "name": "SD IT AL HAMBRA",
+    "location": "Jl. Branti Raya Dusun Jatirejo Desa kagungan Ratu, Kagunganratu",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70050883",
+    "name": "SDIT MARDHIYATUL QOMARIYAH",
+    "location": "Jl. Terusan Branti Raya, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70054219",
+    "name": "SMP DAARUT TAUHID AN-NIDZOM ROWOREJO",
+    "location": "Jl. Grujugan Desa roworejo KECAMATAN NEGERI KATON, Roworejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69981748",
+    "name": "SMP IP FATHUL ULUM",
+    "location": "DSN. SRINUSA BANGSA BARAT DESA PONCOKRESNO, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69774938",
+    "name": "SMP IT AL-FARABI",
+    "location": "Desa Halangan Ratu, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810291",
+    "name": "SMP IT NURUL IMAN PURWOREJO",
+    "location": "Purworejo, Purworejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70013658",
+    "name": "SMP MAARIF 2 NURUL HUDA",
+    "location": "JL. BRANTI RAYA-GEDONG TATAAN, DESA PEJAMBON, Pejambon",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814559",
+    "name": "SMP PGRI PEJAMBON",
+    "location": "Jl. Branti Raya, Pejambon",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800584",
+    "name": "SMP SWADHIPA 3 TUGUSARI",
+    "location": "Tugu Sari Halangan Ratu, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69826565",
+    "name": "SMPS Teknik YAMACO",
+    "location": "Desa Karang Rejo Kec.Negeri Katon, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801452",
+    "name": "UPTD SDN 1 NEGERI KATON",
+    "location": "Jalan Letnan Saidi Nomor 1, Purworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800186",
+    "name": "UPTD SDN 10  NEGERI KATON",
+    "location": "Roworejo, Roworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800338",
+    "name": "UPTD SDN 11  NEGERI KATON",
+    "location": "Jl Koptu Alambasya, Purworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801455",
+    "name": "UPTD SDN 12  NEGERI KATON",
+    "location": "Trikora Rt 01 Rw 10 Poncokresno, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801071",
+    "name": "UPTD SDN 13  NEGERI KATON",
+    "location": "Jalan Raya Trirahayu, Tri Rahayu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801081",
+    "name": "UPTD SDN 14  NEGERI KATON",
+    "location": "Jl. PTPN VII Desa Tanjung Rejo Kecamatan Negeri katon, Tanjung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801487",
+    "name": "UPTD SDN 15  NEGERI KATON",
+    "location": "Negarasaka, Negarasaka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800318",
+    "name": "UPTD SDN 16  NEGERI KATON",
+    "location": "Jl. Puniakan Dalam Tuha, Negeri Ulangan Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800627",
+    "name": "UPTD SDN 17  NEGERI KATON",
+    "location": "Pejambon, Pejambon",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801321",
+    "name": "UPTD SDN 18  NEGERI KATON",
+    "location": "Tugu Sari, Halangan Ratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800723",
+    "name": "UPTD SDN 19  NEGERI KATON",
+    "location": "Sinarbandung Rt5 Rw2, Sinarbandung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810341",
+    "name": "UPTD SDN 2 NEGERI KATON",
+    "location": "Jln Kesehatan No. 3 Roworejo, Roworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801409",
+    "name": "UPTD SDN 20  NEGERI KATON",
+    "location": "Bangunsari Rt 2 Rw 3, Bangun Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800408",
+    "name": "UPTD SDN 21  NEGERI KATON",
+    "location": "Trirahayu, Tri Rahayu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800232",
+    "name": "UPTD SDN 22  NEGERI KATON",
+    "location": "JL. RAYA SRINUSABANGSA DESA PONCOKRESNO KEC. NEGERI KATON KABUPATEN PESAWARAN, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810344",
+    "name": "UPTD SDN 23  NEGERI KATON",
+    "location": "Trisno maju, Trisno Maju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800317",
+    "name": "UPTD SDN 24  NEGERI KATON",
+    "location": "Negeri Katon, Negerikatun",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800151",
+    "name": "UPTD SDN 25 NEGERI KATON",
+    "location": "Poncokresno, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801172",
+    "name": "UPTD SDN 26  NEGERI KATON",
+    "location": "Kalirejo, Kalirejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800168",
+    "name": "UPTD SDN 27  NEGERI KATON",
+    "location": "Purworejo, Purworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800159",
+    "name": "UPTD SDN 28 NEGERI KATON",
+    "location": "Jl. Branti Raya Desa Negerikaton, Negerikatun",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801454",
+    "name": "UPTD SDN 29  NEGERI KATON",
+    "location": "Pujorahayu, Pujorahayu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801107",
+    "name": "UPTD SDN 3 NEGERI KATON",
+    "location": "Trisno maju, Trisno Maju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800400",
+    "name": "UPTD SDN 30  NEGERI KATON",
+    "location": "Sridadi, Tanjung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800105",
+    "name": "UPTD SDN 31 NEGERI KATON",
+    "location": "Tanjungrejo, Tanjung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810340",
+    "name": "UPTD SDN 32  NEGERI KATON",
+    "location": "Jl. Abdul Majdid, Karangrejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800231",
+    "name": "UPTD SDN 33  NEGERI KATON",
+    "location": "Pujorahayu, Pujorahayu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801134",
+    "name": "UPTD SDN 34  NEGERI KATON",
+    "location": "Roworejo 2, Sidomulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810339",
+    "name": "UPTD SDN 35 NEGERI KATON",
+    "location": "Jl. Branti Raya, Kagunganratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810346",
+    "name": "UPTD SDN 36  NEGERI KATON",
+    "location": "Trisnomaju, Trisno Maju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810347",
+    "name": "UPTD SDN 37  NEGERI KATON",
+    "location": "Trisnomaju, Trisno Maju",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801370",
+    "name": "UPTD SDN 38  NEGERI KATON",
+    "location": "Halangan Ratu, Halangan Ratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801314",
+    "name": "UPTD SDN 39  NEGERI KATON",
+    "location": "Bangun Sari, Bangun Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801488",
+    "name": "UPTD SDN 4 NEGERI KATON",
+    "location": "Jl. Branti Raya Desa Negerikaton Kecamatan Negerikaton Kabupaten Pesawaran, Negerikatun",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800160",
+    "name": "UPTD SDN 40  NEGERI KATON",
+    "location": "Negarasaka, Negarasaka",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800216",
+    "name": "UPTD SDN 41  NEGERI KATON",
+    "location": "Poncokresno, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800279",
+    "name": "UPTD SDN 42  NEGERI KATON",
+    "location": "Jln Raya Sidomulyo, Sidomulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810343",
+    "name": "UPTD SDN 43  NEGERI KATON",
+    "location": "Sangubanyu, Lumbi Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810348",
+    "name": "UPTD SDN 44  NEGERI KATON",
+    "location": "Guruh Nangi, Halangan Ratu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800341",
+    "name": "UPTD SDN 5 NEGERI KATON",
+    "location": "PoncoKresno, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800340",
+    "name": "UPTD SDN 6  NEGERI KATON",
+    "location": "Pujorahayu, Pujorahayu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810342",
+    "name": "UPTD SDN 7  NEGERI KATON",
+    "location": "Jl. Raya Lumbirejo, Lumbi Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801339",
+    "name": "UPTD SDN 8  NEGERI KATON",
+    "location": "Jln. Branti Raya, Kalirejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10180331",
+    "name": "UPTD SDN 9  NEGERI KATON",
+    "location": "Jln Kesehatan No. 3, Roworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800545",
+    "name": "UPTD SMPN 18 PESAWARAN",
+    "location": "Jl. Branti Raya, Karangrejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814577",
+    "name": "UPTD SMPN 21 PESAWARAN",
+    "location": "Poncokresno, Poncokresno",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814574",
+    "name": "UPTD SMPN 31 PESAWARAN",
+    "location": "Tanjung Rejo, Tanjung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800519",
+    "name": "UPTD SMPN 7 PESAWARAN",
+    "location": "Jalan Raya Lumbirejo, Lumbi Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814575",
+    "name": "UPTD SMPN SATAP 7 PESAWARAN",
+    "location": "Desa Bangun sari, Bangun Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814629",
+    "name": "UPTD SMPN SATAP 8 PESAWARAN",
+    "location": "Jalan Puniakan Dalam Tuha, Dusun way rate, Negeri Ulangan Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705904",
+    "name": "MIS AL FATAH",
+    "location": "Trimulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705907",
+    "name": "MIS AT TAQWA",
+    "location": "Jalan Krajan, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705906",
+    "name": "MIS AT-TAQWA KRESNOWIDODO",
+    "location": "JL. KRAJAN DESA KRESNO WIDODO RT 013 / RW 004, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705909",
+    "name": "MIS ISLAMIYAH",
+    "location": "Purworejo, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705910",
+    "name": "MIS MINHADLUL ULUM",
+    "location": "Trimulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70041907",
+    "name": "MIS MUALLAMUL HUDA AL ARSYAD ZAINAB",
+    "location": "Dusun Margodadi RT 01, Gedung Gumanti",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705903",
+    "name": "MIS MUHAMMADIYAH SIDOBASUKI",
+    "location": "Jl. Lintas Sumatra KM.36 Sidobasuki Desa Bumi Agung, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705905",
+    "name": "MIS NURUSSAADAH",
+    "location": "Gerning, Gerning",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705908",
+    "name": "MIS QOMARUL HIDAYAH",
+    "location": "Margo Rejo, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69956123",
+    "name": "MIS TAHFIDZ HIDAYATUL QUR AN",
+    "location": "Jl. Sri Mulyo, Gerning",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816903",
+    "name": "MTSS AL HIDAYAT",
+    "location": "Jalan Raya Gerning, Gerning",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816898",
+    "name": "MTSS AL HIKMAH",
+    "location": "Gerning, Gerning",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816901",
+    "name": "MTSS AT TAQWA",
+    "location": "Kresno Widodo, Kresno Widodo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816896",
+    "name": "MTSS DAARUTTAUHID",
+    "location": "Bumi Agung, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816900",
+    "name": "MTSS MINHADLUL ULUM",
+    "location": "Trimulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816897",
+    "name": "MTSS MUQORUL IKHSAN",
+    "location": "Rejo Agung, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816902",
+    "name": "MTSS NURUL IMAN",
+    "location": "Jalan Protokol Pancur, Rejoagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816899",
+    "name": "MTSS QOMARUL HIDAYAH",
+    "location": "Margo Rejo, Margo Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69773547",
+    "name": "SD S DWI MULYA",
+    "location": "Jl. Lintas Sumatra Kec. Tegineneng, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70044760",
+    "name": "SDIT Ar Rahman Trimulyo",
+    "location": "Dusun Wonorejo Trimulyo Kecamatan Tegineneng Kabupaten Pesawaran, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10815112",
+    "name": "SMP DWI MULYA",
+    "location": "Desa KOTA AGUNG, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800463",
+    "name": "SMP MUHAMMADIYAH 1 WONOREJO",
+    "location": "Jl. K. H. Ahmad Dahlan No.07, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800581",
+    "name": "SMP TITIPASAN MASGAR",
+    "location": "Jln Raya Lintas Sumatra, Bumiagung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800489",
+    "name": "SMP YP17.1 MARGOMULYO",
+    "location": "Margomulyo, Margo Mulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69773546",
+    "name": "SMPS DAARUL QURAN",
+    "location": "JL.LINTAS SUMATRA KM.39, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801354",
+    "name": "UPTD SDN 1 TEGINENENG",
+    "location": "Jl. Simpang Metro No.104 Bumi Agung, Bumiagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811030",
+    "name": "UPTD SDN 10 TEGINENENG",
+    "location": "Jl. Suttan Sakti, Trimulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800593",
+    "name": "UPTD SDN 11 TEGINENENG",
+    "location": "Jl. Inpres Desa Panca Bakti, Panca Bakti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801310",
+    "name": "UPTD SDN 12 TEGINENENG",
+    "location": "Jl. Raya Tegineneng Metro, Batang Hari Ogan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801376",
+    "name": "UPTD SDN 13 TEGINENENG",
+    "location": "Jl. Desa Gedung Gumanti, Gedung Gumanti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801194",
+    "name": "UPTD SDN 14 TEGINENENG",
+    "location": "Jl. Kresno Aji, Kresno Widodo, Kresno Widodo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801481",
+    "name": "UPTD SDN 15 TEGINENENG",
+    "location": "Jl. Muntilan, Desa Margorejo, Margo Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800374",
+    "name": "UPTD SDN 16 TEGINENENG",
+    "location": "Jl. Sri Widari, Desa Sri Widari, SRIWEDARI",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800722",
+    "name": "UPTD SDN 17 TEGINENENG",
+    "location": "Jl. Raya Sinar Jati, Dusun Sri Rejeki, Sinar Jati",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800188",
+    "name": "UPTD SDN 18 TEGINENENG",
+    "location": "Jl. Tridadi, Desa Margomulyo, Margo Mulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800653",
+    "name": "UPTD SDN 19 TEGINENENG",
+    "location": "Jl. Suttan Sakti, Desa Kejadian, Kejadian",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811109",
+    "name": "UPTD SDN 2 TEGINENENG",
+    "location": "Jl. Lintas Sumatra Km.40, Negara Ratuwates",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800335",
+    "name": "UPTD SDN 20 TEGINENENG",
+    "location": "Jl. Purwodadi, Desa Rejo Agung, Rejoagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800169",
+    "name": "UPTD SDN 21 TEGINENENG",
+    "location": "Jl. Rejo Agung, Rejoagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800427",
+    "name": "UPTD SDN 22 TEGINENENG",
+    "location": "Jl. Ogan Dua, Desa Trimulyo, Trimulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801328",
+    "name": "UPTD SDN 23 TEGINENENG",
+    "location": "Jl. Talang Besar, Desa Gedung Gumanti, Gedung Gumanti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800242",
+    "name": "UPTD SDN 24 TEGINENENG",
+    "location": "Jl. Kresno Baru, Kresno Widodo, Kresno Widodo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800607",
+    "name": "UPTD SDN 25 TEGINENENG",
+    "location": "Jl. Mekar Sari, Kota Agung, Kota Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800661",
+    "name": "UPTD SDN 26 TEGINENENG",
+    "location": "Jl. Simpang Rengas, Gunung Sugih Baru, Gunung Sugih Baru",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801327",
+    "name": "UPTD SDN 27 TEGINENENG",
+    "location": "Jl. Srimulyo No. 10/04 Gerning, Gerning",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800138",
+    "name": "UPTD SDN 28 TEGINENENG",
+    "location": "Jl. Lintas Sumatra, Sido Basuki, Bumi Agung, Bumiagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800352",
+    "name": "UPTD SDN 29 TEGINENENG",
+    "location": "Jl. Enggal Mulyo, Desa Gedung Gumanti, Gedung Gumanti",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801489",
+    "name": "UPTD SDN 3 TEGINENENG",
+    "location": "Jl. Simpang Masgar, Margomulyo, Margo Mulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800199",
+    "name": "UPTD SDN 30 TEGINENENG",
+    "location": "Jl. Srimulyo, Desa Sriwedari, SRIWEDARI",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800218",
+    "name": "UPTD SDN 31 TEGINENENG",
+    "location": "Jl. Kresno Tunggal, Kresno Widodo, Kresno Widodo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800326",
+    "name": "UPTD SDN 32 TEGINENENG",
+    "location": "Jl. Desa Margorejo, Margo Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800207",
+    "name": "UPTD SDN 33 TEGINENENG",
+    "location": "Jl. Janur Kuning, Bumi Rejo, Bumiagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800167",
+    "name": "UPTD SDN 34 TEGINENENG",
+    "location": "Jl. Panggung Asri, Desa Margorejo, Margo Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800369",
+    "name": "UPTD SDN 35 TEGINENENG",
+    "location": "Jl. Ponorogo Desa Gerning, Gerning",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801404",
+    "name": "UPTD SDN 4 TEGINENENG",
+    "location": "Jl. Desa Batang Hari Ogan, Batang Hari Ogan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801449",
+    "name": "UPTD SDN 5 TEGINENENG",
+    "location": "Jl. Purworejo II Rejo Agung, Rejoagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800349",
+    "name": "UPTD SDN 6 TEGINENENG",
+    "location": "Jl. Simpang Masgar, Margomulyo, Margo Mulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801462",
+    "name": "UPTD SDN 7 TEGINENENG",
+    "location": "Jl. Kresno Widodo, Kresno Widodo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810830",
+    "name": "UPTD SDN 8 TEGINENENG",
+    "location": "Jl. Raya Gerning, Desa Gerning, Gerning",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800363",
+    "name": "UPTD SDN 9 TEGINENENG",
+    "location": "Jl. Lintas Sumatra Masgar, Bumi Agung, Bumiagung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800537",
+    "name": "UPTD SMPN 11 PESAWARAN",
+    "location": "Jl. Sriwedari, SRIWEDARI",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10803129",
+    "name": "UPTD SMPN 15 PESAWARAN",
+    "location": "Jalan Suttan Perdana Wiso No.33, Trimulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69978651",
+    "name": "UPTD SMPN 28 PESAWARAN",
+    "location": "DESA BATANGHARI OGAN, TEGINENENG, Batang Hari Ogan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810616",
+    "name": "UPTD SMPN 6 PESAWARAN",
+    "location": "Jl. Trimulyo No. 17 Tegineneng, Kejadian",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811582",
+    "name": "UPTD SMPN SATAP 3 PESAWARAN",
+    "location": "Jl. Raya Sinarjati, Sinar Jati",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705899",
+    "name": "MIS AL KHAIRIYAH",
+    "location": "Kampung Baru, Kampung Baru",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705898",
+    "name": "MIS NURUL IMAN",
+    "location": "Pematang Awi, Sukajaya Punduh",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816895",
+    "name": "MTSS AL  KHAIRIYAH",
+    "location": "Kampung Baru, Kampung Baru",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800856",
+    "name": "MTSS NURUL IMAN",
+    "location": "Jalan Pematang Awi, Sukajaya Punduh",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801383",
+    "name": "SDS GUNUNG BUNDAR",
+    "location": "DUSUN TANGGANG DESA MAJA, Maja",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800626",
+    "name": "UPTD SDN 1 MARGA PUNDUH",
+    "location": "Jl. Raya Marga Punduh, Pekon Ampai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801157",
+    "name": "UPTD SDN 2 MARGA PUNDUH",
+    "location": "Jl. Raya Punduh Pedada, Sukajaya Punduh",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800303",
+    "name": "UPTD SDN 3 MARGA PUNDUH",
+    "location": "Jl. Pematang Awi, Sukajaya Punduh",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800656",
+    "name": "UPTD SDN 4 MARGA PUNDUH",
+    "location": "Jl. Suka Tani NO.3 Desa Kampung Baru, Kampung Baru",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800652",
+    "name": "UPTD SDN 5 MARGA PUNDUH",
+    "location": "Jl. Kekatang Hilir, Kekatang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800620",
+    "name": "UPTD SDN 6 MARGA PUNDUH",
+    "location": "Desa Penyandingan, Penyandingan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10815282",
+    "name": "UPTD SDN 7 MARGA PUNDUH",
+    "location": "Jl. Maja Ujung, Maja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800595",
+    "name": "UPTD SDN 8 MARGA PUNDUH",
+    "location": "Dusun I Suak Buah Pulau Pahawang, Pulau Pahawang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69978816",
+    "name": "UPTD SMPN 29 PESAWARAN",
+    "location": "Jl Teluk Asuk, Desa Penyandingan, Penyandingan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800515",
+    "name": "UPTD SMPN 8 PESAWARAN",
+    "location": "Jl. Sukajaya Maja Punduh, Maja",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814583",
+    "name": "UPTD SMPN SATAP 6 PESAWARAN",
+    "location": "Dusun Suak Buah Desa Pulau Pahawang Kec. Marga Punduh, Pulau Pahawang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705847",
+    "name": "MIS DINIYYAH ISLAMIYAH",
+    "location": "Jalan Latsitarda, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705855",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Babakan Loa, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705869",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Gunung Sari, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705862",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Jln. Ky. Abd. Syukur No.56 Mada Jaya, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705861",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Tanjung Rejo, Tanjung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705854",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Serkung, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70060611",
+    "name": "MTS IBNU MUHTARAM",
+    "location": "Jalan Raya Tanjung Kerta Dusun 6 RT 04 RW 02, Tanjung Kerta",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816870",
+    "name": "MTSS AR-ROHMAN",
+    "location": "Dusun Serkung, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816864",
+    "name": "MTSS DARUL MUQIMIN",
+    "location": "Kota Jawa, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816867",
+    "name": "MTSS HAYATUL MUTAQIN",
+    "location": "Penengahan, Penengahan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69955872",
+    "name": "MTSS MALNU",
+    "location": "Jalan Damar Sari, Kota Jawa",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811560",
+    "name": "SDS SINAR JAYA",
+    "location": "Dusun Sinar Jaya, Bayas Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70000063",
+    "name": "SMP BUMIKAROMAH",
+    "location": "Kp Bontor Girang RT/RW: 007/ 004, Mada Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70033886",
+    "name": "SMP DARUL MUSTHOFA AL MAHMUDANY",
+    "location": "Jl. Gunung Sari, Gg Sate RT 004/ RW 004, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70055209",
+    "name": "SMP RADEN FATTAH",
+    "location": "Desa Gunung Sari, Rt.014/ Rw.06 Kec. Way Khilau, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70054676",
+    "name": "SMP ROUDLOTUSSOLIHIN",
+    "location": "Jl. GUNUNG SARI DESA GUNUNG SARI KEC. WAY KHILAU, Gunung Sari",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801138",
+    "name": "UPTD SDN  1 WAY KHILAU",
+    "location": "Jl. Raya Kedondong KM. 50 Desa Sukajaya, Sukajaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801195",
+    "name": "UPTD SDN  10 WAY KHILAU",
+    "location": "Desa KOTA JAWA, Kota Jawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800344",
+    "name": "UPTD SDN  12 WAY KHILAU",
+    "location": "Desa Penengahan, Penengahan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801324",
+    "name": "UPTD SDN  13 WAY KHILAU",
+    "location": "Gunung Sari Kec Kedondong Kabupaten Pesawaran, Gunung Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811219",
+    "name": "UPTD SDN  14 WAY KHILAU",
+    "location": "Jl.raya Desa Padang Cermin, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801193",
+    "name": "UPTD SDN  15 WAY KHILAU",
+    "location": "Dusun Sida Mulya, Kubu Batu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801185",
+    "name": "UPTD SDN  16 WAY KHILAU",
+    "location": "Desa Mada Jaya, Mada Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800402",
+    "name": "UPTD SDN  17 WAY KHILAU",
+    "location": "Jl. Raya Kedondong Desa Tanjung Kerta, Tanjung Kerta",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801308",
+    "name": "UPTD SDN  18 WAY KHILAU",
+    "location": "Dusun Congkanan, Bayas Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801373",
+    "name": "UPTD SDN  2 WAY KHILAU",
+    "location": "jalan Gunungsari no.30, Gunung Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801438",
+    "name": "UPTD SDN  4 WAY KHILAU",
+    "location": "Desa Penengahan, Penengahan",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801082",
+    "name": "UPTD SDN  5 WAY KHILAU",
+    "location": "Tanjung Kerta, Tanjung Kerta",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801463",
+    "name": "UPTD SDN  7 WAY KHILAU",
+    "location": "JL. RAYA KOTA JAWA, Kota Jawa",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801401",
+    "name": "UPTD SDN 11  WAY KHILAU",
+    "location": "Dusun Bayas, Bayas Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800100",
+    "name": "UPTD SDN 19  WAY KHILAU",
+    "location": "Langan Sari, Gunung Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801461",
+    "name": "UPTD SDN 3  WAY KHILAU",
+    "location": "Jl Raya Kubu Batu, Kubu Batu",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811218",
+    "name": "UPTD SDN 6  WAY KHILAU",
+    "location": "Desa Padang Cermin, Padang Cermin",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800371",
+    "name": "UPTD SDN 8  WAY KHILAU",
+    "location": "Desa Tanjungrejo, Tanjung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801495",
+    "name": "UPTD SDN 9  WAY KHILAU",
+    "location": "Desa Mada Jaya, Mada Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800535",
+    "name": "UPTD SMPN 12 PESAWARAN",
+    "location": "Jalan Raya Sukajaya, Sukajaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810589",
+    "name": "UPTD SMPN 9 PESAWARAN",
+    "location": "Desa Mada Jaya, Mada Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705888",
+    "name": "MIS AL FALAH",
+    "location": "Muncak, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705887",
+    "name": "MIS AL MUNAWWAROH",
+    "location": "Marga Dalom, Batu Menyan",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705884",
+    "name": "MIS AL- FALAH",
+    "location": "Pancur, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705891",
+    "name": "MIS HAQQUL YAQIN",
+    "location": "Sukajaya Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705877",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Unggak Way, Gebang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705893",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Seribu, Gebang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705881",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Pematang, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705883",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Tanjung Agung, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705890",
+    "name": "MIS NURUL HUDA",
+    "location": "Sungkai, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705889",
+    "name": "MIS SHOLAWATUL FALAH",
+    "location": "Sukajaya Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705876",
+    "name": "MIS SUNAN MURIA",
+    "location": "Jl. Perintis No. 1 Desa Cilimus Kec. Teluk Pandan Pesawaran Lampung, Cilimus",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70042038",
+    "name": "SD IT GLOBAL AR RAHMAN",
+    "location": "Jl. Raya Way Ratai Dusun C, Desa Hanura , Kec.Teluk Pandan Pesawaran  – Lampung, Hanura",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70004860",
+    "name": "SDIT DHARMA KUSUMA JAYA",
+    "location": "JL.Sukabumin II Gg Aryo, Sukajaya Lempasing, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69972447",
+    "name": "SMP QURAN NURUL HUDA",
+    "location": "JL. TELUK RATAI DUSUN SUKABUMI II SUKAJAYA LEMPASING, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801368",
+    "name": "UPTD SDN 1 TELUK PANDAN",
+    "location": "Jl. Jendral Suprapto, Hanura",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801367",
+    "name": "UPTD SDN 10 TELUK PANDAN",
+    "location": "Jl. Raya Cilimus Dusun Way Sembung, Cilimus",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800729",
+    "name": "UPTD SDN 11 TELUK PANDAN",
+    "location": "Tanjung Harapan, Tanjung Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800354",
+    "name": "UPTD SDN 12 TELUK PANDAN",
+    "location": "Dusun Sinar Harapan, Gebang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800386",
+    "name": "UPTD SDN 13 TELUK PANDAN",
+    "location": "Jl. HM. Nur Desa Talang Mulya, Talang Mulya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800118",
+    "name": "UPTD SDN 14 TELUK PANDAN",
+    "location": "Sukajaya Lempasing, Dusun Mutun, Sukajaya Lempasing",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801199",
+    "name": "UPTD SDN 2 TELUK PANDAN",
+    "location": "Jl. Jendral Ahmad Yani Dusun B, Hanura",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801358",
+    "name": "UPTD SDN 3 TELUK PANDAN",
+    "location": "Jl Raya Way Ratai KM 17, Gebang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801140",
+    "name": "UPTD SDN 4 TELUK PANDAN",
+    "location": "Jl. Way Ratay Km 8, Sukajaya Lempasing",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800748",
+    "name": "UPTD SDN 5 TELUK PANDAN",
+    "location": "Jl. Raya Way Ratai, Sidodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801330",
+    "name": "UPTD SDN 6 TELUK PANDAN",
+    "location": "Jl. Raya Way Ratai, Gebang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800387",
+    "name": "UPTD SDN 7 TELUK PANDAN",
+    "location": "Jl. Raya Way Ratai Rt 02 Rw 02, Hanura",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801198",
+    "name": "UPTD SDN 8 TELUK PANDAN",
+    "location": "Hurun, Hurun",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800304",
+    "name": "UPTD SDN 9 TELUK PANDAN",
+    "location": "Way Reda, Munca",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800518",
+    "name": "UPTD SMPN 2 PESAWARAN",
+    "location": "Jln. Pramuka Barat No. 8, Hanura",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69769624",
+    "name": "UPTD SMPN 25 PESAWARAN",
+    "location": "JL.RAYA WAY RATAI DESA SIDODADI, Sidodadi",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69986951",
+    "name": "UPTD SMPN SATAP 11 PESAWARAN",
+    "location": "DESA TANJUNG AGUNG, Tanjung Agung",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69978818",
+    "name": "UPTD SMPN SATAP 9 PESAWARAN",
+    "location": "JL. HM NUR, DESA TALANG MULYA No 33, TELUK PANDAN, Talang Mulya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705897",
+    "name": "MIS AN NIDA",
+    "location": "Totoharjo, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705894",
+    "name": "MIS HIDAYATUL MUBTADIIN",
+    "location": "Kaliguha, Pesawaran Indah",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705885",
+    "name": "MIS ISLAMIYAH",
+    "location": "Sinar Harapan, Bunut Seberang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705886",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Sukasirna, Bunut Seberang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705879",
+    "name": "MIS MATHLAUL ANWAR",
+    "location": "Cadasari, Bunut Seberang",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705878",
+    "name": "MIS NURUL HUDA",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "60705892",
+    "name": "MIS NURUL IMAN",
+    "location": "Wonorejo, Pesawaran Indah",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "70008779",
+    "name": "SMP ISLAM RIYADHUL MUBAROK",
+    "location": "Dusun Mekar Sari RT 001/RW 05 Desa Harapan Jaya, Harapan Jaya",
+    "status": "SWASTA",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801351",
+    "name": "UPTD SDN 1 WAY RATAI",
+    "location": "Jl.Bunut Pasar Desa Bunut, Bunut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801458",
+    "name": "UPTD SDN 10 WAY RATAI",
+    "location": "Jl.Margorejo Desa Pesawaran Indah, Pesawaran Indah",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800426",
+    "name": "UPTD SDN 11 WAY RATAI",
+    "location": "Jl.Raya Way Ratai Desa Wates Way Ratai, Wates Way Ratai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801350",
+    "name": "UPTD SDN 12 WAY RATAI",
+    "location": "Jl. Raya Way Ratai Desa Bunut Seberang, Bunut Seberang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801145",
+    "name": "UPTD SDN 13 WAY RATAI",
+    "location": "Jl.Barajawi Jaya Desa Sumber Jaya, Sumber Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810637",
+    "name": "UPTD SDN 14 WAY RATAI",
+    "location": "Jl. Candi Sari Desa Gunung Rejo, Gunung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800215",
+    "name": "UPTD SDN 15 WAY RATAI",
+    "location": "Jl. Banyumas Desa Ceringin Asri, Ceringin Asri",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800405",
+    "name": "UPTD SDN 16 WAY RATAI",
+    "location": "Jl.Krikil Tajam Sinar 2 Desa Harapan Jaya, Harapan Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800360",
+    "name": "UPTD SDN 17 WAY RATAI",
+    "location": "Jl.Cibalong Desa Bunut, Bunut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800292",
+    "name": "UPTD SDN 18 WAY RATAI",
+    "location": "Jl.Tanjung Jaya Desa Sumber Jaya, Sumber Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800113",
+    "name": "UPTD SDN 19 WAY RATAI",
+    "location": "Jl. Tangkil Rejo Desa Sumber Jaya, Sumber Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800370",
+    "name": "UPTD SDN 2 WAY RATAI",
+    "location": "Jl.Taman Sari Desa Mulyosari, Mulyo Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800132",
+    "name": "UPTD SDN 20 WAY RATAI",
+    "location": "Jl.Salak Pondok Gunung Sari, Mulyo Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800205",
+    "name": "UPTD SDN 21 WAY RATAI",
+    "location": "Jl.kaliawi Desa Gunung Rejo, Gunung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800119",
+    "name": "UPTD SDN 22 WAY RATAI",
+    "location": "Jl.Kalirejo desa Wates Way Ratai, Wates Way Ratai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69990967",
+    "name": "UPTD SDN 23 WAY RATAI",
+    "location": "JL.Poncorejo, Desa poncorejo, Kec. Way Ratai, Poncorejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801318",
+    "name": "UPTD SDN 3 WAY RATAI",
+    "location": "Jl.Sidomulyo Desa Bunut Seberang, Bunut Seberang",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800342",
+    "name": "UPTD SDN 4 WAY RATAI",
+    "location": "Jl. Wonorejo Desa Pesawaran Indah, Pesawaran Indah",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801106",
+    "name": "UPTD SDN 5 WAY RATAI",
+    "location": "Jl.Way Ratai Desa Wates Way Ratai, Wates Way Ratai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800257",
+    "name": "UPTD SDN 6 WAY RATAI",
+    "location": "Jl.Taman Baru Desa Wates Way ratai, Wates Way Ratai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10810636",
+    "name": "UPTD SDN 7 WAY RATAI",
+    "location": "Jl.Gunung Rejo 1 Desa Gunung Rejo, Gunung Rejo",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10801317",
+    "name": "UPTD SDN 8 WAY RATAI",
+    "location": "Jl.Raya Way Ratai Desa Bunut Way Ratai, Bunut",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10800210",
+    "name": "UPTD SDN 9 WAY RATAI",
+    "location": "Jl.Selorejo Desa Wates Way Ratai, Wates Way Ratai",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10811878",
+    "name": "UPTD SMPN 23 PESAWARAN",
+    "location": "Jalan Way Ratai, Mulyo Sari",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "69978817",
+    "name": "UPTD SMPN SATAP 10 PESAWARAN",
+    "location": "DUSUN TAMAN ASRI , DESA CERINGIN ASRI, Ceringin Asri",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10814581",
+    "name": "UPTD SMPN SATAP 2 PESAWARAN",
+    "location": "Jl. Brawijaya desa Sumber Jaya, Sumber Jaya",
+    "status": "NEGERI",
+    "jenjang": "DIKDAS"
+  },
+  {
+    "npsn": "10816340",
+    "name": "MAS AL ISLAM BUNUT",
+    "location": "Bunut, Bunut",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816337",
+    "name": "MAS AL-IKHLAS",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816342",
+    "name": "MAS DARUR RIDHO",
+    "location": "Jl. A. Yani No. 05 RT. 002 RW. 002 RKB, Hanura",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69941636",
+    "name": "MAS MATHLAUL ANWAR",
+    "location": "Pematang, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816341",
+    "name": "MAS MATHLLAUL ANWAR",
+    "location": "Kecapi, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816339",
+    "name": "MAS NURUL HUDA",
+    "location": "Candisari, Gunung Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800705",
+    "name": "SMAN 1 PADANG CERMIN",
+    "location": "Jl. Pramuka no. 7 HANURA, Hanura",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800736",
+    "name": "SMAS DHARMA ASIH WATES",
+    "location": "JL. RAYA WATES WAY RATAI, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800676",
+    "name": "SMAS PGRI 01 PADANG CERMIN",
+    "location": "JL. Rawa Tunggal Desa Padang cermin, Padang Cermin",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69851374",
+    "name": "SMKI SUNAN MURIA",
+    "location": "Jl. Perintis Blok.YSM, CILIMUS",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800482",
+    "name": "SMKN PADANG CERMIN",
+    "location": "Jl. Raya Way Ratai, Km. 40,5, Way Urang",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69955653",
+    "name": "MAS UNWANUL FALAH",
+    "location": "Kupang Rejo, Bangun Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70023852",
+    "name": "SMA NEGERI PULAU LEGUNDI",
+    "location": "JL. Abdurrohman No. 1, Pulau Legundi",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69758128",
+    "name": "SMAN 2 PUNDUH PEDADA",
+    "location": "PUNDUH PEDADA, Bawang",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69976007",
+    "name": "MA DAARUL IKROM",
+    "location": "Jalan Raya Tempel Rejo Dusun Suka Bakti, Tempel Rejo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816334",
+    "name": "MAN 1 PESAWARAN",
+    "location": "Jalan Kertasana No. 1 Desa Gunung Sugih, Gunung Sugih",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69941633",
+    "name": "MAS AL AMIN",
+    "location": "Sinar Harapan, Sinar Harapan",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816336",
+    "name": "MAS MATHLAUL ANWAR",
+    "location": "Jalan Pos dan Giro, Pasar Baru",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10810747",
+    "name": "SMAN 1 KEDONDONG",
+    "location": "JL. TRITURA  NO. 8, Kedondong",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70012845",
+    "name": "SMK WIRABUANA PESAWARAN",
+    "location": "Jalan Lintas Way Ratai Tanjung Jati Atas, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800477",
+    "name": "SMKS PGRI 1 KEDONDONG",
+    "location": "JL.TRITURA NO.7 RT.01 RW.01 KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10811003",
+    "name": "SMKS PGRI 2 KEDONDONG",
+    "location": "JL.TRITURA KEDONDONG, Kedondong",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816345",
+    "name": "MAS DARUL HIKMAH",
+    "location": "Jalan Dwi Janda, Margodadi",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69941635",
+    "name": "MAS HIDAYATUL MUBTADIIN",
+    "location": "Tanjung Rahayu, Tanjung Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10810810",
+    "name": "SMAN 1 WAY LIMA",
+    "location": "JL. Raya Desa Baturaja, Baturaja",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69941634",
+    "name": "MAS DARUL HUFFAZH",
+    "location": "Jalan Raya Bernung No. 36, Bernung",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816333",
+    "name": "MAS DINIYYAH PUTRI",
+    "location": "Jalan Raya Negeri Sakti, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70024586",
+    "name": "SLB SINAR HAFIZAH",
+    "location": "JL. Darmo Wiyono 2 RT. 05 RW. 01, Wiyono",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70034981",
+    "name": "SMA ISLAM DARUSSAADAH",
+    "location": "JL. Dwi Karya Dusun Sumber Sari 2, Tamansari",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70005700",
+    "name": "SMA KHADIJAH",
+    "location": "Jl. Abdul Wahid RT/RW : 003/001 Dusun Negeri Ampai, Negeri Sakti",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800690",
+    "name": "SMAN 1 GEDONG TATAAN",
+    "location": "JL. SWADAYA, Sukaraja",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69754001",
+    "name": "SMAN 2 GEDONG TATAAN",
+    "location": "DESA TAMAN SARI GEDONG TATAAN, Tamansari",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69725547",
+    "name": "SMAS TAMAN SISWA",
+    "location": "JL.A.YANI NO.67 GEDONG TATAAN, Bagelen",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69851860",
+    "name": "SMK NUSANTARA",
+    "location": "JL. PTPN VII, Kebagusan",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69754002",
+    "name": "SMKN 1 GEDONG TATAAN",
+    "location": "JL.VETERAN II DAM C DESA WIYONO G.TATAAN, Wiyono",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800508",
+    "name": "SMKS MUHAMMADIYAH GEDONG TATAAN",
+    "location": "JL RAYA PENEGAHAN GEDONG TATAAN KAB.PESAWARAN, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10815146",
+    "name": "SMKS PELITA GEDONG TATAAN",
+    "location": "JL.RAYA PENENGAHAN GEDONG TATAAN, Gedung Tataan",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69788108",
+    "name": "MAS RAUDLATUL HUDA AL-ISLAMY",
+    "location": "Jalan Raya Sidomulyo, Sidomulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69968912",
+    "name": "SMA IT AL - FARABI",
+    "location": "Jln. Branti Raya, Halangan Ratu",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800706",
+    "name": "SMAN 1 NEGERI KATON",
+    "location": "JL. RAYA DESA SIDOMULYO No. 01, Sidomulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69725552",
+    "name": "SMAN 2  NEGERI KATON",
+    "location": "JL.BRANTI RAYA NEGERI KATON, Pejambon",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70029099",
+    "name": "SMK IP FATHUL ULUM",
+    "location": "Dusun Srinusa Bangsa Barat RT/RW 001/007, Poncokresno",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69754005",
+    "name": "SMKN 1 NEGERI KATON",
+    "location": "Jalan Pandean II, Purworejo",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814927",
+    "name": "SMKS YAMACO KATON",
+    "location": "JL.TERUSAN BRANTI RAYA KARANGREJO, Karangrejo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816344",
+    "name": "MAS AL HIDAYAT",
+    "location": "Gerning, Gerning",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816343",
+    "name": "MAS MINHADLUL ULUM",
+    "location": "Trimulyo, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800682",
+    "name": "SMAN 1 TEGINENENG",
+    "location": "JL. Kresno Aji, Desa Kresno Widodo, Kec. Tegineneng, Kab. Pesawaran, Kresno Widodo",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814587",
+    "name": "SMAN 2 TEGINENENG",
+    "location": "JL. NGUDI ILMU NO. 25, Trimulyo",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814589",
+    "name": "SMAS DWI MULYA",
+    "location": "JL. LINTAS SUMATERA, Kota Agung",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10800684",
+    "name": "SMAS MUHAMMADIYAH TEGINENENG",
+    "location": "JL. KH. DAHLAN NO. 7, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69762726",
+    "name": "SMKN 1 TEGINENENG",
+    "location": "JL.RAYA TEGINENENG, Batang Hari Ogan",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814653",
+    "name": "SMKS MINHADLUL ULUM",
+    "location": "JL RAYA CENDANASARI WONOREJO, Trimulyo",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69955654",
+    "name": "MAS AL MUSLIM NURUL HIDAYAH",
+    "location": "Pematang Awi, Sukajaya Punduh",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814585",
+    "name": "SMAN 1 PUNDUH PEDADA",
+    "location": "JL. RAKITO ARIFIN, Maja",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69759182",
+    "name": "SMAS PAHAWANG",
+    "location": "Desa Pulau Pahawang, Pulau Pahawang",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10816335",
+    "name": "MAS HAYATUL MUTTAQIN",
+    "location": "Jalan Raya Kedondong Desa Penengahan Kecamatan Way Khilau, Penengahan",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69757215",
+    "name": "SMAN 1 WAY KHILAU",
+    "location": "JL.RAYA SUKAJAYA, Sukajaya",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69955652",
+    "name": "MAS AL FALAH MUNCAK",
+    "location": "Dusun Kampling, Munca",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69955651",
+    "name": "MAS MATHLAUL ANWAR",
+    "location": "Jalan Raya Way Ratai, Gebang",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "70024302",
+    "name": "SMA QURAN NURUL HUDA",
+    "location": "JL. Teluk Ratai Dusun Sukabumi II, Sukajaya Lempasing",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "10814586",
+    "name": "SMAN 2 PADANG CERMIN",
+    "location": "JL. Raya Ceringin Asri, Ceringin Asri",
+    "status": "NEGERI",
+    "jenjang": "DIKMEN"
+  },
+  {
+    "npsn": "69972621",
+    "name": "SMK MAARIF 3 PESAWARAN",
+    "location": "Jl. Padangcermin-Kedondong, Wates Way Ratai",
+    "status": "SWASTA",
+    "jenjang": "DIKMEN"
+  }
+]

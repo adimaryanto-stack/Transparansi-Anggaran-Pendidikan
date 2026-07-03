@@ -33,9 +33,9 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 ---
 
 ## 📋 Status Proyek
-- **Versi Saat Ini**: `v1.5.0` (Statistik Terpadu, Paginasi & Pencarian Dinamis)
-- **Status**: Active Development (Fase 9 - Peluncuran Publik & PWA Optimization)
-- **Update Terakhir**: 29 Juni 2026
+- **Versi Saat Ini**: `v1.6.0` (RAB Dashboard, Statistik Provinsi, Paginasi & Data Sekolah Lengkap)
+- **Status**: Active Development (Fase 10 — Transparansi RAB & Data Publik)
+- **Update Terakhir**: 3 Juli 2026
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
@@ -109,6 +109,17 @@ Jika nilainya dibawah 500 jt, maka dilaporkan ke auditor BPK(Badan Pemeriksa Keu
 ### 4. 👫 Transparansi Publik (Citizen Oversight)
 - Forum diskusi publik di setiap dashboard sekolah.
 - Fitur "Beri Bintang" (Apresiasi Warga) untuk sekolah yang transparan.
+
+### 5. 📋 Rencana Anggaran Biaya (RAB) Publik
+- Tampilkan detail RAB per sekolah langsung di dashboard publik.
+- Data disinkronkan ke Supabase — tidak ada lagi data tersembunyi.
+- Paginasi 10 baris per halaman dengan navigasi halaman bernomor (1, 2, 3...).
+- Mendukung sekolah baru (tabel `rencana_anggaran`) maupun sekolah lama (mapping `rincian_pengeluaran_item`).
+
+### 6. 🗺️ Statistik Sekolah per Provinsi
+- Kartu statistik nasional: jumlah PAUD/TK/KB, SD, SMP, SMA/SMK, dan Universitas.
+- Breakdown jenjang pendidikan ditampilkan langsung di halaman daftar provinsi (`/provinces`).
+- Materialized View PostgreSQL untuk kecepatan query sub-milidetik.
 
 ---
 
@@ -218,6 +229,15 @@ Proyek ini dikembangkan dalam beberapa fase:
 ---
 
 ## 📜 Change Log
+
+### v1.6.0 (3 Juli 2026)
+- **RAB Dashboard Publik**: Menampilkan Rencana Anggaran Biaya (RAB) per sekolah di atas Forum Diskusi pada halaman dashboard sekolah. Data bersumber dari Supabase (`rencana_anggaran`), mendukung mapping ke legacy schools.
+- **Paginasi RAB**: Tabel RAB dibatasi 10 baris per halaman dengan navigasi halaman bernomor (1, 2, 3...) dan elipsis cerdas untuk listing besar (misal ITB: 133 item = 14 halaman).
+- **Statistik Jenjang Provinsi**: Menampilkan rincian PAUD/TK/KB, SD/Sederajat, SMP/Sederajat, SMA/SMK, dan Universitas di halaman daftar provinsi (`/provinces`) dengan Materialized View PostgreSQL.
+- **Sinkronisasi Data Yogyakarta**: Memperbaiki bug data sekolah DIY Yogyakarta yang kosong — seeding ulang 4.569 sekolah dengan skema optimasi transaction yang menghindari timeout.
+- **Perbaikan Duplikasi Kecamatan**: Memperbaiki alamat STEBI Lampung (NPSN 213606) yang tampil dengan duplikasi nama Kecamatan.
+- **Optimasi Filter Kecamatan & Jenjang**: Fitur filter Kecamatan dan jenjang yang lebih stabil dan responsif di halaman detail Provinsi/Kabupaten.
+- **SQL Data Tools**: Penambahan SQL dumps dan scraper scripts untuk 20+ provinsi sebagai data pipeline seeding.
 
 ### v1.5.0 (29 Juni 2026)
 - **Sinkronisasi Statistik Nasional**: Migrasi 100% data transaksi legacy (32.089 transaksi, 3.135 anggaran) ke tabel modern dengan kalkulasi database berkinerja tinggi (PostgreSQL RPC).
