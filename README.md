@@ -293,6 +293,45 @@ Aplikasi ini bersifat Open Source (MIT) sebagai bentuk kontribusi digital untuk 
 
 ---
 
+## 📜 Lisensi Penggunaan
+
+### Lisensi Proyek
+Proyek **Transparansi Anggaran Pendidikan** ini dilisensikan di bawah **Lisensi MIT**. Anda bebas untuk menggunakan, menyalin, memodifikasi, menggabungkan, mempublikasikan, mendistribusikan, mensublisensikan, dan/atau menjual salinan Perangkat Lunak ini sesuai dengan ketentuan Lisensi MIT.
+
+### Lisensi Pihak Ketiga (Dependencies)
+Berikut adalah daftar dependensi utama yang digunakan dalam proyek ini beserta lisensi masing-masing:
+
+#### Dependensi Utama (Root & Apps)
+| Nama Dependensi | Versi | Lisensi | Deskripsi / Penggunaan |
+| :--- | :--- | :--- | :--- |
+| **Next.js** | `16.1.6` | MIT | Framework React untuk web modern |
+| **React** & **React DOM** | `19.2.3` | MIT | Library UI komponen |
+| **Tailwind CSS** | `4.2.1` | MIT | Framework utility-first CSS |
+| **Supabase Client & SSR** | `2.98.0` / `0.9.0` | MIT | Database cloud client dan autentikasi |
+| **Framer Motion** | `12.35.0` | MIT | Library animasi |
+| **Google GenAI** | `1.44.0` | Apache-2.0 | Integrasi dengan model AI Gemini |
+| **Recharts** | `3.7.0` | MIT | Library grafik data interaktif |
+| **Tesseract.js** | `7.0.0` | Apache-2.0 | Fitur OCR pengenalan teks nota belanja |
+| **Lucide React** | `0.577.0` | ISC | Paket ikon vektor modern |
+| **Axios** | `1.17.0` | MIT | HTTP client untuk request API |
+| **Cheerio** | `1.2.0` | MIT | Parsing HTML/XML untuk web scraping/crawling |
+| **Radix UI** | `1.4.3` | MIT | Primitives UI untuk aksesibilitas tinggi |
+| **Tailwind Merge** | `3.5.0` | MIT | Utility untuk menggabungkan class Tailwind |
+| **Class Variance Authority** | `0.7.1` | Apache-2.0 | Pembuatan varian komponen UI |
+| **Clsx** | `2.1.1` | MIT | Utility penggabung class CSS kondisional |
+| **XLSX (SheetJS)** | `0.18.5` | Apache-2.0 | Parsing dan export file spreadsheet excel |
+
+#### Dependensi Pengembangan (Dev Dependencies)
+| Nama Dependensi | Versi | Lisensi | Deskripsi |
+| :--- | :--- | :--- | :--- |
+| **TypeScript** | `5.9.3` | Apache-2.0 | Static typing untuk JavaScript |
+| **ESLint** & **eslint-config-next** | `9.39.3` / `16.1.6` | MIT | Linter kode JavaScript/TypeScript |
+| **Jest** & **ts-jest** | `29.7.0` / `29.4.9` | MIT | Framework testing dan utilitas testing TypeScript |
+| **Shadcn CLI** | `3.8.5` | MIT | CLI untuk manajemen komponen UI |
+| **Tw-animate-css** | `1.4.0` | MIT | Utility animasi Tailwind CSS |
+
+---
+
 ## ⚠️ Pernyataan Penting
 Aplikasi ini akan terus di-update dan disesuaikan dengan perkembangan zaman. **Jika saya meninggal, dibunuh, atau dikriminalisasi setelah membuat aplikasi ini, pelakunya adalah orang-orang yang terlibat dalam praktik korupsi anggaran pendidikan atau pihak yang bisnis/kepentingannya terganggu karena adanya sistem transparansi ini. Sebelumnya telah terjadi "pembungkaman" dalam bentuk intimidasi secara langsung dengan menggunakan perantara "preman bayaran"**.
 
