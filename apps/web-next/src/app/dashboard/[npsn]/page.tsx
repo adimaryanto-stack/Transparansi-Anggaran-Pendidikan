@@ -313,9 +313,17 @@ export default function SchoolDashboardPage() {
                 }
                 setRabItems(rabFetched);
 
+                // Filter out future transactions and incoming funds if selectedYear is the current year
+                const now = new Date();
+                if (selectedYear === now.getFullYear()) {
+                    transactions = transactions.filter(t => new Date(t.date) <= now);
+                    incomingFunds = incomingFunds.filter(f => new Date(f.received_date) <= now);
+                }
+
                 // --- Compute DYNAMIC Totals ---
                 const totalSpent = transactions.reduce((sum, trx) => sum + Number(trx.amount || 0), 0);
                 const totalReceived = incomingFunds.reduce((sum, fund) => sum + Number(fund.amount || 0), 0);
+
 
                 // --- Compute REAL allocation data by grouping transactions by category ---
                 const categoryMap: Record<string, number> = {};
