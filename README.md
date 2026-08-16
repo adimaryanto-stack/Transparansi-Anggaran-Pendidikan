@@ -37,7 +37,7 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 - **Status**: Active Development (Fase 10 — Transparansi RAB & Data Publik)
 - **Update Terakhir**: 3 Juli 2026
 
-## 📋 Status Proyek
+## 📋 Online Demo Proyek
 Pilih Root Directory sesuai dashboard yang ingin Anda aktifkan:
 - apps/transparansi-anggaran/apps/web-next (Portal Publik): https://transparansi-publik.vercel.app/
 - apps/dashboard-kementerian (Kementerian): https://dashboard-kementerian-lime.vercel.app/dashboard
