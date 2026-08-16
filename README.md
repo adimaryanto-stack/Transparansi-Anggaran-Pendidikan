@@ -39,7 +39,7 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 
 ## 📋 Online Demo Proyek
 Pilih Root Directory sesuai dashboard yang ingin Anda aktifkan:
-- apps/transparansi-anggaran/apps/web-next (Portal Publik): https://transparansi-publik.vercel.app/
+- apps/transparansi-anggaran/apps/web-next (Portal Publik): https://transparansi-publik.vercel.app
 - apps/dashboard-kementerian (Kementerian): https://dashboard-kementerian-lime.vercel.app/dashboard
 - apps/dashboard-bank (Bank) : https://dashboardbank.vercel.app/dashboard
 - apps/dashboard-auditor (Auditor): https://dashboardauditor.vercel.app/dashboard
