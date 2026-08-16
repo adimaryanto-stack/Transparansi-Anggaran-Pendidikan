@@ -37,6 +37,15 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 - **Status**: Active Development (Fase 10 — Transparansi RAB & Data Publik)
 - **Update Terakhir**: 3 Juli 2026
 
+## 📋 Status Proyek
+Pilih Root Directory sesuai dashboard yang ingin Anda aktifkan:
+- apps/transparansi-anggaran/apps/web-next (Portal Publik) : https://transparansi-publik.vercel.app/
+- apps/dashboard-kementerian (Kementerian) : https://dashboard-kementerian-lime.vercel.app/dashboard
+- apps/dashboard-bank (Bank) : https://dashboardbank.vercel.app/dashboard
+- apps/dashboard-auditor (Auditor) : https://dashboardauditor.vercel.app/dashboard
+- apps/dashboard-institusi-pendidikan (Institusi Pendidikan) : https://institusipendidikan.vercel.app/dashboard
+- apps/dashboard-apbd (APBD)
+
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
 Sistem ini memecahkan masalah "dana gaib" with melacak rekonsiliasi angka di setiap level:
