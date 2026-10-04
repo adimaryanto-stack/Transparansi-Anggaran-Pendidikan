@@ -10,7 +10,7 @@ Sebelum membaca dokumentasi kode ini secara lengkap, ada baiknya simak video Bin
 
 Sederhananya adalah karena anggaran **Anggaran APBN dan APBD berasal dari pajak rakyat, yang dihimpun melalui lembaga perpajakan** sudah seharusnya anggaran tersebut dibuka, dan untuk mengurangi terjadinya anomali, lakukan **Blockchain anggaran**, semakin ditutupi maka semakin besar potensi terjadinya anomali **Dana Gaib**. Untuk keterbukaan anggaran, sudah ada UU yang mengatur hal ini, sehingga tidak ada lagi alasan untuk menyembunyikan anggaran, terutama anggaran pendidikan.
 
-Uji coba sistem secara Online di sini: https://transparansi-anggaran-pendidikan-we.vercel.app/
+Uji coba sistem secara Online di sini: https://transparansi-publik.vercel.app/
 
 Untuk melihat Product Requirement Document ada di sini: https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan/blob/main/prd.md
 
@@ -39,12 +39,12 @@ Jika dikoneksikan dengan AI Agent seperti OpenClaw(https://www.instagram.com/ree
 
 ## 📋 Online Demo Proyek
 Pilih Root Directory sesuai dashboard yang ingin Anda aktifkan:
-- apps/transparansi-anggaran/apps/web-next (Portal Publik): https://transparansi-publik.vercel.app
-- apps/dashboard-kementerian (Kementerian): https://dashboard-kementerian-lime.vercel.app/dashboard
-- apps/dashboard-bank (Bank) : https://dashboardbank.vercel.app/dashboard
-- apps/dashboard-auditor (Auditor): https://dashboardauditor.vercel.app/dashboard
-- apps/dashboard-institusi-pendidikan (Institusi Pendidikan): https://institusipendidikan.vercel.app/dashboard
-- apps/dashboard-apbd (APBD): https://apbd.vercel.app/dashboard
+- apps/transparansi-anggaran/apps/web-next (Portal Publik): [https://transparansi-publik.vercel.app](https://transparansi-publik.vercel.app/)
+- apps/dashboard-kementerian (Kementerian): [https://dashboard-kementerian-lime.vercel.app/dashboard](https://dashboard-kementerian-lime.vercel.app/)
+- apps/dashboard-bank (Bank) : [https://dashboardbank.vercel.app/dashboard](https://dashboardbank.vercel.app/)
+- apps/dashboard-auditor (Auditor): [https://dashboardauditor.vercel.app/dashboard](https://dashboardauditor.vercel.app/)
+- apps/dashboard-institusi-pendidikan (Institusi Pendidikan): [https://institusipendidikan.vercel.app/dashboard](https://institusipendidikan.vercel.app/)
+- apps/dashboard-apbd (APBD): [https://apbd.vercel.app/dashboard](https://apbd.vercel.app/)
 
 ## 🗺️ Fund Flow Architecture (Aliran Dana)
 
