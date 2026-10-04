@@ -147,11 +147,11 @@ Sistem Transparansi Anggaran terdiri dari 5 server yang saling terhubung, mencak
 
 | # | Nama Server | Kategori | Fungsi | Database | Repositori | Demo URL |
 |---|-------------|----------|--------|----------|------------|----------|
-| 1 | Frontend Publik | Dedicated Server | Frontend untuk diakses publik dari 38 Provinsi. | PostgreSQL (sinkron Supabase) | [Transparansi-Anggaran](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo] | (https://transparansi-publik.vercel.app)
-| 2 | Dashboard Kementerian | VPS Server | Dashboard Kementerian dalam pembagian nominal anggaran. | Supabase | [Dashboard-Kementerian](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [🔗 Live Demo] |[(https://dashboard-kementerian-lime.vercel.app/dashboard)
-| 3 | Dashboard Himbara | VPS Server | Manajemen dan status transfer ke rekening Institusi Pendidikan. | Supabase | [Dashboard-Himbara](https://github.com/adimaryanto-stack/Dashboard-Himbara) | [🔗 Live Demo]| (https://dashboardbank.vercel.app/dashboard)
-| 4 | Dashboard Institusi Pendidikan | Dedicated Server | Manajemen & pendataan belanja institusi dari 38 Provinsi (CDN Indonesia di 5 Pulau). | PostgreSQL (sinkron Supabase) | [Dashboard-Institusi-Pendidikan](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [🔗 Live Demo] | (https://institusipendidikan.vercel.app/dashboard)
-| 5 | Dashboard Auditor | VPS Server | Pengawasan oleh Auditor resmi negara. | Supabase | [Dashboard-Auditor](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [🔗 Live Demo] | (https://dashboardauditor.vercel.app/dashboard)
+| 1 | Frontend Publik | Dedicated Server | Frontend untuk diakses publik dari 38 Provinsi. | PostgreSQL (sinkron Supabase) | [Transparansi-Anggaran](https://github.com/adimaryanto-stack/Transparansi-Anggaran-Pendidikan) | [🔗 Live Demo](https://transparansi-publik.vercel.app) 
+| 2 | Dashboard Kementerian | VPS Server | Dashboard Kementerian dalam pembagian nominal anggaran. | Supabase | [Dashboard-Kementerian](https://github.com/adimaryanto-stack/Dashboard-Kementerian) | [🔗 Live Demo](https://dashboard-kementerian-lime.vercel.app/dashboard)
+| 3 | Dashboard Himbara | VPS Server | Manajemen dan status transfer ke rekening Institusi Pendidikan. | Supabase | [Dashboard-Himbara](https://github.com/adimaryanto-stack/Dashboard-Himbara) | [🔗 Live Demo](https://dashboardbank.vercel.app/dashboard)
+| 4 | Dashboard Institusi Pendidikan | Dedicated Server | Manajemen & pendataan belanja institusi dari 38 Provinsi (CDN Indonesia di 5 Pulau). | PostgreSQL (sinkron Supabase) | [Dashboard-Institusi-Pendidikan](https://github.com/adimaryanto-stack/Dashboard-Institusi-Pendidikan) | [🔗 Live Demo](https://institusipendidikan.vercel.app/dashboard)
+| 5 | Dashboard Auditor | VPS Server | Pengawasan oleh Auditor resmi negara. | Supabase | [Dashboard-Auditor](https://github.com/adimaryanto-stack/Dashboard-Auditor) | [🔗 Live Demo](https://dashboardauditor.vercel.app/dashboard)
 
 Catatan Infrastruktur:
 - Server Dedicated (No. 1 & 4) menggunakan PostgreSQL lokal yang disinkronkan dengan Supabase untuk menangani beban akses dari 38 Provinsi.
